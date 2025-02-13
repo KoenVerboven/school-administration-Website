@@ -4,13 +4,13 @@ import { CommonModule } from '@angular/common';
 import { CourseService } from '../Services/course.service';
 
 @Component({
-  selector: 'app-course-table',
+  selector: 'app-course-list',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './course-table.component.html',
-  styleUrl: './course-table.component.css'
+  templateUrl: './course-list.component.html',
+  styleUrl: './course-list.component.css'
 })
-export class CourseTableComponent implements OnInit{
+export class CourseListComponent implements OnInit{
 
   courses : Course[] =[]
   PageTitle: string = "Courses list"

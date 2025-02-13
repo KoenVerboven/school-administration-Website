@@ -1,13 +1,13 @@
 import { Routes } from '@angular/router';
-import { StudentTableComponent } from './student-table/student-table.component';
+import { StudentListComponent } from './student-list/student-list.component';
 import { StudentFormComponent } from './student-form/student-form.component';
-import { CourseTableComponent } from './course-table/course-table.component';
+import { CourseListComponent } from './course-list/course-list.component';
 
 
 export const routes: Routes = [
-    {path: '', component: StudentTableComponent},
+    {path: '', component: StudentListComponent},
     {path: 'createstudent', component: StudentFormComponent},
     {path: 'studentdetail/:action/:id', component: StudentFormComponent},
     {path: 'students', redirectTo: '', pathMatch:'full'},
-    {path: 'courses',component:CourseTableComponent}
+    {path: 'courses',component:CourseListComponent}
 ];

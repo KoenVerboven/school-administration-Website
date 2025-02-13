@@ -5,13 +5,13 @@ import { CommonModule } from '@angular/common';
 import { Router , RouterModule} from '@angular/router';
 
 @Component({
-  selector: 'student-table',
+  selector: 'student-list',
   standalone: true,
   imports: [CommonModule,RouterModule],
-  templateUrl: './student-table.component.html',
-  styleUrl: './student-table.component.css'
+  templateUrl: './student-list.component.html',
+  styleUrl: './student-list.component.css'
 })
-export class StudentTableComponent {
+export class StudentListComponent {
  
   students: Student[] = [];
 
