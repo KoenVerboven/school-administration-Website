@@ -1,14 +1,13 @@
-<h3 class="text-center my-5">Students</h3>
-<a routerLink="/createstudent" >Create Student</a>
-<br/><br/>
+<p class="text-center h5" >Students</p>
+<a routerLink="/createstudent">Create Student</a>
 <table class="table table-sm table-hover">
     <thead>
        <tr>
-         <th class="text-bg-secondary p-3">Id</th>
-         <th class="text-bg-secondary p-3">Name</th>
-         <th class="text-bg-secondary p-3">Phone</th>       
-         <th class="text-bg-secondary p-3">Email</th>       
-         <th class="text-bg-secondary p-3"></th>       
+         <th class="text-bg-secondary p-2">Id</th>
+         <th class="text-bg-secondary p-2">Name</th>
+         <th class="text-bg-secondary p-2">Phone</th>       
+         <th class="text-bg-secondary p-2">Email</th>       
+         <th class="text-bg-secondary p-2"></th>       
       </tr>
     </thead>
     <tbody>
@@ -18,8 +17,8 @@
             <td>{{student.phone}}</td>
             <td>{{student.email}}</td>
             <td>
-                <button class="btn btn-primary btn-sm  m-2" (click)="updateStudent(student.id)">Update</button>
-                <button class="btn btn-danger  btn-sm"  (click)="deleteStudent(student.id)">Delete</button>
+                <button class="btn btn-primary btn-sm  m-1" (click)="updateStudent(student.id)">Update</button>
+                <button class="btn btn-danger  btn-sm m-1"  (click)="deleteStudent(student.id)">Delete</button>
             </td>
           </tr>       
     </tbody>
