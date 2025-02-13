@@ -1,0 +1,21 @@
+<h3 class="text-center my-5">Teachers</h3>
+<br/><br/>
+<table class="table table-sm table-hover">
+    <thead>
+       <tr>
+         <th class="text-bg-secondary p-3">Id</th>
+         <th class="text-bg-secondary p-3">Name</th>
+         <th class="text-bg-secondary p-3">Phone</th>       
+         <th class="text-bg-secondary p-3">Email</th>       
+         <th class="text-bg-secondary p-3"></th>       
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let teacher of teachers" >      
+            <td >{{teacher.id}}</td>        
+            <td>{{teacher.lastName}} {{teacher.firstName}}</td>      
+            <td>{{teacher.phone}}</td>
+            <td>{{teacher.email}}</td>
+          </tr>         
+    </tbody>
+</table>

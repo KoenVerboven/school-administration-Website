@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { StudentListComponent } from './student-list/student-list.component';
 import { StudentFormComponent } from './student-form/student-form.component';
 import { CourseListComponent } from './course-list/course-list.component';
+import { TeacherListComponent } from './teacher-list/teacher-list.component';
 
 
 export const routes: Routes = [
@@ -9,5 +10,6 @@ export const routes: Routes = [
     {path: 'createstudent', component: StudentFormComponent},
     {path: 'studentdetail/:action/:id', component: StudentFormComponent},
     {path: 'students', redirectTo: '', pathMatch:'full'},
-    {path: 'courses',component:CourseListComponent}
+    {path: 'courses',component:CourseListComponent},
+    {path: 'teachers',component:TeacherListComponent}
 ];
