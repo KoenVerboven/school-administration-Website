@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Course} from '../../models/course';
+import { Course} from '../../../models/course';
 import { CommonModule } from '@angular/common';
-import { CourseService } from '../Services/course.service';
+import { CourseService } from '../../Services/course.service';
 
 @Component({
   selector: 'app-course-list',
