@@ -1,1 +1,7 @@
-<h2 class="text-center my-5">Courses</h2>
+<h2 class="text-center my-5">{{PageTitle}}</h2>
+
+<ul>
+    <li *ngFor="let course of courses">
+         <h3>{{course.courseName}}</h3>
+    </li>
+</ul>
