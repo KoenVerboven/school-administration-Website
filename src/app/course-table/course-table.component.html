@@ -1,7 +1,19 @@
-<h2 class="text-center my-5">{{PageTitle}}</h2>
 
-<ul>
-    <li *ngFor="let course of courses">
-         <h3>{{course.courseName}}</h3>
-    </li>
-</ul>
+<h3 class="text-center my-5">Courses</h3>
+<br/><br/>
+<table class="table table-sm table-hover">
+    <thead>
+       <tr>
+         <th class="text-bg-secondary p-3">Id</th>
+         <th class="text-bg-secondary p-3">Name</th>
+         <th class="text-bg-secondary p-3">Code</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let course of courses">      
+            <td >{{course.id}}</td>        
+            <td>{{course.courseName}}</td> 
+            <td>{{course.courseCode}}</td>     
+          </tr>       
+    </tbody>
+</table>

@@ -1,14 +1,15 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {Course} from '../models/course';
+import { Injectable } from '@angular/core';
+import { environment } from '../environments/environment';
 import {Observable} from 'rxjs';
+import {Course} from '../models/course';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CourseService {
 
-  private apiUrl = '${environment.apiUrl}/course';// todo  : put this in a seperat file
+  private apiUrl = `${environment.apiUrl}/course`  // todo  : put this in a seperat file
 
   constructor(private http : HttpClient) { }
 

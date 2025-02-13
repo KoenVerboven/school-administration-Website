@@ -1,45 +1,30 @@
-<h2 class="text-center my-5">Students</h2>
-
+<h3 class="text-center my-5">Students</h3>
 <a routerLink="/createstudent" >Create Student</a>
+<br/><br/>
+<table class="table table-sm table-hover">
+    <thead>
+       <tr>
+         <th class="text-bg-secondary p-3">Id</th>
+         <th class="text-bg-secondary p-3">Name</th>
+         <th class="text-bg-secondary p-3">Phone</th>       
+         <th class="text-bg-secondary p-3">Email</th>       
+         <th class="text-bg-secondary p-3"></th>       
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let student of students"  (click)="showStudentDetail(student.id)" >      
+            <td >{{student.id}}</td>        
+            <td>{{student.lastName}} {{student.firstName}}</td>      
+            <td>{{student.phone}}</td>
+            <td>{{student.email}}</td>
+            <td>
+                <button class="btn btn-primary btn-sm  m-2" (click)="updateStudent(student.id)">Update</button>
+                <button class="btn btn-danger  btn-sm"  (click)="deleteStudent(student.id)">Delete</button>
+            </td>
+          </tr>       
+    </tbody>
+</table>
 
-<div class="card my-3">
-    <div class="card-header">
-        <p class="fs-5">Overview</p>
-    </div>
-    <div class="card-body">
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>Id</th>
-                    <th>Firstname</th>
-                    <th>Lastname</th>
-                    <th>Phone</th>
-                    <th>Email</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let student of students">
-                    <button class="btn btn-primary btn-sm  m-2" (click)="showStudentDetail(student.id)">Select</button>
-                    <td>{{student.id}}</td>
-                    <td>{{student.firstName}}</td>
-                    <td>{{student.lastName}}</td>
-                    <td>{{student.phone}}</td>
-                    <td>{{student.email}}</td>
-                    <td>
-                        <button class="btn btn-primary btn-sm  m-2" (click)="updateStudent(student.id)">Update</button>
-                        <button class="btn btn-danger  btn-sm" (click)="deleteStudent(student.id)">Delete</button>
-                    </td>
-       
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
- 
-
-</div>
 
 
 
