@@ -11,7 +11,7 @@
       </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let teacher of teachers" >      
+        <tr *ngFor="let teacher of teachers" (click)="showTeacherDetail(teacher.id)" >      
             <td >{{teacher.id}}</td>        
             <td>{{teacher.lastName}} {{teacher.firstName}}</td>      
             <td>{{teacher.phone}}</td>

@@ -1,34 +1,34 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Course } from '../../../models/course';
-import { CourseService } from '../../Services/course.service'
+import { Teacher } from '../../../models/teacher';
+import { TeacherService } from '../../Services/teacher.service'
 import { Router,ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-course-form',
+  selector: 'app-teacher-form',
   standalone: true,
   imports: [FormsModule, CommonModule],
-  templateUrl: './course-form.component.html',
-  styleUrl: './course-form.component.css'
+  templateUrl: './teacher-form.component.html',
+  styleUrl: './teacher-form.component.css'
 })
-export class CourseFormComponent  implements OnInit{
+export class TeacherFormComponent implements OnInit {
 
-course: Course = {
+  teacher: Teacher = {
       id: 0,
-      courseName: '',
-      courseCode: '',
-      courseDescription: '',
-      maxNumberOfStudents: 0
-}
+      firstName: '',
+      lastName: '',
+      phone: '',
+      email: ''
+    }
 
- isUpdating: boolean = false;
+    isUpdating: boolean = false;
     disableControls: boolean = false;
     formAction : string = "true";
     errorMessage : string = "";
     pageTitle: string| null = "";
    
-    constructor(private courseService : CourseService,
+    constructor(private teacherService : TeacherService,
       private router: Router,
       private route: ActivatedRoute
     ){}         
@@ -39,17 +39,18 @@ course: Course = {
       //alert(id);
       const action = result.get('action');
       
-      if(action == null){this.pageTitle = "Create course"}
+      if(action == null){this.pageTitle = "Create teacher"}
         else if(action == "detail"){
-          this.pageTitle = "Course detail";
+          this.pageTitle = "Teacher detail";
           this.formAction = "detail";
           this.disableControls = true;
         }
 
         if(id){
           this.isUpdating = true;
-          this.courseService.getCourseById(Number(id)).subscribe({
-            next: result => this.course = result,
+          //console.log("Is updating");
+          this.teacherService.getTeacherById(Number(id)).subscribe({
+            next: result => this.teacher = result,
             error: err => this.errorMessage = `Error : (${err.status})`
           })
         }

@@ -18,6 +18,9 @@ export class StudentFormComponent implements OnInit {
     id: 0,
     firstName: '',
     lastName: '',
+    dateOfBirth: '',
+    zipcode:0,
+    streetAndNumber: '',
     phone: '',
     email: ''
   }

@@ -6,37 +6,50 @@
 <form *ngIf="errorMessage === ''"   (ngSubmit)="onSubmit()" #studentForm="ngForm" class="border rounded p-4 w-50 mb-5 mx-auto">
 
    <div class="mb-3">
-        <label class="form-label">Firstname * </label>
+        <label class="form-label">Firstname *</label>
         <input required #firstName="ngModel" [disabled]=disableControls class="form-control"   type="text" name="firstName"  [(ngModel)]="student.firstName" />
 
         <div *ngIf="firstName.invalid &&(firstName.touched || firstName.dirty)">
             <div class="text-danger" *ngIf="firstName.errors?.['required']">First Name is required</div>
         </div>
-
    </div>
-
    <div class="mb-3">
-        <label class="form-label">Lastname </label>
+        <label class="form-label">Lastname *</label>
         <input required #lastName="ngModel" [disabled]=disableControls class="form-control" type="text" name="lastName"  [(ngModel)]="student.lastName" />
-        
         <div *ngIf="lastName.invalid &&(lastName.touched || lastName.dirty)">
-                <div class="text-danger" *ngIf="lastName.errors?.['required']">Last Name is required</div>
+               <div class="text-danger" *ngIf="lastName.errors?.['required']">Last Name is required</div>
         </div>
-
    </div>
-
    <div class="mb-3">
-        <label  class="form-label">Phone </label>
+     <label class="form-label">Date of birth</label>
+     <label class="form-control">{{student.dateOfBirth | date: 'dd/MM/yyyy'}}</label>
+      <!-- 
+     <input required #dateOfBirth="ngModel" [disabled]=disableControls class="form-control" type="text" name="dateOfBirth"  [(ngModel)]="student.dateOfBirth" />
+     <div *ngIf="dateOfBirth.invalid &&(dateOfBirth.touched || dateOfBirth.dirty)">
+             <div class="text-danger" *ngIf="dateOfBirth.errors?.['required']">Date of birth is required</div>
+     </div>
+     -->
+   </div>
+   <div class="mb-3">
+     <label  class="form-label">ZipCode</label>
+     <input required #zipcode="ngModel" [disabled]=disableControls class="form-control" type="text" name="zipcode"   [(ngModel)]="student.zipcode"/>
+     <div *ngIf="lastName.invalid &&(zipcode.touched || zipcode.dirty)">
+          <div class="text-danger" *ngIf="zipcode.errors?.['required']">Zipcode is required</div>
+     </div>
+   </div>  
+   <div class="mb-3">
+     <label  class="form-label">Street and number</label>
+     <input  #streetAndNumber="ngModel" [disabled]=disableControls class="form-control" type="text" name="streetAndNumber"  [(ngModel)]="student.streetAndNumber" />
+   </div>  
+   <div class="mb-3">
+        <label  class="form-label">Phone</label>
         <input required #phone="ngModel" [disabled]=disableControls class="form-control" type="phone" name="phone"  [(ngModel)]="student.phone" />
-
         <div *ngIf="phone.invalid &&(phone.touched || phone.dirty)">
             <div class="text-danger" *ngIf="phone.errors?.['required']">Phone is required</div>
         </div>
-
    </div>
-
    <div class="mb-3">
-        <label class="form-label">Email </label>
+        <label class="form-label">Email</label>
         <input required email #email="ngModel" [disabled]=disableControls class="form-control" type="email" name="email"  [(ngModel)]="student.email" />
 
         <div *ngIf="email.invalid &&(email.touched || email.dirty)">

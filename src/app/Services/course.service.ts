@@ -9,12 +9,16 @@ import {Course} from '../../models/course';
 })
 export class CourseService {
 
-  private apiUrl = `${environment.apiUrl}/course`  // todo  : put this in a seperat file
+  private apiUrl = `${environment.apiUrl}/course/`  // todo  : put this in a seperat file
 
   constructor(private http : HttpClient) { }
 
   getCourses() : Observable<Course[]>{
     return this.http.get<Course[]>(this.apiUrl);
+  }
+
+  getCourseById(id : number): Observable<Course>{
+    return this.http.get<Course>(`${this.apiUrl}getById/${id}`)
   }
 
 }

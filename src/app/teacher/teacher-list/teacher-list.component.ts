@@ -22,4 +22,9 @@ teachers: Teacher[] = [];
         console.log(data);
     });
   }
+
+  showTeacherDetail(id: number): void{
+    this.router.navigate(['/teacherdetail/detail', id])
+  }
+
 }

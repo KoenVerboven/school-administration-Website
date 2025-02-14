@@ -9,7 +9,7 @@
       </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let course of courses">      
+        <tr *ngFor="let course of courses" (click)="showCourseDetail(course.id)">      
             <td >{{course.id}}</td>        
             <td>{{course.courseName}}</td> 
             <td>{{course.courseCode}}</td>     
