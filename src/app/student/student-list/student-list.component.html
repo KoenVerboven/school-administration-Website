@@ -1,6 +1,6 @@
 <p class="text-center h5" >Students</p>
 <a routerLink="/createstudent">Create Student</a>
-<table class="table table-sm table-hover">
+<table class="table table-sm">
     <thead>
        <tr>
          <th class="text-bg-secondary p-2">Id</th>
@@ -11,9 +11,9 @@
       </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let student of students"  (click)="showStudentDetail(student.id)" >      
+        <tr *ngFor="let student of students" >      
             <td >{{student.id}}</td>        
-            <td>{{student.lastName}} {{student.firstName}}</td>  
+            <td (click)="showStudentDetail(student.id)"><b>{{student.lastName}} {{student.firstName}}</b></td>  
             <td>{{student.phone}}</td>
             <td>{{student.email}}</td>
             <td>

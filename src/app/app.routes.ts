@@ -12,7 +12,9 @@ export const routes: Routes = [
     {path: 'createstudent', component: StudentFormComponent},
     {path: 'studentdetail/:action/:id', component: StudentFormComponent},
     {path: 'courses',component:CourseListComponent},
+    {path: 'createcourse', component: CourseFormComponent},
     {path: 'coursedetail/:action/:id', component: CourseFormComponent},
     {path: 'teachers',component:TeacherListComponent},
+    {path: 'createteacher', component: TeacherFormComponent},
     {path: 'teacherdetail/:action/:id', component: TeacherFormComponent}
 ];

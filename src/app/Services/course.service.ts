@@ -9,7 +9,7 @@ import {Course} from '../../models/course';
 })
 export class CourseService {
 
-  private apiUrl = `${environment.apiUrl}/course/`  // todo  : put this in a seperat file
+  private apiUrl = `${environment.apiUrl}/course`  // todo  : put this in a seperat file
 
   constructor(private http : HttpClient) { }
 
@@ -18,7 +18,19 @@ export class CourseService {
   }
 
   getCourseById(id : number): Observable<Course>{
-    return this.http.get<Course>(`${this.apiUrl}getById/${id}`)
+    return this.http.get<Course>(`${this.apiUrl}/getById/${id}`)
+  }
+
+  createCourse(course : Course): Observable<Course>{
+    return this.http.post<Course>(this.apiUrl,course);
+  }
+
+  deleteCourse(id : number) : Observable<void>{
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  }
+
+  updateCourse(course: Course):Observable<Course>{
+    return this.http.put<Course>(`${this.apiUrl}/${course.id}`,course);
   }
 
 }

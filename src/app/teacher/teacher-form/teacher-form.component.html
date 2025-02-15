@@ -3,7 +3,7 @@
     {{errorMessage}}
 </div>
 
-<form *ngIf="errorMessage === ''"    #teacherForm="ngForm" class="border rounded p-4 w-50 mb-5 mx-auto">
+<form *ngIf="errorMessage === ''"  (ngSubmit)="onSubmit()"  #teacherForm="ngForm" class="border rounded p-4 w-50 mb-5 mx-auto">
 
     <div class="mb-3">
         <label class="form-label">Firstname *</label>
@@ -20,5 +20,34 @@
             <div class="text-danger" *ngIf="lastName.errors?.['required']">Last Name is required</div>
         </div>
     </div>
+    <div class="mb-3">
+        <label  class="form-label">ZipCode</label> <!--  to do ZIPCODE MOET 4 LANG ZIJN anders ERROR !!!   -->
+        <input required #zipcode="ngModel" [disabled]=disableControls class="form-control" type="text" name="zipcode"   [(ngModel)]="teacher.zipcode"/>
+        <div *ngIf="lastName.invalid &&(zipcode.touched || zipcode.dirty)">
+             <div class="text-danger" *ngIf="zipcode.errors?.['required']">Zipcode is required</div>
+        </div>
+      </div>  
+      <div class="mb-3">
+        <label  class="form-label">Street and number</label>
+        <input  #streetAndNumber="ngModel" [disabled]=disableControls class="form-control" type="text" name="streetAndNumber"  [(ngModel)]="teacher.streetAndNumber" />
+      </div>  
+    <div class="mb-3">
+        <label  class="form-label">Phone</label>
+        <input required #phone="ngModel" [disabled]=disableControls class="form-control" type="phone" name="phone"  [(ngModel)]="teacher.phone" />
+        <div *ngIf="phone.invalid &&(phone.touched || phone.dirty)">
+            <div class="text-danger" *ngIf="phone.errors?.['required']">Phone is required</div>
+        </div>
+   </div>
+   <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input required email #email="ngModel" [disabled]=disableControls class="form-control" type="email" name="email"  [(ngModel)]="teacher.email" />
 
+        <div *ngIf="email.invalid &&(email.touched || email.dirty)">
+            <div class="text-danger" *ngIf="email.errors?.['required']">Email is required</div>
+            <div class="text-danger" *ngIf="email.errors?.['email']">Email is invalid</div>
+        </div>
+   </div>
+   <div *ngIf="formAction  != 'detail'">
+    <button class="btn btn-primary" type="submit" [disabled]="teacherForm.invalid">{{isUpdating? 'Update' : 'Create'}}</button>
+   </div>
 </form>

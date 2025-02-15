@@ -18,6 +18,8 @@ export class TeacherFormComponent implements OnInit {
       id: 0,
       firstName: '',
       lastName: '',
+      zipcode :0,
+      streetAndNumber:'',
       phone: '',
       email: ''
     }
@@ -36,7 +38,6 @@ export class TeacherFormComponent implements OnInit {
     ngOnInit(): void {
       this.route.paramMap.subscribe(result => {
       const id = result.get('id');
-      //alert(id);
       const action = result.get('action');
       
       if(action == null){this.pageTitle = "Create teacher"}
@@ -45,10 +46,10 @@ export class TeacherFormComponent implements OnInit {
           this.formAction = "detail";
           this.disableControls = true;
         }
+        else if(action == "update"){this.pageTitle = "Update teacher"}
 
         if(id){
           this.isUpdating = true;
-          //console.log("Is updating");
           this.teacherService.getTeacherById(Number(id)).subscribe({
             next: result => this.teacher = result,
             error: err => this.errorMessage = `Error : (${err.status})`
@@ -56,6 +57,37 @@ export class TeacherFormComponent implements OnInit {
         }
     
     });
+  }
+
+  onSubmit():void{
+
+    if(this.isUpdating){
+      //updating
+      this.teacherService.updateTeacher(this.teacher)
+      .subscribe({ 
+        next: (response) =>{
+          this.router.navigate(['/teachers'])
+        },
+        error: (err) => {
+          console.error(err);
+          this.errorMessage = `Error occured during update : ${err.status}`;
+        }
+      });
+    }
+    else{
+      //inserting
+      this.teacherService.createTeacher(this.teacher)
+      .subscribe({ 
+        next: (response) =>{
+          this.router.navigate(['/teachers'])
+        },
+        error: (err) => {
+          console.error(err);
+          this.errorMessage = `Error occured during insert : ${err.status}`;
+        }
+      });
+    }
+    
   }
 
 }

@@ -27,6 +27,22 @@ export class CourseListComponent implements OnInit{
     .subscribe(coursesFromApi => this.courses = coursesFromApi);
   }
 
+  deleteCourse(id : number) : void {
+      this.courseService.deleteCourse(id).subscribe({
+      next: (response) => {
+        this.courses = this.courses.filter(s => s.id != id);
+      },
+      error: (err) => {
+        console.error('Error deleting course',err);
+      }
+    });
+  }
+
+  updateCourse(id: number): void{
+    this.router.navigate(['/coursedetail/update', id])
+  }
+
+
   showCourseDetail(id: number): void{
     this.router.navigate(['/coursedetail/detail', id])
   }

@@ -21,4 +21,16 @@ export class TeacherService {
       return this.http.get<Teacher>(`${this.apiUrl}/${id}`)
     }
 
+    createTeacher(teacher : Teacher): Observable<Teacher>{
+        return this.http.post<Teacher>(this.apiUrl,teacher);
+      }
+    
+      deleteTeacher(id : number) : Observable<void>{
+        return this.http.delete<void>(`${this.apiUrl}/${id}`);
+      }
+    
+      updateTeacher(teacher: Teacher):Observable<Teacher>{
+        return this.http.put<Teacher>(`${this.apiUrl}/${teacher.id}`,teacher);
+      }
+
 }

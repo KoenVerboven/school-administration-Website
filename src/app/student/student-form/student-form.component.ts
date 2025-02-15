@@ -70,7 +70,7 @@ export class StudentFormComponent implements OnInit {
       this.studentService.updateStudent(this.student)
       .subscribe({ 
         next: (response) =>{
-          this.router.navigate(['/'])
+          this.router.navigate(['/students'])
         },
         error: (err) => {
           console.error(err);
@@ -83,7 +83,7 @@ export class StudentFormComponent implements OnInit {
       this.studentService.createStudent(this.student)
       .subscribe({ 
         next: (response) =>{
-          this.router.navigate(['/'])
+          this.router.navigate(['/students'])
         },
         error: (err) => {
           console.error(err);

@@ -36,7 +36,6 @@ course: Course = {
     ngOnInit(): void {
       this.route.paramMap.subscribe(result => {
       const id = result.get('id');
-      //alert(id);
       const action = result.get('action');
       
       if(action == null){this.pageTitle = "Create course"}
@@ -45,6 +44,7 @@ course: Course = {
           this.formAction = "detail";
           this.disableControls = true;
         }
+        else if(action == "update"){this.pageTitle = "Update course"}
 
         if(id){
           this.isUpdating = true;
@@ -55,6 +55,37 @@ course: Course = {
         }
     
     });
+  }
+
+  onSubmit():void{
+
+    if(this.isUpdating){
+      //updating
+      this.courseService.updateCourse(this.course)
+      .subscribe({ 
+        next: (response) =>{
+          this.router.navigate(['/courses'])
+        },
+        error: (err) => {
+          console.error(err);
+          this.errorMessage = `Error occured during update : ${err.status}`;
+        }
+      });
+    }
+    else{
+      //inserting
+      this.courseService.createCourse(this.course)
+      .subscribe({ 
+        next: (response) =>{
+          this.router.navigate(['/courses'])
+        },
+        error: (err) => {
+          console.error(err);
+          this.errorMessage = `Error occured during insert : ${err.status}`;
+        }
+      });
+    }
+    
   }
 
 }

@@ -1,18 +1,23 @@
 <p class="text-center h5" >Courses</p>
-<br/>
-<table class="table table-sm table-hover">
+<a routerLink="/createcourse">Create Course</a>
+<table class="table table-sm">
     <thead>
        <tr>
          <th class="text-bg-secondary p-2">Id</th>
          <th class="text-bg-secondary p-2">Name</th>
          <th class="text-bg-secondary p-2">Code</th>
+         <th class="text-bg-secondary p-2"></th>   
       </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let course of courses" (click)="showCourseDetail(course.id)">      
+        <tr *ngFor="let course of courses">      
             <td >{{course.id}}</td>        
-            <td>{{course.courseName}}</td> 
-            <td>{{course.courseCode}}</td>     
+            <td (click)="showCourseDetail(course.id)"><b>{{course.courseName}}</b></td> 
+            <td>{{course.courseCode}}</td>  
+            <td>
+              <button class="btn btn-primary btn-sm  m-1" (click)="updateCourse(course.id)">Update</button>
+              <button class="btn btn-danger  btn-sm m-1"  (click)="deleteCourse(course.id)">Delete</button>
+          </td>   
           </tr>       
     </tbody>
 </table>
