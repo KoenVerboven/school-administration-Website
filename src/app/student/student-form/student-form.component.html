@@ -5,7 +5,12 @@
 
 <form *ngIf="errorMessage === ''"   (ngSubmit)="onSubmit()" #studentForm="ngForm" class="border rounded p-4 w-50 mb-5 mx-auto">
 
-   <div class="mb-3">
+     <div style="background-color: rgb(81, 235, 235);padding:4px;border-radius: 4px; ">
+          <button class="btn btn-info" style="margin-right: 6px;" *ngIf="formAction != 'detail'" type="submit" [disabled]="studentForm.invalid">Save</button>
+          <button class="btn btn-info" type="button" (click)="navigateBack()">Cancel</button>
+     </div>
+     <br />
+     <div class="mb-3">
         <label class="form-label">Firstname *</label>
         <input required #firstName="ngModel" [disabled]=disableControls class="form-control"   type="text" name="firstName"  [(ngModel)]="student.firstName" />
 
@@ -20,15 +25,28 @@
                <div class="text-danger" *ngIf="lastName.errors?.['required']">Last Name is required</div>
         </div>
    </div>
+
+   <div class="mb-3">
+     <label class="form-label">Gender</label>
+     <select  class="form-control" name="gender">  
+          <option>Select Gender</option>  
+          <option>male</option> 
+          <option>female</option>  
+         <!-- <option *ngFor="let web of websiteList">{{web}}</option> -->    
+      </select> 
+   </div>
    <div class="mb-3">
      <label class="form-label">Date of birth</label>
-     <label class="form-control">{{student.dateOfBirth | date: 'dd/MM/yyyy'}}</label>
-      <!-- 
-     <input required #dateOfBirth="ngModel" [disabled]=disableControls class="form-control" type="text" name="dateOfBirth"  [(ngModel)]="student.dateOfBirth" />
-     <div *ngIf="dateOfBirth.invalid &&(dateOfBirth.touched || dateOfBirth.dirty)">
-             <div class="text-danger" *ngIf="dateOfBirth.errors?.['required']">Date of birth is required</div>
+     
+     <div *ngIf="formAction  == 'detail'; else dateOfBirthEdit ">
+          <label class="form-control">{{student.dateOfBirth | date: 'dd/MM/yyyy'}}</label>
      </div>
-     -->
+     <ng-template #dateOfBirthEdit>
+          <input required #dateOfBirth="ngModel" [disabled]=disableControls class="form-control" type="text" name="dateOfBirth"  [(ngModel)]="student.dateOfBirth" />
+          <div *ngIf="dateOfBirth.invalid &&(dateOfBirth.touched || dateOfBirth.dirty)">
+               <div class="text-danger" *ngIf="dateOfBirth.errors?.['required']">Date of birth is required</div>
+          </div>
+     </ng-template>
    </div>
    <div class="mb-3">
      <label  class="form-label">ZipCode</label>
@@ -57,8 +75,5 @@
             <div class="text-danger" *ngIf="email.errors?.['email']">Email is invalid</div>
         </div>
    </div>
-   <div *ngIf="formAction  != 'detail'">
-        <button class="btn btn-primary" type="submit" [disabled]="studentForm.invalid">{{isUpdating? 'Update' : 'Create'}}</button>
-   </div>
-    
+          
 </form>

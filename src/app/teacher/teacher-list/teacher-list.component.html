@@ -13,7 +13,7 @@
     <tbody>
         <tr *ngFor="let teacher of teachers" >      
             <td >{{teacher.id}}</td>        
-            <td (click)="showTeacherDetail(teacher.id)"><b>{{teacher.lastName}} {{teacher.firstName}}</b></td>      
+            <td (click)="showTeacherDetail(teacher.id)" class="cell-hovercolor"><b>{{teacher.lastName}} {{teacher.firstName}}</b></td>      
             <td>{{teacher.phone}}</td>
             <td>{{teacher.email}}</td>
             <td>

@@ -37,6 +37,14 @@ course: Course = {
       this.route.paramMap.subscribe(result => {
       const id = result.get('id');
       const action = result.get('action');
+
+      if(id){
+        this.courseService.getCourseById(Number(id)).subscribe({
+        next: result => this.course = result,
+        error: err => this.errorMessage = `Error : (${err.status})`
+       });
+       this.isUpdating = true;
+      } 
       
       if(action == null){this.pageTitle = "Create course"}
         else if(action == "detail"){
@@ -45,15 +53,7 @@ course: Course = {
           this.disableControls = true;
         }
         else if(action == "update"){this.pageTitle = "Update course"}
-
-        if(id){
-          this.isUpdating = true;
-          this.courseService.getCourseById(Number(id)).subscribe({
-            next: result => this.course = result,
-            error: err => this.errorMessage = `Error : (${err.status})`
-          })
-        }
-    
+   
     });
   }
 
@@ -85,7 +85,11 @@ course: Course = {
         }
       });
     }
-    
+  }
+
+  navigateBack()
+  {
+    this.router.navigateByUrl('/courses')
   }
 
 }

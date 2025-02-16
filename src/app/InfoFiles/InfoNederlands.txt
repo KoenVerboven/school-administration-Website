@@ -1,0 +1,564 @@
+
+In cmd :
+---------
+aanmaken nieuw angular project : ng new school-administration-app
+
+na installatie ga naar juist pad : cd school-administration-app
+
+om visual code te openen in een nieuw venster : code .
+
+
+is visual code : 
+-----------------
+open nieuw terminal (cmd)
+
+in terminal:
+------------
+ng serve
+
+klik op link  : http://localhost:4200/
+en het project opent
+
+in src :
+ app.component.html :
+verwijder alles behalve de regel <router-outlet />
+
+in de src folder:
+-----------------
+maak een nieuwe folder en noem het models.
+maak in deze folder de classe : student.ts
+
+export interface Student{
+    id: number;
+    firstName: string;
+    lastName: string;
+    phone: string;
+    email: string;
+}
+
+in terminal:
+------------
+aanmaken nieuwe componenten (generate component):
+ng g c student-table
+
+pas nu de file app.components.ts aan:
+-------------------------------------
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { StudentTableComponent } from './student-table/student-table.component';<---toevoegen
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [RouterOutlet,StudentTableComponent], <--- toevoegen
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css'
+})
+export class AppComponent {
+  title = 'school-administration-app';
+}
+
+in de src-folder maak een nieuwe folder:
+----------------------------------------
+environments
+
+in deze folder maak file:
+-------------------------
+environment.ts
+
+in deze file :
+
+export const environment = {
+    isProduction: false,
+    apiUrl: ''
+}
+
+
+in de map environments:
+-------------------------
+maak nieuwe file environment.prod.ts
+
+in deze file :
+
+export const environment = {
+    isProduction: true,
+    apiUrl: ''
+}
+
+
+
+in file app.component.html:
+---------------------------
+<router-outlet />
+
+<student-table></student-table> --> voeg toe
+
+
+in de browser check nu:
+----------------------
+student-table works! -> moet er staan
+
+nu in visual studio van onze api:
+--------------------------------
+ga naar properties, launchsettings :
+
+"https": {
+  "commandName": "Project",
+  "dotnetRunMessages": true,
+  "launchBrowser": true,
+  "applicationUrl": "https://localhost:7213;http://localhost:5032",
+  "environmentVariables": {
+    "ASPNETCORE_ENVIRONMENT": "Development"
+  }
+
+
+copy deze url : https://localhost:7213
+
+in visual studio code :
+environments.ts :
+
+
+export const environment = {
+    isProduction: false,
+    apiUrl: 'https://localhost:7213' <-- plak hier de url
+}
+
+in visual studio :
+student controller : [Route("api/[Controller]")] --> copy 'api/'
+
+in visual code:
+
+ apiUrl: 'https://localhost:7213'
+wordt nu:
+ apiUrl: 'https://localhost:7213/api'
+
+
+in terminal service aanmaken :
+------------------------------
+ng g s student
+
+-> student.service.ts ia aangemaakt
+
+
+in file app.config.ts:
+-----------------------
+import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
+import { provideRouter } from '@angular/router';
+
+
+import { routes } from './app.routes';
+import { provideHttpClient } from '@angular/common/http';
+
+export const appConfig: ApplicationConfig = {
+  providers: [
+    provideZoneChangeDetection({ eventCoalescing: true }),
+     provideRouter(routes),
+     provideHttpClient() <--- toevoegen
+    ]
+};
+
+
+student.service.ts origineel :
+------------------------------
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class StudentService {
+
+  constructor() { }
+}
+
+student.service.ts aangepast  ->
+-----------------------------
+inject http-client:
+constructor(private http: HttpClient) { }
+-----------------------------------------
+
+-->
+
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { environment } from '../environments/environment.prod';
+import { Observable } from 'rxjs';
+import { Student } from '../models/student';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class StudentService {
+
+  private apiUrl = `${environment.apiUrl}/student`
+  
+  constructor(private http: HttpClient) { }
+
+  getStudents(): Observable<Student[]>{
+    return this.http.get<Student[]>(this.apiUrl)
+  }
+
+}
+
+-------------------------------------------------
+
+employee-table.component.ts orgineel ->
+
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'student-table',
+  standalone: true,
+  imports: [],
+  templateUrl: './student-table.component.html',
+  styleUrl: './student-table.component.css'
+})
+export class StudentTableComponent {
+
+}
+
+----------------------------------------------
+aangepast ->
+
+import { Component, OnInit } from '@angular/core';
+import { Student } from '../../models/student'; 
+import { StudentService } from '../student.service';
+
+@Component({
+  selector: 'student-table',
+  standalone: true,
+  imports: [],
+  templateUrl: './student-table.component.html',
+  styleUrl: './student-table.component.css'
+})
+export class StudentTableComponent {
+  students: Student[] = [];
+
+  constructor(private studentService:StudentService){}
+
+  ngOnInit(){
+    this.studentService.getStudents().subscribe((data: Student[]) =>{
+        this.students = data;
+        console.log(data);
+    });
+  }
+
+}
+-------------------------------------------------------------
+aanmaken nieuw component (for updating and creating):
+------------------------------------------------------
+ng g c student-form
+
+app.routes.ts(origineel):
+---------------------------
+import { Routes } from '@angular/router';
+
+export const routes: Routes = [];
+
+
+app.routes.ts(aangepast):
+---------------------------
+import { Routes } from '@angular/router';
+import { StudentTableComponent } from './student-table/student-table.component';
+import { StudentFormComponent } from './student-form/student-form.component';
+
+
+export const routes: Routes = [
+    {path: '', component: StudentTableComponent},
+    {path: 'create', component: StudentFormComponent},
+    {path: 'students', redirectTo: '', pathMatch:'full'}
+];
+
+
+
+menu maken:
+----------------
+app.component.ts ->
+imports add: Routermodule
+
+app.component.html:
+---------------------
+<nav>
+    <a routerLink="/">Home</a>
+    <a routerLink="/create">Create</a>
+</nav>
+
+<router-outlet />
+
+
+
+student-form.component.ts (origineel)
+-------------------------------------
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-student-form',
+  standalone: true,
+  imports: [],
+  templateUrl: './student-form.component.html',
+  styleUrl: './student-form.component.css'
+})
+export class StudentFormComponent {
+
+}
+
+
+
+student-form.component.ts(aangepast):
+-------------------------------------
+import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { Student } from '../../models/student';
+
+@Component({
+  selector: 'app-student-form',
+  standalone: true,
+  imports: [FormsModule],
+  templateUrl: './student-form.component.html',
+  styleUrl: './student-form.component.css'
+})
+export class StudentFormComponent {
+
+  student: Student = {
+    id: 0,
+    firstName: '',
+    lastName: '',
+    phone: '',
+    email: ''
+  }
+
+  onSubmit():void{
+    console.log(this.student);
+    // logic to create a new student
+  }
+
+}
+
+
+
+student-form.component.html (origineel):
+----------------------------------------
+<p>student-form works!</p>
+
+
+student-form.component.html (aangepast):
+----------------------------------------
+<h2>Create Student</h2>
+
+<form (ngSubmit)="onSubmit()">
+
+   <div>
+    <label>Firstname </label>
+    <input type="text" name="firstName"  [(ngModel)]="student.firstName" />
+   </div>
+
+   <div>
+    <label>Lastname </label>
+    <input type="text" name="lastName"  [(ngModel)]="student.lastName" />
+   </div>
+
+   <div>
+    <label>Phone </label>
+    <input type="phone" name="phone"  [(ngModel)]="student.phone" />
+   </div>
+
+   <div>
+    <label>Email </label>
+    <input type="email" name="email"  [(ngModel)]="student.email" />
+   </div>
+
+    <button type="submit">Create</button>
+</form>
+
+
+add to student.service.ts (createStudent):
+----------------------------
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { environment } from '../environments/environment';
+import { Observable } from 'rxjs';
+import { Student } from '../models/student';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class StudentService {
+
+  private apiUrl = `${environment.apiUrl}/student`
+  
+  constructor(private http: HttpClient) { }
+
+  getStudents(): Observable<Student[]>{
+    return this.http.get<Student[]>(this.apiUrl)
+  }
+
+  createStudent(student : Student): Observable<Student>{
+    return this.http.post<Student>(this.apiUrl,student);
+  }
+
+}
+
+--------------------------
+
+employee-form.component.ts wordt nu :
+--------------------------------------
+import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { Student } from '../../models/student';
+import { StudentService } from '../student.service';
+
+@Component({
+  selector: 'app-student-form',
+  standalone: true,
+  imports: [FormsModule],
+  templateUrl: './student-form.component.html',
+  styleUrl: './student-form.component.css'
+})
+export class StudentFormComponent {
+
+  student: Student = {
+    id: 0,
+    firstName: '',
+    lastName: '',
+    phone: '',
+    email: ''
+  }
+
+  constructor(private studentService : StudentService){}
+
+  onSubmit():void{
+    console.log(this.student);
+    // logic to create a new student
+    this.studentService.createStudent(this.student)
+      .subscribe(result => console.log(result));
+  }
+
+}
+---------------------------------------------------------------------------
+
+
+error handling : 
+
+errorMessage : string = "";
+
+  constructor(private studentService : StudentService, private router: Router){}
+
+  onSubmit():void{
+    console.log(this.student);
+    // logic to create a new student
+    this.studentService.createStudent(this.student)
+      .subscribe({ 
+        next: (response) =>{
+          this.router.navigate(['/'])
+        },
+        error: (err) => {
+          console.error(err);
+          this.errorMessage = err;
+        }
+      });
+  }
+
+in html : 
+---------
+
+<div *ngIf="errorMessage != ''">
+    {{errorMessage}}
+</div>
+
+-------------------------------------------------------------------------
+-------------------------------------------------------------------------
+update student:
+
+app.routes:
+voeg nieuwe route toe:
+
+export const routes: Routes = [
+    {path: '', component: StudentTableComponent},
+    {path: 'create', component: StudentFormComponent},
+    {path: 'update/:id', component: StudentFormComponent},
+    {path: 'students', redirectTo: '', pathMatch:'full'}
+];
+
+html : voeg button toe:
+ <button (click)="updateStudent(student.id)">Update</button>
+
+component.ts : voeg eventhandler toe :
+
+updateStudent(id: number): void{
+    this.router.navigate(['/update', id])
+  }
+
+in student-form.component:
+import { Router,ActivatedRoute } from '@angular/router'; -> we gaan de id opvangen -> hiervoor add : 'ActivatedRoute'
+
+voeg dit ook toe dmv dependency-injection:
+
+ constructor(private studentService : StudentService, 
+    private router: Router,
+    private route: ActivatedRoute <----------
+  ){}
+
+voeg nu oninit toe : import { Component, OnInit } from '@angular/core';
+
+vang de url-parameter id op : 
+
+ngOnInit(): void {
+    this.route.paramMap.subscribe(result => console.log(result));
+  }
+
+ngOnInit = lifecycle-hook
+
+ngOnInit(): void {
+    this.route.paramMap.subscribe(result => {
+        const id = result.get('id');
+
+        if(id){
+          //we are in update-mode
+          this.isEditing = true;
+          console.log("Is updating");
+        }
+        else{
+          //we are in insert-mode
+          console.log("Is inserting");
+        }
+     });
+  }
+
+
+---------------------------------------------------------------------------
+install bootstrap :
+
+npm install bootstrap@5.3.3
+
+
+toevoegenboots trap:
+
+pas angular.json aan:
+
+ ],
+            "styles": [
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+            ],
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ]
+          },
+
+
+--------------------------------------------------------------------
+
+nieuw component login-form aanmaken in de map user\login :
+nota : de mappen user en login bestonden nog niet, maar 
+worden nu aangemaakt door onderstaand commando
+
+ng g c user\login\login-form
+-----------------------------------------------------------------------
+
+
+
+
+
+
+
+
+

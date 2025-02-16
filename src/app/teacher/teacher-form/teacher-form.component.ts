@@ -39,6 +39,14 @@ export class TeacherFormComponent implements OnInit {
       this.route.paramMap.subscribe(result => {
       const id = result.get('id');
       const action = result.get('action');
+
+      if(id){
+        this.teacherService.getTeacherById(Number(id)).subscribe({
+          next: result => this.teacher = result,
+          error: err => this.errorMessage = `Error : (${err.status})`
+        });
+        this.isUpdating = true;
+      }
       
       if(action == null){this.pageTitle = "Create teacher"}
         else if(action == "detail"){
@@ -48,14 +56,6 @@ export class TeacherFormComponent implements OnInit {
         }
         else if(action == "update"){this.pageTitle = "Update teacher"}
 
-        if(id){
-          this.isUpdating = true;
-          this.teacherService.getTeacherById(Number(id)).subscribe({
-            next: result => this.teacher = result,
-            error: err => this.errorMessage = `Error : (${err.status})`
-          })
-        }
-    
     });
   }
 
@@ -87,7 +87,11 @@ export class TeacherFormComponent implements OnInit {
         }
       });
     }
-    
+  }
+
+  navigateBack()
+  {
+    this.router.navigateByUrl('/teachers')
   }
 
 }

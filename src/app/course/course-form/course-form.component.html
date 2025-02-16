@@ -5,6 +5,11 @@
 
 <form *ngIf="errorMessage === ''" (ngSubmit)="onSubmit()"   #courseForm="ngForm" class="border rounded p-4 w-50 mb-5 mx-auto">
 
+    <div style="background-color: rgb(81, 235, 235);padding:4px;border-radius: 4px; ">
+        <button class="btn btn-info" style="margin-right: 6px;" *ngIf="formAction != 'detail'" type="submit" [disabled]="courseForm.invalid">Save</button>
+        <button class="btn btn-info" type="button" (click)="navigateBack()">Cancel</button>
+   </div>
+    <br/>
     <div class="mb-3">
         <label class="form-label">CourseName *</label>
         <input required #courseName="ngModel" [disabled]=disableControls class="form-control"   type="text" name="courseName"  [(ngModel)]="course.courseName" />
@@ -25,8 +30,5 @@
         <textarea rows="5" required #courseDescription="ngModel" [disabled]=disableControls class="form-control" type="text" name="CourseDescription"  [(ngModel)]="course.courseDescription" >
         </textarea>
     </div>
-    <div *ngIf="formAction  != 'detail'">
-        <button class="btn btn-primary" type="submit" [disabled]="courseForm.invalid">{{isUpdating? 'Update' : 'Create'}}</button>
-   </div>
-
+    
 </form>

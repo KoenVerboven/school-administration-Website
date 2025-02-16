@@ -40,7 +40,14 @@ export class StudentFormComponent implements OnInit {
     this.route.paramMap.subscribe(result => {
         const id = result.get('id');
         const action = result.get('action');
-       
+               
+        if(id){
+          this.studentService.getStudentById(Number(id)).subscribe({
+            next: result => this.student = result,
+            error: err => this.errorMessage = `Error : (${err.status})`
+          });
+          this.isUpdating = true;
+        }
 
         if(action == null){this.pageTitle = "Create student"}
         else if(action == "detail"){
@@ -48,26 +55,17 @@ export class StudentFormComponent implements OnInit {
           this.formAction = "detail";
           this.disableControls = true;
         }
-        else if(action == "update"){this.pageTitle = "Update student"}
-        // alert(this.action);
-
-        if(id){
-          this.isUpdating = true;
-          //console.log("Is updating");
-          this.studentService.getStudentById(Number(id)).subscribe({
-            next: result => this.student = result,
-            error: err => this.errorMessage = `Error : (${err.status})`
-          })
+        else if(action == "update"){
+          this.pageTitle = "Update student";
         }
-      
+    
      });
   }
 
   onSubmit():void{
 
     if(this.isUpdating){
-      //updating
-      this.studentService.updateStudent(this.student)
+       this.studentService.updateStudent(this.student)
       .subscribe({ 
         next: (response) =>{
           this.router.navigate(['/students'])
@@ -79,7 +77,6 @@ export class StudentFormComponent implements OnInit {
       });
     }
     else{
-      //inserting
       this.studentService.createStudent(this.student)
       .subscribe({ 
         next: (response) =>{
@@ -91,7 +88,11 @@ export class StudentFormComponent implements OnInit {
         }
       });
     }
-    
+  }
+ 
+  navigateBack()
+  {
+    this.router.navigateByUrl('/students')
   }
 
 }
