@@ -30,6 +30,7 @@ export class StudentFormComponent implements OnInit {
   formAction : string = "true";
   errorMessage : string = "";
   pageTitle: string| null = "";
+  studentId: number = 0;
 
   constructor(private studentService : StudentService, 
     private router: Router,
@@ -40,6 +41,7 @@ export class StudentFormComponent implements OnInit {
     this.route.paramMap.subscribe(result => {
         const id = result.get('id');
         const action = result.get('action');
+        this.studentId = Number(id);
                
         if(id){
           this.studentService.getStudentById(Number(id)).subscribe({
@@ -93,6 +95,29 @@ export class StudentFormComponent implements OnInit {
   navigateBack()
   {
     this.router.navigateByUrl('/students')
+  }
+
+  updateClick()
+  {
+    this.formAction = "update";
+    this.pageTitle = "Update student";
+    this.disableControls = false;
+  }
+
+  deleteClick()
+  {
+    this.deleteStudent(this.studentId);
+  }
+
+  deleteStudent(id : number) : void {
+    this.studentService.deleteStudent(id).subscribe({
+      next: (response) => {
+        this.router.navigate(['/students']);
+      },
+      error: (err) => {
+        console.error('Error deleting student',err);
+      }
+    });
   }
 
 }
