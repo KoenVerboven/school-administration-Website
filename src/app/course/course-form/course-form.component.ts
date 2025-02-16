@@ -22,11 +22,12 @@ course: Course = {
       maxNumberOfStudents: 0
 }
 
- isUpdating: boolean = false;
-    disableControls: boolean = false;
-    formAction : string = "true";
-    errorMessage : string = "";
-    pageTitle: string| null = "";
+  isUpdating: boolean = false;
+  disableControls: boolean = false;
+  formAction : string = "true";
+  errorMessage : string = "";
+  pageTitle: string| null = "";
+  courseId: number = 0;
    
     constructor(private courseService : CourseService,
       private router: Router,
@@ -37,6 +38,7 @@ course: Course = {
       this.route.paramMap.subscribe(result => {
       const id = result.get('id');
       const action = result.get('action');
+      this.courseId = Number(id);
 
       if(id){
         this.courseService.getCourseById(Number(id)).subscribe({
@@ -91,5 +93,29 @@ course: Course = {
   {
     this.router.navigateByUrl('/courses')
   }
+
+  updateClick()
+  {
+    this.formAction = "update";
+    this.pageTitle = "Update course";
+    this.disableControls = false;
+  }
+
+  deleteClick()
+  {
+    this.deleteCourse(this.courseId);
+  }
+
+  deleteCourse(id : number) : void {
+    this.courseService.deleteCourse(id).subscribe({
+      next: (response) => {
+        this.router.navigate(['/course']);
+      },
+      error: (err) => {
+        console.error('Error deleting course',err);
+      }
+    });
+  }
+
 
 }

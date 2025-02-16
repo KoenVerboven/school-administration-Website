@@ -7,10 +7,10 @@
 
      <div style="background-color: rgb(81, 235, 235);padding:4px;border-radius: 4px; ">
           <button class="btn btn-primary" style="margin-right: 6px;" *ngIf="formAction == 'detail'"  type="button" (click)="navigateBack()">Go Back</button>
-          <button class="btn btn-warning" style="margin-right: 6px;" *ngIf="formAction == 'detail'"  type="button" (click)="updateClick()">Update</button>
+          <button class="btn btn-secondary" style="margin-right: 6px;" *ngIf="formAction == 'detail'"  type="button" (click)="updateClick()">Update</button>
           <button class="btn btn-danger" *ngIf="formAction == 'detail'"  type="button" (click)="deleteClick()">Delete</button>
-          <button class="btn btn-primary" style="margin-right: 6px;" *ngIf="formAction != 'detail'" type="submit" [disabled]="studentForm.invalid">Save</button>
-          <button class="btn btn-primary"  *ngIf="formAction != 'detail'"  type="button" (click)="navigateBack()">Cancel</button>
+          <button class="btn btn-success" style="margin-right: 6px;" *ngIf="formAction != 'detail'" type="submit" [disabled]="studentForm.invalid">Save</button>
+          <button class="btn btn-warning"  *ngIf="formAction != 'detail'"  type="button" (click)="navigateBack()">Cancel</button>
      </div>
      <br />
      <div class="mb-3">

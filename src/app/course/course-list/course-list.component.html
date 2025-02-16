@@ -1,6 +1,6 @@
 <p class="text-center h5" >Courses</p>
 <a routerLink="/createcourse">Create Course</a>
-<table class="table table-sm">
+<table class="table table-sm  table-hover">
     <thead>
        <tr>
          <th class="text-bg-secondary p-2">Id</th>
@@ -10,14 +10,10 @@
       </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let course of courses">      
+        <tr *ngFor="let course of courses" (click)="showCourseDetail(course.id)" class="cell-hoverCursor">      
             <td >{{course.id}}</td>        
-            <td (click)="showCourseDetail(course.id)" class="cell-hovercolor"><b>{{course.courseName}}</b></td> 
+            <td >{{course.courseName}}</td> 
             <td>{{course.courseCode}}</td>  
-            <td>
-              <button class="btn btn-primary btn-sm  m-1" (click)="updateCourse(course.id)">Update</button>
-              <button class="btn btn-danger  btn-sm m-1"  (click)="deleteCourse(course.id)">Delete</button>
-          </td>   
-          </tr>       
+        </tr>       
     </tbody>
 </table>

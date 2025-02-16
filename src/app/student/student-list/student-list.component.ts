@@ -24,24 +24,8 @@ export class StudentListComponent {
     });
   }
 
-  deleteStudent(id : number) : void {
-    this.studentService.deleteStudent(id).subscribe({
-      next: (response) => {
-        this.students = this.students.filter(s => s.id != id);
-      },
-      error: (err) => {
-        console.error('Error deleting student',err);
-      }
-    });
-  }
-
-  updateStudent(id: number): void{
-    this.router.navigate(['/studentdetail/update', id])
-  }
-
   showStudentDetail(id: number): void{
     this.router.navigate(['/studentdetail/detail', id])
   }
-
 
 }

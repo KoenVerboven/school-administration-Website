@@ -22,23 +22,7 @@ teachers: Teacher[] = [];
         console.log(data);
     });
   }
-
-  deleteTeacher(id : number) : void {
-    this.teacherService.deleteTeacher(id).subscribe({
-      next: (response) => {
-        this.teachers = this.teachers.filter(s => s.id != id);
-      },
-      error: (err) => {
-        console.error('Error deleting teacher',err);
-      }
-    });
-  }
-
-  updateTeacher(id: number): void{
-    this.router.navigate(['/teacherdetail/update', id])
-  }
-
-
+ 
   showTeacherDetail(id: number): void{
     this.router.navigate(['/teacherdetail/detail', id])
   }

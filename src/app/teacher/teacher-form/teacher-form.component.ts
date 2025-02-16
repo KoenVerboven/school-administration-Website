@@ -29,6 +29,7 @@ export class TeacherFormComponent implements OnInit {
     formAction : string = "true";
     errorMessage : string = "";
     pageTitle: string| null = "";
+    teacherId: number = 0;
    
     constructor(private teacherService : TeacherService,
       private router: Router,
@@ -39,6 +40,7 @@ export class TeacherFormComponent implements OnInit {
       this.route.paramMap.subscribe(result => {
       const id = result.get('id');
       const action = result.get('action');
+      this.teacherId = Number(id);
 
       if(id){
         this.teacherService.getTeacherById(Number(id)).subscribe({
@@ -92,6 +94,29 @@ export class TeacherFormComponent implements OnInit {
   navigateBack()
   {
     this.router.navigateByUrl('/teachers')
+  }
+
+  updateClick()
+  {
+    this.formAction = "update";
+    this.pageTitle = "Update teacher";
+    this.disableControls = false;
+  }
+
+  deleteClick()
+  {
+    this.deleteTeacher(this.teacherId);
+  }
+
+  deleteTeacher(id : number) : void {
+    this.teacherService.deleteTeacher(id).subscribe({
+      next: (response) => {
+        this.router.navigate(['/teachers']);
+      },
+      error: (err) => {
+        console.error('Error deleting teacher',err);
+      }
+    });
   }
 
 }

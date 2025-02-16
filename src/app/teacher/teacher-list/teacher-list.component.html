@@ -1,25 +1,20 @@
 <p class="text-center h5" >Teachers</p>
 <a routerLink="/createteacher">Create Teacher</a>
-<table class="table table-sm">
+<table class="table table-sm  table-hover">
     <thead>
        <tr>
          <th class="text-bg-secondary p-2">Id</th>
          <th class="text-bg-secondary p-2">Name</th>
          <th class="text-bg-secondary p-2">Phone</th>       
          <th class="text-bg-secondary p-2">Email</th>       
-         <th class="text-bg-secondary p-2"></th>       
-      </tr>
+        </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let teacher of teachers" >      
+        <tr *ngFor="let teacher of teachers" (click)="showTeacherDetail(teacher.id)" class="cell-hoverCursor" >      
             <td >{{teacher.id}}</td>        
-            <td (click)="showTeacherDetail(teacher.id)" class="cell-hovercolor"><b>{{teacher.lastName}} {{teacher.firstName}}</b></td>      
+            <td>{{teacher.lastName}} {{teacher.firstName}}</td>      
             <td>{{teacher.phone}}</td>
             <td>{{teacher.email}}</td>
-            <td>
-              <button class="btn btn-primary btn-sm  m-1" (click)="updateTeacher(teacher.id)">Update</button>
-              <button class="btn btn-danger  btn-sm m-1"  (click)="deleteTeacher(teacher.id)">Delete</button>
-          </td>   
           </tr>         
     </tbody>
 </table>
