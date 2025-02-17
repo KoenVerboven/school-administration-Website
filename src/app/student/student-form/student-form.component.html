@@ -28,14 +28,13 @@
                <div class="text-danger" *ngIf="lastName.errors?.['required']">Last Name is required</div>
         </div>
    </div>
-
    <div class="mb-3">
      <label class="form-label">Gender</label>
-     <select  class="form-control" name="gender">  
-          <option>Select Gender</option>  
-          <option>male</option> 
-          <option>female</option>  
-         <!-- <option *ngFor="let web of websiteList">{{web}}</option> -->    
+     <select  class="form-control" name="gender" [(ngModel)]="student.gender" [disabled]=disableControls>  
+          <option value="">Select Gender</option>
+          <option [ngValue]="gender.Id"  *ngFor="let gender of genderData">
+               {{gender.Name}}
+          </option>    
       </select> 
    </div>
    <div class="mb-3">

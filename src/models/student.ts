@@ -3,6 +3,7 @@ export interface Student{
     firstName: string;
     lastName: string;
     dateOfBirth: string;
+    gender: number;
     zipcode:number;
     streetAndNumber:string;
     phone: string;

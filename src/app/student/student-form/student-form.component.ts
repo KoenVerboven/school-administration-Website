@@ -19,6 +19,7 @@ export class StudentFormComponent implements OnInit {
     firstName: '',
     lastName: '',
     dateOfBirth: '',
+    gender:0,
     zipcode:0,
     streetAndNumber: '',
     phone: '',
@@ -31,6 +32,7 @@ export class StudentFormComponent implements OnInit {
   errorMessage : string = "";
   pageTitle: string| null = "";
   studentId: number = 0;
+  genderData: any;
 
   constructor(private studentService : StudentService, 
     private router: Router,
@@ -50,6 +52,8 @@ export class StudentFormComponent implements OnInit {
           });
           this.isUpdating = true;
         }
+
+        this.populateGenderData();
 
         if(action == null){this.pageTitle = "Create student"}
         else if(action == "detail"){
@@ -90,6 +94,20 @@ export class StudentFormComponent implements OnInit {
         }
       });
     }
+  }
+
+  populateGenderData()
+  {
+    this.genderData=[
+      {
+        "Id":1,
+        "Name":"Male"
+      },
+      {
+        "Id":2,
+        "Name":"Female"
+      }
+    ]
   }
  
   navigateBack()

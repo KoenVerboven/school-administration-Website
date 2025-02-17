@@ -18,7 +18,8 @@ export class TeacherFormComponent implements OnInit {
       id: 0,
       firstName: '',
       lastName: '',
-      zipcode :0,
+      gender: 0,
+      zipcode : 0,
       streetAndNumber:'',
       phone: '',
       email: ''
@@ -30,6 +31,7 @@ export class TeacherFormComponent implements OnInit {
     errorMessage : string = "";
     pageTitle: string| null = "";
     teacherId: number = 0;
+    genderData: any;
    
     constructor(private teacherService : TeacherService,
       private router: Router,
@@ -49,6 +51,8 @@ export class TeacherFormComponent implements OnInit {
         });
         this.isUpdating = true;
       }
+
+      this.populateGenderData();
       
       if(action == null){this.pageTitle = "Create teacher"}
         else if(action == "detail"){
@@ -60,6 +64,7 @@ export class TeacherFormComponent implements OnInit {
 
     });
   }
+
 
   onSubmit():void{
 
@@ -89,6 +94,20 @@ export class TeacherFormComponent implements OnInit {
         }
       });
     }
+  }
+
+  populateGenderData()
+  {
+    this.genderData=[
+      {
+        "Id":1,
+        "Name":"Male"
+      },
+      {
+        "Id":2,
+        "Name":"Female"
+      }
+    ]
   }
 
   navigateBack()

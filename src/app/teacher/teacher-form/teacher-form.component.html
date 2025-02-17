@@ -29,6 +29,15 @@
         </div>
     </div>
     <div class="mb-3">
+        <label class="form-label">Gender</label>
+        <select  class="form-control" name="gender" [(ngModel)]="teacher.gender" [disabled]=disableControls>  
+             <option value="">Select Gender</option>
+             <option [ngValue]="gender.Id"  *ngFor="let gender of genderData">
+                  {{gender.Name}}
+             </option>    
+         </select> 
+      </div>
+    <div class="mb-3">
         <label  class="form-label">ZipCode</label> <!--  to do ZIPCODE MOET 4 LANG ZIJN anders ERROR !!!   -->
         <input required #zipcode="ngModel" [disabled]=disableControls class="form-control" type="text" name="zipcode"   [(ngModel)]="teacher.zipcode"/>
         <div *ngIf="lastName.invalid &&(zipcode.touched || zipcode.dirty)">
