@@ -17,6 +17,10 @@ export class StudentService {
     return this.http.get<Student[]>(this.apiUrl)
   }
 
+  getStudentByNameStartWith(name : string): Observable<Student[]>{
+    return this.http.get<Student[]>(`${this.apiUrl}/getByNameStartWith/${name}`)
+  }
+
   getStudentById(id : number): Observable<Student>{
     return this.http.get<Student>(`${this.apiUrl}/${id}`)
   }

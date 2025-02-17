@@ -39,7 +39,6 @@
    </div>
    <div class="mb-3">
      <label class="form-label">Date of birth</label>
-     
      <div *ngIf="formAction  == 'detail'; else dateOfBirthEdit ">
           <label class="form-control">{{student.dateOfBirth | date: 'dd/MM/yyyy'}}</label>
      </div>
@@ -77,5 +76,5 @@
             <div class="text-danger" *ngIf="email.errors?.['email']">Email is invalid</div>
         </div>
    </div>
-          
+         
 </form>

@@ -8,5 +8,4 @@ export interface Student{
     streetAndNumber:string;
     phone: string;
     email: string;
-
-}
+ }

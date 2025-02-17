@@ -36,7 +36,19 @@
                   {{gender.Name}}
              </option>    
          </select> 
-      </div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Date of birth</label>
+        <div *ngIf="formAction  == 'detail'; else dateOfBirthEdit ">
+             <label class="form-control">{{teacher.dateOfBirth | date: 'dd/MM/yyyy'}}</label>
+        </div>
+        <ng-template #dateOfBirthEdit>
+             <input required #dateOfBirth="ngModel" [disabled]=disableControls class="form-control" type="text" name="dateOfBirth"  [(ngModel)]="teacher.dateOfBirth" />
+             <div *ngIf="dateOfBirth.invalid &&(dateOfBirth.touched || dateOfBirth.dirty)">
+                  <div class="text-danger" *ngIf="dateOfBirth.errors?.['required']">Date of birth is required</div>
+             </div>
+        </ng-template>
+    </div>
     <div class="mb-3">
         <label  class="form-label">ZipCode</label> <!--  to do ZIPCODE MOET 4 LANG ZIJN anders ERROR !!!   -->
         <input required #zipcode="ngModel" [disabled]=disableControls class="form-control" type="text" name="zipcode"   [(ngModel)]="teacher.zipcode"/>
@@ -64,5 +76,17 @@
             <div class="text-danger" *ngIf="email.errors?.['email']">Email is invalid</div>
         </div>
    </div>
+   <div class="mb-3">
+    <label class="form-label">Hiredate</label>
+    <div *ngIf="formAction  == 'detail'; else hireDateEdit ">
+         <label class="form-control">{{teacher.hireDate | date: 'dd/MM/yyyy'}}</label>
+    </div>
+    <ng-template #hireDateEdit>
+         <input required #hireDate="ngModel" [disabled]=disableControls class="form-control" type="text" name="hireDate"  [(ngModel)]="teacher.hireDate" />
+         <div *ngIf="hireDate.invalid &&(hireDate.touched || hireDate.dirty)">
+              <div class="text-danger" *ngIf="hireDate.errors?.['required']">Hiredate is required</div>
+         </div>
+    </ng-template>
+</div>
    
 </form>

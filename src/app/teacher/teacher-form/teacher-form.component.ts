@@ -18,11 +18,13 @@ export class TeacherFormComponent implements OnInit {
       id: 0,
       firstName: '',
       lastName: '',
+      dateOfBirth: '',
       gender: 0,
       zipcode : 0,
       streetAndNumber:'',
       phone: '',
-      email: ''
+      email: '',
+      hireDate: ''
     }
 
     isUpdating: boolean = false;
