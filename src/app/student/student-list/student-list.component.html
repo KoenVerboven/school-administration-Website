@@ -1,5 +1,5 @@
 <p class="text-center h5" >Students</p>
-<input id="framework" type="text" style="width:400px;margin-right: 16px;" [(ngModel)]="searchName" /> 
+<input id="framework" type="text" style="width:400px;margin-right: 16px;"  (keyup.enter)= "getStudents()"  [(ngModel)]="searchName" /> 
 <button class="btn btn-primary"   type="button" (click)="getStudents()">Search</button>
 <br/>
 <a routerLink="/createstudent">Create Student</a>
@@ -14,7 +14,7 @@
     </thead>
     <tbody>
         <tr *ngFor="let student of students" (click)="showStudentDetail(student.id)" class="cell-hoverCursor">      
-            <td >{{student.id}}</td>        
+            <td>{{student.id}}</td>        
             <td>{{student.lastName}} {{student.firstName}}</td>  
             <td>{{student.phone}}</td>
             <td>{{student.email}}</td>
