@@ -1,5 +1,5 @@
 <p class="text-center h5" >Students</p>
-<input id="framework" type="text" style="width:400px;margin-right: 16px;"  (keyup.enter)= "getStudents()"  [(ngModel)]="searchName" /> 
+<input id="framework" type="text" style="width:400px;margin-right: 16px;" placeholder="Search on Student name" (keyup.enter)= "getStudents()"  [(ngModel)]="searchName" /> 
 <button class="btn btn-primary"   type="button" (click)="getStudents()">Search</button>
 <br/>
 <a routerLink="/createstudent">Create Student</a>

@@ -553,8 +553,9 @@ worden nu aangemaakt door onderstaand commando
 
 ng g c user\login\login-form
 -----------------------------------------------------------------------
+aanmaken nieuwe service in bestaande map 'Services':
 
-
+ng g s Services\exam
 
 
 
