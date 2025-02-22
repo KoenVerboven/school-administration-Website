@@ -1,1 +1,17 @@
-<p>exam-list works!</p>
+<p class="text-center h5" >Exams</p>
+<table class="table table-sm table-hover">
+    <thead>
+       <tr>
+         <th class="p-2">Id</th>
+         <th class="p-2">Title</th>
+         <th class="p-2">Date</th>       
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let exam of exams" (click)="showExamDetail(exam.id)" class="cell-hoverCursor">      
+            <td>{{exam.id}}</td>        
+            <td>{{exam.examTitle}}</td> 
+            <td>{{exam.examenDate}}</td>
+         </tr>       
+    </tbody>
+</table>

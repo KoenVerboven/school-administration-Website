@@ -1,1 +1,19 @@
-<p>examresult-list works!</p>
+<p class="text-center h5" >ExamResults</p>
+<table class="table table-sm table-hover">
+    <thead>
+       <tr>
+         <th class="tp-2">Id</th>
+         <th class="p-2">StudentId</th>
+         <th class="p-2">CourseId</th> 
+         <th class="p-2">Score</th>      
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let examResult of examResults"  class="cell-hoverCursor">      
+            <td>{{examResult.id}}</td>        
+            <td>{{examResult.studentId}}</td> 
+            <td>{{examResult.courseId}}</td>        
+            <td>{{examResult.examenResultScore}}</td>   
+         </tr>       
+    </tbody>
+</table>

@@ -6,6 +6,7 @@ import { CourseFormComponent } from './course/course-form/course-form.component'
 import { TeacherListComponent } from './teacher/teacher-list/teacher-list.component';
 import { TeacherFormComponent } from './teacher/teacher-form/teacher-form.component';
 import { ExamListComponent } from './exam/exam-list/exam-list.component';
+import { ExamFormComponent } from './exam/exam-form/exam-form.component';
 import { ExamResultListComponent } from './exam/examresult-list/examresult-list.component';
 
 
@@ -21,5 +22,6 @@ export const routes: Routes = [
     {path: 'createteacher', component: TeacherFormComponent},
     {path: 'teacherdetail/:action/:id', component: TeacherFormComponent},
     {path: 'exams',component:ExamListComponent},
+    {path: 'examdetail/:action/:id', component: ExamFormComponent},
     {path: 'examresults',component:ExamResultListComponent}
 ];

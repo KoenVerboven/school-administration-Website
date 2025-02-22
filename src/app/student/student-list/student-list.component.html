@@ -1,15 +1,15 @@
 <p class="text-center h5" >Students</p>
-<input id="framework" type="text" style="width:400px;margin-right: 16px;" placeholder="Search on Student name" (keyup.enter)= "getStudents()"  [(ngModel)]="searchName" /> 
+<input id="framework" type="text" style="width:400px;margin-right: 16px;" placeholder="Type student name" (keyup.enter)= "getStudents()"  [(ngModel)]="searchName" /> 
 <button class="btn btn-primary"   type="button" (click)="getStudents()">Search</button>
 <br/>
 <a routerLink="/createstudent">Create Student</a>
 <table class="table table-sm table-hover">
     <thead>
        <tr>
-         <th class="text-bg-secondary p-2">Id</th>
-         <th class="text-bg-secondary p-2">Name</th>
-         <th class="text-bg-secondary p-2">Phone</th>       
-         <th class="text-bg-secondary p-2">Email</th>       
+         <th class="p-2">Id</th>
+         <th class="p-2">Name</th>
+         <th class="p-2">Phone</th>       
+         <th class="p-2">Email</th>       
       </tr>
     </thead>
     <tbody>

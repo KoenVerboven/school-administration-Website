@@ -5,7 +5,7 @@
 
 <form *ngIf="errorMessage === ''" (ngSubmit)="onSubmit()"   #courseForm="ngForm" class="border rounded p-4 w-50 mb-5 mx-auto">
 
-    <div style="background-color: rgb(156, 149, 15);padding:4px;border-radius: 4px; ">
+    <div class="formHeader">
         <button class="btn btn-primary" style="margin-right: 6px;" *ngIf="formAction == 'detail'"  type="button" (click)="navigateBack()">Go Back</button>
         <button class="btn btn-secondary" style="margin-right: 6px;" *ngIf="formAction == 'detail'"  type="button" (click)="updateClick()">Update</button>
         <button class="btn btn-danger" *ngIf="formAction == 'detail'"  type="button" (click)="deleteClick()">Delete</button>
@@ -31,7 +31,7 @@
     </div>
     <div class="mb-3">
         <label class="form-label">CourseDescription *</label>
-        <textarea rows="5" required #courseDescription="ngModel" [disabled]=disableControls class="form-control" type="text" name="CourseDescription"  [(ngModel)]="course.courseDescription" >
+        <textarea rows="5" #courseDescription="ngModel" [disabled]=disableControls class="form-control" type="text" name="CourseDescription"  [(ngModel)]="course.courseDescription" >
         </textarea>
     </div>
     

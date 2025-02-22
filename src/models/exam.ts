@@ -2,8 +2,8 @@ export interface Exam{
     id: number;
     courseId: number;
     examTitle: string;
-    Description: string;
-    ExamDate: Date;
+    description: string;
+    examenDate: Date;
     maxScore:number;
     minScoreToPassExam: number;
 }

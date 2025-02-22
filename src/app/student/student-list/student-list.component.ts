@@ -20,12 +20,7 @@ export class StudentListComponent {
   constructor(private studentService: StudentService, private router: Router){}
 
   ngOnInit(){
-    //this.studentService.getStudents().subscribe((data: Student[]) =>{
-     //   this.students = data;
-    //    console.log(data);
-    //});
-
-     this.getStudents();
+    this.getStudents();
   }
 
   showStudentDetail(id: number): void{
