@@ -1,0 +1,17 @@
+<p class="text-center h5" >StudyPlans</p>
+<table class="table table-sm table-hover">
+    <thead>
+       <tr>
+         <th class="p-2">Id</th>
+         <th class="p-2">Name</th>
+         <th class="p-2">StudentId</th>       
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let studyPlan of studyPlans"  class="cell-hoverCursor">      
+            <td>{{studyPlan.id}}</td>        
+            <td>{{studyPlan.name}}</td> 
+            <td>{{studyPlan.studentId}}</td>
+         </tr>       
+    </tbody>
+</table>

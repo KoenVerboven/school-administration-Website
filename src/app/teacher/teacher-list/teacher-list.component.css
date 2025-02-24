@@ -1,7 +1,11 @@
 th{
-    background-color: rgb(164, 245, 245);
+    background-color: rgb(200, 200, 200);
 }
 .cell-hoverCursor:hover {
     cursor: pointer;
+}
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+    background-color: rgb(173, 3, 3);
+    color:white;
 }
 
