@@ -17,20 +17,24 @@ export class TeacherService {
       return this.http.get<Teacher[]>(this.apiUrl)
     }
 
+    getTeachersSort(sort: string): Observable<Teacher[]>{
+      return this.http.get<Teacher[]>(`${this.apiUrl}/GetAllTeachersSort/${sort}`)
+    }
+
     getTeacherById(id : number): Observable<Teacher>{
       return this.http.get<Teacher>(`${this.apiUrl}/${id}`)
     }
 
     createTeacher(teacher : Teacher): Observable<Teacher>{
-        return this.http.post<Teacher>(this.apiUrl,teacher);
-      }
+      return this.http.post<Teacher>(this.apiUrl,teacher);
+    }
     
-      deleteTeacher(id : number) : Observable<void>{
-        return this.http.delete<void>(`${this.apiUrl}/${id}`);
-      }
+    deleteTeacher(id : number) : Observable<void>{
+      return this.http.delete<void>(`${this.apiUrl}/${id}`);
+    }
     
-      updateTeacher(teacher: Teacher):Observable<Teacher>{
-        return this.http.put<Teacher>(`${this.apiUrl}/${teacher.id}`,teacher);
-      }
+    updateTeacher(teacher: Teacher):Observable<Teacher>{
+      return this.http.put<Teacher>(`${this.apiUrl}/${teacher.id}`,teacher);
+    }
 
 }

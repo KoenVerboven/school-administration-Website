@@ -17,14 +17,19 @@ teachers: Teacher[] = [];
   constructor(private teacherService: TeacherService, private router: Router){}
 
   ngOnInit(){
-    this.teacherService.getTeachers().subscribe((data: Teacher[]) =>{
-        this.teachers = data;
-        console.log(data);
-    });
+    this.getTeachers("name");
   }
  
   showTeacherDetail(id: number): void{
     this.router.navigate(['/teacherdetail/detail', id])
   }
+
+  getTeachers(sort: string){
+    this.teacherService.getTeachersSort(sort).subscribe((data: Teacher[]) =>{
+      this.teachers = data;
+      console.log(data);
+  });
+  }
+
 
 }
