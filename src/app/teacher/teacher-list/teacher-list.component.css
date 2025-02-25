@@ -5,7 +5,7 @@ th{
     cursor: pointer;
 }
 .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
-    background-color: rgb(173, 3, 3);
+    background-color:black;
     color:white;
 }
 

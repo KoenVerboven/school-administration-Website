@@ -1,0 +1,420 @@
+clear screen:
+cls
+
+working directory:
+git status
+
+aanmaken working directory:
+git init
+-> maakt een .git folder aan in de directory (is een hidden folder)
+
+git status
+-> geeft nu :
+o commits yet
+Untracked files:
+(use "git add <file>..." to include in what will be committed)
+initial-commitTextFile.txt
+nothing added to commit but untracked files present (use "git add" to track)
+
+files toevoegen aan de staging area:
+punt wil zeggen : alle files
+use git add TO TRACK
+git add .
+
+git status
+geeft nu:
+On branch master
+No commits yet
+Changes to be committed:
+(use "git rm --cached <file>..." to unstage)
+new file: initial-commitTextFile.txt
+
+git commit -m "eerste tekstfile toegevoegd"
+
+Toon alle commits:
+git log
+geeft:
+commit 204d6170a33f537a76cf769630aa090d673f35c4 (HEAD -> master)
+Author: Koen Verboven <@gmail.com>
+Date: Tue Feb 11 14:32:42 2025 +0100
+eerste tekstfile toegevoegd
+
+git commit -m "added second file"
+[master b63ebbd] added second file
+1 file changed, 1 insertion(+)
+create mode 100644 second-commitTestfile.txt
+PS C:\Users\koenv\Desktop\git-basics>
+
+git log
+commit b63ebbd0c3004aa9201850b3beedc99e615a97aa (HEAD -> master)
+Author: Koen Verboven <@gmail.com>
+Date: Tue Feb 11 15:45:44 2025 +0100
+added second file
+commit 204d6170a33f537a76cf769630aa090d673f35c4
+Author: Koen Verboven <@gmail.com>
+Date: Tue Feb 11 14:32:42 2025 +0100
+eerste tekstfile toegevoegd
+
+CHECKOUT BEPAALDE COMMIT:
+git checkout 204d6170a33f537a76cf769630aa090d673f35c4
+geeft:
+Note: switching to '204d6170a33f537a76cf769630aa090d673f35c4'.
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+git switch -c <new-branch-name>
+Or undo this operation with:
+git switch -
+Turn off this advice by setting config variable advice.detachedHead to false
+HEAD is now at 204d617 eerste tekstfile toegevoegd
+
+git checkout master
+geeft:
+Previous HEAD position was 204d617 eerste tekstfile toegevoegd
+Switched to branch 'master'
+
+Toon alle branches:
+git branch
+geeft:
+
+- master
+
+nieuwe branch aanmaken:
+git branch featherbranchkoen
+
+git branch
+geeft nu :
+featherbranchkoen
+
+- master
+
+switch between branches:
+
+git checkout featherbranchkoen
+geeft:
+Switched to branch 'featherbranchkoen'
+
+korte manier om een derde branch aan te maken:
+git checkout -b thirdbranch
+Switched to a new branch 'thirdbranch'
+
+git branch
+geeft nu:
+featherbranchkoen
+master
+
+- thirdbranch
+
+git add workingwithbranches.txt
+
+git commit -m "added branches txt file"
+[thirdbranch 575b41b] added branches txt file
+1 file changed, 2 insertions(+)
+create mode 100644 workingwithbranches.txt
+
+git log
+geeft:
+commit 575b41b6dbf6499eb51bbbbe10a0bbad3c440c3e (HEAD -> thirdbranch)
+Author: Koen Verboven <@gmail.com>
+Date: Tue Feb 11 17:30:01 2025 +0100
+
+    added branches txt file
+
+commit b63ebbd0c3004aa9201850b3beedc99e615a97aa (master, featherbranchkoen)
+Author: Koen Verboven <@gmail.com>
+Date: Tue Feb 11 15:45:44 2025 +0100
+
+    added second file
+
+commit 204d6170a33f537a76cf769630aa090d673f35c4
+Author: Koen Verboven <@gmail.com>
+Date: Tue Feb 11 14:32:42 2025 +0100
+
+git checkout master
+Switched to branch 'master'
+
+C:\Users\koenv\Desktop\git-basics>git merge thirdbranch
+Updating b63ebbd..575b41b
+Fast-forward
+workingwithbranches.txt | 2 ++
+1 file changed, 2 insertions(+)
+create mode 100644 workingwithbranches.txt
+
+C:\Users\koenv\Desktop\git-basics>git branch
+featherbranchkoen
+
+- master
+  thirdbranch
+
+C:\Users\koenv\Desktop\git-basics>git log
+commit 575b41b6dbf6499eb51bbbbe10a0bbad3c440c3e (HEAD -> master, thirdbranch)
+Author: Koen Verboven <koenverboven@gmail.com>
+Date: Tue Feb 11 17:30:01 2025 +0100
+
+    added branches txt file
+
+commit b63ebbd0c3004aa9201850b3beedc99e615a97aa (featherbranchkoen)
+Author: Koen Verboven <koenverboven@gmail.com>
+Date: Tue Feb 11 15:45:44 2025 +0100
+
+    added second file
+
+commit 204d6170a33f537a76cf769630aa090d673f35c4
+Author: Koen Verboven <koenverboven@gmail.com>
+commit 575b41b6dbf6499eb51bbbbe10a0bbad3c440c3e (HEAD -> master, thirdbranch)
+Author: Koen Verboven <koenverboven@gmail.com>
+Date: Tue Feb 11 17:30:01 2025 +0100
+
+    added branches txt file
+
+commit b63ebbd0c3004aa9201850b3beedc99e615a97aa (featherbranchkoen)
+Author: Koen Verboven <koenverboven@gmail.com>
+Date: Tue Feb 11 15:45:44 2025 +0100
+
+    added second file
+
+commit 204d6170a33f537a76cf769630aa090d673f35c4
+Author: Koen Verboven <koenverboven@gmail.com>
+Date: Tue Feb 11 14:32:42 2025 +0100
+:...skipping...
+commit 575b41b6dbf6499eb51bbbbe10a0bbad3c440c3e (HEAD -> master, thirdbranch)
+Author: Koen Verboven <koenverboven@gmail.com>
+Date: Tue Feb 11 17:30:01 2025 +0100
+
+    added branches txt file
+
+commit b63ebbd0c3004aa9201850b3beedc99e615a97aa (featherbranchkoen)
+Author: Koen Verboven <koenverboven@gmail.com>
+Date: Tue Feb 11 15:45:44 2025 +0100
+
+    added second file
+
+commit 204d6170a33f537a76cf769630aa090d673f35c4
+Author: Koen Verboven <koenverboven@gmail.com>
+Date: Tue Feb 11 14:32:42 2025 +0100
+
+:...skipping...
+commit 575b41b6dbf6499eb51bbbbe10a0bbad3c440c3e (HEAD -> master, thirdbranch)
+Author: Koen Verboven <koenverboven@gmail.com>
+Date: Tue Feb 11 17:30:01 2025 +0100
+
+    added branches txt file
+
+commit b63ebbd0c3004aa9201850b3beedc99e615a97aa (featherbranchkoen)
+Author: Koen Verboven <koenverboven@gmail.com>
+Date: Tue Feb 11 15:45:44 2025 +0100
+
+    added second file
+
+commit 204d6170a33f537a76cf769630aa090d673f35c4
+Author: Koen Verboven <koenverboven@gmail.com>
+Date: Tue Feb 11 14:32:42 2025 +0100
+
+    eerste tekstfile toegevoegd
+
+:...skipping...
+commit 575b41b6dbf6499eb51bbbbe10a0bbad3c440c3e (HEAD -> master, thirdbranch)
+Author: Koen Verboven <koenverboven@gmail.com>
+Date: Tue Feb 11 17:30:01 2025 +0100
+
+    added branches txt file
+
+commit b63ebbd0c3004aa9201850b3beedc99e615a97aa (featherbranchkoen)
+Author: Koen Verboven <koenverboven@gmail.com>
+Date: Tue Feb 11 15:45:44 2025 +0100
+
+    added second file
+
+commit 204d6170a33f537a76cf769630aa090d673f35c4
+Author: Koen Verboven <koenverboven@gmail.com>
+Date: Tue Feb 11 14:32:42 2025 +0100
+
+    eerste tekstfile toegevoegd
+
+~
+(END)...skipping...
+commit 575b41b6dbf6499eb51bbbbe10a0bbad3c440c3e (HEAD -> master, thirdbranch)
+Author: Koen Verboven <koenverboven@gmail.com>
+Date: Tue Feb 11 17:30:01 2025 +0100
+
+    added branches txt file
+
+commit b63ebbd0c3004aa9201850b3beedc99e615a97aa (featherbranchkoen)
+Author: Koen Verboven <koenverboven@gmail.com>
+Date: Tue Feb 11 15:45:44 2025 +0100
+
+    added second file
+
+alternatief commando om nieuwe branch aan te maken :
+
+git switch -c fourth-branch
+
+C:\Users\koenv\Desktop\git-basics>git branch
+featherbranchkoen
+
+- fourth-branch
+  master
+  thirdbranch
+
+git status :
+C:\Users\koenv\Desktop\git-basics>git status
+On branch fourth-branch
+nothing to commit, working tree clean
+
+---
+
+## branches :
+
+git init
+branches>git add . --> adding to staging area
+
+C:\Users\koenv\Desktop\branches>git commit -m "m1"
+[master (root-commit) 6a4513f] m1
+1 file changed, 0 insertions(+), 0 deletions(-)
+create mode 100644 master/m1.txt
+
+aanmaken nieuwe branch en deze uitcheckeb :
+C:\Users\koenv\Desktop\branches>git switch -c feature
+Switched to a new branch 'feature'
+
+---
+
+FAST FORWRD MERGE :
+feature branch mergen in master branch :
+
+C:\Users\koenv\Desktop\branches>git switch master
+Switched to branch 'master'
+
+C:\Users\koenv\Desktop\branches>git merge feature
+Updating ae0d469..afac885
+Fast-forward
+feature/f1.txt | 0
+feature/f2.txt | 0
+2 files changed, 0 insertions(+), 0 deletions(-)
+create mode 100644 feature/f1.txt
+create mode 100644 feature/f2.txt
+
+C:\Users\koenv\Desktop\branches>git log
+commit afac88517317cfd2e2942b26892f65e671fc1973 (HEAD -> master, feature)
+Author: Koen Verboven <koenverboven@gmail.com>
+Date: Wed Feb 19 17:03:30 2025 +0100
+
+    f2
+
+commit 46bb9946324ee20a30819556e803ca8d7e333a5b
+Author: Koen Verboven <koenverboven@gmail.com>
+Date: Wed Feb 19 17:02:29 2025 +0100
+
+    f1
+
+commit ae0d4697f8043511ac2552490d98a71dd4e983df
+Author: Koen Verboven <koenverboven@gmail.com>
+Date: Wed Feb 19 16:58:18 2025 +0100
+
+    m2
+
+commit 6a4513f939443e44b56313b1d29affad8ba29dab
+Author: Koen Verboven <koenverboven@gmail.com>
+Date: Wed Feb 19 16:56:06 2025 +0100
+
+## --> merk op : GEEN nieuw commit aangemaakt bij fast forward merge
+
+undo de vorige merge , met 2 commits terug :
+
+C:\Users\koenv\Desktop\branches>git reset --hard HEAD~2
+HEAD is now at ae0d469 m2
+
+C:\Users\koenv\Desktop\branches>git log
+commit ae0d4697f8043511ac2552490d98a71dd4e983df (HEAD -> master)
+Author: Koen Verboven <koenverboven@gmail.com>
+Date: Wed Feb 19 16:58:18 2025 +0100
+
+    m2
+
+commit 6a4513f939443e44b56313b1d29affad8ba29dab
+Author: Koen Verboven <koenverboven@gmail.com>
+Date: Wed Feb 19 16:56:06 2025 +0100
+
+    m1
+
+---
+
+FAST FORWARD SQUACH merge:
+
+C:\Users\koenv\Desktop\branches>git merge --squash feature
+Updating ae0d469..afac885
+Fast-forward
+Squash commit -- not updating HEAD
+feature/f1.txt | 0
+feature/f2.txt | 0
+2 files changed, 0 insertions(+), 0 deletions(-)
+create mode 100644 feature/f1.txt
+create mode 100644 feature/f2.txt
+
+C:\Users\koenv\Desktop\branches>git log
+commit ae0d4697f8043511ac2552490d98a71dd4e983df (HEAD -> master)
+Author: Koen Verboven <koenverboven@gmail.com>
+Date: Wed Feb 19 16:58:18 2025 +0100
+
+    m2
+
+commit 6a4513f939443e44b56313b1d29affad8ba29dab
+Author: Koen Verboven <koenverboven@gmail.com>
+Date: Wed Feb 19 16:56:06 2025 +0100
+
+    m1
+
+C:\Users\koenv\Desktop\branches>git status
+On branch master
+Changes to be committed:
+(use "git restore --staged <file>..." to unstage)
+new file: feature/f1.txt
+new file: feature/f2.txt
+
+C:\Users\koenv\Desktop\branches>git commit -m "merged feature and master"
+[master 494ad74] merged feature and master
+2 files changed, 0 insertions(+), 0 deletions(-)
+create mode 100644 feature/f1.txt
+create mode 100644 feature/f2.txt
+
+C:\Users\koenv\Desktop\branches>git log
+commit 494ad7402e8ec97e02bff18f6eb118f23bfe6938 (HEAD -> master)
+Author: Koen Verboven <koenverboven@gmail.com>
+Date: Wed Feb 19 17:23:18 2025 +0100
+
+    merged feature and master
+
+commit ae0d4697f8043511ac2552490d98a71dd4e983df
+Author: Koen Verboven <koenverboven@gmail.com>
+Date: Wed Feb 19 16:58:18 2025 +0100
+
+    m2
+
+commit 6a4513f939443e44b56313b1d29affad8ba29dab
+Author: Koen Verboven <koenverboven@gmail.com>
+Date: Wed Feb 19 16:56:06 2025 +0100
+
+    m1
+
+---
+
+resetten :
+
+C:\Users\koenv\Desktop\branches>git reset --hard HEAD~1
+HEAD is now at ae0d469 m2
+C:\Users\koenv\Desktop\branches>git log
+commit ae0d4697f8043511ac2552490d98a71dd4e983df (HEAD -> master)
+Author: Koen Verboven <koenverboven@gmail.com>
+Date: Wed Feb 19 16:58:18 2025 +0100
+
+    m2
+
+commit 6a4513f939443e44b56313b1d29affad8ba29dab
+Author: Koen Verboven <koenverboven@gmail.com>
+Date: Wed Feb 19 16:56:06 2025 +0100
+
+    m1
+
+---
