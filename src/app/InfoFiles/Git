@@ -1,3 +1,35 @@
+start webserver :
+
+ng serve
+
+Initial chunk files | Names | Raw size
+styles.css | styles | 277.63 kB |
+main.js | main | 129.15 kB |
+scripts.js | scripts | 107.58 kB |
+polyfills.js | polyfills | 90.20 kB |
+
+                    | Initial total | 604.57 kB
+
+Application bundle generation complete. [3.548 seconds]
+
+Watch mode enabled. Watching for file changes...
+NOTE: Raw file sizes do not reflect development server per-request transformations.
+➜ Local: http://localhost:4200/
+➜ press h + enter to show help
+
+---
+
+$ git --version
+
+$ git config --global user.name "Koen Verboven"
+$ git config user.name
+
+$ git config --gloabal user.email "test@test.be"
+$ git config user.email
+
+print working directory :
+$ pwd
+
 clear screen:
 cls
 
@@ -35,7 +67,7 @@ Toon alle commits:
 git log
 geeft:
 commit 204d6170a33f537a76cf769630aa090d673f35c4 (HEAD -> master)
-Author: Koen Verboven <@gmail.com>
+Author: Koen Verboven
 Date: Tue Feb 11 14:32:42 2025 +0100
 eerste tekstfile toegevoegd
 
@@ -47,11 +79,11 @@ PS C:\Users\koenv\Desktop\git-basics>
 
 git log
 commit b63ebbd0c3004aa9201850b3beedc99e615a97aa (HEAD -> master)
-Author: Koen Verboven <@gmail.com>
+Author: Koen Verboven
 Date: Tue Feb 11 15:45:44 2025 +0100
 added second file
 commit 204d6170a33f537a76cf769630aa090d673f35c4
-Author: Koen Verboven <@gmail.com>
+Author: Koen Verboven
 Date: Tue Feb 11 14:32:42 2025 +0100
 eerste tekstfile toegevoegd
 
@@ -150,85 +182,85 @@ featherbranchkoen
 
 C:\Users\koenv\Desktop\git-basics>git log
 commit 575b41b6dbf6499eb51bbbbe10a0bbad3c440c3e (HEAD -> master, thirdbranch)
-Author: Koen Verboven <koenverboven@gmail.com>
+Author: Koen Verboven
 Date: Tue Feb 11 17:30:01 2025 +0100
 
     added branches txt file
 
 commit b63ebbd0c3004aa9201850b3beedc99e615a97aa (featherbranchkoen)
-Author: Koen Verboven <koenverboven@gmail.com>
+Author: Koen Verboven
 Date: Tue Feb 11 15:45:44 2025 +0100
 
     added second file
 
 commit 204d6170a33f537a76cf769630aa090d673f35c4
-Author: Koen Verboven <koenverboven@gmail.com>
+Author: Koen Verboven
 commit 575b41b6dbf6499eb51bbbbe10a0bbad3c440c3e (HEAD -> master, thirdbranch)
-Author: Koen Verboven <koenverboven@gmail.com>
+Author: Koen Verboven
 Date: Tue Feb 11 17:30:01 2025 +0100
 
     added branches txt file
 
 commit b63ebbd0c3004aa9201850b3beedc99e615a97aa (featherbranchkoen)
-Author: Koen Verboven <koenverboven@gmail.com>
+Author: Koen Verboven
 Date: Tue Feb 11 15:45:44 2025 +0100
 
     added second file
 
 commit 204d6170a33f537a76cf769630aa090d673f35c4
-Author: Koen Verboven <koenverboven@gmail.com>
+Author: Koen Verboven
 Date: Tue Feb 11 14:32:42 2025 +0100
 :...skipping...
 commit 575b41b6dbf6499eb51bbbbe10a0bbad3c440c3e (HEAD -> master, thirdbranch)
-Author: Koen Verboven <koenverboven@gmail.com>
+Author: Koen Verboven
 Date: Tue Feb 11 17:30:01 2025 +0100
 
     added branches txt file
 
 commit b63ebbd0c3004aa9201850b3beedc99e615a97aa (featherbranchkoen)
-Author: Koen Verboven <koenverboven@gmail.com>
+Author: Koen Verboven
 Date: Tue Feb 11 15:45:44 2025 +0100
 
     added second file
 
 commit 204d6170a33f537a76cf769630aa090d673f35c4
-Author: Koen Verboven <koenverboven@gmail.com>
+Author: Koen Verboven
 Date: Tue Feb 11 14:32:42 2025 +0100
 
 :...skipping...
 commit 575b41b6dbf6499eb51bbbbe10a0bbad3c440c3e (HEAD -> master, thirdbranch)
-Author: Koen Verboven <koenverboven@gmail.com>
+Author: Koen Verboven
 Date: Tue Feb 11 17:30:01 2025 +0100
 
     added branches txt file
 
 commit b63ebbd0c3004aa9201850b3beedc99e615a97aa (featherbranchkoen)
-Author: Koen Verboven <koenverboven@gmail.com>
+Author: Koen Verboven
 Date: Tue Feb 11 15:45:44 2025 +0100
 
     added second file
 
 commit 204d6170a33f537a76cf769630aa090d673f35c4
-Author: Koen Verboven <koenverboven@gmail.com>
+Author: Koen Verboven
 Date: Tue Feb 11 14:32:42 2025 +0100
 
     eerste tekstfile toegevoegd
 
 :...skipping...
 commit 575b41b6dbf6499eb51bbbbe10a0bbad3c440c3e (HEAD -> master, thirdbranch)
-Author: Koen Verboven <koenverboven@gmail.com>
+Author: Koen Verboven
 Date: Tue Feb 11 17:30:01 2025 +0100
 
     added branches txt file
 
 commit b63ebbd0c3004aa9201850b3beedc99e615a97aa (featherbranchkoen)
-Author: Koen Verboven <koenverboven@gmail.com>
+Author: Koen Verboven
 Date: Tue Feb 11 15:45:44 2025 +0100
 
     added second file
 
 commit 204d6170a33f537a76cf769630aa090d673f35c4
-Author: Koen Verboven <koenverboven@gmail.com>
+Author: Koen Verboven
 Date: Tue Feb 11 14:32:42 2025 +0100
 
     eerste tekstfile toegevoegd
@@ -236,13 +268,13 @@ Date: Tue Feb 11 14:32:42 2025 +0100
 ~
 (END)...skipping...
 commit 575b41b6dbf6499eb51bbbbe10a0bbad3c440c3e (HEAD -> master, thirdbranch)
-Author: Koen Verboven <koenverboven@gmail.com>
+Author: Koen Verboven
 Date: Tue Feb 11 17:30:01 2025 +0100
 
     added branches txt file
 
 commit b63ebbd0c3004aa9201850b3beedc99e615a97aa (featherbranchkoen)
-Author: Koen Verboven <koenverboven@gmail.com>
+Author: Koen Verboven
 Date: Tue Feb 11 15:45:44 2025 +0100
 
     added second file
@@ -296,27 +328,28 @@ feature/f2.txt | 0
 create mode 100644 feature/f1.txt
 create mode 100644 feature/f2.txt
 
+Exit git log : press q en dan ENTER
 C:\Users\koenv\Desktop\branches>git log
 commit afac88517317cfd2e2942b26892f65e671fc1973 (HEAD -> master, feature)
-Author: Koen Verboven <koenverboven@gmail.com>
+Author: Koen Verboven
 Date: Wed Feb 19 17:03:30 2025 +0100
 
     f2
 
 commit 46bb9946324ee20a30819556e803ca8d7e333a5b
-Author: Koen Verboven <koenverboven@gmail.com>
+Author: Koen Verboven
 Date: Wed Feb 19 17:02:29 2025 +0100
 
     f1
 
 commit ae0d4697f8043511ac2552490d98a71dd4e983df
-Author: Koen Verboven <koenverboven@gmail.com>
+Author: Koen Verboven
 Date: Wed Feb 19 16:58:18 2025 +0100
 
     m2
 
 commit 6a4513f939443e44b56313b1d29affad8ba29dab
-Author: Koen Verboven <koenverboven@gmail.com>
+Author: Koen Verboven
 Date: Wed Feb 19 16:56:06 2025 +0100
 
 ## --> merk op : GEEN nieuw commit aangemaakt bij fast forward merge
@@ -328,13 +361,13 @@ HEAD is now at ae0d469 m2
 
 C:\Users\koenv\Desktop\branches>git log
 commit ae0d4697f8043511ac2552490d98a71dd4e983df (HEAD -> master)
-Author: Koen Verboven <koenverboven@gmail.com>
+Author: Koen Verboven
 Date: Wed Feb 19 16:58:18 2025 +0100
 
     m2
 
 commit 6a4513f939443e44b56313b1d29affad8ba29dab
-Author: Koen Verboven <koenverboven@gmail.com>
+Author: Koen Verboven
 Date: Wed Feb 19 16:56:06 2025 +0100
 
     m1
@@ -355,13 +388,13 @@ create mode 100644 feature/f2.txt
 
 C:\Users\koenv\Desktop\branches>git log
 commit ae0d4697f8043511ac2552490d98a71dd4e983df (HEAD -> master)
-Author: Koen Verboven <koenverboven@gmail.com>
+Author: Koen Verboven
 Date: Wed Feb 19 16:58:18 2025 +0100
 
     m2
 
 commit 6a4513f939443e44b56313b1d29affad8ba29dab
-Author: Koen Verboven <koenverboven@gmail.com>
+Author: Koen Verboven
 Date: Wed Feb 19 16:56:06 2025 +0100
 
     m1
@@ -381,19 +414,19 @@ create mode 100644 feature/f2.txt
 
 C:\Users\koenv\Desktop\branches>git log
 commit 494ad7402e8ec97e02bff18f6eb118f23bfe6938 (HEAD -> master)
-Author: Koen Verboven <koenverboven@gmail.com>
+Author: Koen Verboven
 Date: Wed Feb 19 17:23:18 2025 +0100
 
     merged feature and master
 
 commit ae0d4697f8043511ac2552490d98a71dd4e983df
-Author: Koen Verboven <koenverboven@gmail.com>
+Author: Koen Verboven
 Date: Wed Feb 19 16:58:18 2025 +0100
 
     m2
 
 commit 6a4513f939443e44b56313b1d29affad8ba29dab
-Author: Koen Verboven <koenverboven@gmail.com>
+Author: Koen Verboven
 Date: Wed Feb 19 16:56:06 2025 +0100
 
     m1
@@ -406,13 +439,13 @@ C:\Users\koenv\Desktop\branches>git reset --hard HEAD~1
 HEAD is now at ae0d469 m2
 C:\Users\koenv\Desktop\branches>git log
 commit ae0d4697f8043511ac2552490d98a71dd4e983df (HEAD -> master)
-Author: Koen Verboven <koenverboven@gmail.com>
+Author: Koen Verboven
 Date: Wed Feb 19 16:58:18 2025 +0100
 
     m2
 
 commit 6a4513f939443e44b56313b1d29affad8ba29dab
-Author: Koen Verboven <koenverboven@gmail.com>
+Author: Koen Verboven
 Date: Wed Feb 19 16:56:06 2025 +0100
 
     m1

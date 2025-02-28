@@ -8,7 +8,7 @@
       </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let studyPlan of studyPlans"  class="cell-hoverCursor">      
+        <tr *ngFor="let studyPlan of studyPlans"  (click)="showStudyPlanDetail(studyPlan.id)"  class="cell-hoverCursor">      
             <td>{{studyPlan.id}}</td>        
             <td>{{studyPlan.name}}</td> 
             <td>{{studyPlan.studentId}}</td>

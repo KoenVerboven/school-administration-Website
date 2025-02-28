@@ -8,7 +8,9 @@
     <div class="formHeader">
         <button class="btn btn-primary" style="margin-right: 6px;" *ngIf="formAction == 'detail'"  type="button" (click)="navigateBack()">Go Back</button>
         <button class="btn btn-secondary" style="margin-right: 6px;" *ngIf="formAction == 'detail'"  type="button" (click)="updateClick()">Update</button>
-        <button class="btn btn-danger" *ngIf="formAction == 'detail'"  type="button" (click)="deleteClick()">Delete</button>
+        <button type="button" class="btn btn-danger"  *ngIf="formAction == 'detail'" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Delete
+        </button>
         <button class="btn btn-success" style="margin-right: 6px;" *ngIf="formAction != 'detail'" type="submit" [disabled]="teacherForm.invalid">Save</button>
         <button class="btn btn-warning"  *ngIf="formAction != 'detail'"  type="button" (click)="navigateBack()">Cancel</button>
    </div>
@@ -88,5 +90,24 @@
          </div>
     </ng-template>
 </div>
-   
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Delete</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Are you sure that you want delete teacher {{teacher.lastName}} ?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="deleteClick()">Yes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
 </form>

@@ -20,6 +20,10 @@ export class StudyplanListComponent {
   ngOnInit(){
       this.getStudyPlans();
   }
+
+  showStudyPlanDetail(id: number): void{
+    this.router.navigate(['/studyplandetail/detail', id])
+  }
      
   getStudyPlans()
   {

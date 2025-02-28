@@ -9,7 +9,7 @@ import { ExamListComponent } from './exam/exam-list/exam-list.component';
 import { ExamFormComponent } from './exam/exam-form/exam-form.component';
 import { ExamResultListComponent } from './exam/examresult-list/examresult-list.component';
 import { StudyplanListComponent } from './study/studyplan-list/studyplan-list.component';
-
+import { StudyplanFormComponent } from './study/studyplan-form/studyplan-form.component';
 
 export const routes: Routes = [
     {path: '', component: StudentListComponent},
@@ -26,4 +26,5 @@ export const routes: Routes = [
     {path: 'examdetail/:action/:id', component: ExamFormComponent},
     {path: 'examresults',component:ExamResultListComponent},
     {path: 'studyplans',component:StudyplanListComponent},
+    {path: 'studyplandetail/:action/:id',component:StudyplanFormComponent},
 ];
