@@ -3,5 +3,8 @@ export interface Course{
     courseName: string;
     courseCode: string;
     courseDescription: string;
+    startDate:Date;
+    endDate:Date;
+    coursePrice:number;
     maxNumberOfStudents: number;
 }

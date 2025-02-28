@@ -23,8 +23,10 @@ export const routes: Routes = [
     {path: 'createteacher', component: TeacherFormComponent},
     {path: 'teacherdetail/:action/:id', component: TeacherFormComponent},
     {path: 'exams',component:ExamListComponent},
+    {path: 'createxam', component: ExamFormComponent},
     {path: 'examdetail/:action/:id', component: ExamFormComponent},
     {path: 'examresults',component:ExamResultListComponent},
     {path: 'studyplans',component:StudyplanListComponent},
+    {path: 'createstudyplan',component:StudyplanFormComponent},
     {path: 'studyplandetail/:action/:id',component:StudyplanFormComponent},
 ];

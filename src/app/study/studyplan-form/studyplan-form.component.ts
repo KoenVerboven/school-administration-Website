@@ -77,7 +77,7 @@ constructor(private studyplanService : StudyplanService,
       this.studyplanService.createStudyPlan(this.studyPlan)
       .subscribe({ 
         next: (response) =>{
-          this.router.navigate(['/studyplan'])
+          this.router.navigate(['/studyplans'])
         },
         error: (err) => {
           console.error(err);
@@ -107,7 +107,7 @@ constructor(private studyplanService : StudyplanService,
   deleteCourse(id : number) : void {
     this.studyplanService.deleteStudyPlan(id).subscribe({
       next: (response) => {
-        this.router.navigate(['/studyplan']);
+        this.router.navigate(['/studyplans']);
       },
       error: (err) => {
         console.error('Error deleting studyplan',err);

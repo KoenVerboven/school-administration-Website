@@ -19,6 +19,9 @@ course: Course = {
       courseName: '',
       courseCode: '',
       courseDescription: '',
+      startDate: new Date(),
+      endDate: new Date(),
+      coursePrice: 0,
       maxNumberOfStudents: 0
 }
 
@@ -109,7 +112,7 @@ course: Course = {
   deleteCourse(id : number) : void {
     this.courseService.deleteCourse(id).subscribe({
       next: (response) => {
-        this.router.navigate(['/course']);
+        this.router.navigate(['/courses']);
       },
       error: (err) => {
         console.error('Error deleting course',err);

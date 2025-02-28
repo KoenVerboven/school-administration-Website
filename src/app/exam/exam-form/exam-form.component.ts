@@ -111,7 +111,7 @@ export class ExamFormComponent {
   deleteCourse(id : number) : void {
     this.examService.deleteExam(id).subscribe({
       next: (response) => {
-        this.router.navigate(['/exam']);
+        this.router.navigate(['/exams']);
       },
       error: (err) => {
         console.error('Error deleting exam',err);
