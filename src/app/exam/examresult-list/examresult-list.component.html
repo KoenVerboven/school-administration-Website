@@ -2,18 +2,18 @@
 <table class="table table-sm table-hover">
     <thead>
        <tr>
-         <th class="tp-2">Id</th>
-         <th class="p-2">StudentId</th>
-         <th class="p-2">CourseId</th> 
-         <th class="p-2">Score</th>      
+         <th class="p-2">Student Name</th>
+         <th class="p-2">Email</th>  
+         <th class="p-2">ExamName</th>   
+         <th class="p-2">Score</th>    
       </tr>
     </thead>
     <tbody>
         <tr *ngFor="let examResult of examResults"  class="cell-hoverCursor">      
-            <td>{{examResult.id}}</td>        
-            <td>{{examResult.studentId}}</td> 
-            <td>{{examResult.courseId}}</td>        
-            <td>{{examResult.examenResultScore}}</td>   
+            <td>{{examResult.studentLastName}} {{examResult.studentFirstName}}</td> 
+            <td>{{examResult.studentEmail}}</td>   
+            <td>{{examResult.examName}}</td>   
+            <td [ngClass]="(examResult.examenResult >= examResult.minScoreToPassExam)?'bordergreen':'borderred'">{{examResult.examenResult}} / {{examResult.maxScore}}</td>      
          </tr>       
     </tbody>
 </table>

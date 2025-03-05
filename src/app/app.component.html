@@ -1,3 +1,4 @@
+ <div  id=fullheight style="background-color:#ddd;min-height: 110vh;">
  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" style="background-color: #01061b; color:rgb(197, 3, 3); padding : 8px" href="#">School Management</a>
@@ -28,7 +29,7 @@
             Exams
           </a>
           <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-            <li> <a class="nav-link cell-hovercolor"    routerLink="/exams">Exam Overview</a></li>
+            <li> <a class="nav-link cell-hovercolor"    routerLink="/exams">Exam</a></li>
             <li><a  class="nav-link cell-hovercolor" routerLink="/examresults">Exam Results</a></li>
           </ul>
         </li>
@@ -37,16 +38,14 @@
             Study
           </a>
           <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-            <li> <a class="nav-link cell-hovercolor"    routerLink="/studyplans">StudyPlan Overview</a></li>
+            <li> <a class="nav-link cell-hovercolor"    routerLink="/studyplans">StudyPlan</a></li>
           </ul>
         </li>
       </ul>
     </div>
   </div>
 </nav>
-
-
-
 <div class="container">
   <router-outlet />
+</div>
 </div>

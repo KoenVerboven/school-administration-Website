@@ -24,7 +24,7 @@ export class ExamResultListComponent {
        
     getExamResults()
     {
-        this.examResultService.getExamResults().subscribe((data: ExamResult[]) =>{
+        this.examResultService.getStudentsExamResults().subscribe((data: ExamResult[]) =>{
           this.examResults = data;
           console.log(data);
         });

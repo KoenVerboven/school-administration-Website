@@ -30,6 +30,10 @@
         </div>
     </div>
     <div class="mb-3">
+        <label class="form-label">Cost Price</label>
+        <input  #courseCode="ngModel" [disabled]=disableControls class="form-control" type="text" name="costPrice"  [(ngModel)]="course.coursePrice" />
+    </div>
+    <div class="mb-3">
         <label class="form-label">CourseDescription *</label>
         <textarea rows="5" #courseDescription="ngModel" [disabled]=disableControls class="form-control" type="text" name="CourseDescription"  [(ngModel)]="course.courseDescription" >
         </textarea>

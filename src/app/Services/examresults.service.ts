@@ -9,11 +9,11 @@ import { ExamResult } from '../../models/examResult';
 })
 export class ExamResultsService {
 
-   private apiUrl = `${environment.apiUrl}/examResult`
+   private apiUrl = `${environment.apiUrl}/student/GetStudentsExamResults`  
   
   constructor(private http: HttpClient) { }
 
-  getExamResults(): Observable<ExamResult[]>{
+  getStudentsExamResults(): Observable<ExamResult[]>{
     return this.http.get<ExamResult[]>(this.apiUrl)
   }
 

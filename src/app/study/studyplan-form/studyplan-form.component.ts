@@ -101,7 +101,7 @@ constructor(private studyplanService : StudyplanService,
 
   deleteClick()
   {
-   // this.studyplanService.deleteStudyPlan(this.id);
+    this.deleteCourse(this.studyPlanId);
   }
 
   deleteCourse(id : number) : void {
@@ -114,6 +114,5 @@ constructor(private studyplanService : StudyplanService,
       }
     });
   }
-
 
 }
