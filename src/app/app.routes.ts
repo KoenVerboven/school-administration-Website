@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { DashboardListComponent } from './daschboard/dashboard-list/dashboard-list.component';
 import { StudentListComponent } from './student/student-list/student-list.component';
 import { StudentFormComponent } from './student/student-form/student-form.component';
 import { CourseListComponent } from './course/course-list/course-list.component';
@@ -12,8 +13,9 @@ import { StudyplanListComponent } from './study/studyplan-list/studyplan-list.co
 import { StudyplanFormComponent } from './study/studyplan-form/studyplan-form.component';
 
 export const routes: Routes = [
-    {path: '', component: StudentListComponent},
-    {path: 'students', redirectTo: '', pathMatch:'full'},
+    {path: '', component: DashboardListComponent},
+    {path: 'dashbord', redirectTo: '', pathMatch:'full'},
+    {path: 'students',component:StudentListComponent},
     {path: 'createstudent', component: StudentFormComponent},
     {path: 'studentdetail/:action/:id', component: StudentFormComponent},
     {path: 'courses',component:CourseListComponent},

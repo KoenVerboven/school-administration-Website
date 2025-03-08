@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <div *ngFor="let dasboarditem of items" >
+        <div *ngIf="dasboarditem.columnNumber == 1" class="dashboarditemStyle" [ngStyle]="{'border-left-color': dasboarditem.color}"> 
+            <div class="itemName">{{dasboarditem.itemName}}</div>
+            <div class="itemCount">count : {{dasboarditem.itemCount}}</div>
+        </div> 
+        </div>
+      </div>
+      <div class="col-sm">
+        <div *ngFor="let dasboarditem of items" >
+        <div *ngIf="dasboarditem.columnNumber == 2" class="dashboarditemStyle" [ngStyle]="{'border-left-color': dasboarditem.color}"> 
+          <div class="itemName">{{dasboarditem.itemName}}</div>
+            <div class="itemCount">count : {{dasboarditem.itemCount}}</div>
+        </div> 
+        </div>
+      </div>
+      <div class="col-sm">
+        <div *ngFor="let dasboarditem of items" >
+        <div *ngIf="dasboarditem.columnNumber == 3" class="dashboarditemStyle" [ngStyle]="{'border-left-color': dasboarditem.color}"> 
+          <div  class="itemName">{{dasboarditem.itemName}}</div>
+          <div class="itemCount">count : {{dasboarditem.itemCount}}</div>
+        </div> 
+        </div>
+      </div>
+</div>
+    
+
+

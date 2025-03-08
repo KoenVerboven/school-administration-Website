@@ -1,0 +1,20 @@
+.dashboarditemStyle{
+    height:130px ;
+    width:300px;
+    margin: 20px;
+    border-width: 0px;
+    border-style: solid;
+    border-left-width: 16px;
+    background-color: white;
+    border-radius: 6px;
+}
+.itemName{
+    margin-left:10px;
+    font-size: 19px;
+    font-weight: 500;
+}
+.itemCount{
+    margin-left: 20px;
+}
+
+
