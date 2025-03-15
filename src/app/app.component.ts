@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
 
-import { NgModule } from '@angular/core';
-
-
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -12,5 +9,5 @@ import { NgModule } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'school-administration-app';
+  public mySchoolName = 'Free univerity';
 }

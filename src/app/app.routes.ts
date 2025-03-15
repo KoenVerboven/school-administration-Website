@@ -11,6 +11,7 @@ import { ExamFormComponent } from './exam/exam-form/exam-form.component';
 import { ExamResultListComponent } from './exam/examresult-list/examresult-list.component';
 import { StudyplanListComponent } from './study/studyplan-list/studyplan-list.component';
 import { StudyplanFormComponent } from './study/studyplan-form/studyplan-form.component';
+import { LoginFormComponent } from './user/login/login-form/login-form.component';
 
 export const routes: Routes = [
     {path: '', component: DashboardListComponent},
@@ -31,4 +32,5 @@ export const routes: Routes = [
     {path: 'studyplans',component:StudyplanListComponent},
     {path: 'createstudyplan',component:StudyplanFormComponent},
     {path: 'studyplandetail/:action/:id',component:StudyplanFormComponent},
+    {path: 'login',component:LoginFormComponent}
 ];
