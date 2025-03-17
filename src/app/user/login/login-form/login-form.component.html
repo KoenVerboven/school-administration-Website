@@ -3,17 +3,41 @@
   </div>
   <div class="col-md-4">
     <br/><br/>
-    <form>
+    <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
-        <label for="exampleInputEmail1">Email</label>
-        <input type="text" class="form-control" id="inputEmailOrUserName" aria-describedby="emailHelp" placeholder="Enter email or username">
+        <input 
+          type="text" 
+          class="form-control"
+          name="userName"
+          [(ngModel)] =  "user.userName"
+          id="inputEmailOrUserName" 
+          aria-describedby="emailHelp" 
+          required
+          placeholder="Enter username or email">
       </div>
+      <br/>
       <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" id="inputPassword1" placeholder="Password">
+        <input 
+          type="password" 
+          class="form-control"
+          name="password"
+          [(ngModel)] =  "user.password" 
+          id="inputPassword1" 
+          required
+          minlength="8"
+          placeholder="Password">
       </div>
-      <button type="submit" class="btn btn-primary" style="margin-top: 2cqh;width: 100%;">Login</button>
+        <button type="submit" 
+          class="btn btn-primary" 
+          [disabled]="!loginForm.valid" 
+          style="margin-top: 2cqh;width: 100%;">
+              Login
+        </button>
     </form>
+    <br/>
+    <a href="\resetpassword">Forgot password?</a>
+    <br/>
+    <a href="\changepassword">Change password?</a>
   </div>
 </div>
 
