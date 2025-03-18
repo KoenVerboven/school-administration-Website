@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { User } from '../../../../models/user';
+import { AuthService } from '../../../Services/auth.service';
+import { LoginUser } from '../../../../models/loginUser';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-form',
@@ -12,14 +14,29 @@ import { User } from '../../../../models/user';
 })
 export class LoginFormComponent {
 
-  user:User={
+  user:LoginUser={
     userName:'',
-    email:'',
     password:'',
-    newPassword:''
   }
+
+  errorMessage : string = "";
+
+  constructor(private authService: AuthService, private router: Router,){}
   
   onSubmit():void{
-    alert("submit");
+      this.authService.userLogin(this.user)
+      .subscribe({ 
+        next: (response) =>{
+          this.router.navigate(['/'])
+        },
+        error: (err) => {
+          console.error(err);
+          this.errorMessage = `Error occured during login : ${err.status}`;
+        }
+      });
+    
+    this.user.userName = '';
+    this.user.password = '';
   }
+
 }

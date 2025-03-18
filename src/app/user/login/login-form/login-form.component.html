@@ -1,11 +1,12 @@
 <div class="row">
-  <div class="col-md-8">
+  <div class="col-md-4">
   </div>
   <div class="col-md-4">
-    <br/><br/>
+    <br/>
+      <h4>Welcome</h4>
+      <br/>
     <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
-      <div class="form-group">
-        <input 
+      <input 
           type="text" 
           class="form-control"
           name="userName"
@@ -14,10 +15,8 @@
           aria-describedby="emailHelp" 
           required
           placeholder="Enter username or email">
-      </div>
       <br/>
-      <div class="form-group">
-        <input 
+      <input 
           type="password" 
           class="form-control"
           name="password"
@@ -26,18 +25,19 @@
           required
           minlength="8"
           placeholder="Password">
-      </div>
-        <button type="submit" 
+     <button type="submit" 
           class="btn btn-primary" 
           [disabled]="!loginForm.valid" 
           style="margin-top: 2cqh;width: 100%;">
               Login
-        </button>
+      </button>
     </form>
     <br/>
     <a href="\resetpassword">Forgot password?</a>
     <br/>
     <a href="\changepassword">Change password?</a>
+  </div>
+  <div class="col-md-4">
   </div>
 </div>
 
