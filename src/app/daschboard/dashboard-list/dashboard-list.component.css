@@ -4,8 +4,7 @@
     margin: 20px;
     border-width: 0px;
     border-style: solid;
-    border-left-width: 16px;
-    background-color: white;
+    color: white;
     border-radius: 6px;
 }
 .itemName{

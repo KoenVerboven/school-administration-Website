@@ -2,25 +2,26 @@
     <div class="row">
       <div class="col-sm">
         <div *ngFor="let dasboarditem of items" >
-        <div *ngIf="dasboarditem.columnNumber == 1" class="dashboarditemStyle" [ngStyle]="{'border-left-color': dasboarditem.color}"> 
-            <div class="itemName">{{dasboarditem.itemName}}</div>
-            <div class="itemCount">count : {{dasboarditem.itemCount}}</div>
-        </div> 
+          <div class="card" *ngIf="dasboarditem.columnNumber == 1" class="dashboarditemStyle" [ngStyle]="{'background-color': dasboarditem.color}"> 
+              <div class="itemName">{{dasboarditem.itemName}} ({{dasboarditem.itemCount}})</div>
+              <button type="button" style="margin-left: 10px;margin-top: 60px;color:white;background-color: darkred;">More Info</button>
+          </div> 
         </div>
       </div>
       <div class="col-sm">
         <div *ngFor="let dasboarditem of items" >
-        <div *ngIf="dasboarditem.columnNumber == 2" class="dashboarditemStyle" [ngStyle]="{'border-left-color': dasboarditem.color}"> 
-          <div class="itemName">{{dasboarditem.itemName}}</div>
-            <div class="itemCount">count : {{dasboarditem.itemCount}}</div>
-        </div> 
+         <div class="card" *ngIf="dasboarditem.columnNumber == 2" class="dashboarditemStyle" [ngStyle]="{'background-color': dasboarditem.color}"> 
+            <div class="itemName">{{dasboarditem.itemName}} ({{dasboarditem.itemCount}})</div>
+            <button type="button" style="margin-left: 10px;margin-top: 60px;color:white;background-color: darkblue;">More Info</button>
         </div>
+      </div> 
       </div>
       <div class="col-sm">
-        <div *ngFor="let dasboarditem of items" >
-        <div *ngIf="dasboarditem.columnNumber == 3" class="dashboarditemStyle" [ngStyle]="{'border-left-color': dasboarditem.color}"> 
-          <div  class="itemName">{{dasboarditem.itemName}}</div>
-          <div class="itemCount">count : {{dasboarditem.itemCount}}</div>
+        <div   *ngFor="let dasboarditem of items" >
+          <div class="card" *ngIf="dasboarditem.columnNumber == 3" class="dashboarditemStyle" [ngStyle]="{'background-color': dasboarditem.color}"> 
+            <div class="itemName">{{dasboarditem.itemName}} ({{dasboarditem.itemCount}})</div>
+            <button type="button" style="margin-left: 10px;margin-top: 60px;color:white;background-color: darkgreen;">More Info</button>
+          </div> 
         </div> 
         </div>
       </div>

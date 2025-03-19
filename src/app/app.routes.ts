@@ -14,6 +14,7 @@ import { StudyplanFormComponent } from './study/studyplan-form/studyplan-form.co
 import { LoginFormComponent } from './user/login/login-form/login-form.component';
 import { ResetPasswordFormComponent } from './user/reset-password-form/reset-password-form.component';
 import { ChangePasswordFormComponent } from './user/change-password-form/change-password-form.component';
+import { CheckYourEmailFormComponent } from './user/check-your-email-form/check-your-email-form.component';
 
 export const routes: Routes = [
     {path: '', component: DashboardListComponent},
@@ -36,5 +37,6 @@ export const routes: Routes = [
     {path: 'studyplandetail/:action/:id',component:StudyplanFormComponent},
     {path: 'login',component:LoginFormComponent},
     {path: 'resetpassword',component:ResetPasswordFormComponent},
-    {path: 'changepassword',component: ChangePasswordFormComponent}
+    {path: 'changepassword',component: ChangePasswordFormComponent},
+    {path: 'checkyouremail', component: CheckYourEmailFormComponent}
 ];

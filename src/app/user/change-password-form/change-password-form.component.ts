@@ -16,7 +16,7 @@ import { RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-change-password-form',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, ReactiveFormsModule],
+  imports: [ CommonModule, ReactiveFormsModule],
   templateUrl: './change-password-form.component.html',
   styleUrl: './change-password-form.component.css'
 })
@@ -98,6 +98,5 @@ export class ChangePasswordFormComponent {
           this.passwordForm.get(controlName)?.touched
       );
   }
-  
-
+ 
 }
