@@ -4,7 +4,7 @@
         <div *ngFor="let dasboarditem of items" >
           <div class="card" *ngIf="dasboarditem.columnNumber == 1" class="dashboarditemStyle" [ngStyle]="{'background-color': dasboarditem.color}"> 
               <div class="itemName">{{dasboarditem.itemName}} ({{dasboarditem.itemCount}})</div>
-              <button type="button" style="margin-left: 10px;margin-top: 60px;color:white;background-color: darkred;">More Info</button>
+              <button type="button" (click)="showMoreInfo(dasboarditem.url)" style="margin-left: 10px;margin-top: 60px;color:white;background-color: darkred;">More Info</button>
           </div> 
         </div>
       </div>
@@ -12,7 +12,7 @@
         <div *ngFor="let dasboarditem of items" >
          <div class="card" *ngIf="dasboarditem.columnNumber == 2" class="dashboarditemStyle" [ngStyle]="{'background-color': dasboarditem.color}"> 
             <div class="itemName">{{dasboarditem.itemName}} ({{dasboarditem.itemCount}})</div>
-            <button type="button" style="margin-left: 10px;margin-top: 60px;color:white;background-color: darkblue;">More Info</button>
+            <button type="button" (click)="showMoreInfo(dasboarditem.url)" style="margin-left: 10px;margin-top: 60px;color:white;background-color: darkblue;">More Info</button>
         </div>
       </div> 
       </div>
@@ -20,7 +20,7 @@
         <div   *ngFor="let dasboarditem of items" >
           <div class="card" *ngIf="dasboarditem.columnNumber == 3" class="dashboarditemStyle" [ngStyle]="{'background-color': dasboarditem.color}"> 
             <div class="itemName">{{dasboarditem.itemName}} ({{dasboarditem.itemCount}})</div>
-            <button type="button" style="margin-left: 10px;margin-top: 60px;color:white;background-color: darkgreen;">More Info</button>
+            <button type="button" (click)="showMoreInfo(dasboarditem.url)" style="margin-left: 10px;margin-top: 60px;color:white;background-color: darkgreen;">More Info</button>
           </div> 
         </div> 
         </div>
