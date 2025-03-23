@@ -451,3 +451,14 @@ Date: Wed Feb 19 16:56:06 2025 +0100
     m1
 
 ---
+
+delete local branch :
+
+C:\Users\koenv\school-administration-app>git branch -d feature-studyplan
+Deleted branch feature-studyplan (was 941cbc9).
+
+---
+
+squash commit feature-patient in to master-branch:
+1/maak de master-branch actief (check met git branch)
+2/git merge --squash feature-patient

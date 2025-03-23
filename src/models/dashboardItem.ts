@@ -4,4 +4,5 @@ export interface DashboardItem{
     columnNumber: number;
     itemCount: number;
     color:string;
+    url:string;
 }

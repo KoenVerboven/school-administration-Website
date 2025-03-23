@@ -1,0 +1,2 @@
+
+https://code.visualstudio.com/updates/v1_48#_git-overflow-menu-cleanup

@@ -1,17 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { CustomValidators} from '../customValidators'
 import {
     FormBuilder,
     FormGroup,
     ReactiveFormsModule,
     Validators,
-    AbstractControl,
 } from '@angular/forms';
-import { RouterOutlet } from '@angular/router';
-
-
-
-
 
 @Component({
   selector: 'app-change-password-form',
@@ -33,56 +28,18 @@ export class ChangePasswordFormComponent {
                   '',
                   [
                       Validators.required,
-                      Validators.minLength(6),
-                      this.hasUppercase,
-                      this.hasNumber,
-                      this.hasSpecialCharacter,
+                      Validators.minLength(8),
+                      CustomValidators.hasUppercase,
+                      CustomValidators.hasNumber,
+                      CustomValidators.hasSpecialCharacter,
                   ],
               ],
               confirmPassword: ['', Validators.required],
           },
-          { validator: this.passwordMatchValidator }
+          { validator: CustomValidators.passwordMatchValidator }
       );
   }
-
-  // Custom validator to check if passwords match
-  passwordMatchValidator(form: FormGroup) {
-      const password = form.get('password')?.value;
-      const confirmPassword = form.get('confirmPassword')?.value;
-      if (password !== confirmPassword) {
-          return { passwordMismatch: true };
-      }
-      return null;
-  }
-
-  // Custom validator to check if the password contains at least one uppercase letter
-  hasUppercase(control: AbstractControl) {
-      const value = control.value;
-      if (value && !/[A-Z]/.test(value)) {
-          return { uppercase: true };
-      }
-      return null;
-  }
-
-  // Custom validator to check if the password contains at least one number
-  hasNumber(control: AbstractControl) {
-      const value = control.value;
-      if (value && !/\d/.test(value)) {
-          return { number: true };
-      }
-      return null;
-  }
-
-  // Custom validator to check if the password contains at least one special character
-  hasSpecialCharacter(control: AbstractControl) {
-      const value = control.value;
-      if (value && !/[!@#$%^&*(),.?":{}|<>]/.test(value)) {
-          return { specialCharacter: true };
-      }
-      return null;
-  }
-
-  // Form Submit
+      
   onSubmit() {
       if (this.passwordForm.valid) {
           alert(`Form Submitted Successfully`);
