@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {dashboarditems} from '../mock-dashboard-list';
+import {dashboarditems} from './mock-dashboard-list';
 import { Router } from '@angular/router';
 
 @Component({
