@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <div *ngFor="let dasboarditem of items"  style="margin-top: 20px;width: 200px;">
+          <div class="card" *ngIf="dasboarditem.columnNumber == 1">
+            <app-dashboard-item [itemName]="dasboarditem.itemName"   
+            [itemCount]="dasboarditem.itemCount" 
+            [itemColor]="dasboarditem.color"
+            [itemUrl]="dasboarditem.url"
+            />
+          </div>
+        </div> 
+      </div>
+      <div class="col-sm">
+        <div *ngFor="let dasboarditem of items"  style="margin-top: 20px;width: 200px;">
+          <div class="card" *ngIf="dasboarditem.columnNumber == 2">
+            <app-dashboard-item [itemName]="dasboarditem.itemName"   
+            [itemCount]="dasboarditem.itemCount" 
+            [itemColor]="dasboarditem.color"
+            [itemUrl]="dasboarditem.url"
+            />
+          </div>
+        </div> 
+      </div>
+      <div class="col-sm">
+        <div *ngFor="let dasboarditem of items" style="margin-top: 20px;width: 200px;">
+          <div class="card" *ngIf="dasboarditem.columnNumber == 3">
+            <app-dashboard-item [itemName]="dasboarditem.itemName"   
+            [itemCount]="dasboarditem.itemCount" 
+            [itemColor]="dasboarditem.color"
+            [itemUrl]="dasboarditem.url"
+            />
+          </div>
+        </div> 
+        </div>
+      </div>
+</div>
+    
+
+

@@ -1,19 +1,17 @@
 .dashboarditemStyle{
     height:130px ;
     width:300px;
-    margin: 20px;
-    border-width: 0px;
+    border-width: 2px;
     border-style: solid;
-    color: white;
+    color: black;
     border-radius: 6px;
 }
 .itemName{
     margin-left:10px;
     font-size: 19px;
     font-weight: 500;
+    color:white;
 }
 .itemCount{
     margin-left: 20px;
 }
-
-
