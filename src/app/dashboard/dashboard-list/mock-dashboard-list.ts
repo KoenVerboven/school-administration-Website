@@ -36,6 +36,7 @@ import {DashboardItem} from '../../../models/dashboardItem'
       id:5,
       itemName:'ExamResults',
       columnNumber: 2,
+      itemCount: 4,
       color:'blue',
       url:'/examresults'
     },

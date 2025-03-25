@@ -4,10 +4,7 @@
         <div *ngFor="let dasboarditem of items"  style="margin-top: 20px;width: 200px;">
           <div class="card" *ngIf="dasboarditem.columnNumber == colomnNr">
             <app-dashboard-item 
-              [itemName]="dasboarditem.itemName"   
-              [itemCount]="dasboarditem.itemCount" 
-              [itemColor]="dasboarditem.color"
-              [itemUrl]="dasboarditem.url"
+              [dashboardItem]="dasboarditem"   
             />
           </div>
         </div> 

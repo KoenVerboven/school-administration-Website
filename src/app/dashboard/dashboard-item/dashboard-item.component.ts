@@ -11,11 +11,14 @@ import { Router } from '@angular/router';
 })
 export class DashboardItemComponent {
 
-  // input : instelbaar van buitenaf.
-   @Input({required:true}) itemName!:string;
-   @Input() itemCount: number | undefined;
-   @Input() itemColor!: string | undefined;
-   @Input({required:true}) itemUrl!: string
+   @Input({required:true})dashboardItem!:{
+      id:number;
+      itemName:string;
+      columnNumber: number;
+      itemCount?: number | undefined;
+      color?: string | undefined;
+      url: string
+   }
   
    constructor(private router: Router,
    ){}
