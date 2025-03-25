@@ -12,17 +12,17 @@ import { Router } from '@angular/router';
 export class DashboardItemComponent {
 
   // input : instelbaar van buitenaf.
-   @Input() itemName!:string;
-   @Input() itemCount!: number;
-   @Input() itemColor!: string;
-   @Input() itemUrl!: string
+   @Input({required:true}) itemName!:string;
+   @Input() itemCount: number | undefined;
+   @Input() itemColor!: string | undefined;
+   @Input({required:true}) itemUrl!: string
   
    constructor(private router: Router,
    ){}
 
    showMoreInfo(url : string)
-    {
-      this.router.navigateByUrl(url)
-    }
+   {
+     this.router.navigateByUrl(url)
+   }
 
 }

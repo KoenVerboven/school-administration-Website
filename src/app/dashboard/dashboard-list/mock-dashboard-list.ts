@@ -4,9 +4,8 @@ import {DashboardItem} from '../../../models/dashboardItem'
     {
       id:1,
       itemName:'Students',
+      itemCount:506,
       columnNumber: 1,
-      itemCount:577,
-      color:'red',
       url:'/students'
     },
     {
@@ -29,7 +28,7 @@ import {DashboardItem} from '../../../models/dashboardItem'
       id:4,
       itemName:'Exams',
       columnNumber: 2,
-      itemCount:180,
+      itemCount:20,
       color:'blue',
       url:'/exams'
     },
@@ -37,7 +36,6 @@ import {DashboardItem} from '../../../models/dashboardItem'
       id:5,
       itemName:'ExamResults',
       columnNumber: 2,
-      itemCount:180,
       color:'blue',
       url:'/examresults'
     },

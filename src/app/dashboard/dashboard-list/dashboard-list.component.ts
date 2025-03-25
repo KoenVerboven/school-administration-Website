@@ -13,14 +13,9 @@ import { DashboardItemComponent } from "../dashboard-item/dashboard-item.compone
 })
 export class DashboardListComponent {
     items =  dashboarditems ;   
-    nrs  = [1,2,3 ];
+    colomnNrs  = [1,2,3 ];
 
      constructor(private router: Router,
      ){}
-
-    showMoreInfo(url : string)
-    {
-      this.router.navigateByUrl(url)
-    }
    
 }
