@@ -2,7 +2,7 @@ export interface Student{
     id: number;
     firstName: string;
     lastName: string;
-    dateOfBirth: string;
+    dateOfBirth: Date;
     gender: number;
     zipcode:number;
     streetAndNumber:string;

@@ -3,7 +3,7 @@
     {{errorMessage}}
 </div>
 
-<form *ngIf="errorMessage === ''"   (ngSubmit)="onSubmit()" #studentForm="ngForm" class="border rounded p-4 w-50 mb-5 mx-auto">
+<form *ngIf="errorMessage === ''" (ngSubmit)="onSubmit()" #studentForm="ngForm" class="border rounded p-4 w-50 mb-5 mx-auto">
 
      <div class="formHeader">
           <button class="btn btn-primary" style="margin-right: 6px;" *ngIf="formAction == 'detail'"  type="button" (click)="navigateBack()">Go Back</button>
@@ -39,15 +39,23 @@
    </div>
    <div class="mb-3">
      <label class="form-label">Date of birth</label>
-     <div *ngIf="formAction  == 'detail'; else dateOfBirthEdit ">
-          <label class="form-control">{{student.dateOfBirth | date: 'dd/MM/yyyy'}}</label>
-     </div>
-     <ng-template #dateOfBirthEdit>
-          <input required #dateOfBirth="ngModel" [disabled]=disableControls class="form-control" type="text" name="dateOfBirth"  [(ngModel)]="student.dateOfBirth" />
-          <div *ngIf="dateOfBirth.invalid &&(dateOfBirth.touched || dateOfBirth.dirty)">
-               <div class="text-danger" *ngIf="dateOfBirth.errors?.['required']">Date of birth is required</div>
-          </div>
-     </ng-template>
+     @if(formAction  == 'detail')
+     {
+        <label class="form-control">{{student.dateOfBirth | date: 'dd/MM/yyyy'}}</label>
+     }
+     @else {
+       <mat-form-field style="width: 100%;">
+          <input matInput  [matDatepicker]="datepicker"
+                placeholder="Select a date" 
+                [(ngModel)]="student.dateOfBirth"
+                name="dateOfBirth"
+          >
+        <mat-hint>DD/MM/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+               <mat-datepicker #datepicker></mat-datepicker>
+        </mat-form-field>
+     }
+     
    </div>
    <div class="mb-3">
      <label  class="form-label">ZipCode</label>

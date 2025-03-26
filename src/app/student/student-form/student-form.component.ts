@@ -5,10 +5,16 @@ import { StudentService } from '../../Services/student.service'
 import { Router,ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
+import { MatDatepickerInputEvent, MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { DateAdapter } from '@angular/material/core';
+
 @Component({
   selector: 'app-student-form',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule,MatDatepickerModule,MatNativeDateModule,MatInputModule,MatFormFieldModule],
   templateUrl: './student-form.component.html',
   styleUrl: './student-form.component.css'
 })
@@ -18,13 +24,15 @@ export class StudentFormComponent implements OnInit {
     id: 0,
     firstName: '',
     lastName: '',
-    dateOfBirth: '',
+    dateOfBirth: new Date(),
     gender:0,
     zipcode:0,
     streetAndNumber: '',
     phone: '',
     email: ''
   }
+
+  geboortedate : string| undefined;
 
   isUpdating: boolean = false;
   disableControls: boolean = false;
@@ -34,10 +42,15 @@ export class StudentFormComponent implements OnInit {
   studentId: number = 0;
   genderData: any;
 
+  events: string[] = [];
+
   constructor(private studentService : StudentService, 
     private router: Router,
-    private route: ActivatedRoute
-  ){}
+    private route: ActivatedRoute,
+    private dateAdapter: DateAdapter<Date>
+  ){
+      this.dateAdapter.setLocale('nl-BE'); 
+   }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(result => {
@@ -67,9 +80,16 @@ export class StudentFormComponent implements OnInit {
     
      });
   }
+  
+  addHours(date: Date, hours : number):Date {
+    const hoursToAdd = hours * 60 * 60 * 1000;
+    date.setTime(date.getTime() + hoursToAdd);
+    return date;
+  }
+
 
   onSubmit():void{
-
+    this.student.dateOfBirth = this.addHours(this.student.dateOfBirth, 2);
     if(this.isUpdating){
        this.studentService.updateStudent(this.student)
       .subscribe({ 

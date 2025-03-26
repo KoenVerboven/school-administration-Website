@@ -557,6 +557,25 @@ aanmaken nieuwe service in bestaande map 'Services':
 
 ng g s Services\exam
 
+INSTALLING angular/material:
+----------------------------
+C:\Users\koenv\school-administration-app>ng add @angular/material@18
+✔ Determining Package Manager
+  › Using package manager: npm
+✔ Loading package information from registry
+  › ⚠ Package has unmet peer dependencies. Adding the package may not succeed.
+✔ Confirming installation
+✔ Installing package
+? Choose a prebuilt theme name, or "custom" for a custom theme: Azure/Blue         [Preview: https://material.angular.io?theme=azure-blue]     
+? Set up global Angular Material typography styles? yes
+? Include the Angular animations module? Include and enable animations
+UPDATE package.json (1151 bytes)
+✔ Packages installed successfully.
+UPDATE src/app/app.config.ts (534 bytes)
+UPDATE angular.json (3050 bytes)
+UPDATE src/index.html (545 bytes)
+UPDATE src/styles.css (171 bytes)
+
 
 
 
