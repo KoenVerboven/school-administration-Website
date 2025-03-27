@@ -10,11 +10,13 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let teacher of teachers" (click)="showTeacherDetail(teacher.id)" class="cell-hoverCursor" >      
-            <td >{{teacher.id}}</td>        
-            <td>{{teacher.lastName}} {{teacher.firstName}}</td>      
-            <td>{{teacher.phone}}</td>
-            <td>{{teacher.email}}</td>
-          </tr>         
+        @for(teacher of teachers; track teacher.id){  
+            <tr  (click)="showTeacherDetail(teacher.id)" class="cell-hoverCursor" >      
+                <td >{{teacher.id}}</td>        
+                <td>{{teacher.lastName}} {{teacher.firstName}}</td>      
+                <td>{{teacher.phone}}</td>
+                <td>{{teacher.email}}</td>
+            </tr>  
+        } 
     </tbody>
 </table>

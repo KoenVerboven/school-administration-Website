@@ -1,14 +1,16 @@
 <div class="container">
     <div class="row">
-      <div *ngFor="let colomnNr of colomnNrs" class="col-sm">
-        <div *ngFor="let dasboarditem of items"  style="margin-top: 20px;width: 200px;">
-          <div class="card" *ngIf="dasboarditem.columnNumber == colomnNr">
-            <app-dashboard-item 
-              [dashboardItem]="dasboarditem"   
-            />
-          </div>
-        </div> 
-      </div>
+      @for(colomnNr of colomnNrs; track colomnNr){
+        <div class="col-sm">
+          <div *ngFor="let dasboarditem of items"  style="margin-top: 20px;width: 200px;">
+            <div class="card" *ngIf="dasboarditem.columnNumber == colomnNr">
+              <app-dashboard-item 
+                [dashboardItem]="dasboarditem"   
+              />
+            </div>
+          </div> 
+        </div>
+      }
     </div>
 </div>
   

@@ -9,10 +9,12 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let course of courses" (click)="showCourseDetail(course.id)" class="cell-hoverCursor">      
-            <td >{{course.id}}</td>        
-            <td >{{course.courseName}}</td> 
-            <td>{{course.courseCode}}</td>  
-        </tr>       
+        @for(course of courses;track course.id){
+            <tr (click)="showCourseDetail(course.id)" class="cell-hoverCursor">      
+                <td >{{course.id}}</td>        
+                <td >{{course.courseName}}</td> 
+                <td>{{course.courseCode}}</td>  
+            </tr>       
+        }
     </tbody>
 </table>
