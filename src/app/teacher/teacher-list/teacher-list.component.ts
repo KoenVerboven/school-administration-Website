@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Teacher } from '../../../models/teacher'; 
+import { Teacher } from '../../models/teacher.model'; 
 import { TeacherService } from '../../Services/teacher.service';
 import { CommonModule } from '@angular/common';
 import { Router , RouterModule} from '@angular/router';

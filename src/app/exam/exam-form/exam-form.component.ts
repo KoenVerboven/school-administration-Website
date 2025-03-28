@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Exam } from '../../../models/exam';
+import { Exam } from '../../models/exam.model';
 import { ExamService } from '../../Services/exam.service'
 import { Router,ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';

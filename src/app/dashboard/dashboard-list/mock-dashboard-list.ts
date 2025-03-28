@@ -1,4 +1,4 @@
-import {DashboardItem} from '../../../models/dashboardItem'
+import {DashboardItem} from '../../models/dashboardItem'
 
   export const  dashboarditems: DashboardItem[] = [
     {

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Course} from '../../../models/course';
+import { Course} from '../../models/course.model';
 import { CommonModule } from '@angular/common';
 import { CourseService } from '../../Services/course.service';
 import { Router , RouterModule} from '@angular/router';

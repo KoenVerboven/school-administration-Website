@@ -1,4 +1,4 @@
-import { UserDTO } from "./userDTO";
+import { UserDTO } from "./userDTO.model";
 
 export interface AuthResponseData{
     user: UserDTO;
