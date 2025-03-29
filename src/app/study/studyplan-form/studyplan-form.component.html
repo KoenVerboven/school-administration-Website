@@ -1,33 +1,43 @@
 <p class="text-center h5" >{{pageTitle}}</p>
-<div  class="text-danger text-center"  *ngIf="errorMessage != ''">
-    {{errorMessage}}
-</div>
-
-<form *ngIf="errorMessage === ''" (ngSubmit)="onSubmit()"   #examForm="ngForm" class="border rounded p-4 w-50 mb-5 mx-auto">
-
-    <div class="formHeader">
-        <button class="btn btn-primary" style="margin-right: 6px;" *ngIf="formAction == 'detail'"  type="button" (click)="navigateBack()">Go Back</button>
-        <button class="btn btn-secondary" style="margin-right: 6px;" *ngIf="formAction == 'detail'"  type="button" (click)="updateClick()">Update</button>
-        <button class="btn btn-danger" *ngIf="formAction == 'detail'"  type="button" (click)="deleteClick()">Delete</button>
-        <button class="btn btn-success" style="margin-right: 6px;" *ngIf="formAction != 'detail'" type="submit" [disabled]="examForm.invalid">Save</button>
-        <button class="btn btn-warning"  *ngIf="formAction != 'detail'"  type="button" (click)="navigateBack()">Cancel</button>
+@if(errorMessage != '')
+{
+    <div  class="text-danger text-center">
+        {{errorMessage}}
     </div>
-    <br/>
-    <div class="mb-3">
-        <label class="form-label">StudentId</label>
-        <input required #studentId="ngModel" [disabled]=disableControls class="form-control"   type="text" name="StudentId"  [(ngModel)]="studyPlan.studentId" />
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Name *</label>
-        <input required #studyplanName="ngModel" [disabled]=disableControls class="form-control"   type="text" name="StudyplanName"  [(ngModel)]="studyPlan.name" />
-        <div *ngIf="studyplanName.invalid &&(studyplanName.touched || studyplanName.dirty)">
-            <div class="text-danger" *ngIf="studyplanName.errors?.['required']">Name is required</div>
+}
+@else {
+    <form (ngSubmit)="onSubmit()"   #examForm="ngForm" class="border rounded p-4 w-50 mb-5 mx-auto">
+        <div class="formHeader">
+           @if(formAction == 'detail')
+           {
+            <button class="btn btn-primary headerButton" type="button" (click)="navigateBack()">Go Back</button>
+            <button class="btn btn-secondary headerButton" type="button" (click)="updateClick()">Update</button>
+            <button class="btn btn-danger"  type="button" (click)="deleteClick()">Delete</button>
+           }
+           @else {
+            <button class="btn btn-success headerButton" *ngIf="formAction != 'detail'" type="submit" [disabled]="examForm.invalid">Save</button>
+            <button class="btn btn-warning"  *ngIf="formAction != 'detail'"  type="button" (click)="navigateBack()">Cancel</button>
+           }
         </div>
-    </div>
-    
-    <div class="mb-3">
-        <label class="form-label">Description</label>
-        <textarea rows="5" #description="ngModel" [disabled]=disableControls class="form-control"   type="text" name="description"  [(ngModel)]="studyPlan.description" >
-        </textarea>
-    </div>
-</form>
+        <br/>
+        <div class="mb-3">
+            <label class="form-label">StudentId</label>
+            <input required #studentId="ngModel" [disabled]=disableControls class="form-control"   type="text" name="StudentId"  [(ngModel)]="studyPlan.studentId" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Name *</label>
+            <input required #studyplanName="ngModel" [disabled]=disableControls class="form-control"   type="text" name="StudyplanName"  [(ngModel)]="studyPlan.name" />
+            @if((studyplanName.invalid &&(studyplanName.touched || studyplanName.dirty)) && studyplanName.errors?.['required'])
+            {
+                <div class="text-danger">Name is required</div>
+            }
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Description</label>
+            <textarea rows="5" #description="ngModel" [disabled]=disableControls class="form-control"   type="text" name="description"  [(ngModel)]="studyPlan.description" >
+            </textarea>
+        </div>
+    </form>
+}
+
+

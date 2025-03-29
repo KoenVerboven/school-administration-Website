@@ -1,88 +1,105 @@
 <p class="text-center h5" >{{pageTitle}}</p>
-<div  class="text-danger text-center"  *ngIf="errorMessage != ''">
-    {{errorMessage}}
-</div>
-
-<form *ngIf="errorMessage === ''" (ngSubmit)="onSubmit()" #studentForm="ngForm" class="border rounded p-4 w-50 mb-5 mx-auto">
-
-     <div class="formHeader">
-          <button class="btn btn-primary" style="margin-right: 6px;" *ngIf="formAction == 'detail'"  type="button" (click)="navigateBack()">Go Back</button>
-          <button class="btn btn-secondary" style="margin-right: 6px;" *ngIf="formAction == 'detail'"  type="button" (click)="updateClick()">Update</button>
-          <button class="btn btn-danger" *ngIf="formAction == 'detail'"  type="button" (click)="deleteClick()">Delete</button>
-          <button class="btn btn-success" style="margin-right: 6px;" *ngIf="formAction != 'detail'" type="submit" [disabled]="studentForm.invalid">Save</button>
-          <button class="btn btn-warning"  *ngIf="formAction != 'detail'"  type="button" (click)="navigateBack()">Cancel</button>
-     </div>
-     <br />
-     <div class="mb-3">
-        <label class="form-label">Firstname *</label>
-        <input required #firstName="ngModel" [disabled]=disableControls class="form-control"   type="text" name="firstName"  [(ngModel)]="student.firstName" />
-
-        <div *ngIf="firstName.invalid &&(firstName.touched || firstName.dirty)">
-            <div class="text-danger" *ngIf="firstName.errors?.['required']">First Name is required</div>
-        </div>
+@if(errorMessage != '')
+{
+   <div  class="text-danger text-center">
+      {{errorMessage}}
    </div>
-   <div class="mb-3">
-        <label class="form-label">Lastname *</label>
-        <input required #lastName="ngModel" [disabled]=disableControls class="form-control" type="text" name="lastName"  [(ngModel)]="student.lastName" />
-        <div *ngIf="lastName.invalid &&(lastName.touched || lastName.dirty)">
-               <div class="text-danger" *ngIf="lastName.errors?.['required']">Last Name is required</div>
-        </div>
-   </div>
-   <div class="mb-3">
-     <label class="form-label">Gender</label>
-     <select  class="form-control" name="gender" [(ngModel)]="student.gender" [disabled]=disableControls>  
-          <option value="">Select Gender</option>
-          <option [ngValue]="gender.Id"  *ngFor="let gender of genderData">
-               {{gender.Name}}
-          </option>    
-      </select> 
-   </div>
-   <div class="mb-3">
-     <label class="form-label">Date of birth</label>
-     @if(formAction  == 'detail')
-     {
-        <label class="form-control">{{student.dateOfBirth | date: 'dd/MM/yyyy'}}</label>
-     }
-     @else {
-       <mat-form-field style="width: 100%;">
-          <input matInput  [matDatepicker]="datepicker"
-                placeholder="Select a date" 
-                [(ngModel)]="student.dateOfBirth"
-                name="dateOfBirth"
-          >
-        <mat-hint>DD/MM/YYYY</mat-hint>
-        <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
-               <mat-datepicker #datepicker></mat-datepicker>
+}
+@else
+{
+   <form (ngSubmit)="onSubmit()" #studentForm="ngForm" class="border rounded p-4 w-50 mb-5 mx-auto">
+      <div class="formHeader">
+         @if(formAction == 'detail')
+         {
+            <button class="btn btn-primary headerButton" type="button" (click)="navigateBack()">Go Back</button>
+            <button class="btn btn-secondary headerButton" type="button" (click)="updateClick()">Update</button>
+            <button class="btn btn-danger" type="button" (click)="deleteClick()">Delete</button>
+         }
+         @else {
+            <button class="btn btn-success headerButton" *ngIf="formAction != 'detail'" type="submit" [disabled]="studentForm.invalid">Save</button>
+            <button class="btn btn-warning"  *ngIf="formAction != 'detail'"  type="button" (click)="navigateBack()">Cancel</button>
+         }
+      </div>
+      <br />
+      <div class="mb-3">
+         <label class="form-label">Firstname *</label>
+         <input required #firstName="ngModel" [disabled]=disableControls class="form-control"   type="text" name="firstName"  [(ngModel)]="student.firstName" />
+         @if((firstName.invalid &&(firstName.touched || firstName.dirty)) && firstName.errors?.['required'])
+         {
+           <div class="text-danger">First Name is required</div>
+         }
+    </div>
+    <div class="mb-3">
+         <label class="form-label">Lastname *</label>
+         <input required #lastName="ngModel" [disabled]=disableControls class="form-control" type="text" name="lastName"  [(ngModel)]="student.lastName" />
+         @if((lastName.invalid &&(lastName.touched || lastName.dirty)) && lastName.errors?.['required'])
+         {
+            <div class="text-danger">Last Name is required</div>
+         }
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Gender</label>
+      <select  class="form-control" name="gender" [(ngModel)]="student.gender" [disabled]=disableControls>  
+           <option value="">Select Gender</option>
+           <option [ngValue]="gender.Id"  *ngFor="let gender of genderData">
+                {{gender.Name}}
+           </option>    
+       </select> 
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Date of birth</label>
+      @if(formAction  == 'detail')
+      {
+         <label class="form-control">{{student.dateOfBirth | date: 'dd/MM/yyyy'}}</label>
+      }
+      @else {
+        <mat-form-field style="width: 100%;">
+           <input matInput  
+               [matDatepicker]="datepicker"
+               placeholder="Select a date" 
+               [(ngModel)]="student.dateOfBirth"
+               name="dateOfBirth">
+           <mat-hint>DD/MM/YYYY</mat-hint>
+           <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+           <mat-datepicker #datepicker></mat-datepicker>
         </mat-form-field>
-     }
-     
-   </div>
-   <div class="mb-3">
-     <label  class="form-label">ZipCode</label>
-     <input required #zipcode="ngModel" [disabled]=disableControls class="form-control" type="text" name="zipcode"   [(ngModel)]="student.zipcode"/>
-     <div *ngIf="lastName.invalid &&(zipcode.touched || zipcode.dirty)">
-          <div class="text-danger" *ngIf="zipcode.errors?.['required']">Zipcode is required</div>
-     </div>
-   </div>  
-   <div class="mb-3">
-     <label  class="form-label">Street and number</label>
-     <input  #streetAndNumber="ngModel" [disabled]=disableControls class="form-control" type="text" name="streetAndNumber"  [(ngModel)]="student.streetAndNumber" />
-   </div>  
-   <div class="mb-3">
-        <label  class="form-label">Phone</label>
-        <input required #phone="ngModel" [disabled]=disableControls class="form-control" type="phone" name="phone"  [(ngModel)]="student.phone" />
-        <div *ngIf="phone.invalid &&(phone.touched || phone.dirty)">
-            <div class="text-danger" *ngIf="phone.errors?.['required']">Phone is required</div>
-        </div>
-   </div>
-   <div class="mb-3">
-        <label class="form-label">Email</label>
-        <input required email #email="ngModel" [disabled]=disableControls class="form-control" type="email" name="email"  [(ngModel)]="student.email" />
+      }
+    </div>
+    <div class="mb-3">
+      <label  class="form-label">ZipCode *</label>
+      <input required #zipcode="ngModel" [disabled]=disableControls class="form-control" type="text" name="zipcode"   [(ngModel)]="student.zipcode"/>
+      @if((lastName.invalid &&(zipcode.touched || zipcode.dirty)) && zipcode.errors?.['required'])
+      {
+         <div class="text-danger">Zipcode is required</div>
+      }
+    </div>  
+    <div class="mb-3">
+      <label  class="form-label">Street and number</label>
+      <input  #streetAndNumber="ngModel" [disabled]=disableControls class="form-control" type="text" name="streetAndNumber"  [(ngModel)]="student.streetAndNumber" />
+    </div>  
+    <div class="mb-3">
+         <label  class="form-label">Phone *</label>
+         <input required #phone="ngModel" [disabled]=disableControls class="form-control" type="phone" name="phone"  [(ngModel)]="student.phone" />
+         @if((phone.invalid &&(phone.touched || phone.dirty)) && phone.errors?.['required'])
+         {
+           <div class="text-danger">Phone is required</div>
+         }
+    </div>
+    <div class="mb-3">
+         <label class="form-label">Email *</label>
+         <input required email #email="ngModel" [disabled]=disableControls class="form-control" type="email" name="email"  [(ngModel)]="student.email" />
+         @if(email.invalid &&(email.touched || email.dirty))
+         {
+             @if(email.errors?.['required'])
+             {
+                <div class="text-danger">Email is required</div>
+             }
+             @if(email.errors?.['email'])
+             {
+                <div class="text-danger">Email is invalid</div>
+             }
+         }
+    </div>
+ </form>
+}
 
-        <div *ngIf="email.invalid &&(email.touched || email.dirty)">
-            <div class="text-danger" *ngIf="email.errors?.['required']">Email is required</div>
-            <div class="text-danger" *ngIf="email.errors?.['email']">Email is invalid</div>
-        </div>
-   </div>
-         
-</form>

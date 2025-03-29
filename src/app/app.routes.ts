@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { DashboardListComponent } from './dashboard/dashboard-list/dashboard-list.component';
-import { DashboardItem } from './models/dashboardItem';
+import { DashboardItem } from './models/dashboardItem.model';
 import { StudentListComponent } from './student/student-list/student-list.component';
 import { StudentFormComponent } from './student/student-form/student-form.component';
 import { CourseListComponent } from './course/course-list/course-list.component';

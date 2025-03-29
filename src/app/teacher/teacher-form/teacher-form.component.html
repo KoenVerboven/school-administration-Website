@@ -1,34 +1,41 @@
 <p class="text-center h5" >{{pageTitle}}</p>
-<div  class="text-danger text-center"  *ngIf="errorMessage != ''">
+@if(errorMessage != '')
+{
+  <div  class="text-danger text-center">
     {{errorMessage}}
-</div>
-
-<form *ngIf="errorMessage === ''"  (ngSubmit)="onSubmit()"  #teacherForm="ngForm" class="border rounded p-4 w-50 mb-5 mx-auto">
+  </div>
+}
+@else {
+  <form (ngSubmit)="onSubmit()"  #teacherForm="ngForm" class="border rounded p-4 w-50 mb-5 mx-auto">
 
     <div class="formHeader">
-        <button class="btn btn-primary" style="margin-right: 6px;" *ngIf="formAction == 'detail'"  type="button" (click)="navigateBack()">Go Back</button>
-        <button class="btn btn-secondary" style="margin-right: 6px;" *ngIf="formAction == 'detail'"  type="button" (click)="updateClick()">Update</button>
-        <button type="button" class="btn btn-danger"  *ngIf="formAction == 'detail'" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Delete
-        </button>
-        <button class="btn btn-success" style="margin-right: 6px;" *ngIf="formAction != 'detail'" type="submit" [disabled]="teacherForm.invalid">Save</button>
-        <button class="btn btn-warning"  *ngIf="formAction != 'detail'"  type="button" (click)="navigateBack()">Cancel</button>
+      @if(formAction == 'detail')
+      {
+        <button class="btn btn-primary headerButton" type="button" (click)="navigateBack()">Go Back</button>
+        <button class="btn btn-secondary headerButton" type="button" (click)="updateClick()">Update</button>
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete</button>
+      }
+      @else {
+        <button class="btn btn-success headerButton" type="submit" [disabled]="teacherForm.invalid">Save</button>
+        <button class="btn btn-warning"  type="button" (click)="navigateBack()">Cancel</button>
+      }
    </div>
    <br />
     <div class="mb-3">
         <label class="form-label">Firstname *</label>
         <input required #firstName="ngModel" [disabled]=disableControls class="form-control"   type="text" name="firstName"  [(ngModel)]="teacher.firstName" />
-
-        <div *ngIf="firstName.invalid &&(firstName.touched || firstName.dirty)">
-            <div class="text-danger" *ngIf="firstName.errors?.['required']">First Name is required</div>
-        </div>
+        @if((firstName.invalid &&(firstName.touched || firstName.dirty)) && firstName.errors?.['required'])
+        {
+          <div class="text-danger">First Name is required</div>
+        }
     </div>
     <div class="mb-3">
         <label class="form-label">Lastname *</label>
         <input required #lastName="ngModel" [disabled]=disableControls class="form-control" type="text" name="lastName"  [(ngModel)]="teacher.lastName" />
-        <div *ngIf="lastName.invalid &&(lastName.touched || lastName.dirty)">
-            <div class="text-danger" *ngIf="lastName.errors?.['required']">Last Name is required</div>
-        </div>
+        @if((lastName.invalid &&(lastName.touched || lastName.dirty)) && lastName.errors?.['required'])
+        {
+          <div class="text-danger" *ngIf="lastName.errors?.['required']">Last Name is required</div>
+        }
     </div>
     <div class="mb-3">
         <label class="form-label">Gender</label>
@@ -40,57 +47,68 @@
          </select> 
     </div>
     <div class="mb-3">
-        <label class="form-label">Date of birth</label>
-        <div *ngIf="formAction  == 'detail'; else dateOfBirthEdit ">
-             <label class="form-control">{{teacher.dateOfBirth | date: 'dd/MM/yyyy'}}</label>
-        </div>
-        <ng-template #dateOfBirthEdit>
-             <input required #dateOfBirth="ngModel" [disabled]=disableControls class="form-control" type="text" name="dateOfBirth"  [(ngModel)]="teacher.dateOfBirth" />
-             <div *ngIf="dateOfBirth.invalid &&(dateOfBirth.touched || dateOfBirth.dirty)">
-                  <div class="text-danger" *ngIf="dateOfBirth.errors?.['required']">Date of birth is required</div>
-             </div>
-        </ng-template>
+        <label class="form-label">Date of birth *</label>
+        @if(formAction  == 'detail')
+        {
+          <label class="form-control">{{teacher.dateOfBirth | date: 'dd/MM/yyyy'}}</label>
+        }
+        @else {
+          <input required #dateOfBirth="ngModel" [disabled]=disableControls class="form-control" type="text" name="dateOfBirth"  [(ngModel)]="teacher.dateOfBirth" />
+             @if((dateOfBirth.invalid &&(dateOfBirth.touched || dateOfBirth.dirty) && dateOfBirth.errors?.['required']))
+             {
+              <div class="text-danger">Date of birth is required</div>
+             }
+        }
     </div>
     <div class="mb-3">
-        <label  class="form-label">ZipCode</label> <!--  to do ZIPCODE MOET 4 LANG ZIJN anders ERROR !!!   -->
+        <label  class="form-label">ZipCode *</label> <!--  to do ZIPCODE MOET 4 LANG ZIJN anders ERROR !!!   -->
         <input required #zipcode="ngModel" [disabled]=disableControls class="form-control" type="text" name="zipcode"   [(ngModel)]="teacher.zipcode"/>
-        <div *ngIf="lastName.invalid &&(zipcode.touched || zipcode.dirty)">
-             <div class="text-danger" *ngIf="zipcode.errors?.['required']">Zipcode is required</div>
-        </div>
-      </div>  
-      <div class="mb-3">
-        <label  class="form-label">Street and number</label>
-        <input  #streetAndNumber="ngModel" [disabled]=disableControls class="form-control" type="text" name="streetAndNumber"  [(ngModel)]="teacher.streetAndNumber" />
-      </div>  
+        @if((lastName.invalid &&(zipcode.touched || zipcode.dirty)) && zipcode.errors?.['required'])
+        {
+          <div class="text-danger">Zipcode is required</div>
+        }
+    </div>  
     <div class="mb-3">
-        <label  class="form-label">Phone</label>
+      <label  class="form-label">Street and number</label>
+      <input  #streetAndNumber="ngModel" [disabled]=disableControls class="form-control" type="text" name="streetAndNumber"  [(ngModel)]="teacher.streetAndNumber" />
+    </div>  
+    <div class="mb-3">
+        <label  class="form-label">Phone *</label>
         <input required #phone="ngModel" [disabled]=disableControls class="form-control" type="phone" name="phone"  [(ngModel)]="teacher.phone" />
-        <div *ngIf="phone.invalid &&(phone.touched || phone.dirty)">
-            <div class="text-danger" *ngIf="phone.errors?.['required']">Phone is required</div>
-        </div>
+        @if((phone.invalid &&(phone.touched || phone.dirty)) && phone.errors?.['required'])
+        {
+          <div class="text-danger">Phone is required</div>
+        }
    </div>
    <div class="mb-3">
-        <label class="form-label">Email</label>
+        <label class="form-label">Email *</label>
         <input required email #email="ngModel" [disabled]=disableControls class="form-control" type="email" name="email"  [(ngModel)]="teacher.email" />
-
-        <div *ngIf="email.invalid &&(email.touched || email.dirty)">
-            <div class="text-danger" *ngIf="email.errors?.['required']">Email is required</div>
-            <div class="text-danger" *ngIf="email.errors?.['email']">Email is invalid</div>
-        </div>
+        @if(email.invalid &&(email.touched || email.dirty))
+        {
+          @if(email.errors?.['required'])
+          {
+            <div class="text-danger">Email is required</div>
+          }
+          @if(email.errors?.['email'])
+          {
+            <div class="text-danger">Email is invalid</div>
+          }
+        }
    </div>
    <div class="mb-3">
-    <label class="form-label">Hiredate</label>
-    <div *ngIf="formAction  == 'detail'; else hireDateEdit ">
-         <label class="form-control">{{teacher.hireDate | date: 'dd/MM/yyyy'}}</label>
-    </div>
-    <ng-template #hireDateEdit>
-         <input required #hireDate="ngModel" [disabled]=disableControls class="form-control" type="text" name="hireDate"  [(ngModel)]="teacher.hireDate" />
-         <div *ngIf="hireDate.invalid &&(hireDate.touched || hireDate.dirty)">
-              <div class="text-danger" *ngIf="hireDate.errors?.['required']">Hiredate is required</div>
-         </div>
-    </ng-template>
+    <label class="form-label">Hiredate *</label>
+    @if(formAction  == 'detail')
+    {
+      <label class="form-control">{{teacher.hireDate | date: 'dd/MM/yyyy'}}</label>
+    }
+    @else {
+      <input required #hireDate="ngModel" [disabled]=disableControls class="form-control" type="text" name="hireDate"  [(ngModel)]="teacher.hireDate" />
+      @if((hireDate.invalid &&(hireDate.touched || hireDate.dirty)) && hireDate.errors?.['required'])
+      {
+        <div class="text-danger">Hiredate is required</div>
+      }
+    }
 </div>
-
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -109,5 +127,8 @@
       </div>
     </div>
   </div>
-  
-</form>
+  </form>
+}
+
+
+

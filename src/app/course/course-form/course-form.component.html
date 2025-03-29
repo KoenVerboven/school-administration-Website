@@ -1,42 +1,53 @@
 <p class="text-center h5" >{{pageTitle}}</p>
-<div  class="text-danger text-center"  *ngIf="errorMessage != ''">
-    {{errorMessage}}
-</div>
+@if(errorMessage != '')
+{
+    <div  class="text-danger text-center">
+        {{errorMessage}}
+    </div>
+}
+@else {
+    <form (ngSubmit)="onSubmit()"   #courseForm="ngForm" class="border rounded p-4 w-50 mb-5 mx-auto">
 
-<form *ngIf="errorMessage === ''" (ngSubmit)="onSubmit()"   #courseForm="ngForm" class="border rounded p-4 w-50 mb-5 mx-auto">
-
-    <div class="formHeader">
-        <button class="btn btn-primary" style="margin-right: 6px;" *ngIf="formAction == 'detail'"  type="button" (click)="navigateBack()">Go Back</button>
-        <button class="btn btn-secondary" style="margin-right: 6px;" *ngIf="formAction == 'detail'"  type="button" (click)="updateClick()">Update</button>
-        <button class="btn btn-danger" *ngIf="formAction == 'detail'"  type="button" (click)="deleteClick()">Delete</button>
-        <button class="btn btn-success" style="margin-right: 6px;" *ngIf="formAction != 'detail'" type="submit" [disabled]="courseForm.invalid">Save</button>
-        <button class="btn btn-warning"  *ngIf="formAction != 'detail'"  type="button" (click)="navigateBack()">Cancel</button>
-   </div>
-    
-    <br/>
-    <div class="mb-3">
-        <label class="form-label">CourseName *</label>
-        <input required #courseName="ngModel" [disabled]=disableControls class="form-control"   type="text" name="courseName"  [(ngModel)]="course.courseName" />
-
-        <div *ngIf="courseName.invalid &&(courseName.touched || courseName.dirty)">
-            <div class="text-danger" *ngIf="courseName.errors?.['required']">CourseName is required</div>
+        <div class="formHeader">
+            @if(formAction == 'detail')
+            {
+                <button class="btn btn-primary headerButton" type="button" (click)="navigateBack()">Go Back</button>
+                <button class="btn btn-secondary headerButton" type="button" (click)="updateClick()">Update</button>
+                <button class="btn btn-danger"  type="button" (click)="deleteClick()">Delete</button>
+            }
+            @else {
+                <button class="btn btn-success headerButton" type="submit" [disabled]="courseForm.invalid">Save</button>
+                <button class="btn btn-warning"  type="button" (click)="navigateBack()">Cancel</button>
+            }
         </div>
-    </div>
-    <div class="mb-3">
-        <label class="form-label">CourseCode *</label>
-        <input required #courseCode="ngModel" [disabled]=disableControls class="form-control" type="text" name="lastName"  [(ngModel)]="course.courseCode" />
-        <div *ngIf="courseCode.invalid &&(courseCode.touched || courseCode.dirty)">
-            <div class="text-danger" *ngIf="courseCode.errors?.['required']">CourseCode is required</div>
+        <br/>
+        <div class="mb-3">
+            <label class="form-label">CourseName *</label>
+            <input required #courseName="ngModel" [disabled]=disableControls class="form-control"   type="text" name="courseName"  [(ngModel)]="course.courseName" />
+            @if((courseName.invalid &&(courseName.touched || courseName.dirty)) && courseName.errors?.['required'])
+            {
+                <div class="text-danger">CourseName is required</div>
+            }
         </div>
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Cost Price</label>
-        <input  #courseCode="ngModel" [disabled]=disableControls class="form-control" type="text" name="costPrice"  [(ngModel)]="course.coursePrice" />
-    </div>
-    <div class="mb-3">
-        <label class="form-label">CourseDescription *</label>
-        <textarea rows="5" #courseDescription="ngModel" [disabled]=disableControls class="form-control" type="text" name="CourseDescription"  [(ngModel)]="course.courseDescription" >
-        </textarea>
-    </div>
-    
-</form>
+        <div class="mb-3">
+            <label class="form-label">CourseCode *</label>
+            <input required #courseCode="ngModel" [disabled]=disableControls class="form-control" type="text" name="lastName"  [(ngModel)]="course.courseCode" />
+            @if((courseCode.invalid &&(courseCode.touched || courseCode.dirty)) && courseCode.errors?.['required'])
+            {
+                <div class="text-danger">CourseCode is required</div>
+            }
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Cost Price</label>
+            <input  #courseCode="ngModel" [disabled]=disableControls class="form-control" type="text" name="costPrice"  [(ngModel)]="course.coursePrice" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">CourseDescription *</label>
+            <textarea rows="5" #courseDescription="ngModel" [disabled]=disableControls class="form-control" type="text" name="CourseDescription"  [(ngModel)]="course.courseDescription" >
+            </textarea>
+        </div>
+        
+    </form>
+}
+
+

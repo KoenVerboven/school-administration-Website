@@ -1,34 +1,44 @@
 <p class="text-center h5" >{{pageTitle}}</p>
-<div  class="text-danger text-center"  *ngIf="errorMessage != ''">
-    {{errorMessage}}
-</div>
+@if(errorMessage != ''){
+    <div  class="text-danger text-center">
+        {{errorMessage}}
+    </div>
+}
+@else {
+    <form (ngSubmit)="onSubmit()"   #examForm="ngForm" class="border rounded p-4 w-50 mb-5 mx-auto">
 
-<form *ngIf="errorMessage === ''" (ngSubmit)="onSubmit()"   #examForm="ngForm" class="border rounded p-4 w-50 mb-5 mx-auto">
-
-    <div class="formHeader">
-        <button class="btn btn-primary" style="margin-right: 6px;" *ngIf="formAction == 'detail'"  type="button" (click)="navigateBack()">Go Back</button>
-        <button class="btn btn-secondary" style="margin-right: 6px;" *ngIf="formAction == 'detail'"  type="button" (click)="updateClick()">Update</button>
-        <button class="btn btn-danger" *ngIf="formAction == 'detail'"  type="button" (click)="deleteClick()">Delete</button>
-        <button class="btn btn-success" style="margin-right: 6px;" *ngIf="formAction != 'detail'" type="submit" [disabled]="examForm.invalid">Save</button>
-        <button class="btn btn-warning"  *ngIf="formAction != 'detail'"  type="button" (click)="navigateBack()">Cancel</button>
-   </div>
-    
-    <br/>
-    <div class="mb-3">
-        <label class="form-label">ExamName *</label>
-        <input required #examName="ngModel" [disabled]=disableControls class="form-control"   type="text" name="ExamName"  [(ngModel)]="exam.examTitle" />
-
-        <div *ngIf="examName.invalid &&(examName.touched || examName.dirty)">
-            <div class="text-danger" *ngIf="examName.errors?.['required']">ExamName is required</div>
+        <div class="formHeader">
+           @if(formAction == 'detail')
+           {
+            <button class="btn btn-primary headerButton" type="button" (click)="navigateBack()">Go Back</button>
+            <button class="btn btn-secondary headerButton" type="button" (click)="updateClick()">Update</button>
+            <button class="btn btn-danger"  type="button" (click)="deleteClick()">Delete</button>
+           }
+           @else {
+            <button class="btn btn-success headerButton" type="submit" [disabled]="examForm.invalid">Save</button>
+            <button class="btn btn-warning"  type="button" (click)="navigateBack()">Cancel</button>
+           }
+       </div>
+       <br/>
+        <div class="mb-3">
+            <label class="form-label">ExamName *</label>
+            <input required #examName="ngModel" [disabled]=disableControls class="form-control"   type="text" name="ExamName"  [(ngModel)]="exam.examTitle" />
+            @if((examName.invalid &&(examName.touched || examName.dirty)) && examName.errors?.['required'])
+            {
+                <div class="text-danger">ExamName is required</div>
+            }
         </div>
-    </div>
-    <div class="mb-3">
-        <label class="form-label">StartDate</label>
-        <input #startDate="ngModel" [disabled]=disableControls class="form-control"   type="text" name="StartDate"  [(ngModel)]="exam.examenDate" />
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Description</label>
-        <textarea rows="5" #description="ngModel" [disabled]=disableControls class="form-control"   type="text" name="description"  [(ngModel)]="exam.description" >
-        </textarea>
-    </div>
-</form>
+        <div class="mb-3">
+            <label class="form-label">StartDate</label>
+            <input #startDate="ngModel" [disabled]=disableControls class="form-control"   type="text" name="StartDate"  [(ngModel)]="exam.examenDate" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Description</label>
+            <textarea rows="5" #description="ngModel" [disabled]=disableControls class="form-control"   type="text" name="description"  [(ngModel)]="exam.description" >
+            </textarea>
+        </div>
+    </form>
+}
+
+
+
