@@ -17,7 +17,8 @@ export class DashboardItemComponent {
       columnNumber: number;
       itemCount?: number | undefined;
       color?: string | undefined;
-      url: string
+      url: string;
+      visible:boolean
    }
   
    constructor(private router: Router,

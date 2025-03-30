@@ -2,16 +2,15 @@
     <div class="row">
       @for(colomnNr of colomnNrs; track colomnNr){
         <div class="col-sm">
-          <div *ngFor="let dasboarditem of items"  style="margin-top: 20px;width: 200px;">
-            <div class="card" *ngIf="dasboarditem.columnNumber == colomnNr">
-              <app-dashboard-item 
-                [dashboardItem]="dasboarditem"   
-              />
-            </div>
-          </div> 
+          @for(dasboarditem of items; track dasboarditem.id ){
+            @if(dasboarditem.columnNumber == colomnNr && dasboarditem.visible==true)
+            {
+              <app-dashboard-item [dashboardItem]="dasboarditem"  />
+            }
+          }
         </div>
       }
-    </div>
+  </div>
 </div>
   
 

@@ -6,7 +6,8 @@ import {DashboardItem} from '../../models/dashboardItem.model'
       itemName:'Students',
       itemCount:506,
       columnNumber: 1,
-      url:'/students'
+      url:'/students',
+      visible:true
     },
     {
       id:2,
@@ -14,7 +15,8 @@ import {DashboardItem} from '../../models/dashboardItem.model'
       columnNumber: 1,
       itemCount:56,
       color:'red',
-      url:'/teachers'
+      url:'/teachers',
+      visible:true
     },
     {
       id:3,
@@ -22,7 +24,8 @@ import {DashboardItem} from '../../models/dashboardItem.model'
       columnNumber: 3,
       itemCount:99,
       color:'green',
-      url:'/courses'
+      url:'/courses',
+      visible:true
     },
     {
       id:4,
@@ -30,7 +33,8 @@ import {DashboardItem} from '../../models/dashboardItem.model'
       columnNumber: 2,
       itemCount:20,
       color:'blue',
-      url:'/exams'
+      url:'/exams',
+      visible:true
     },
     {
       id:5,
@@ -38,6 +42,7 @@ import {DashboardItem} from '../../models/dashboardItem.model'
       columnNumber: 2,
       itemCount: 4,
       color:'blue',
-      url:'/examresults'
+      url:'/examresults',
+      visible:true
     },
 ]
