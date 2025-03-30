@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Teacher } from '../../models/teacher.model';
-import { TeacherService } from '../../Services/teacher.service'
+import { Teacher } from '../models/teacher.model';
+import { TeacherService } from '../services/teacher.service'
 import { Router,ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 

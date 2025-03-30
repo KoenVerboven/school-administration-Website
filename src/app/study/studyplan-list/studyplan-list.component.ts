@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { StudyPlan } from '../../models/studyPlan.model';
-import { StudyplanService } from '../../Services/studyplan.service'; 
+import { StudyPlan } from '../models/studyPlan.model';
+import { StudyplanService } from '../services/studyplan.service'; 
 import { CommonModule } from '@angular/common';
 import { Router , RouterModule} from '@angular/router';
 
