@@ -1,9 +1,21 @@
 
 <p class="text-center h5" >Students</p>
-<input id="framework" type="text" style="width:400px;margin-right: 16px;" placeholder="Type student name" (keyup.enter)= "getStudents()"  [(ngModel)]="searchName" /> 
-<button class="btn btn-primary"   type="button" (click)="getStudents()">Search</button>
-<br/>
-<a routerLink="/createstudent">Create Student</a>
+
+  <mat-form-field class="example-form-field" appearance="outline" style="width:400px;margin-right: 16px;float:left;">
+    <mat-label>Search on student name</mat-label>
+    <input matInput type="text" (keyup.enter)= "getStudents()"   [(ngModel)]="searchName">
+    @if (searchName) {
+      <button matSuffix mat-icon-button aria-label="Clear" (click)="searchName=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    }
+  </mat-form-field>
+  <button class="btn btn-primary" style="float:left "  type="button" (click)="getStudents()"><i class="bi bi-search"></i>  Search</button>
+
+ <br/><br/><br/><br/>
+  <a routerLink="/createstudent">Create Student</a>
+
+
 <table class="table table-sm table-hover">
     <thead>
        <tr>

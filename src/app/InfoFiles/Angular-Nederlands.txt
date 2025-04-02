@@ -576,6 +576,19 @@ UPDATE angular.json (3050 bytes)
 UPDATE src/index.html (545 bytes)
 UPDATE src/styles.css (171 bytes)
 
+INSTALLING bootstrap Icons:
+----------------------------
+cmd prompt : run :
+npm i bootstrap-icons
+
+angular.json:
+add :
+    "styles": 
+              "@angular/material/prebuilt-themes/azure-blue.css",
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/bootstrap-icons/font/bootstrap-icons.css"  <-------
+
 
 
 

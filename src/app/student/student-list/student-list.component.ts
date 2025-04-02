@@ -5,10 +5,15 @@ import { StudentService } from '../services/student.service';
 import { CommonModule } from '@angular/common';
 import { Router , RouterModule} from '@angular/router';
 
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+
 @Component({
   selector: 'student-list',
   standalone: true,
-  imports: [CommonModule,RouterModule,FormsModule],
+  imports: [CommonModule,RouterModule,FormsModule,MatFormFieldModule, MatInputModule, FormsModule, MatButtonModule, MatIconModule],
   templateUrl: './student-list.component.html',
   styleUrl: './student-list.component.css'
 })
