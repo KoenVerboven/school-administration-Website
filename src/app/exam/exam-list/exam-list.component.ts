@@ -14,6 +14,7 @@ import { Router , RouterModule} from '@angular/router';
 })
 export class ExamListComponent {
   exams: Exam[] = [];
+  examsCount = 0;
 
   constructor(private examService: ExamService, private router: Router){}
 
@@ -25,6 +26,7 @@ export class ExamListComponent {
   {
       this.examService.getExams().subscribe((data: Exam[]) =>{
         this.exams = data;
+        this.examsCount = this.exams.length;
         console.log(data);
       });
   }

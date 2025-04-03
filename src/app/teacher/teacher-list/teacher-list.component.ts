@@ -13,6 +13,7 @@ import { Router , RouterModule} from '@angular/router';
 })
 export class TeacherListComponent {
 teachers: Teacher[] = [];
+teachersCount = 0;
 
   constructor(private teacherService: TeacherService, private router: Router){}
 
@@ -21,12 +22,13 @@ teachers: Teacher[] = [];
   }
  
   showTeacherDetail(id: number): void{
-    this.router.navigate(['/teacherdetail/detail', id])
+    this.router.navigate(['/teacherdetail/detail', id]) 
   }
 
   getTeachers(sort: string){
     this.teacherService.getTeachersSort(sort).subscribe((data: Teacher[]) =>{
       this.teachers = data;
+      this.teachersCount = this.teachers.length;
       console.log(data);
   });
   }

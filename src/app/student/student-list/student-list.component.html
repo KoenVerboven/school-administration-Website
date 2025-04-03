@@ -1,7 +1,5 @@
-
 <p class="text-center h5" >Students</p>
-
-  <mat-form-field class="example-form-field" appearance="outline" style="width:400px;margin-right: 16px;float:left;">
+<mat-form-field class="example-form-field" appearance="outline" style="width:400px;margin-right: 16px;float:left;">
     <mat-label>Search on student name</mat-label>
     <input matInput type="text" (keyup.enter)= "getStudents()"   [(ngModel)]="searchName">
     @if (searchName) {
@@ -11,31 +9,38 @@
     }
   </mat-form-field>
   <button class="btn btn-primary" style="float:left "  type="button" (click)="getStudents()"><i class="bi bi-search"></i>  Search</button>
-
- <br/><br/><br/><br/>
-  <a routerLink="/createstudent">Create Student</a>
-
-
-<table class="table table-sm table-hover">
-    <thead>
-       <tr>
-         <th class="p-2">Id</th>
-         <th class="p-2">Name</th>
-         <th class="p-2">Phone</th>       
-         <th class="p-2">Email</th>       
-      </tr>
-    </thead>
-    <tbody>
-        @for(student of students; track student.id){
-          <tr (click)="showStudentDetail(student.id)" class="cell-hoverCursor">   
-            <td>{{student.id}}</td>        
-            <td>{{student.lastName}} {{student.firstName}}</td>  
-            <td>{{student.phone}}</td>
-            <td>{{student.email}}</td>
-          </tr>
-        }
-    </tbody>
-</table>
+  <br/><br/><br/><br/>
+  <div style="float:left;"><a routerLink="/createstudent"><i class="bi bi-plus"></i> Add Student</a></div>
+  @if(studentsCount > 0){
+    <div style="float:right;">  {{studentsCount}} students found. </div>
+  }
+  <br/>
+  @if(studentsCount > 0)
+  {
+    <table class="table table-sm table-hover">
+      <thead>
+         <tr>
+           <th class="p-2">Id</th>
+           <th class="p-2">Name</th>
+           <th class="p-2">Phone</th>       
+           <th class="p-2">Email</th>       
+        </tr>
+      </thead>
+      <tbody>
+          @for(student of students; track student.id){
+            <tr (click)="showStudentDetail(student.id)" class="cell-hoverCursor">   
+              <td>{{student.id}}</td>        
+              <td>{{student.lastName}} {{student.firstName}}</td>  
+              <td>{{student.phone}}</td>
+              <td>{{student.email}}</td>
+            </tr>
+          }
+      </tbody>
+    </table>
+  }
+ @if(studentsCount == 0) {
+    <h4>No Students found with name like '{{searchName}}'.</h4>
+  }
 
 
 

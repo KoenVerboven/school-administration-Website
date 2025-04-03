@@ -37,4 +37,9 @@ export class StudentService {
     return this.http.put<Student>(`${this.apiUrl}/${student.id}`,student);
   }
 
+  getStudentCount()
+  {
+    return this.http.get<number>(`${this.apiUrl}/getStudentCount}`)
+  }
+
 }

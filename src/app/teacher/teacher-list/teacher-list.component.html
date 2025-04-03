@@ -1,5 +1,6 @@
 <p class="text-center h5" >Teachers</p>
-<a routerLink="/createteacher">Create Teacher</a>
+<div style="float:left;"><a routerLink="/createteacher"><i class="bi bi-plus"></i> Add Teacher</a></div>
+<div style="float:right;">  {{teachersCount}} teachers found. </div>
 <table class="table table-sm  table-hover" style="overflow:hidden; border-radius:5px;">
     <thead>
        <tr class="cell-hoverCursor">
@@ -12,7 +13,7 @@
     <tbody>
         @for(teacher of teachers; track teacher.id){  
             <tr  (click)="showTeacherDetail(teacher.id)" class="cell-hoverCursor" >      
-                <td >{{teacher.id}}</td>        
+                <td>{{teacher.id}}</td>        
                 <td>{{teacher.lastName}} {{teacher.firstName}}</td>      
                 <td>{{teacher.phone}}</td>
                 <td>{{teacher.email}}</td>

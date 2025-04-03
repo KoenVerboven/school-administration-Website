@@ -15,6 +15,7 @@ export class CourseListComponent implements OnInit{
 
   courses : Course[] =[]
   PageTitle: string = "Courses list"
+  coursesCount = 0;
 
   constructor(private courseService : CourseService, private router: Router){}
 
@@ -24,7 +25,7 @@ export class CourseListComponent implements OnInit{
   
   getCourses():void{
     this.courseService.getCourses()
-    .subscribe(coursesFromApi => this.courses = coursesFromApi);
+    .subscribe(coursesFromApi => {this.courses = coursesFromApi; this.coursesCount = this.courses.length;}) 
   }
   
   showCourseDetail(id: number): void{

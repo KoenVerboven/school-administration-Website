@@ -14,6 +14,7 @@ import { Router , RouterModule} from '@angular/router';
 })
 export class StudyplanListComponent {
   studyPlans: StudyPlan[] = [];
+  studyPlansCount = 0;
 
   constructor(private studyplanService: StudyplanService, private router: Router){}
 
@@ -29,6 +30,7 @@ export class StudyplanListComponent {
   {
       this.studyplanService.getStudyPlans().subscribe((data: StudyPlan[]) =>{
         this.studyPlans = data;
+        this.studyPlansCount = this.studyPlans.length;
         console.log(data);
       });
   }

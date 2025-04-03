@@ -21,6 +21,7 @@ export class StudentListComponent {
  
   students: Student[] = [];
   searchName: string = '';
+  studentsCount = -1;
 
   constructor(private studentService: StudentService, private router: Router){}
 
@@ -36,6 +37,7 @@ export class StudentListComponent {
   {
     this.studentService.getStudentByNameStartWith(this.searchName).subscribe((data: Student[]) =>{
       this.students = data;
+      this.studentsCount = this.students.length;
       console.log(data);
     });
   }

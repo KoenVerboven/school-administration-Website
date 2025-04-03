@@ -1,12 +1,21 @@
 
 * {
     font-family:  Arial,Helvetica, sans-serif;
-  }
-
-
-
-
-
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+}
+html, body { 
+  height: 100%; 
+}
+body { 
+  margin: 0;
+  font-family: Roboto,"Helvetica Neue", sans-serif; 
+}
+.header{
+  background-color: rgb(45, 190, 216);
+}
+.cell-hoverCursor:hover{
+  cursor: pointer;
+}
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color:black;
+  color:white;
+}
