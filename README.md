@@ -6,38 +6,24 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+# Back-end :
+https://github.com/KoenVerboven/SchoolAdministrationApi
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Screenshots :
 
-## Build
+![dashboard](https://github.com/user-attachments/assets/11e7097a-a597-4b00-a281-79218facdc63)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+![searchStudents](https://github.com/user-attachments/assets/770478ec-9a36-4365-a4a2-ae8bf8edc6ae)
 
-## Running unit tests
+![studentDetail](https://github.com/user-attachments/assets/2bd4118b-dd66-4b42-8209-712d67ff274e)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+![updateStudent](https://github.com/user-attachments/assets/35170b4d-161c-474d-b425-aa81edc85fb6)
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-
-## Screenshots
+![examResults](https://github.com/user-attachments/assets/5c7525e3-776b-482c-8158-e6fde85d3f31)
 
 
-![dashBoard](https://github.com/user-attachments/assets/95943ffb-3a33-4894-bd85-18bc0034a64f)
 
-![students](https://github.com/user-attachments/assets/0ade6449-82bf-40cd-a57b-b5cef44840e2)
 
-![studentDetail](https://github.com/user-attachments/assets/cff10c97-4d7c-4f90-91a9-aca5021be370)
-
-![updateStudent](https://github.com/user-attachments/assets/6c233c7d-701f-4eaf-87a8-e501c46b14fa)
-
-![examResults](https://github.com/user-attachments/assets/b9a3f195-44d8-4736-81d5-3727eaffdd56)
 
 ![Schermafbeelding 2025-03-29 092952](https://github.com/user-attachments/assets/f37629df-1b0c-417c-8c60-0e18e459503a)
 
