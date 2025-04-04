@@ -1,0 +1,68 @@
+<div class="sidebar" [ngClass]="{ 'expanded': isExpanded }">
+    <div class="header">
+      <h1 class="title">
+        Menu
+      </h1>
+      <div class="toggle" (click)="handleSidebarToggle()">
+        <span class="chevron"></span>
+      </div>
+    </div>
+    <div class="content">
+      <div class="link">
+        <div class="content" [routerLink]="['dashbord']" [routerLinkActive]="'active'">
+          <div class="icon">
+            <i class="bi bi-house"></i>
+          </div>
+          <div class="title">Home</div>
+        </div>
+      </div>
+      <div class="link">
+        <div class="content" [routerLink]="['students']" [routerLinkActive]="'active'">
+          <div class="icon">
+            <i class="bi bi-person"></i>
+          </div>
+          <div class="title">Students</div>
+        </div>
+      </div>
+      <div class="link">
+        <div class="content" [routerLink]="['teachers']" [routerLinkActive]="'active'">
+          <div class="icon">
+            <i class="bi bi-person"></i>
+          </div>
+          <div class="title">Teachers</div>
+        </div>
+      </div>
+      <div class="link">
+        <div class="content" [routerLink]="['courses']" [routerLinkActive]="'active'">
+          <div class="icon">
+            <i class="bi bi-person"></i>
+          </div>
+          <div class="title">Courses</div>
+        </div>
+      </div>
+      <div class="link">
+        <div class="content" [routerLink]="['exams']" [routerLinkActive]="'active'">
+          <div class="icon">
+            <i class="bi bi-card-list"></i>
+          </div>
+          <div class="title">Exams</div>
+        </div>
+      </div>
+      <div class="link">
+        <div class="content" [routerLink]="['examresults']" [routerLinkActive]="'active'">
+          <div class="icon">
+            <i class="bi bi-card-list"></i>
+          </div>
+          <div class="title">Exam results</div>
+        </div>
+      </div>
+      <div class="link">
+        <div class="content" [routerLink]="['studyplans']" [routerLinkActive]="'active'">
+          <div class="icon">
+            <i class="bi bi-card-list"></i>
+          </div>
+          <div class="title">Study plans</div>
+        </div>
+      </div>
+    </div>
+  </div>
