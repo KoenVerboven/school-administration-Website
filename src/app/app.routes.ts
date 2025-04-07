@@ -20,7 +20,7 @@ import { DashboardItemComponent } from './dashboard/dashboard-item/dashboard-ite
 
 export const routes: Routes = [
     {path: '', component: DashboardListComponent},
-    {path: 'dashbord', redirectTo: '', pathMatch:'full'},
+    {path: 'dashbord',component:DashboardListComponent},
     {path: 'dashbordtem', redirectTo: '', component:DashboardItemComponent},
     {path: 'students',component:StudentListComponent},
     {path: 'createstudent', component: StudentFormComponent},

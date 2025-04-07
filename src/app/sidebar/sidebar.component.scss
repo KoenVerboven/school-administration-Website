@@ -43,7 +43,7 @@
         }
       }
     }
-    background: #151620;
+    background: #42434d;
     color: #babbcd;
   
     .header {
@@ -51,11 +51,11 @@
       align-items: center;
       justify-content: center;
       padding: 10px;
-      background: #0f1017;
+      background:  #42434d;
   
       h1 {
         font-size: 20px;
-        color: #6d6e7e;
+        color: #e5e6f3;
         margin: 0;
         flex: 1;
         transition: 0.5s;
@@ -63,7 +63,7 @@
       }
   
       .chevron {
-        color: #6d6e7e;
+        color: #c2c3ce;
         cursor: pointer;
         transition: 0.3s;
         margin-left: -25px;

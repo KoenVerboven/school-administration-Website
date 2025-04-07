@@ -1,8 +1,9 @@
- <div  id=fullheight style="background-color:#ddd;min-height: 110vh;">
-
-  <app-sidebar [isExpanded]="sidebarExpanded" (toggleSidebar)="sidebarExpanded = !sidebarExpanded"></app-sidebar>
-  <div class="content" [ngClass]="{ 'sidebarExpanded': sidebarExpanded }" >
-    <router-outlet></router-outlet>
+ <div  id=fullheight style="background-color:hsl(0, 0%, 87%);min-height: 110vh;">
+  <div style="height: 40px;background-color: rgb(99,99,99);color:white;">
+    <div style="float: right;margin-right:50px ;">Login</div>
   </div>
-
+    <app-sidebar [isExpanded]="sidebarExpanded" (toggleSidebar)="sidebarExpanded = !sidebarExpanded"></app-sidebar>
+    <div class="content" [ngClass]="{ 'sidebarExpanded': sidebarExpanded }" style="margin-right: 30px;" >
+      <router-outlet></router-outlet>
+    </div>
   </div>
