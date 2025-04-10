@@ -1,9 +1,20 @@
 .content {
     margin-left: 100px;
+    margin-right: 30px;
     transition: 0.5s;
     &.sidebarExpanded {
       margin-left: 250px;
     }
+  }
+  #signIn{
+    float: right;margin-right:50px ; margin-top:7px; color:white
+  }
+  #fullheight
+  {
+    background-color:hsl(0, 0%, 87%);min-height: 110vh;
+  }
+  #header{
+    height: 40px;background-color: rgb(99,99,99);color:white;
   }
   
 

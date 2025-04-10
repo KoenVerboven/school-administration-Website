@@ -1,0 +1,19 @@
+<br>
+<h6 style="background-color: #779;color:white;padding-left: 20px;">Preparations for exam 14 june 2025</h6>
+<div>
+    <h6>  Week:12  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       7 april 2025 to 11 april 2025</h6>  <button>previous week</button>&nbsp;<button>next week</button>
+</div>
+<br/>
+<table class="table table-sm">
+    <tbody>
+        @for(studyplandetail of items; track studyplandetail.id) {
+            <tr>
+                <td style="padding-left: 10px;">{{studyplandetail.startDateTime | date :'EEEE'}}</td>  
+                <td>{{studyplandetail.startDateTime | date: 'dd/MM'}}</td>
+                <td>{{studyplandetail.startDateTime | date:'shortTime'}} to {{studyplandetail.endDateTime | date:'shortTime'}}</td>
+                <td>{{studyplandetail.studySubject}}</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

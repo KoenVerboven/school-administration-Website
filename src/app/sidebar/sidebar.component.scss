@@ -18,7 +18,7 @@
     transition: 0.3s;
     width: 70px;
     &.expanded {
-      width: 200px;
+      width: 240px;
       .header {
         h1 {
           margin-left: 0px;
@@ -34,7 +34,7 @@
         .link {
           .content {
             .title {
-              max-width: 100px;
+              max-width: 220px;
             }
             .icon {
               margin-right: 4px;

@@ -17,6 +17,7 @@ import { ResetPasswordFormComponent } from './user/reset-password-form/reset-pas
 import { ChangePasswordFormComponent } from './user/change-password-form/change-password-form.component';
 import { CheckYourEmailFormComponent } from './user/check-your-email-form/check-your-email-form.component';
 import { DashboardItemComponent } from './dashboard/dashboard-item/dashboard-item.component';
+import {StudyplanDetailListComponent} from  './study/studyplan-detail-list/studyplan-detail-list.component';    
 
 export const routes: Routes = [
     {path: '', component: DashboardListComponent},
@@ -41,5 +42,6 @@ export const routes: Routes = [
     {path: 'login',component:LoginFormComponent},
     {path: 'resetpassword',component:ResetPasswordFormComponent},
     {path: 'changepassword',component: ChangePasswordFormComponent},
-    {path: 'checkyouremail', component: CheckYourEmailFormComponent}
+    {path: 'checkyouremail', component: CheckYourEmailFormComponent},
+    {path: 'studyplandetail',component:StudyplanDetailListComponent},
 ];
