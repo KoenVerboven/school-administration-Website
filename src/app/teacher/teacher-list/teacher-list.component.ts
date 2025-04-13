@@ -29,7 +29,6 @@ teachersCount = 0;
     this.teacherService.getTeachersSort(sort).subscribe((data: Teacher[]) =>{
       this.teachers = data;
       this.teachersCount = this.teachers.length;
-      console.log(data);
   });
   }
 

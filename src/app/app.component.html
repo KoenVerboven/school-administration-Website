@@ -1,9 +1,11 @@
+<meta name="google-site-verification" content="ZzjLIH92ovuSGKH6C5FjjVc41M04tkZazOQdgbslOes" />
  <div  id="fullheight">
-  <div id="header">
-    <a href="login" id="signIn">Sign in</a>
-  </div>
+    <div id="header">
+       <div style="float:left;color:rgb(221, 224, 32);margin-left: 250px;font-size: 28px;margin-top:5px">Free University</div>
+       <a href="login" id="signIn">Sign in</a>
+    </div>
     <app-sidebar [isExpanded]="sidebarExpanded" (toggleSidebar)="sidebarExpanded = !sidebarExpanded"></app-sidebar>
     <div class="content" [ngClass]="{ 'sidebarExpanded': sidebarExpanded }">
-      <router-outlet></router-outlet>
+       <router-outlet></router-outlet>
     </div>
   </div>

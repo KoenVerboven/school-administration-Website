@@ -38,7 +38,6 @@ export class StudentListComponent {
     this.studentService.getStudentByNameStartWith(this.searchName).subscribe((data: Student[]) =>{
       this.students = data;
       this.studentsCount = this.students.length;
-      console.log(data);
     });
   }
 

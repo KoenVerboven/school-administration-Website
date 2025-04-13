@@ -28,7 +28,6 @@ export class ExamResultListComponent {
         this.examResultService.getStudentsExamResults().subscribe((data: ExamResult[]) =>{
           this.examResults = data;
           this.examResultsCount = this.examResults.length;
-          console.log(data);
         });
     }
 

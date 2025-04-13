@@ -1,11 +1,13 @@
-import { DateSelectionModelChange } from "@angular/material/datepicker";
-
 export interface StudyPlanDetail{
     id:number;
-    startDateTime:Date;
-    endDateTime:Date;
-    studySubject:string;
-    status:number;//kan null zijn
+    start:Date;
+    end:Date;
+    goalDescription:string;
+    status:number;
+    remarks:string;
+    studyObjectiveArchievedInProcent:number;
+    studyPlanId:number;
+    courseId:number;
 }
 
 //studyplan kan ook linken bevatten naar paginas met lessen of oefeninge of huiswerk

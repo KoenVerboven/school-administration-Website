@@ -27,7 +27,6 @@ export class ExamListComponent {
       this.examService.getExams().subscribe((data: Exam[]) =>{
         this.exams = data;
         this.examsCount = this.exams.length;
-        console.log(data);
       });
   }
 
