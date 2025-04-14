@@ -8,6 +8,18 @@
     <button (click)="showNext()" style="margin-left: 20px;"><i class="bi bi-arrow-right"></i></button>
 </div>
 <br/>
+
+<div style="background-color: red;color:white; padding-left: 20px;">{{errors}}</div>
+
+@if(loading)
+{
+    <div style="margin-left: 200px;">
+        <div fxLayout="row" fxLayoutAlign="space-around center" style="height:100%;">
+            <mat-spinner diameter="70" strokeWidth="5"></mat-spinner>
+       </div>
+       <div>loading</div> 
+    </div>
+}
 @if(studyplanDetailsCount > 0)
 {
     <table class="table table-sm">
@@ -22,9 +34,11 @@
         </tbody>
     </table>
 }
-@else{
+@if(studyplanDetailsCount == 0){
     <h6>No studyplan items found for {{ studyDate | date :'dd/MM/yyyy'}} </h6>
 }
+
+
 
 
 

@@ -13,12 +13,16 @@ export class StudyplandetailService {
     
     constructor(private http: HttpClient) { }
   
-    getStudyPlanDetails(startDate : Date): Observable<StudyPlanDetail[]>{
-      return this.http.get<StudyPlanDetail[]>(`${this.apiUrl}/${startDate}`)
+    getStudyPlanDetailsFilter(): Observable<StudyPlanDetail[]>{
+      return this.http.get<StudyPlanDetail[]>(`${this.apiUrl}/getStudyplanPartsFilter`)
     }
 
-    //getStudyPlanDetails(): Observable<StudyPlanDetail[]>{
-    //  return this.http.get<StudyPlanDetail[]>(this.apiUrl)
+    //getStudyPlanDetailsFilter(startDate : Date): Observable<StudyPlanDetail[]>{
+    //  return this.http.get<StudyPlanDetail[]>(`${this.apiUrl}/getStudyplanPartsFilter${startDate}`)
     //}
+
+    getStudyPlanDetails(): Observable<StudyPlanDetail[]>{
+      return this.http.get<StudyPlanDetail[]>(this.apiUrl)
+    }
   
   }

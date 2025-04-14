@@ -4,61 +4,66 @@ import { StudyplandetailService} from '../services/studyplandetail.service'
 import { Router , RouterModule} from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { StudyPlanDetail } from '../models/studyPlanDetail.model';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-studyplan-detail-list',
   standalone: true,
-  imports: [CommonModule,RouterModule,FormsModule],
+  imports: [CommonModule,RouterModule,FormsModule, MatProgressSpinnerModule],
   templateUrl: './studyplan-detail-list.component.html',
   styleUrl: './studyplan-detail-list.component.css'
 })
 export class StudyplanDetailListComponent {
     
   studyplansDetails: StudyPlanDetail[] = [];
-  studyplanDetailsCount = 0;
+  studyplanDetailsCount = -1;
   studyDate = new Date();
+  loading = false;
+  errors: any;
 
   constructor(private studyplandetailService: StudyplandetailService, private router: Router){}
 
   ngOnInit(){
-      this.getStudyPlanDetails();
+    this.getStudyPlanDetails();
   }
 
   getStudyPlanDetails()
   {
-    alert(this.studyDate);  
-    this.studyplandetailService.getStudyPlanDetails(this.studyDate).subscribe((data: StudyPlanDetail[]) =>{
-        this.studyplansDetails = data;
-        this.studyplanDetailsCount = this.studyplansDetails.length;
-      });
+    this.loading = true;
+    this.studyplandetailService.getStudyPlanDetailsFilter().subscribe((
+      data: StudyPlanDetail[]) =>{
+          this.studyplansDetails = data;
+          this.studyplanDetailsCount = this.studyplansDetails.length;
+          this.loading = false;
+      },
+      error => {
+        this.errors = 'Error : ' + error;
+        console.log(error);
+        this.loading = false;
+      },
+      () => {
+        // 'onCompleted' callback.
+      }
+    );
   }
 
   showCurrent()
   {
     this.studyDate = new Date();
-    this.studyplandetailService.getStudyPlanDetails(this.studyDate).subscribe((data: StudyPlanDetail[]) =>{
-      this.studyplansDetails = data;
-      this.studyplanDetailsCount = this.studyplansDetails.length;
-    });
+    this.getStudyPlanDetails();
   }
 
   showPrevious()
   {
  
     this.studyDate = new Date(this.studyDate.setDate(this.studyDate.getDate() - 1)) ;
-    this.studyplandetailService.getStudyPlanDetails(this.studyDate).subscribe((data: StudyPlanDetail[]) =>{
-      this.studyplansDetails = data;
-      this.studyplanDetailsCount = this.studyplansDetails.length;
-    });
+    this.getStudyPlanDetails();
   }
 
   showNext()
   {
     this.studyDate = new Date(this.studyDate.setDate(this.studyDate.getDate() + 1)) ;
-    this.studyplandetailService.getStudyPlanDetails(this.studyDate).subscribe((data: StudyPlanDetail[]) =>{
-      this.studyplansDetails = data;
-      this.studyplanDetailsCount = this.studyplansDetails.length;
-    });
+    this.getStudyPlanDetails();
   }
 
 }
