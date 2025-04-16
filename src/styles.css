@@ -16,3 +16,9 @@ body {
   background-color:rgb(178, 224, 250);
   color:black;
 }
+.errorLabel{
+  padding-left:20px;
+  width: 100%;
+  background-color:rgb(170, 6, 6);
+  color:white
+}

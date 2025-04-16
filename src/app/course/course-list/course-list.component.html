@@ -1,21 +1,39 @@
 <p class="text-center h5" >Courses</p>
-<div style="float:left;"><a routerLink="/createcourse"><i class="bi bi-plus"></i> Add Course</a></div>
-<div style="float:right;">  {{coursesCount}} courses found. </div>
-<table class="table table-sm  table-hover">
-    <thead>
-       <tr>
-         <th class="p-2">Id</th>
-         <th class="p-2">Name</th>
-         <th class="p-2">Code</th>
-        </tr>
-    </thead>
-    <tbody>
-        @for(course of courses;track course.id){
-            <tr (click)="showCourseDetail(course.id)" class="cell-hoverCursor">      
-                <td >{{course.id}}</td>        
-                <td >{{course.courseName}}</td> 
-                <td>{{course.courseCode}}</td>  
-            </tr>       
-        }
-    </tbody>
-</table>
+@if(error != "")
+{
+    <div class="errorLabel">{{error}}</div>
+}
+@if(loading)
+{
+    <div style="margin-left: 200px;">
+        <div fxLayout="row" fxLayoutAlign="space-around center" style="height:100%;">
+            <mat-spinner diameter="70" strokeWidth="5"></mat-spinner>
+       </div>
+       <div>loading</div> 
+    </div>
+}
+@if(error == "" && !loading)
+{
+    <div style="float:left;"><a routerLink="/createcourse"><i class="bi bi-plus"></i> Add Course</a></div>
+    <div style="float:right;">  {{coursesCount}} courses found. </div>
+    <table class="table table-sm  table-hover">
+        <thead>
+           <tr>
+             <th class="p-2">Id</th>
+             <th class="p-2">Name</th>
+             <th class="p-2">Code</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(course of courses;track course.id){
+                <tr (click)="showCourseDetail(course.id)" class="cell-hoverCursor">      
+                    <td >{{course.id}}</td>        
+                    <td >{{course.courseName}}</td> 
+                    <td>{{course.courseCode}}</td>  
+                </tr>       
+            }
+        </tbody>
+    </table>
+}
+
+

@@ -1,22 +1,40 @@
 <p class="text-center h5" >StudyPlans</p>
-<div style="float:left;"><a routerLink="/createstudyplan"><i class="bi bi-plus"></i> Add Studyplan</a></div>
-<div style="float:right;">  {{studyPlansCount}} studyplans found. </div>
+@if(error != "")
+{
+    <div class="errorLabel">{{error}}</div>
+}
+@if(loading)
+{
+  <div style="margin-left: 200px;">
+    <div fxLayout="row" fxLayoutAlign="space-around center" style="height:100%;">
+      <mat-spinner diameter="70" strokeWidth="5"></mat-spinner>
+    </div>
+    <div>loading</div> 
+  </div>
+}
+@if(error == "" && !loading)
+{
+  <div style="float:left;"><a routerLink="/createstudyplan"><i class="bi bi-plus"></i> Add Studyplan</a></div>
+  <div style="float:right;">  {{studyPlansCount}} studyplans found. </div>
+  
+  <table class="table table-sm table-hover">
+      <thead>
+         <tr>
+           <th class="p-2">Id</th>
+           <th class="p-2">Name</th>
+           <th class="p-2">StudentId</th>       
+        </tr>
+      </thead>
+      <tbody>
+        @for(studyPlan of studyPlans; track studyPlan.id){
+          <tr (click)="showStudyPlanDetail(studyPlan.id)"  class="cell-hoverCursor">      
+            <td>{{studyPlan.id}}</td>        
+            <td>{{studyPlan.name}}</td> 
+            <td>{{studyPlan.studentId}}</td>
+         </tr>  
+        }  
+      </tbody>
+  </table>
+}
 
-<table class="table table-sm table-hover">
-    <thead>
-       <tr>
-         <th class="p-2">Id</th>
-         <th class="p-2">Name</th>
-         <th class="p-2">StudentId</th>       
-      </tr>
-    </thead>
-    <tbody>
-      @for(studyPlan of studyPlans; track studyPlan.id){
-        <tr (click)="showStudyPlanDetail(studyPlan.id)"  class="cell-hoverCursor">      
-          <td>{{studyPlan.id}}</td>        
-          <td>{{studyPlan.name}}</td> 
-          <td>{{studyPlan.studentId}}</td>
-       </tr>  
-      }  
-    </tbody>
-</table>
+

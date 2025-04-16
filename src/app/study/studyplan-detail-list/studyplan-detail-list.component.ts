@@ -19,7 +19,7 @@ export class StudyplanDetailListComponent {
   studyplanDetailsCount = -1;
   studyDate = new Date();
   loading = false;
-  errors: any;
+  error = '';
 
   constructor(private studyplandetailService: StudyplandetailService, private router: Router){}
 
@@ -37,12 +37,9 @@ export class StudyplanDetailListComponent {
           this.loading = false;
       },
       error => {
-        this.errors = 'Error : ' + error;
-        console.log(error);
+        this.error = 'An error has occurred. Please try again later.';
+        console.log(error.message);
         this.loading = false;
-      },
-      () => {
-        // 'onCompleted' callback.
       }
     );
   }
@@ -55,7 +52,6 @@ export class StudyplanDetailListComponent {
 
   showPrevious()
   {
- 
     this.studyDate = new Date(this.studyDate.setDate(this.studyDate.getDate() - 1)) ;
     this.getStudyPlanDetails();
   }

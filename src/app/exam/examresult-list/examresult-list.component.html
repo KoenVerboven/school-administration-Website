@@ -1,22 +1,39 @@
 <p class="text-center h5" >ExamResults</p>
-<div style="float:right;">  {{examResultsCount}} exam results found. </div>
-<table class="table table-sm">
-    <thead>
-       <tr>
-         <th class="p-2">Student Name</th>
-         <th class="p-2">Email</th>  
-         <th class="p-2">ExamName</th>   
-         <th class="p-2">Score</th>    
-      </tr>
-    </thead>
-    <tbody>
-      @for(examResult of examResults; track examResult.id){
-        <tr class="cell-hoverCursor">      
-          <td>{{examResult.studentLastName}} {{examResult.studentFirstName}}</td> 
-          <td>{{examResult.studentEmail}}</td>   
-          <td>{{examResult.examName}}</td>   
-          <td [ngClass]="(examResult.examenResult >= examResult.minScoreToPassExam)?'bordergreen':'borderred'">{{examResult.examenResult}} / {{examResult.maxScore}}</td>      
-       </tr>  
-      }
-    </tbody>
-</table>
+@if(error != "")
+{
+    <div class="errorLabel">{{error}}</div>
+}
+@if(loading)
+{
+  <div style="margin-left: 200px;">
+    <div fxLayout="row" fxLayoutAlign="space-around center" style="height:100%;">
+      <mat-spinner diameter="70" strokeWidth="5"></mat-spinner>
+    </div>
+    <div>loading</div> 
+  </div>
+}
+@if(error == "" && !loading)
+{
+  <div style="float:right;">  {{examResultsCount}} exam results found. </div>
+  <table class="table table-sm">
+      <thead>
+         <tr>
+           <th class="p-2">Student Name</th>
+           <th class="p-2">Email</th>  
+           <th class="p-2">ExamName</th>   
+           <th class="p-2">Score</th>    
+        </tr>
+      </thead>
+      <tbody>
+        @for(examResult of examResults; track examResult.id){
+          <tr class="cell-hoverCursor">      
+            <td>{{examResult.studentLastName}} {{examResult.studentFirstName}}</td> 
+            <td>{{examResult.studentEmail}}</td>   
+            <td>{{examResult.examName}}</td>   
+            <td [ngClass]="(examResult.examenResult >= examResult.minScoreToPassExam)?'bordergreen':'borderred'">{{examResult.examenResult}} / {{examResult.maxScore}}</td>      
+         </tr>  
+        }
+      </tbody>
+  </table>
+}
+

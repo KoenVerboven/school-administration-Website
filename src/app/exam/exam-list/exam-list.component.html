@@ -1,21 +1,38 @@
 <p class="text-center h5" >Exams</p>
-<div style="float:left;"><a routerLink="/createxam"><i class="bi bi-plus"></i> Add Exam</a></div>
-<div style="float:right;">  {{examsCount}} exams found. </div>
-<table class="table table-sm table-hover">
-    <thead>
-       <tr>
-         <th class="p-2">Id</th>
-         <th class="p-2">Title</th>
-         <th class="p-2">Date</th>       
-      </tr>
-    </thead>
-    <tbody>
-      @for(exam of exams; track exam.id){
-        <tr (click)="showExamDetail(exam.id)" class="cell-hoverCursor">      
-          <td>{{exam.id}}</td>        
-          <td>{{exam.examTitle}}</td> 
-          <td>{{exam.examenDate}}</td>
-       </tr>      
-      }
-    </tbody>
-</table>
+@if(error != "")
+{
+    <div class="errorLabel">{{error}}</div>
+}
+@if(loading)
+{
+  <div style="margin-left: 200px;">
+    <div fxLayout="row" fxLayoutAlign="space-around center" style="height:100%;">
+      <mat-spinner diameter="70" strokeWidth="5"></mat-spinner>
+    </div>
+    <div>loading</div> 
+  </div>
+}
+@if(error == "" && !loading)
+{
+  <div style="float:left;"><a routerLink="/createxam"><i class="bi bi-plus"></i> Add Exam</a></div>
+  <div style="float:right;">  {{examsCount}} exams found. </div>
+  <table class="table table-sm table-hover">
+      <thead>
+         <tr>
+           <th class="p-2">Id</th>
+           <th class="p-2">Title</th>
+           <th class="p-2">Date</th>       
+        </tr>
+      </thead>
+      <tbody>
+        @for(exam of exams; track exam.id){
+          <tr (click)="showExamDetail(exam.id)" class="cell-hoverCursor">      
+            <td>{{exam.id}}</td>        
+            <td>{{exam.examTitle}}</td> 
+            <td>{{exam.examenDate}}</td>
+         </tr>      
+        }
+      </tbody>
+  </table>
+}
+
