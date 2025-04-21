@@ -1,23 +1,23 @@
 .dashboarditemStyle{
-    height:130px ;
-    width:300px;
-    border-radius: 6px;
+    height:8rem ;
+    width: 21rem;
+    border-radius: 0.5rem;
     box-shadow: 0 1px 6px black;
-    margin-top: 25px;
-    padding-top:10px;
-    padding-left:10px;
+    margin-top: 2rem;
+    padding-top:0.7rem;
+    padding-left:0.7rem;
 }
 .itemName{
-    font-size: 19px;
+    font-size: 1.1rem;
     font-weight: 500;
     color:white;
 }
 .itemCount{
-    margin-left: 20px;
+    margin-left: 2rem;
 }
 .buttonMoreInfo
 {
-    margin-top: 60px;
+    margin-top: 3rem;
     color:white;
     background-color: rgb(71, 68, 68)
 }

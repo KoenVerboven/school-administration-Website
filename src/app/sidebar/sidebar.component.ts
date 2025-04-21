@@ -12,6 +12,14 @@ import {RouterModule} from '@angular/router';
 export class SidebarComponent {
   @Input() isExpanded: boolean = false;
   @Output() toggleSidebar: EventEmitter<boolean> = new EventEmitter<boolean>();
+  //todo : replace hardcoded menu by a dynamic one.
+  studentsVisible: boolean = false;
+  teachersVisible: boolean = false;
+  coursesVisible:boolean = false;
+  examsVisible:boolean= false;
+  examResultsVisible: boolean = false;
+  studyPlansVisible:boolean=false;
+  mystudyplan:boolean=false;
 
   handleSidebarToggle = () => this.toggleSidebar.emit(!this.isExpanded);
 }

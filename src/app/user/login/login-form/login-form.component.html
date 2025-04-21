@@ -5,7 +5,7 @@
     <br/>
       <h4>Welcome</h4>
       <br/>
-    <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+    <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
       <input 
           type="text" 
           class="form-control"
@@ -32,6 +32,8 @@
               Sign in
       </button>
     </form>
+    <br/>
+    <div class="errorLabel">{{signInMessage}}</div>
     <br/>
     <a href="\resetpassword">Forgot password?</a>
     <br/>
