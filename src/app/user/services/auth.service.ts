@@ -12,15 +12,12 @@ import { ApiResponse } from '../models/apiResponse.model';
 
 export class AuthService {
 
-  private apiUrl = `${environment.apiUrl}/UserAuth/login`  
+  private apiUrl = `${environment.apiUrl}/user/login`  
     
   constructor(private http : HttpClient) { }
   
   userLogin(loginUser : LoginUser): Observable<ApiResponse>{
        return this.http.post<ApiResponse>(this.apiUrl,loginUser)
   }
-
- // userLogin(loginUser : LoginUser): Observable<AuthResponseData>{
- //   return this.http.post<AuthResponseData>(this.apiUrl,loginUser)
-  //}
+ 
 }

@@ -1,0 +1,71 @@
+<p class="text-center h5" >{{pageTitle}}</p>
+@if(errorMessage != '')
+{
+   <div  class="text-danger text-center">
+      {{errorMessage}}
+   </div>
+}
+@else
+{
+   <form (ngSubmit)="onSubmit()" [formGroup]="passwordForm"  class="border rounded p-4 w-50 mb-5 mx-auto">
+      <div class="formHeader">
+         <button class="btn btn-success headerButton" *ngIf="formAction != 'detail'" type="submit" >Save</button>
+         <button class="btn btn-warning"  *ngIf="formAction != 'detail'" type="button"  (click)="navigateBack()">Cancel</button>
+       </div>
+      <br />
+      <div class="mb-3">
+         <label class="form-label">Name *</label>
+         <input required  [disabled]=disableControls class="form-control" formControlName="name"   type="text"   [(ngModel)]="user.name" />
+         <div *ngIf="hasError('name', 'required')">
+            <p style="color: red">Name is required</p>
+        </div>
+      </div>
+      <div class="mb-3">
+         <label class="form-label">UserName *</label>
+         <input required  [disabled]=disableControls class="form-control" formControlName="userName"  type="text"   [(ngModel)]="user.userName" />
+         <div *ngIf="hasError('userName', 'required')">
+            <p style="color: red">UserName is required</p>
+        </div>
+      </div>
+      <div class="mb-3">
+          <!-- todo test valid email -->
+         <label class="form-label">Email</label>
+         <input  [disabled]=disableControls class="form-control" formControlName="email"  type="text"  [(ngModel)]="user.email" />
+      </div>
+      <div class="mb-3">
+         <label class="form-label">Password *</label>
+         <input required  [disabled]=disableControls class="form-control" formControlName="password"  type="text"   [(ngModel)]="user.password" />
+          <!-- Error messages for password field -->
+        <div *ngIf="hasError('password', 'required')">
+         <p style="color: red">Password is required</p>
+     </div>
+     <div *ngIf="hasError('password', 'minlength')">
+         <p style="color: red">Password must be at least 7 characters long</p>
+     </div>
+     <div *ngIf="hasError('password', 'uppercase')">
+         <p style="color: red">
+             Password must contain at least one uppercase letter
+         </p>
+     </div>
+     <div *ngIf="hasError('password', 'number')">
+         <p style="color: red">Password must contain at least one number</p>
+     </div>
+     <div *ngIf="hasError('password', 'specialCharacter')">
+         <p style="color: red">
+             Password must contain at least one special character
+         </p>
+     </div>
+      </div>
+      <div class="mb-3">
+         <!-- todo dropdown -->
+         <label class="form-label">Role *</label>
+         <input required  [disabled]=disableControls class="form-control" formControlName="role"  type="text"   [(ngModel)]="user.role" />
+         <div *ngIf="hasError('role', 'required')">
+            <p style="color: red">Role is required</p>
+        </div>
+      </div>
+   </form>
+  
+}
+
+

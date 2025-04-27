@@ -15,10 +15,11 @@ import { Router } from '@angular/router';
 export class ResetPasswordFormComponent {
   
   user:User={
+    name: '',
     userName:'',
     email:'',
     password:'',
-    newPassword:''
+    role:''
   }
 
   constructor( 
@@ -26,7 +27,6 @@ export class ResetPasswordFormComponent {
      ){}
  
   onSubmit():void{
-    //alert("submit");
     this.router.navigateByUrl('/checkyouremail')
   }
   

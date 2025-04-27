@@ -1,0 +1,44 @@
+<p class="text-center h5" >Users</p>
+@if(error != "")
+{
+    <div class="errorLabel">{{error}}</div>
+}
+@if(loading)
+{
+  <div style="margin-left: 200px;">
+    <div fxLayout="row" fxLayoutAlign="space-around center" style="height:100%;">
+      <mat-spinner diameter="70" strokeWidth="5"></mat-spinner>
+    </div>
+    <div>loading</div> 
+  </div>
+}
+@if(error == "" && !loading)
+{
+  <div style="float:left;"><a routerLink="/createuser"><i class="bi bi-plus"></i> Add User</a></div>
+  <div style="float:right;">  {{userCount}} users found. </div>
+  
+  <table class="table table-sm">
+      <thead>
+         <tr>
+           <th class="p-2">Name</th>
+           <th class="p-2">UserName</th>       
+        </tr>
+      </thead>
+      <tbody>
+        @for(user of users; track user.name){
+          <tr  class="cell-hoverCursor">      
+            <td>{{user.name}}</td> 
+            <td>{{user.userName}}</td>
+            <!-- 
+              <td>{{user.email}}</td>
+            <td>{{user.role}}</td>
+            
+            -->
+          </tr>  
+        }  
+      </tbody>
+  </table>
+}
+
+
+
