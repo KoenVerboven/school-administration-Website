@@ -57,7 +57,15 @@ export class LoginFormComponent {
     this.authService.userLogin(this.user) // correct login : username: maddy@test.be   password: Admin123+
       .subscribe({ 
         next: (data) =>{
-          console.log(data.result.role);
+          //console.log(data.result.role);
+          this.userDTO.name = data.result.user.name;
+          this.userDTO.userName = data.result.user.userName;
+          this.responseData = {
+            user: this.userDTO,
+            role:data.result.role,
+            token:data.result.token
+          }
+          this.authService.user.next(this.responseData);
           //alert(data.result.user.userName);
           //alert(data.result.role);
           //alert(data.result.token);

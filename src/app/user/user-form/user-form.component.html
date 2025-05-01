@@ -7,9 +7,9 @@
 }
 @else
 {
-   <form (ngSubmit)="onSubmit()" [formGroup]="passwordForm"  class="border rounded p-4 w-50 mb-5 mx-auto">
+   <form (ngSubmit)="onSubmit()" [formGroup]="userForm"  class="border rounded p-4 w-50 mb-5 mx-auto">
       <div class="formHeader">
-         <button class="btn btn-success headerButton" *ngIf="formAction != 'detail'" type="submit" >Save</button>
+         <button class="btn btn-success headerButton" *ngIf="formAction != 'detail'"  [disabled]="userForm.invalid"  type="submit" >Save</button>
          <button class="btn btn-warning"  *ngIf="formAction != 'detail'" type="button"  (click)="navigateBack()">Cancel</button>
        </div>
       <br />
@@ -31,6 +31,9 @@
           <!-- todo test valid email -->
          <label class="form-label">Email</label>
          <input  [disabled]=disableControls class="form-control" formControlName="email"  type="text"  [(ngModel)]="user.email" />
+         <div *ngIf="hasError('email', 'email')">
+            <p style="color: red">Email is not valid</p>
+        </div>
       </div>
       <div class="mb-3">
          <label class="form-label">Password *</label>
@@ -59,10 +62,18 @@
       <div class="mb-3">
          <!-- todo dropdown -->
          <label class="form-label">Role *</label>
-         <input required  [disabled]=disableControls class="form-control" formControlName="role"  type="text"   [(ngModel)]="user.role" />
+         <select  class="form-control" formControlName="role" [(ngModel)]="user.role" [disabled]=disableControls>  
+            <option value="">Select Role</option>
+            <option [ngValue]="role.Name"  *ngFor="let role of roleList">
+                 {{role.Name}}
+            </option>    
+        </select> 
+         
          <div *ngIf="hasError('role', 'required')">
             <p style="color: red">Role is required</p>
         </div>
+        
+       
       </div>
    </form>
   

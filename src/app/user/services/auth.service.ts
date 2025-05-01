@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
-import {Observable} from 'rxjs';
+import {BehaviorSubject, Observable, Subject} from 'rxjs';
 import { LoginUser } from '../models/loginUser.model';
 import { AuthResponseData } from '../models/authResponseData.model';
 import { ApiResponse } from '../models/apiResponse.model';
@@ -11,7 +11,7 @@ import { ApiResponse } from '../models/apiResponse.model';
 })
 
 export class AuthService {
-
+  public user = new Subject<AuthResponseData>();
   private apiUrl = `${environment.apiUrl}/user/login`  
     
   constructor(private http : HttpClient) { }

@@ -19,6 +19,6 @@ body {
 .errorLabel{
   padding-left:20px;
   width: 100%;
-  background-color:rgb(170, 6, 6);
-  color:white
+  color:rgb(253, 4, 4);
+  background-color:white
 }

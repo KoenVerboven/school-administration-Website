@@ -6,6 +6,7 @@ import { Router,ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators,} from '@angular/forms';
 import { CustomValidators } from '../customValidators';
+import { rolelistitems } from './mock-role-list';
 
 @Component({
   selector: 'app-user-form',
@@ -14,7 +15,7 @@ import { CustomValidators } from '../customValidators';
   templateUrl: './user-form.component.html',
   styleUrl: './user-form.component.css'
 })
-export class UserFormComponent {
+export class UserFormComponent implements OnInit {
   user : User= {
     name:'',
     userName:'',
@@ -29,10 +30,11 @@ export class UserFormComponent {
   errorMessage : string = "";
   pageTitle: string = "Add User";
   userId: string| null = '';
-  passwordForm: FormGroup;
+  userForm: FormGroup;
+  roleList : any;
 
   constructor(private userService : UserService, private router: Router, private route: ActivatedRoute, private fb: FormBuilder){
-    this.passwordForm = this.fb.group(
+    this.userForm = this.fb.group(
       {
         name:[
           '',
@@ -49,7 +51,7 @@ export class UserFormComponent {
         email:[
           '',
           [
-               
+               Validators.email,
           ],
         ],
         password: [
@@ -65,12 +67,15 @@ export class UserFormComponent {
           role:[
             '',
             [
-                  Validators.required,
+              Validators.required
             ],
           ],
       }
-     
-  );
+    );
+  }
+
+  ngOnInit():void{
+    this.roleList= rolelistitems;
   }
 
   navigateBack()
@@ -79,7 +84,7 @@ export class UserFormComponent {
   }
 
   onSubmit():void{
-    //test of username uniek is
+    //test of username of email uniek is (exists)
     if(!this.isUpdating){
       //inserting
       this.userService.createUser(this.user)
@@ -95,12 +100,12 @@ export class UserFormComponent {
     }
   }
 
-    // check if a specific control has a specific error and if it was touched
-    hasError(controlName: string, errorName: string) {
-      return (
-          this.passwordForm.get(controlName)?.hasError(errorName) &&
-          this.passwordForm.get(controlName)?.touched
-      );
+  // check if a specific control has a specific error and if it was touched
+  hasError(controlName: string, errorName: string) {
+    return (
+      this.userForm.get(controlName)?.hasError(errorName) &&
+      this.userForm.get(controlName)?.touched
+    );
   }
  
 }
