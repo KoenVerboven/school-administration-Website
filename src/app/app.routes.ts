@@ -20,9 +20,11 @@ import { DashboardItemComponent } from './dashboard/dashboard-item/dashboard-ite
 import {StudyplanDetailListComponent} from  './study/studyplan-detail-list/studyplan-detail-list.component';   
 import { UserListComponent } from './user/user-list/user-list.component'; 
 import { UserFormComponent } from './user/user-form/user-form.component';
+import { HomeComponent } from './home/home.component';
 
 export const routes: Routes = [
-    {path: '', component: DashboardListComponent},
+    {path: '', component: HomeComponent},
+    {path: 'home', component: HomeComponent},
     {path: 'dashbord',component:DashboardListComponent},
     {path: 'dashbordtem', redirectTo: '', component:DashboardItemComponent},
     {path: 'students',component:StudentListComponent},

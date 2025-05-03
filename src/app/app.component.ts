@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { RouterModule, RouterOutlet } from '@angular/router';
+import { Router, RouterModule, RouterOutlet } from '@angular/router';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { CommonModule } from '@angular/common';
 import { AuthService } from './user/services/auth.service';
@@ -16,11 +16,13 @@ export class AppComponent implements OnInit, OnDestroy {
   isAuthenticated = false;
   private userSub!: Subscription;
   public userName: string = '';
+  public userRole:string = '';
+  sidebarVisible:boolean= false;
   
   public mySchoolName = 'Free univerity';
   sidebarExpanded = true;
 
-  constructor(private authService: AuthService){}
+  constructor(private authService: AuthService, private router: Router){}
 
   ngOnInit(){
     this.userSub = this.authService.user.subscribe(user => {
@@ -28,6 +30,8 @@ export class AppComponent implements OnInit, OnDestroy {
       if(this.isAuthenticated)
       {
         this.userName = user.user.name;
+        this.userRole = user.role;
+        this.sidebarVisible = true;
       }
       console.log(!user);
       console.log(!!user);
@@ -35,7 +39,9 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   logout(){
-    this.isAuthenticated= false;
+    this.router.navigate(['/','home'])
+    this.isAuthenticated = false;
+    this.sidebarVisible = false;
   }
 
   ngOnDestroy(){

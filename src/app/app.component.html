@@ -2,6 +2,7 @@
  <div  id="fullheight">
     <div id="header">
        <div style="float:left;color:rgb(221, 224, 32);margin-left: 250px;font-size: 28px;margin-top:5px">Free University</div>
+       <a routerLink="home">Home</a>
        @if(!isAuthenticated)
        {
          <a routerLink="login" class="login">Sign in</a>
@@ -10,7 +11,10 @@
          <a class="login" (click)="logout()">Sign out  &nbsp;&nbsp;&nbsp;&nbsp;  {{userName}}</a>
        }
     </div>
-    <app-sidebar [isExpanded]="sidebarExpanded" (toggleSidebar)="sidebarExpanded = !sidebarExpanded"></app-sidebar>
+    @if(sidebarVisible)
+    {
+      <app-sidebar userRole={{userRole}} [isExpanded]="sidebarExpanded" (toggleSidebar)="sidebarExpanded = !sidebarExpanded"></app-sidebar>
+    }
     <div class="content" [ngClass]="{ 'sidebarExpanded': sidebarExpanded }">
        <router-outlet></router-outlet>
     </div>

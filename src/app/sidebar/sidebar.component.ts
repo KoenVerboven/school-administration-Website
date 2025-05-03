@@ -1,4 +1,4 @@
-import { Component , EventEmitter, Input, Output } from '@angular/core';
+import { Component , EventEmitter, OnChanges, SimpleChanges,Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {RouterModule} from '@angular/router';
 
@@ -9,8 +9,10 @@ import {RouterModule} from '@angular/router';
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss'
 })
-export class SidebarComponent {
+export class SidebarComponent implements OnChanges {
   @Input() isExpanded: boolean = false;
+  @Input() userRole:string = '';
+
   @Output() toggleSidebar: EventEmitter<boolean> = new EventEmitter<boolean>();
   //todo : replace hardcoded menu by a dynamic one.
   dashboardVisible: boolean = false;
@@ -23,45 +25,57 @@ export class SidebarComponent {
   mystudyplanVisible:boolean=false;
   usersVisible:boolean=false;
 
-  userRole: string = 'admin';
-
   ngOnInit(): void {
-    //authorization:
-    if(this.userRole = 'admin')
-    {
-      this.dashboardVisible = true;
-      this.studentsVisible= true;
-      this.teachersVisible = true;
-      this.coursesVisible = true;
-      this.examsVisible= true;
-      this.examResultsVisible = true;
-      this.usersVisible=true;
-    }
-    if(this.userRole = 'student')
-    {
-      this.examResultsVisible = true;
-      this.studyPlansVisible=true;
-      this.mystudyplanVisible=true;
-    }
-    if(this.userRole = 'teacher')
-    {
-      this.coursesVisible = true;
-      this.examsVisible= true;
-      this.examResultsVisible = true;
-    }
-    if(this.userRole = 'parent')
-    {
-      this.examResultsVisible = true;
-    }
-
+    this.setRights();
   }
-   
-
-   
-
-
-
-
 
   handleSidebarToggle = () => this.toggleSidebar.emit(!this.isExpanded);
+ 
+  setRights()
+  {
+    if(this.userRole == '')
+      {
+        this.dashboardVisible = false;
+        this.studentsVisible= false;
+        this.teachersVisible = false;
+        this.coursesVisible = false;
+        this.examsVisible= false;
+        this.examResultsVisible = false;
+        this.usersVisible=false;
+      }
+      if(this.userRole == 'admin')
+      {
+        this.dashboardVisible = true;
+        this.studentsVisible= true;
+        this.teachersVisible = true;
+        this.coursesVisible = true;
+        this.examsVisible= true;
+        this.examResultsVisible = true;
+        this.usersVisible=true;
+      }
+      if(this.userRole == 'student')
+      {
+        this.examResultsVisible = true;
+        this.studyPlansVisible=true;
+        this.mystudyplanVisible=true;
+      }
+      if(this.userRole =='teacher')
+      {
+        this.coursesVisible = true;
+        this.examsVisible= true;
+        this.examResultsVisible = true;
+      }
+      if(this.userRole == 'parent')
+      {
+        this.examResultsVisible = true;
+      }
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    console.log(changes['userRole'].currentValue);
+    this.userRole = changes['userRole'].currentValue;
+    this.setRights();
+  }
+
+ 
 }
