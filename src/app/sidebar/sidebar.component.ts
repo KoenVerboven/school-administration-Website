@@ -71,6 +71,8 @@ export class SidebarComponent implements OnChanges {
       }
   }
 
+  //more info How to detect an @Input() value changes in Angular : https://medium.com/@aryanvania03/how-to-detect-when-an-input-value-changes-in-angular-8dbf36222bb1
+
   ngOnChanges(changes: SimpleChanges) {
     console.log(changes['userRole'].currentValue);
     this.userRole = changes['userRole'].currentValue;

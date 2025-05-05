@@ -3,8 +3,17 @@
   </div>
   <div class="col-md-4">
     <br/>
-      <h4>Welcome</h4>
-      <br/>
+    <h4>Welcome</h4>
+    <br/>
+    @if(loading)
+    {
+      <div style="margin-left: 200px;">
+        <div fxLayout="row" fxLayoutAlign="space-around center" style="height:100%;">
+          <mat-spinner diameter="70" strokeWidth="5"></mat-spinner>
+        </div>
+        <div>loading</div> 
+      </div>
+    }
     <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
       <input 
           type="text" 

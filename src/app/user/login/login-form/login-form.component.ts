@@ -7,12 +7,13 @@ import { AuthResponseData } from '../../models/authResponseData.model'
 import { UserDTO } from '../../models/userDTO.model'
 import { ApiResponse } from '../../models/apiResponse.model';
 import { Router } from '@angular/router';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 @Component({
   selector: 'app-login-form',
   standalone: true,
-  imports: [FormsModule,CommonModule],
+  imports: [FormsModule,CommonModule, MatProgressSpinnerModule],
   templateUrl: './login-form.component.html',
   styleUrl: './login-form.component.css'
 })
@@ -26,7 +27,8 @@ export class LoginFormComponent {
   userDTO:UserDTO={
     id:'',
     userName:'',
-    name:''
+    name:'',
+    email:''
   }
 
   responseData:AuthResponseData={
@@ -43,7 +45,7 @@ export class LoginFormComponent {
   }
 
   signInMessage = "";
-  isLoading = false;
+  loading = false;
 
   constructor(private authService: AuthService, private router: Router,){}
   
@@ -52,35 +54,28 @@ export class LoginFormComponent {
     {
       return;
     }
-    this.isLoading = true; // de spinner nog toevoegen !!!
-    ///api/UserAuth/login
+    this.loading = true; // de spinner nog toevoegen !!!
     this.authService.userLogin(this.user) // correct login : username: maddy@test.be   password: Admin123+
       .subscribe({ 
         next: (data) =>{
-          //console.log(data.result.role);
           this.userDTO.name = data.result.user.name;
           this.userDTO.userName = data.result.user.userName;
           this.responseData = {
             user: this.userDTO,
-            role:data.result.role,
-            token:data.result.token
+            role: data.result.role,
+            token: data.result.token
           }
           this.authService.user.next(this.responseData);
-          //alert(data.result.user.userName);
-          //alert(data.result.role);
-          //alert(data.result.token);
-          this.isLoading = false;
+          this.loading = false;
           this.router.navigate(['/'])
         },
         error: (err) => {
           //console.error(err);
-          this.isLoading = false;
-          this.signInMessage = 'Bad userName or Password.';
+          this.loading = false;
+          this.signInMessage = 'Bad userName or Password.'; //todo : is this correct?
         }
-      });
-   
+    });
     loginForm.reset();
-
   }
 
 }
