@@ -26,14 +26,15 @@ Administrator View :
 
 ![image](https://github.com/user-attachments/assets/32c75e5a-0adf-43f4-ba39-09cd17989a16)
 
-![image](https://github.com/user-attachments/assets/bcc990e4-d5f6-45e8-ae97-1bc588b85642)
+![image](https://github.com/user-attachments/assets/d6986c7f-8106-45e8-8651-9cd835371e3e)
 
-![image](https://github.com/user-attachments/assets/3dba21a1-a6fc-4a6b-8366-32c09a1d9dd4)
+![image](https://github.com/user-attachments/assets/d66b8028-6581-4b0b-8f8c-b37717e820a2)
 
-![image](https://github.com/user-attachments/assets/32f49de8-ca17-4e75-92f7-078beb9d1e01)
+![image](https://github.com/user-attachments/assets/5aa9771d-9d20-40b6-b618-f8356e552da6)
 
-![image](https://github.com/user-attachments/assets/9b791933-8df7-4f9b-bc38-c8ba2fe44a7f)
+![image](https://github.com/user-attachments/assets/b97c07a1-31f0-4368-b33c-9bec5f19e71f)
 
+![image](https://github.com/user-attachments/assets/393342b3-0e6f-4690-b9c1-52155f0dd5a5)
 
 
 Student View :
@@ -43,6 +44,12 @@ Student View :
 Teacher View :
 
 ![image](https://github.com/user-attachments/assets/6572617a-b85d-4d4d-b656-676cd6c9ebb6)
+
+SQL-server :
+
+![image](https://github.com/user-attachments/assets/63025142-f4e7-4d35-a371-f3a26314073a)
+
+
 
 
 
