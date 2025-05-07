@@ -10,22 +10,61 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 https://github.com/KoenVerboven/SchoolAdministrationApi
 
 ## Screenshots :
+Home Page :
 
-![dashboard](https://github.com/user-attachments/assets/11e7097a-a597-4b00-a281-79218facdc63)
+![image](https://github.com/user-attachments/assets/15db3863-5f3c-4bdf-a4e3-521e5ec6bb46)
 
-![searchStudents](https://github.com/user-attachments/assets/770478ec-9a36-4365-a4a2-ae8bf8edc6ae)
+SignIn :
 
-![studentDetail](https://github.com/user-attachments/assets/2bd4118b-dd66-4b42-8209-712d67ff274e)
+![image](https://github.com/user-attachments/assets/f3e95585-5f78-42b7-a055-ed4499251ead)
 
-![updateStudent](https://github.com/user-attachments/assets/35170b4d-161c-474d-b425-aa81edc85fb6)
+Administrator View :
 
-![examResults](https://github.com/user-attachments/assets/5c7525e3-776b-482c-8158-e6fde85d3f31)
+![image](https://github.com/user-attachments/assets/0fd8bc65-9ee8-49c3-ba20-2020baa4005f)
+
+![image](https://github.com/user-attachments/assets/e1ea1fbc-1a97-4f59-a03c-2dbe7cc98d24)
+
+![image](https://github.com/user-attachments/assets/32c75e5a-0adf-43f4-ba39-09cd17989a16)
+
+![image](https://github.com/user-attachments/assets/d6986c7f-8106-45e8-8651-9cd835371e3e)
+
+![image](https://github.com/user-attachments/assets/d66b8028-6581-4b0b-8f8c-b37717e820a2)
+
+![image](https://github.com/user-attachments/assets/5aa9771d-9d20-40b6-b618-f8356e552da6)
+
+![image](https://github.com/user-attachments/assets/b97c07a1-31f0-4368-b33c-9bec5f19e71f)
+
+![image](https://github.com/user-attachments/assets/393342b3-0e6f-4690-b9c1-52155f0dd5a5)
+
+
+Student View :
+
+![image](https://github.com/user-attachments/assets/afbd0ffc-abe5-420d-86d1-f5d2694bb4ee)
+
+Teacher View :
+
+![image](https://github.com/user-attachments/assets/6572617a-b85d-4d4d-b656-676cd6c9ebb6)
+
+SQL-server :
+
+![image](https://github.com/user-attachments/assets/63025142-f4e7-4d35-a371-f3a26314073a)
 
 
 
 
 
-![Schermafbeelding 2025-03-29 092952](https://github.com/user-attachments/assets/f37629df-1b0c-417c-8c60-0e18e459503a)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
