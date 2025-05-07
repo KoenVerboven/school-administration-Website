@@ -29,7 +29,7 @@ export class AppComponent implements OnInit, OnDestroy {
       this.isAuthenticated = !!user;
       if(this.isAuthenticated)
       {
-        this.userName = user.user.name;
+        this.userName = user.name;
         this.userRole = user.role;
         this.sidebarVisible = true;
       }

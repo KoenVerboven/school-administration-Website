@@ -40,4 +40,10 @@ export class UserListComponent {
         }
       );
   }
+
+  showUserDetail(id: string): void{
+    this.router.navigate(['/userdetail/detail', id])
+  }
+
+
 }

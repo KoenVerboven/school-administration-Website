@@ -15,6 +15,7 @@ import { Router } from '@angular/router';
 export class ResetPasswordFormComponent {
   
   user:User={
+    id:'',
     name: '',
     userName:'',
     email:'',

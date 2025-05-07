@@ -18,8 +18,8 @@ export class UserService {
     return this.http.get<User[]>(this.apiUrl)
   }
 
-  getUserById(id : string): Observable<UserDTO>{
-    return this.http.get<UserDTO>(`${this.apiUrl}/${id}`)
+  getUserById(id : string): Observable<User>{
+    return this.http.get<User>(`${this.apiUrl}/${id}`)
   }
 
   createUser(user : User): Observable<User>{

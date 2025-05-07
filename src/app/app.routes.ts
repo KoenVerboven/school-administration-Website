@@ -50,4 +50,5 @@ export const routes: Routes = [
     {path: 'studyplandetail',component:StudyplanDetailListComponent},
     {path: 'users',component:UserListComponent},
     {path: 'createuser', component: UserFormComponent},
-];
+    {path: 'userdetail/:action/:id', component: UserFormComponent},
+]; 

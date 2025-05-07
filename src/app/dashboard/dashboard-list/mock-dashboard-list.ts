@@ -45,4 +45,13 @@ import {DashboardItem} from '../models/dashboardItem.model'
       url:'/examresults',
       visible:true
     },
+    {
+      id:5,
+      itemName:'Users',
+      columnNumber: 1,
+      itemCount: 3,
+      color:'red',
+      url:'/users',
+      visible:true
+    },
 ]

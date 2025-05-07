@@ -20,6 +20,15 @@ import { DateAdapter } from '@angular/material/core';
 })
 export class StudentFormComponent implements OnInit {
 
+  geboortedate : string| undefined;
+  isUpdating: boolean = false;
+  disableControls: boolean = false;
+  formAction : string = "true";
+  errorMessage : string = "";
+  pageTitle: string| null = "";
+  studentId: number = 0;
+  genderData: any;
+  events: string[] = [];
   student: Student = {
     id: 0,
     firstName: '',
@@ -31,18 +40,6 @@ export class StudentFormComponent implements OnInit {
     phone: '',
     email: ''
   }
-
-  geboortedate : string| undefined;
-
-  isUpdating: boolean = false;
-  disableControls: boolean = false;
-  formAction : string = "true";
-  errorMessage : string = "";
-  pageTitle: string| null = "";
-  studentId: number = 0;
-  genderData: any;
-
-  events: string[] = [];
 
   constructor(private studentService : StudentService, 
     private router: Router,

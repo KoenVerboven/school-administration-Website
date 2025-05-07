@@ -28,11 +28,15 @@ export class LoginFormComponent {
     id:'',
     userName:'',
     name:'',
-    email:''
+    email:'',
+    role:''
   }
 
   responseData:AuthResponseData={
-    user: this.userDTO,
+    id:'',
+    userName: '',
+    name: '',
+    email: '',
     role:'',
     token:''
   }
@@ -58,10 +62,13 @@ export class LoginFormComponent {
     this.authService.userLogin(this.user) // correct login : username: maddy@test.be   password: Admin123+
       .subscribe({ 
         next: (data) =>{
-          this.userDTO.name = data.result.user.name;
-          this.userDTO.userName = data.result.user.userName;
+          this.userDTO.name = data.result.name;
+          this.userDTO.userName = data.result.userName;
           this.responseData = {
-            user: this.userDTO,
+            id: data.result.id,
+            userName:data.result.userName,
+            name:data.result.name,
+            email:data.result.email,
             role: data.result.role,
             token: data.result.token
           }

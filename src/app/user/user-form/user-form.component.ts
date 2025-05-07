@@ -16,14 +16,7 @@ import { rolelistitems } from './mock-role-list';
   styleUrl: './user-form.component.css'
 })
 export class UserFormComponent implements OnInit {
-  user : User= {
-    name:'',
-    userName:'',
-    email: '',
-    password:'',
-    role:''
-  }
-   
+  
   isUpdating: boolean = false;
   disableControls: boolean = false;
   formAction : string = "true";
@@ -32,7 +25,15 @@ export class UserFormComponent implements OnInit {
   userId: string| null = '';
   userForm: FormGroup;
   roleList : any;
-
+  user : User= {
+    id:'',
+    name:'',
+    userName:'',
+    email: '',
+    password:'',
+    role:''
+  }
+ 
   constructor(private userService : UserService, private router: Router, private route: ActivatedRoute, private fb: FormBuilder){
     this.userForm = this.fb.group(
       {
@@ -75,12 +76,35 @@ export class UserFormComponent implements OnInit {
   }
 
   ngOnInit():void{
-    this.roleList= rolelistitems;
+     this.route.paramMap.subscribe(result => {
+      const id = result.get('id');
+      const action = result.get('action');
+      this.userId = id;
+      if(id){
+        this.userService.getUserById(id).subscribe({
+          next: result => this.user = result,
+          error: err => this.errorMessage = `Error : (${err.status})`
+        });
+        this.isUpdating = true;
+      }
+      this.roleList= rolelistitems;
+      
+      if(action == null){this.pageTitle = "Create user"}
+      else if(action == "detail"){
+        this.pageTitle = "User detail";
+        this.formAction = "detail";
+        this.disableControls = true;
+      }
+      else if(action == "update"){
+        this.pageTitle = "Update user";
+      }
+ 
+    });
   }
 
   navigateBack()
   {
-    this.router.navigateByUrl('/users')
+    this.router.navigateByUrl('/users');
   }
 
   onSubmit():void{

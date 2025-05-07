@@ -17,7 +17,7 @@
   <div style="float:left;"><a routerLink="/createuser"><i class="bi bi-plus"></i> Add User</a></div>
   <div style="float:right;">  {{userCount}} users found. </div>
   
-  <table class="table table-sm">
+  <table class="table table-sm  table-hover">
       <thead>
          <tr>
            <th class="p-2">Name</th>
@@ -27,7 +27,7 @@
       </thead>
       <tbody>
         @for(user of users; track user.name){
-          <tr  class="cell-hoverCursor">      
+          <tr  (click)="showUserDetail(user.id)" class="cell-hoverCursor">      
             <td>{{user.name}}</td> 
             <td>{{user.userName}}</td>
             <td>{{user.email}}</td>

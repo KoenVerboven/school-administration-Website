@@ -9,8 +9,15 @@
 {
    <form (ngSubmit)="onSubmit()" [formGroup]="userForm"  class="border rounded p-4 w-50 mb-5 mx-auto">
       <div class="formHeader">
-         <button class="btn btn-success headerButton" *ngIf="formAction != 'detail'"  [disabled]="userForm.invalid"  type="submit" >Save</button>
-         <button class="btn btn-warning"  *ngIf="formAction != 'detail'" type="button"  (click)="navigateBack()">Cancel</button>
+            @if(formAction == 'detail')
+            {
+            <button class="btn btn-primary headerButton" type="button" (click)="navigateBack()">Go Back</button>
+            <button class="btn btn-secondary headerButton" type="button" >Update</button>
+            }
+            @else {
+                <button class="btn btn-success headerButton" *ngIf="formAction != 'detail'"  [disabled]="userForm.invalid"  type="submit" >Save</button>
+                <button class="btn btn-warning"  *ngIf="formAction != 'detail'" type="button"  (click)="navigateBack()">Cancel</button>
+            }
        </div>
       <br />
       <div class="mb-3">
@@ -72,8 +79,7 @@
          <div *ngIf="hasError('role', 'required')">
             <p style="color: red">Role is required</p>
         </div>
-        
-       
+    
       </div>
    </form>
   
