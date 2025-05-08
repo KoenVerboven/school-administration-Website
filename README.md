@@ -20,7 +20,7 @@ SignIn :
 
 Administrator View :
 
-![image](https://github.com/user-attachments/assets/0fd8bc65-9ee8-49c3-ba20-2020baa4005f)
+![image](https://github.com/user-attachments/assets/52a81bd3-0391-43b5-8e57-7ad94c78bfd7)
 
 ![image](https://github.com/user-attachments/assets/e1ea1fbc-1a97-4f59-a03c-2dbe7cc98d24)
 
@@ -39,11 +39,13 @@ Administrator View :
 
 Student View :
 
-![image](https://github.com/user-attachments/assets/afbd0ffc-abe5-420d-86d1-f5d2694bb4ee)
+![image](https://github.com/user-attachments/assets/d1692cff-152b-4357-9229-bff1276d722a)
+
 
 Teacher View :
 
-![image](https://github.com/user-attachments/assets/6572617a-b85d-4d4d-b656-676cd6c9ebb6)
+![image](https://github.com/user-attachments/assets/8fcf48bd-b102-4b46-b4b4-1ba0026055ad)
+
 
 SQL-server :
 
