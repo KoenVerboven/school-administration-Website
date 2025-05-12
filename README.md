@@ -12,7 +12,7 @@ https://github.com/KoenVerboven/SchoolAdministrationApi
 ## Screenshots :
 Home Page :
 
-![image](https://github.com/user-attachments/assets/15db3863-5f3c-4bdf-a4e3-521e5ec6bb46)
+![image](https://github.com/user-attachments/assets/8d6ae845-f9e8-485d-b0c2-9c16ed04638a)
 
 SignIn :
 
@@ -35,6 +35,8 @@ Administrator View :
 ![image](https://github.com/user-attachments/assets/b97c07a1-31f0-4368-b33c-9bec5f19e71f)
 
 ![image](https://github.com/user-attachments/assets/393342b3-0e6f-4690-b9c1-52155f0dd5a5)
+
+![image](https://github.com/user-attachments/assets/951b2c38-7c30-4f4e-9bbc-4b9f99540ced)
 
 
 Student View :
