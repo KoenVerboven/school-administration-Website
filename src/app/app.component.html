@@ -7,7 +7,7 @@
          <a routerLink="login" class="login">Sign in</a>
        }
        @else{
-         <a class="login" style="cursor:pointer;" (click)="logout()">Sign out  &nbsp;&nbsp;&nbsp;&nbsp;  {{userName}}</a>
+         <a class="login" style="cursor:pointer;" (click)="logout()">Sign out  &nbsp;&nbsp; {{userRole}}  &nbsp;&nbsp;  {{userName}}</a>
        }
     </div>
     @if(sidebarVisible)

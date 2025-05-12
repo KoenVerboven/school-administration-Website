@@ -18,12 +18,13 @@ export class SidebarComponent implements OnChanges {
   dashboardVisible: boolean = false;
   studentsVisible: boolean = false;
   teachersVisible: boolean = false;
-  coursesVisible:boolean = false;
-  examsVisible:boolean= false;
+  coursesVisible: boolean = false;
+  examsVisible: boolean= false;
   examResultsVisible: boolean = false;
-  studyPlansVisible:boolean=false;
-  mystudyplanVisible:boolean=false;
-  usersVisible:boolean=false;
+  studyPlansVisible: boolean=false;
+  mystudyplanVisible: boolean=false;
+  usersVisible: boolean=false;
+  settingsVisible: boolean = false;
 
   ngOnInit(): void {
     this.setRights();
@@ -52,6 +53,7 @@ export class SidebarComponent implements OnChanges {
         this.examsVisible= true;
         this.examResultsVisible = true;
         this.usersVisible=true;
+        this.settingsVisible=true;
       }
       if(this.userRole == 'student')
       {

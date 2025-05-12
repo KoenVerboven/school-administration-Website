@@ -4,6 +4,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { CommonModule } from '@angular/common';
 import { AuthService } from './user/services/auth.service';
 import { Subscription } from 'rxjs';
+import { AuthResponseData } from  '../app/user/models/authResponseData.model'
 
 @Component({
   selector: 'app-root',
@@ -18,9 +19,16 @@ export class AppComponent implements OnInit, OnDestroy {
   public userName: string = '';
   public userRole:string = '';
   sidebarVisible:boolean= false;
-  
   public mySchoolName = 'Free univerity';
   sidebarExpanded = true;
+  responseData:AuthResponseData={
+    id:'',
+    userName: '',
+    name: '',
+    email: '',
+    role:'',
+    token:''
+  }
 
   constructor(private authService: AuthService, private router: Router){}
 
@@ -39,9 +47,10 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   logout(){
-    this.router.navigate(['/','home'])
+    this.authService.user.next(this.responseData);
     this.isAuthenticated = false;
     this.sidebarVisible = false;
+    this.router.navigate(['/','home']);
   }
 
   ngOnDestroy(){

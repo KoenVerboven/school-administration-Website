@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router';
 import { DashboardListComponent } from './dashboard/dashboard-list/dashboard-list.component';
-import { DashboardItem } from './dashboard/models/dashboardItem.model';
 import { StudentListComponent } from './student/student-list/student-list.component';
 import { StudentFormComponent } from './student/student-form/student-form.component';
 import { CourseListComponent } from './course/course-list/course-list.component';
@@ -21,6 +20,8 @@ import {StudyplanDetailListComponent} from  './study/studyplan-detail-list/study
 import { UserListComponent } from './user/user-list/user-list.component'; 
 import { UserFormComponent } from './user/user-form/user-form.component';
 import { HomeComponent } from './home/home.component';
+import { SettingsComponent } from './settings/settings/settings-list.component';
+import { PermissionsComponent } from './settings/permissions/permissions.component';
 
 export const routes: Routes = [
     {path: '', component: HomeComponent},
@@ -51,4 +52,6 @@ export const routes: Routes = [
     {path: 'users',component:UserListComponent},
     {path: 'createuser', component: UserFormComponent},
     {path: 'userdetail/:action/:id', component: UserFormComponent},
+    {path: 'settings', component: SettingsComponent},
+    {path: 'permissions', component: PermissionsComponent},
 ]; 

@@ -1,0 +1,8 @@
+<p class="text-center h5">Settings</p>
+<br/>
+<div class="container">
+    @for(settingsitem of items; track settingsitem.id)
+    {
+       <div class="settingitem" (click)="navigateTo(settingsitem.url)">{{settingsitem.itemName}}</div>   
+    }
+</div>

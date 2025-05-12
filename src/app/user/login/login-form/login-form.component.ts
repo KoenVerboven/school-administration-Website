@@ -58,7 +58,7 @@ export class LoginFormComponent {
     {
       return;
     }
-    this.loading = true; // de spinner nog toevoegen !!!
+    this.loading = true; 
     this.authService.userLogin(this.user) // correct login : username: maddy@test.be   password: Admin123+
       .subscribe({ 
         next: (data) =>{

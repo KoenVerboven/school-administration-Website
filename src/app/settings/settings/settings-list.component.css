@@ -1,0 +1,16 @@
+.settingitem{
+    height: 60px ;
+    width: 300px; 
+    border: 1px;
+    border-style: solid; 
+    margin-bottom: 20px;
+    padding-top: 10px;
+    padding-left: 10px;
+    border-radius: 6px; 
+    background-color: rgb(139, 136, 136); 
+    color: white;
+    font-size: 20px;
+}
+.settingitem:hover {
+    background-color: #4d7a7a; 
+}

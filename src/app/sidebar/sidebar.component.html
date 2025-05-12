@@ -107,6 +107,17 @@
           </div>
         </div>
       }
+      @if(settingsVisible)
+      {
+         <div class="link">
+           <div class="content" [routerLink]="['settings']" [routerLinkActive]="'active'">
+             <div class="icon"  data-placement="right" title="Settings">
+               <i class="bi bi-gear"></i>
+             </div>
+             <div class="title">Settings</div>
+           </div>
+         </div>
+       }
       
     </div>
   </div>

@@ -1,0 +1,49 @@
+<p class="text-center h5">Permissions</p>
+<br/>
+
+<form (ngSubmit)="onSubmit()"   #courseForm="ngForm" class="border rounded p-4 w-50 mb-5 mx-auto">
+  <div>
+    <select Name="role" style="width: 200px;" (change)="RefreshGrid()"> 
+      <option value="">Select Role</option>
+      @for(roleItem of roleList; track roleItem.id)
+      {
+        <option value={{roleItem.id}}>{{roleItem.Name}}</option>  
+      }
+    </select> 
+   </div>
+  <div class="formHeader">
+    @if(formAction == 'detail')
+    {
+      <button class="btn btn-primary headerButton" type="button" (click)="navigateBack()">Go Back</button>
+      <button class="btn btn-secondary headerButton" type="button" (click)="updateClick()">Update</button>
+    }
+    @else {
+      <button class="btn btn-success headerButton" type="submit">Save</button>
+      <button class="btn btn-warning"  type="button" (click)="cancel()">Cancel</button>
+    }
+   </div>
+  <div class="container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="p-2"></th>
+          <th class="p-2">read</th>
+          <th class="p-2">create</th>       
+          <th class="p-2">update</th>  
+          <th class="p-2">delete</th>     
+        </tr>
+      </thead>
+      <tbody>
+        @for(permissionItem of items; track permissionItem.id){
+          <tr>   
+            <td style="background-color: rgb(185, 245, 245);">{{permissionItem.subject}}</td>        
+            <td><input type="checkbox" [disabled]=disableControls name='r{{permissionItem.id}}' [(ngModel)]="permissionItem.readRights"></td>  
+            <td><input type="checkbox" [disabled]=disableControls name='c{{permissionItem.id}}' [(ngModel)]="permissionItem.createRigthst"></td>
+            <td><input type="checkbox" [disabled]=disableControls name='u{{permissionItem.id}}' [(ngModel)]="permissionItem.updateRights"></td>
+            <td><input type="checkbox" [disabled]=disableControls name='d{{permissionItem.id}}' [(ngModel)]="permissionItem.deleteRights"></td>
+          </tr>
+        }
+        </tbody>
+    </table>
+  </div>
+</form>
