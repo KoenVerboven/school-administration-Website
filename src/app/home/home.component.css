@@ -1,0 +1,15 @@
+#studentsImage{
+    float : left;
+}
+.welcome{
+    float : left;
+    margin-left : 30px;
+    font-size: 30px;
+    color:gray
+}
+.writtenBy{
+    float : left;
+    margin-left : 30px;
+    font-size: 20px;
+    color:red
+}

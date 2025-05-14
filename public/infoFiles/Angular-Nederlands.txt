@@ -1,4 +1,8 @@
 
+help opvragen :
+
+ng g help
+
 In cmd :
 ---------
 aanmaken nieuw angular project : ng new school-administration-app

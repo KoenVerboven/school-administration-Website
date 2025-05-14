@@ -32,8 +32,8 @@ export class ExamFormComponent {
   examId: number = 0;
 
   constructor(private examService : ExamService,
-        private router: Router,
-        private route: ActivatedRoute
+              private router: Router,
+              private route: ActivatedRoute
   ){}  
 
 

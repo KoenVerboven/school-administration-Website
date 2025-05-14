@@ -39,7 +39,7 @@ export class StudentService {
 
   getStudentCount()
   {
-    return this.http.get<number>(`${this.apiUrl}/getStudentCount}`)
+    return this.http.get<number>(`${this.apiUrl}/getStudentCount`)
   }
 
 }
