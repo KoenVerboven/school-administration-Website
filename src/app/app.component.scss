@@ -12,10 +12,15 @@
     margin-top:7px;
     color:white;
     padding-left:10px;
-    padding-right:10px;;
+    padding-right:10px;
+    background-color: rgb(0, 92, 128);
+    width: 300px;
+    border-radius: 8px;
+    align-items: center;
   }
   a:hover{
-    background-color: rgb(0, 92, 128);
+    background-color: rgb(26, 154, 204);
+    color: white;
   }
   #fullheight
   {
