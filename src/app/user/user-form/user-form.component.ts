@@ -6,7 +6,7 @@ import { Router,ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators,} from '@angular/forms';
 import { CustomValidators } from '../customValidators';
-import { rolelistitems } from '../../shared/mock-role-list';
+import { rolelistitems } from '../../shared/mocks/mock-role-list';
 
 @Component({
   selector: 'app-user-form',

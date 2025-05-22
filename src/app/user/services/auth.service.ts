@@ -12,6 +12,8 @@ import { ApiResponse } from '../models/apiResponse.model';
 
 export class AuthService {
   public user = new Subject<AuthResponseData>();
+  public authenticated = new Subject<boolean>();
+
   private apiUrl = `${environment.apiUrl}/user/login`  
     
   constructor(private http : HttpClient) { }

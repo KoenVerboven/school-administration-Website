@@ -16,31 +16,34 @@ import { ResetPasswordFormComponent } from './user/reset-password-form/reset-pas
 import { ChangePasswordFormComponent } from './user/change-password-form/change-password-form.component';
 import { CheckYourEmailFormComponent } from './user/check-your-email-form/check-your-email-form.component';
 import { DashboardItemComponent } from './dashboard/dashboard-item/dashboard-item.component';
-import {StudyplanDetailListComponent} from  './study/studyplan-detail-list/studyplan-detail-list.component';   
+import { StudyplanDetailListComponent } from  './study/studyplan-detail-list/studyplan-detail-list.component';   
 import { UserListComponent } from './user/user-list/user-list.component'; 
 import { UserFormComponent } from './user/user-form/user-form.component';
 import { HomeComponent } from './home/home.component';
 import { SettingsComponent } from './settings/settings/settings-list.component';
 import { PermissionsComponent } from './settings/permissions/permissions.component';
+import { PageNotFoundComponent } from './general/page-not-found/page-not-found.component'
+import { AuthGuard } from './user/auth.guard';
+
 
 export const routes: Routes = [
     {path: '', component: HomeComponent},
     {path: 'home', component: HomeComponent},
-    {path: 'dashbord',component:DashboardListComponent},
+    {path: 'dashbord',component:DashboardListComponent, canActivate:[AuthGuard]},
     {path: 'dashbordtem', redirectTo: '', component:DashboardItemComponent},
-    {path: 'students',component:StudentListComponent},
-    {path: 'createstudent', component: StudentFormComponent},
-    {path: 'studentdetail/:action/:id', component: StudentFormComponent},
-    {path: 'courses',component:CourseListComponent},
-    {path: 'createcourse', component: CourseFormComponent},
-    {path: 'coursedetail/:action/:id', component: CourseFormComponent},
-    {path: 'teachers',component:TeacherListComponent},
-    {path: 'createteacher', component: TeacherFormComponent},
-    {path: 'teacherdetail/:action/:id', component: TeacherFormComponent},
-    {path: 'exams',component:ExamListComponent},
-    {path: 'createxam', component: ExamFormComponent},
-    {path: 'examdetail/:action/:id', component: ExamFormComponent},
-    {path: 'examresults',component:ExamResultListComponent},
+    {path: 'students',component:StudentListComponent, canActivate:[AuthGuard]},
+    {path: 'createstudent', component: StudentFormComponent, canActivate:[AuthGuard]},
+    {path: 'studentdetail/:action/:id', component: StudentFormComponent, canActivate:[AuthGuard]},
+    {path: 'courses',component:CourseListComponent, canActivate:[AuthGuard]},
+    {path: 'createcourse', component: CourseFormComponent, canActivate:[AuthGuard]},
+    {path: 'coursedetail/:action/:id', component: CourseFormComponent, canActivate:[AuthGuard]},
+    {path: 'teachers',component:TeacherListComponent, canActivate:[AuthGuard]},
+    {path: 'createteacher', component: TeacherFormComponent, canActivate:[AuthGuard]},
+    {path: 'teacherdetail/:action/:id', component: TeacherFormComponent, canActivate:[AuthGuard]},
+    {path: 'exams',component:ExamListComponent, canActivate:[AuthGuard]},
+    {path: 'createxam', component: ExamFormComponent, canActivate:[AuthGuard]},
+    {path: 'examdetail/:action/:id', component: ExamFormComponent, canActivate:[AuthGuard]},
+    {path: 'examresults',component:ExamResultListComponent, canActivate:[AuthGuard]},
     {path: 'studyplans',component:StudyplanListComponent},
     {path: 'createstudyplan',component:StudyplanFormComponent},
     {path: 'studyplandetail/:action/:id',component:StudyplanFormComponent},
@@ -49,9 +52,10 @@ export const routes: Routes = [
     {path: 'changepassword',component: ChangePasswordFormComponent},
     {path: 'checkyouremail', component: CheckYourEmailFormComponent},
     {path: 'studyplandetail',component:StudyplanDetailListComponent},
-    {path: 'users',component:UserListComponent},
-    {path: 'createuser', component: UserFormComponent},
-    {path: 'userdetail/:action/:id', component: UserFormComponent},
-    {path: 'settings', component: SettingsComponent},
-    {path: 'permissions', component: PermissionsComponent},
+    {path: 'users',component:UserListComponent, canActivate:[AuthGuard]},
+    {path: 'createuser', component: UserFormComponent, canActivate:[AuthGuard]},
+    {path: 'userdetail/:action/:id', component: UserFormComponent, canActivate:[AuthGuard]},
+    {path: 'settings', component: SettingsComponent, canActivate:[AuthGuard]},
+    {path: 'permissions', component: PermissionsComponent, canActivate:[AuthGuard]},
+    {path: '**', component: PageNotFoundComponent}
 ]; 

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { permissions } from './mock-permissions-list';
 import { FormsModule } from '@angular/forms';
 import { Router,ActivatedRoute } from '@angular/router';
-import { rolelistitems } from '../../shared/mock-role-list';
+import { rolelistitems } from '../../shared/mocks/mock-role-list';
 
 @Component({
   selector: 'app-permissions',

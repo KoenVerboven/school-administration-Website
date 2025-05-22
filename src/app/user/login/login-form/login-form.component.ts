@@ -54,6 +54,7 @@ export class LoginFormComponent {
   constructor(private authService: AuthService, private router: Router,){}
   
   onSubmit(loginForm : NgForm):void{
+    this.authService.authenticated.next(false);
     if(!loginForm.valid)
     {
       return;
@@ -73,15 +74,17 @@ export class LoginFormComponent {
             token: data.result.token
           }
           this.authService.user.next(this.responseData);
+          this.authService.authenticated.next(true);
           this.loading = false;
-          this.router.navigate(['/'])
+          this.router.navigate(['/']);
         },
         error: (err) => {
-          //console.error(err);
+          console.error(err);
           this.loading = false;
-          this.signInMessage = 'Bad userName or Password.'; //todo : is this correct?
+          this.signInMessage = 'Bad userName or Password.';
         }
     });
+    
     loginForm.reset();
   }
 
