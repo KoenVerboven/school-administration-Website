@@ -31,6 +31,11 @@ export class StudentListComponent {
     this.router.navigate(['/studentdetail/detail', id])
   }
 
+  clearSearch()
+  {
+    this.searchName = '';
+  }
+
   getStudents()
   {
     this.loading = true;

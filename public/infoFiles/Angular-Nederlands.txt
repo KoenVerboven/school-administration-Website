@@ -591,7 +591,14 @@ add :
               "@angular/material/prebuilt-themes/azure-blue.css",
               "src/styles.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "node_modules/bootstrap-icons/font/bootstrap-icons.css"  <-------
+              "node_modules/bootstrap-icons/font/bootstrap-icons.css"  <-----
+
+------------------------------------------------------
+
+create new guard (permissionGuard) : 
+ng g s user\services\permission
+
+-------------------------------------------------------
 
 
 

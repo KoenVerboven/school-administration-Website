@@ -14,10 +14,12 @@
         <div>loading</div> 
       </div>
     }
-    <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+    @else {
+      <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
       <input 
           type="text" 
           class="form-control"
+          style="width: 100%;"
           name="userName"
           [(ngModel)] =  "user.userName"
           id="inputEmailOrUserName" 
@@ -25,28 +27,38 @@
           required
           placeholder="Enter username or email">
       <br/>
-      <input 
-          type="password" 
-          class="form-control"
-          name="password"
-          [(ngModel)] =  "user.password" 
-          id="inputPassword1" 
-          required
-          minlength="8"
-          placeholder="Password">
-     <button type="submit" 
+      <div class="container">
+          <input 
+                [type]="showPassword ? 'text' : 'password'" 
+                class="form-control"
+                name="password"
+                [(ngModel)] =  "user.password" 
+                id="inputPassword1" 
+                required
+                minlength="8"
+                width="100px"
+                placeholder="Password"
+            >
+            <button type="button"  (click)="togglePasswordVisibility()">
+              <i class="fa" [ngClass]="{'bi bi-eye': !showPassword, 'bi bi-eye-slash': showPassword}"></i>
+            </button>    
+      </div>
+      <button type="submit" 
           class="btn btn-primary" 
           [disabled]="!loginForm.valid" 
           style="margin-top: 2cqh;width: 100%;">
               Sign in
-      </button>
-    </form>
-    <br/>
-    <div class="errorLabel">{{signInMessage}}</div>
-    <br/>
-    <a href="\resetpassword">Forgot password?</a>
-    <br/>
-    <a href="\changepassword">Change password?</a>
+       </button>
+
+      </form>
+      <br/>
+      <div class="errorLabel">{{signInMessage}}</div>
+      <br/>
+      <a href="\resetpassword">Forgot password?</a>
+      <br/>
+      <a href="\changepassword">Change password?</a>
+    }
+    
   </div>
   <div class="col-md-4">
   </div>

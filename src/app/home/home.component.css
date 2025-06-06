@@ -1,16 +1,24 @@
 
 #studentsImage{
-    float : left;
+    margin-top: 10px;
+    width: 100%;
 }
 .welcome{
-    float : left;
-    margin-left : 30px;
+    margin-top : 10px;
     font-size: 30px;
-    color:gray
+    color:rgb(221, 39, 39);
+    background: linear-gradient(to bottom, #4e5253 0%, #9e165a 100%);
+    padding: 12px;
+    border-radius: 8px;
+    width: 100%;
 }
-.writtenBy{
-    float : left;
-    margin-left : 30px;
-    font-size: 20px;
-    color:rgb(245, 244, 241)
+.info{
+    margin-top : 10px;
+    font-size: 16px;
+    color:black;
+    background: white;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 8px;
+    width: 100%;
 }

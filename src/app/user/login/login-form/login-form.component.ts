@@ -50,8 +50,13 @@ export class LoginFormComponent {
 
   signInMessage = "";
   loading = false;
+  showPassword: boolean = false;
 
   constructor(private authService: AuthService, private router: Router,){}
+
+   togglePasswordVisibility(): void {
+    this.showPassword = !this.showPassword;
+  }
   
   onSubmit(loginForm : NgForm):void{
     this.authService.authenticated.next(false);
