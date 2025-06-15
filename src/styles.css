@@ -13,8 +13,8 @@ body {
   cursor: pointer;
 }
 .table-hover tbody tr:hover td {
-  background-color:rgb(178, 224, 250);
-  color:black;
+  background-color: white;
+  color:rgb(0, 0, 0);
 }
 .errorLabel{
   padding-left:20px;

@@ -1,13 +1,16 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { Student } from '../models/student.model';
+import { StudentSpecParams } from '../models/studentSpecParams.model';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class StudentService {
+  public searchNameText = new Subject<string>();
 
   private apiUrl = `${environment.apiUrl}/student`
   
@@ -19,6 +22,10 @@ export class StudentService {
 
   getStudentByNameStartWith(name : string): Observable<Student[]>{
     return this.http.get<Student[]>(`${this.apiUrl}/getByNameStartWith/${name}`)
+  }
+
+  getStudentByFilter(studentSpecParams: StudentSpecParams): Observable<Student[]>{
+    return this.http.get<Student[]>(`${this.apiUrl}/getStudentByFilter/${studentSpecParams}`)
   }
 
   getStudentById(id : number): Observable<Student>{
