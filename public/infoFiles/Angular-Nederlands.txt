@@ -534,7 +534,7 @@ install bootstrap :
 npm install bootstrap@5.3.3
 
 
-toevoegenboots trap:
+toevoegen bootstrap:
 
 pas angular.json aan:
 
@@ -600,7 +600,31 @@ ng g s user\services\permission
 
 -------------------------------------------------------
 
+BEHAVIOR SUBJECT:
+-----------------
+we gebruiken het in ons project om gegevens te onthouden tussen 
+verschillende componenten.
+We wensen de zoekopdracht in het student-list component de onthouden ,
+als we naar student detail en terug naar student-list.
 
+In de studentService :
+export class StudentService 
+public searchNameText = new BehaviorSubject<string>(''); -> Het is verplicht het BehaviorSubject een startwaarde te geven, hier een lege string.
+
+In studentList - component :
+showStudentDetail(id: number): void
+this.studentService.searchNameText.next(this.searchName); --> we kennen hier een nieuwe waarde toe aan searchNameText.
+
+ngOnInit(): void 
+    this.studentService.searchNameText.subscribe({
+          next:(data) =>{
+            this.searchName = data
+          }
+    });
+--> hier halen we de waarde van searchNameText op.
+Daar het hier gaat over een Observable, moeten op deze variable 'subscriben'.
+
+----------------------------------------------------------
 
 
 

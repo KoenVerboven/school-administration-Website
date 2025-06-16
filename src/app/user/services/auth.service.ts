@@ -12,7 +12,7 @@ import { ApiResponse } from '../models/apiResponse.model';
 
 export class AuthService {
   public user = new Subject<AuthResponseData>();
-  public authenticated = new Subject<boolean>();
+  public authenticated = new BehaviorSubject<boolean>(false) ;
 
   private apiUrl = `${environment.apiUrl}/user/login`  
     

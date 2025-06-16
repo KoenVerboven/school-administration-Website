@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
-import { Observable, Subject } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { Student } from '../models/student.model';
 import { StudentSpecParams } from '../models/studentSpecParams.model';
 
@@ -10,7 +10,7 @@ import { StudentSpecParams } from '../models/studentSpecParams.model';
 })
 
 export class StudentService {
-  public searchNameText = new Subject<string>();
+  public searchNameText = new BehaviorSubject<string>('');
 
   private apiUrl = `${environment.apiUrl}/student`
   
