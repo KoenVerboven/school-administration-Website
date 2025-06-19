@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
@@ -24,8 +24,21 @@ export class StudentService {
     return this.http.get<Student[]>(`${this.apiUrl}/getByNameStartWith/${name}`)
   }
 
-  getStudentByFilter(studentSpecParams: StudentSpecParams): Observable<Student[]>{
+  getStudentByFilter1(studentSpecParams: StudentSpecParams): Observable<Student[]>{
     return this.http.get<Student[]>(`${this.apiUrl}/getStudentByFilter/${studentSpecParams}`)
+  }
+
+   getStudentByFilter(name:string,email:string,zipcode:number,sort:string,pagesize:number,pagenumber:number): Observable<Student[]>{
+     let params = new HttpParams();
+     params = params.set('name',name);
+     params = params.set('email',email);
+     params = params.set('zipcode',zipcode);
+     params = params.set('sort',sort);
+     params = params.set('pagesize',pagesize);
+     params = params.set('pagenumber',pagenumber);
+     return this.http.get<Student[]>(`${this.apiUrl}/getStudentByFilter/`,{
+       params: params
+     });
   }
 
   getStudentById(id : number): Observable<Student>{

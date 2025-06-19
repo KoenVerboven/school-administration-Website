@@ -21,75 +21,126 @@ import { StudentSpecParams } from '../models/studentSpecParams.model';
 export class StudentListComponent implements OnInit {
  
   students: Student[] = [];
-  searchName: string = '';
   studentsCount = -1;
   loading = false;
   error = '';
+  sortDirection = 'asc';
+  sortId = false;
+  sortName = false;
+  sortDateOfBirth = false;
+  sortPhone = false;
+  sortEmail = false;
+  actualSort=''
+  previousSort = '';
   studentSpecParams: StudentSpecParams ={
      sort:'name',
-     pageSize:5,
+     pageSize:15,
      pageNumber:1,
      name: '',
      email:'',
      zipcode: 0
   }
 
+
   constructor(private studentService: StudentService, private router: Router){}
 
   ngOnInit(): void {
     this.studentService.searchNameText.subscribe({
           next:(data) =>{
-            this.searchName = data
+            this.studentSpecParams.name = data;
           }
     });
-    if(this.searchName != '')
+    if( this.studentSpecParams.name != '')
     {
-      this.getStudents();
+      this.getStudents('name');
     }
    }
 
   showStudentDetail(id: number): void{
-      this.studentService.searchNameText.next(this.searchName);
-      this.router.navigate(['/studentdetail/detail', id])
+    this.studentService.searchNameText.next(this.studentSpecParams.name);
+    this.router.navigate(['/studentdetail/detail', id])
   }
 
   clearSearch()
   {
-    this.searchName = '';
     this.studentService.searchNameText.next('');
+    this.studentsCount = -1;
   }
 
-  /*
-getStudents()
+  setSort(sort: string): string
   {
-    if(this.searchName.trim() != '')
+    this.sortDirection = "asc";
+    this.sortId = false;
+    this.sortName = false;
+    this.sortDateOfBirth = false;
+    this.sortPhone = false;
+    this.sortEmail = false;
+    if(sort == "id")
     {
-      this.loading = true;
-      alert('bingo');
-      this.studentService.getStudentByFilter(this.studentSpecParams).subscribe((data: Student[]) => {
-          this.students = data;
-          this.studentsCount = this.students.length;
-          this.loading = false;
-        },
-        error => {
-          this.error = 'An error has occurred. Please try again later.';
-          console.log(error.message);
-          this.loading = false;
-        }
-      );
+      this.sortId = true;
+      if(this.previousSort == 'id')
+      {
+        this.sortDirection = 'desc';
+        return 'id_desc';
+      }
+      return 'id'
+    }
     
+    if(sort == "name")
+    {
+      this.sortName = true;
+      if(this.previousSort == 'name')
+      {
+         this.sortDirection = 'desc';
+        return 'name_desc';
+      }
+      return 'name';
     }
- 
+    
+    if(sort == "dateofbirth")
+    {
+      this.sortDateOfBirth = true;
+      if(this.previousSort == 'dateofbirth')
+      {
+        this.sortDirection = 'desc';
+        return 'dateofbirth_desc';
+      }
+      return 'dateofbirth';
+    }
+  
+    if(sort == "phone")
+    {
+      this.sortPhone = true;
+      if(this.previousSort == 'phone')
+      {
+        this.sortDirection = 'desc';
+        return 'phone_desc';
+      }
+      return 'phone';
+    }
+   
+    if(sort == "email")
+    {
+      this.sortEmail = true;
+      if(this.previousSort == 'email')
+      {
+        this.sortDirection = 'desc';
+        return 'email_desc';
+      }
+      return 'email';
+    }
+    return 'name';
   }
-  */
 
- 
- getStudents()
+  
+  getStudents(sort: string)
   {
-    if(this.searchName.trim() != '')
+    if(this.studentSpecParams.name.trim() != '')
     {
       this.loading = true;
-      this.studentService.getStudentByNameStartWith(this.searchName).subscribe((data: Student[]) => {
+      this.actualSort = this.setSort(sort);
+      this.studentSpecParams.sort = this.actualSort;
+      this.studentService.getStudentByFilter(this.studentSpecParams.name,this.studentSpecParams.email,this.studentSpecParams.zipcode,this.studentSpecParams.sort,this.studentSpecParams.pageSize,this.studentSpecParams.pageNumber).subscribe((data: Student[]) => {
           this.students = data;
           this.studentsCount = this.students.length;
           this.loading = false;
@@ -101,6 +152,7 @@ getStudents()
         }
       );
     }
+    this.previousSort = this.actualSort;
   }
 
 }
