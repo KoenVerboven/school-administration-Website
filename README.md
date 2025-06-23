@@ -24,9 +24,13 @@ Administrator View :
 
 ![image](https://github.com/user-attachments/assets/be1de51a-4bc9-4957-91a2-17baf5afd76c)
 Student : 
-Search on fullName like 
-Sort (ascending and desc) by click on header
-Pagination
+* Search on fullName like.
+* Clear search result.
+* Sort (ascending and desc) by click on header. 
+* Pagination.
+* ItemsCount
+* Jump to Student detail by clicking on GridRow.
+  
 
 ![image](https://github.com/user-attachments/assets/32c75e5a-0adf-43f4-ba39-09cd17989a16)
 
