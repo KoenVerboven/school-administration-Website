@@ -62,4 +62,15 @@ export class StudentService {
     return this.http.get<number>(`${this.apiUrl}/getStudentCount`)
   }
 
+  getStudentFilterCount(name:string,email:string,zipcode:number)
+  {
+    let params = new HttpParams();
+     params = params.set('name',name);
+     params = params.set('email',email);
+     params = params.set('zipcode',zipcode);
+    return this.http.get<number>(`${this.apiUrl}/getStudentFilterCount`,{
+       params: params
+     });
+  }
+
 }

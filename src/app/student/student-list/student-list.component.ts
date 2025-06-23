@@ -22,6 +22,7 @@ export class StudentListComponent implements OnInit {
  
   students: Student[] = [];
   studentsCount = -1;
+  list: number[] = [];
   loading = false;
   error = '';
   sortDirection = 'asc';
@@ -34,7 +35,7 @@ export class StudentListComponent implements OnInit {
   previousSort = '';
   studentSpecParams: StudentSpecParams ={
      sort:'name',
-     pageSize:15,
+     pageSize:10,
      pageNumber:1,
      name: '',
      email:'',
@@ -138,11 +139,23 @@ export class StudentListComponent implements OnInit {
     if(this.studentSpecParams.name.trim() != '')
     {
       this.loading = true;
+
+       this.studentService.getStudentFilterCount(this.studentSpecParams.name,this.studentSpecParams.email,this.studentSpecParams.zipcode).subscribe((data: number) => {
+          this.studentsCount = data;
+        },
+        error => {
+          this.error = 'An error has occurred. Please try again later.';
+          console.log(error.message);
+          this.loading = false;
+        }
+      );
+
       this.actualSort = this.setSort(sort);
       this.studentSpecParams.sort = this.actualSort;
       this.studentService.getStudentByFilter(this.studentSpecParams.name,this.studentSpecParams.email,this.studentSpecParams.zipcode,this.studentSpecParams.sort,this.studentSpecParams.pageSize,this.studentSpecParams.pageNumber).subscribe((data: Student[]) => {
           this.students = data;
-          this.studentsCount = this.students.length;
+          this.list = new Array(Math.ceil(this.studentsCount/this.studentSpecParams.pageSize))
+          console.log(this.list);
           this.loading = false;
         },
         error => {
@@ -153,6 +166,65 @@ export class StudentListComponent implements OnInit {
       );
     }
     this.previousSort = this.actualSort;
+  }
+
+  addStudent()
+  {
+    this.router.navigate(['/createstudent'])
+  }
+
+  getPage(pageNumber: number)
+  {
+    this.studentSpecParams.pageNumber = pageNumber;
+    this.studentSpecParams.sort = this.actualSort;
+    this.studentService.getStudentByFilter(this.studentSpecParams.name,this.studentSpecParams.email,this.studentSpecParams.zipcode,this.studentSpecParams.sort,this.studentSpecParams.pageSize,this.studentSpecParams.pageNumber).subscribe((data: Student[]) => {
+          this.students = data;
+          this.list = new Array(Math.ceil(this.studentsCount/this.studentSpecParams.pageSize))
+          console.log(this.list);
+          this.loading = false;
+        },
+        error => {
+          this.error = 'An error has occurred. Please try again later.';
+          console.log(error.message);
+          this.loading = false;
+        }
+    );
+  }
+
+  getPrevPage()
+  {
+    this.studentSpecParams.pageNumber = this.studentSpecParams.pageNumber -1;
+    this.studentSpecParams.sort = this.actualSort;
+    this.studentService.getStudentByFilter(this.studentSpecParams.name,this.studentSpecParams.email,this.studentSpecParams.zipcode,this.studentSpecParams.sort,this.studentSpecParams.pageSize,this.studentSpecParams.pageNumber).subscribe((data: Student[]) => {
+          this.students = data;
+          this.list = new Array(Math.ceil(this.studentsCount/this.studentSpecParams.pageSize))
+          console.log(this.list);
+          this.loading = false;
+        },
+        error => {
+          this.error = 'An error has occurred. Please try again later.';
+          console.log(error.message);
+          this.loading = false;
+        }
+    );
+  }
+
+  getNextPage()
+  {
+    this.studentSpecParams.pageNumber = this.studentSpecParams.pageNumber +1;
+    this.studentSpecParams.sort = this.actualSort;
+    this.studentService.getStudentByFilter(this.studentSpecParams.name,this.studentSpecParams.email,this.studentSpecParams.zipcode,this.studentSpecParams.sort,this.studentSpecParams.pageSize,this.studentSpecParams.pageNumber).subscribe((data: Student[]) => {
+          this.students = data;
+          this.list = new Array(Math.ceil(this.studentsCount/this.studentSpecParams.pageSize))
+          console.log(this.list);
+          this.loading = false;
+        },
+        error => {
+          this.error = 'An error has occurred. Please try again later.';
+          console.log(error.message);
+          this.loading = false;
+        }
+    );
   }
 
 }

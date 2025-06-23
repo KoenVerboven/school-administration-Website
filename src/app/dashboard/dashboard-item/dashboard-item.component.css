@@ -1,9 +1,9 @@
 .dashboarditemStyle{
-    height:8rem ;
+    height:5.0rem ;
     width: 21rem;
     border-radius: 0.5rem;
     box-shadow: 0 1px 6px black;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     padding-top:0.7rem;
     padding-left:0.7rem;
 }
@@ -13,11 +13,11 @@
     color:white;
 }
 .itemCount{
-    margin-left: 2rem;
+    margin-left: 1.5rem;
 }
 .buttonMoreInfo
 {
-    margin-top: 3rem;
+    margin-top: 0.5rem;
     color:white;
     background-color: rgb(71, 68, 68)
 }

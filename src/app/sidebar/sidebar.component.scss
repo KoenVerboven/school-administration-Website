@@ -43,19 +43,20 @@
         }
       }
     }
-    background: #42434d;
-    color: #babbcd;
+    background: #c0c3ec;
+    color: #010213;
   
     .header {
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 10px;
-      background:  #42434d;
+      background: #c0c3ec;
+;
   
       h1 {
         font-size: 20px;
-        color: #e5e6f3;
+        color: #010213;
         margin: 0;
         flex: 1;
         transition: 0.5s;
@@ -63,7 +64,7 @@
       }
   
       .chevron {
-        color: #c2c3ce;
+        color:  #010213;
         cursor: pointer;
         transition: 0.3s;
         margin-left: -25px;
@@ -79,7 +80,7 @@
         }
   
         &:hover {
-          color: white;
+          color: #010213;
         }
       }
     }
@@ -94,19 +95,19 @@
           cursor: pointer;
           transition: 0.5s;
           &:hover {
-            background: rgb(0, 92, 128);
+            background: rgb(94, 192, 231);
             .title {
-              color: white;
+              color: rgb(15, 15, 15);
             }
             svg {
-              fill: white;
+              fill: rgb(31, 30, 30);
             }
           }
   
           &.active {
-            background: #2a38a2;
+            background: #7fa3bb;
             .title {
-              color: white;
+              color: rgb(20, 20, 20);
             }
           }
   
@@ -119,7 +120,7 @@
           }
           .title {
             flex: 1;
-            color: #edeef5;
+            color: #010213;
             transition: 0.3s;
             max-width: 0px;
             overflow: hidden;

@@ -626,7 +626,11 @@ Daar het hier gaat over een Observable, moeten op deze variable 'subscriben'.
 
 ----------------------------------------------------------
 
+add angular-pagination : 
 
+https://getbootstrap.com/docs/5.3/components/pagination/
+
+---------------------------------------------------------------
 
 
 
