@@ -12,17 +12,25 @@ https://github.com/KoenVerboven/SchoolAdministrationApi
 ## Screenshots :
 Home Page :
 
-![image](https://github.com/user-attachments/assets/8d6ae845-f9e8-485d-b0c2-9c16ed04638a)
+![image](https://github.com/user-attachments/assets/ab8a6998-b2d8-4082-beb7-be24fe538d2a)
 
 SignIn :
 
-![image](https://github.com/user-attachments/assets/f3e95585-5f78-42b7-a055-ed4499251ead)
+![image](https://github.com/user-attachments/assets/b6c7830b-f369-499d-8f6e-453f0f01df97)
 
 Administrator View :
 
-![image](https://github.com/user-attachments/assets/52a81bd3-0391-43b5-8e57-7ad94c78bfd7)
+![image](https://github.com/user-attachments/assets/dc9e7f18-9400-42ef-b134-9a60f89e21f1)
 
-![image](https://github.com/user-attachments/assets/e1ea1fbc-1a97-4f59-a03c-2dbe7cc98d24)
+![image](https://github.com/user-attachments/assets/be1de51a-4bc9-4957-91a2-17baf5afd76c)
+Student : 
+* Search on fullName like.
+* Clear search result.
+* Sort (ascending and desc) by click on header. 
+* Pagination.
+* ItemsCount
+* Jump to Student detail by clicking on GridRow.
+  
 
 ![image](https://github.com/user-attachments/assets/32c75e5a-0adf-43f4-ba39-09cd17989a16)
 
