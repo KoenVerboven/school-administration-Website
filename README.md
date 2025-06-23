@@ -16,13 +16,17 @@ Home Page :
 
 SignIn :
 
-![image](https://github.com/user-attachments/assets/42a38561-556f-4fb2-8588-ab914d89c922)
+![image](https://github.com/user-attachments/assets/b6c7830b-f369-499d-8f6e-453f0f01df97)
 
 Administrator View :
 
-![image](https://github.com/user-attachments/assets/52a81bd3-0391-43b5-8e57-7ad94c78bfd7)
+![image](https://github.com/user-attachments/assets/dc9e7f18-9400-42ef-b134-9a60f89e21f1)
 
-![image](https://github.com/user-attachments/assets/35b3c388-5ccb-481d-afe9-15561b88d6a8)
+![image](https://github.com/user-attachments/assets/be1de51a-4bc9-4957-91a2-17baf5afd76c)
+Student : 
+Search on fullName like 
+Sort (ascending and desc) by click on header
+Pagination
 
 ![image](https://github.com/user-attachments/assets/32c75e5a-0adf-43f4-ba39-09cd17989a16)
 
