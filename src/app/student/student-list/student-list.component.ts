@@ -193,7 +193,12 @@ export class StudentListComponent implements OnInit {
 
   getPrevPage()
   {
-    this.studentSpecParams.pageNumber = this.studentSpecParams.pageNumber -1;
+    if(this.studentSpecParams.pageNumber -1 < 1)
+    {
+      return;
+    }
+
+    this.studentSpecParams.pageNumber -= 1;
     this.studentSpecParams.sort = this.actualSort;
     this.studentService.getStudentByFilter(this.studentSpecParams.name,this.studentSpecParams.email,this.studentSpecParams.zipcode,this.studentSpecParams.sort,this.studentSpecParams.pageSize,this.studentSpecParams.pageNumber).subscribe((data: Student[]) => {
           this.students = data;
@@ -211,7 +216,12 @@ export class StudentListComponent implements OnInit {
 
   getNextPage()
   {
-    this.studentSpecParams.pageNumber = this.studentSpecParams.pageNumber +1;
+    if(this.studentSpecParams.pageNumber +1 > this.list.length)
+    {
+      return;
+    }
+    
+    this.studentSpecParams.pageNumber += 1;
     this.studentSpecParams.sort = this.actualSort;
     this.studentService.getStudentByFilter(this.studentSpecParams.name,this.studentSpecParams.email,this.studentSpecParams.zipcode,this.studentSpecParams.sort,this.studentSpecParams.pageSize,this.studentSpecParams.pageNumber).subscribe((data: Student[]) => {
           this.students = data;

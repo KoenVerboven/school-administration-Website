@@ -6,6 +6,14 @@ th {
     background-color: rgb(220, 230, 240);
     cursor: pointer;
 }
+.paginationSelected{
+    background-color: rgb(24, 101, 179);
+    color:rgb(243, 238, 238);
+}
+.paginationNotSelected{
+    background-color: rgb(244, 247, 250);
+    color:black;
+}
 
 
 
