@@ -12,7 +12,8 @@ https://github.com/KoenVerboven/SchoolAdministrationApi
 ## Screenshots :
 Home Page :
 
-![image](https://github.com/user-attachments/assets/ab8a6998-b2d8-4082-beb7-be24fe538d2a)
+![image](https://github.com/user-attachments/assets/c16b3b7f-29f5-4435-abce-a35ea052f080)
+
 
 SignIn :
 
@@ -20,7 +21,7 @@ SignIn :
 
 Administrator View :
 
-![image](https://github.com/user-attachments/assets/dc9e7f18-9400-42ef-b134-9a60f89e21f1)
+![image](https://github.com/user-attachments/assets/69b79234-a861-423e-8b6f-9b377a8525fd)
 
 ![image](https://github.com/user-attachments/assets/b59c7c6d-352a-4771-998f-743053b6fdd8)
 
@@ -36,11 +37,11 @@ Student :
   
   
 
-![image](https://github.com/user-attachments/assets/32c75e5a-0adf-43f4-ba39-09cd17989a16)
+![image](https://github.com/user-attachments/assets/84fd3c9e-9254-4f24-aa82-a64e2a808281)
 
-![image](https://github.com/user-attachments/assets/d6986c7f-8106-45e8-8651-9cd835371e3e)
+![image](https://github.com/user-attachments/assets/a994f98e-3030-4cfd-a1b1-58c920897ddb)
 
-![image](https://github.com/user-attachments/assets/d66b8028-6581-4b0b-8f8c-b37717e820a2)
+![image](https://github.com/user-attachments/assets/2dae06cc-9948-482d-aa01-fa589685df79)
 
 ![image](https://github.com/user-attachments/assets/5aa9771d-9d20-40b6-b618-f8356e552da6)
 
