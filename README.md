@@ -22,7 +22,9 @@ Administrator View :
 
 ![image](https://github.com/user-attachments/assets/dc9e7f18-9400-42ef-b134-9a60f89e21f1)
 
-![image](https://github.com/user-attachments/assets/be1de51a-4bc9-4957-91a2-17baf5afd76c)
+![image](https://github.com/user-attachments/assets/b59c7c6d-352a-4771-998f-743053b6fdd8)
+
+
 Student : 
 * Search on fullName (like *).
 * Clear search result.
