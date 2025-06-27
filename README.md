@@ -12,7 +12,8 @@ https://github.com/KoenVerboven/SchoolAdministrationApi
 ## Screenshots :
 Home Page :
 
-![image](https://github.com/user-attachments/assets/ab8a6998-b2d8-4082-beb7-be24fe538d2a)
+![image](https://github.com/user-attachments/assets/c16b3b7f-29f5-4435-abce-a35ea052f080)
+
 
 SignIn :
 
@@ -20,9 +21,11 @@ SignIn :
 
 Administrator View :
 
-![image](https://github.com/user-attachments/assets/dc9e7f18-9400-42ef-b134-9a60f89e21f1)
+![image](https://github.com/user-attachments/assets/0f850cda-bccb-4450-8fd8-2d0bfe8c5794)
 
-![image](https://github.com/user-attachments/assets/be1de51a-4bc9-4957-91a2-17baf5afd76c)
+![image](https://github.com/user-attachments/assets/b59c7c6d-352a-4771-998f-743053b6fdd8)
+
+
 Student : 
 * Search on fullName (like *).
 * Clear search result.
@@ -34,19 +37,19 @@ Student :
   
   
 
-![image](https://github.com/user-attachments/assets/32c75e5a-0adf-43f4-ba39-09cd17989a16)
+![image](https://github.com/user-attachments/assets/84fd3c9e-9254-4f24-aa82-a64e2a808281)
 
-![image](https://github.com/user-attachments/assets/d6986c7f-8106-45e8-8651-9cd835371e3e)
+![image](https://github.com/user-attachments/assets/a994f98e-3030-4cfd-a1b1-58c920897ddb)
 
-![image](https://github.com/user-attachments/assets/d66b8028-6581-4b0b-8f8c-b37717e820a2)
+![image](https://github.com/user-attachments/assets/2dae06cc-9948-482d-aa01-fa589685df79)
 
 ![image](https://github.com/user-attachments/assets/5aa9771d-9d20-40b6-b618-f8356e552da6)
 
-![image](https://github.com/user-attachments/assets/b97c07a1-31f0-4368-b33c-9bec5f19e71f)
+![image](https://github.com/user-attachments/assets/c80cd124-16f8-492c-964d-f845bcb57c67)
 
-![image](https://github.com/user-attachments/assets/393342b3-0e6f-4690-b9c1-52155f0dd5a5)
+![image](https://github.com/user-attachments/assets/5ed9274f-c20c-421a-bf6a-12ab4b39331e)
 
-![image](https://github.com/user-attachments/assets/951b2c38-7c30-4f4e-9bbc-4b9f99540ced)
+![image](https://github.com/user-attachments/assets/0450fec1-5d1e-4c4f-8d96-71550eb4ce3e)
 
 
 Student View :
@@ -56,7 +59,8 @@ Student View :
 
 Teacher View :
 
-![image](https://github.com/user-attachments/assets/8fcf48bd-b102-4b46-b4b4-1ba0026055ad)
+![image](https://github.com/user-attachments/assets/98f89112-a11c-4fe6-8f59-b78237b94644)
+
 
 
 SQL-server :
