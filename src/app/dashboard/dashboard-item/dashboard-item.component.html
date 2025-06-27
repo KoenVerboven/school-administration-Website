@@ -1,4 +1,4 @@
-<div class="dashboarditemStyle"  [ngStyle]="{'background-color': dashboardItem.color? dashboardItem.color : '#888888'}"> 
+<div class="dashboarditemStyle" (click)="showMoreInfo(dashboardItem.url)" [ngStyle]="{'background-color': dashboardItem.color? dashboardItem.color : '#888888'}"> 
     <div class="itemName">Total {{dashboardItem.itemName}} : {{dashboardItem.itemCount}}</div>
-    <button type="button" class="buttonMoreInfo" (click)="showMoreInfo(dashboardItem.url)">More Info</button>
+    <label type="button" class="labelMoreInfo" >More Info <i class="bi bi-arrow-right-circle"></i></label>
 </div>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { studentpresenceitems } from './mock-studentpresence-list';
 
 @Component({
   selector: 'app-student-presence',
@@ -8,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrl: './student-presence.component.css'
 })
 export class StudentPresenceComponent {
-
+  items = studentpresenceitems;
 }

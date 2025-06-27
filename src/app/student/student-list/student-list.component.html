@@ -46,11 +46,17 @@
       </table>
       <nav aria-label="Page navigation">
         <ul class="pagination">
-          <li class="page-item"><a class="page-link" (click)="getPrevPage()">Previous</a></li>
+          @if(studentSpecParams.pageNumber > 1)
+          {
+            <li class="page-item"><a class="page-link" (click)="getPrevPage()">Previous</a></li>
+          }
           @for( item of list;track item; let i=  $index){
             <li class="page-item"><a class="page-link paginationSelected" [ngClass]="i + 1 == studentSpecParams.pageNumber ? 'paginationSelected' : 'paginationNotSelected'"  (click)="getPage(i + 1)">{{i + 1}}</a></li>
           }
-          <li class="page-item"><a class="page-link" (click)="getNextPage()">Next</a></li>
+          @if(studentSpecParams.pageNumber < list.length)
+          {
+            <li class="page-item"><a class="page-link" (click)="getNextPage()">Next</a></li>
+          }
         </ul>
       </nav>
     }

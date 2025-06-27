@@ -24,6 +24,7 @@ import { SettingsComponent } from './settings/settings/settings-list.component';
 import { PermissionsComponent } from './settings/permissions/permissions.component';
 import { PageNotFoundComponent } from './general/page-not-found/page-not-found.component'
 import { AuthGuard } from './user/auth.guard';
+import { StudentPresenceComponent } from './student/student-presence/student-presence.component';
 
 
 export const routes: Routes = [
@@ -57,5 +58,6 @@ export const routes: Routes = [
     {path: 'userdetail/:action/:id', component: UserFormComponent, canActivate:[AuthGuard]},
     {path: 'settings', component: SettingsComponent, canActivate:[AuthGuard]},
     {path: 'permissions', component: PermissionsComponent, canActivate:[AuthGuard]},
+    {path: 'studentpresence', component: StudentPresenceComponent, canActivate:[AuthGuard]},
     {path: '**', component: PageNotFoundComponent}
 ]; 

@@ -1,1 +1,36 @@
-<p>student-presence works!</p>
+<p class="text-center h5" >Student-presence</p>
+<p>
+  <Select>
+    <option value="">Please choose an class</option>
+    <option value="1">Class1</option>
+    <option value="2">Class2</option>
+  </Select>
+</p>
+
+
+<table style="width: 100%;">
+    <thead>
+        <th>StudentName</th>
+        <th>Presence</th>
+        <th>Absense reason</th>
+        <th>Comment</th>
+    </thead>
+    <tbody>
+      @for(item of items; track item.id){
+        <tr>
+           <td style="width: 20%;">{{item.studentName}}</td> 
+           <td><input type="checkbox" name="presence" value="false"></td> 
+           <td>
+               <Select>
+                   <option value="">Please choose an option</option>
+                   <option value="sick">Sick</option>
+                   <option value="legally absent">legally absent</option>
+               </Select>
+           </td>
+           <td style="width: 40%;"><input type="text" style="width: 100%;"></td>
+        </tr>
+      }  
+    </tbody>
+ </table>
+
+

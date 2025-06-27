@@ -10,16 +10,27 @@
 .itemName{
     font-size: 1.1rem;
     font-weight: 500;
-    color:white;
+    color:rgb(15, 15, 15);
 }
 .itemCount{
     margin-left: 1.5rem;
 }
-.buttonMoreInfo
+.labelMoreInfo
 {
     margin-top: 0.5rem;
+    padding-left: 0.3rem;
+    padding-right: 0.4rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.1rem;
     color:white;
     background-color: rgb(71, 68, 68)
+}
+.dashboarditemStyle:hover{
+    cursor: pointer;
+}
+
+.dashboarditemStyle:hover .labelMoreInfo{
+    background-color: rgb(43, 86, 226);
 }
 
 

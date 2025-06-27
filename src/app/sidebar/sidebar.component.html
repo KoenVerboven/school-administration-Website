@@ -106,6 +106,17 @@
             <div class="title">My studyplan</div>
           </div>
         </div>
+     }
+     @if(studentPresenceVisible)
+     {
+        <div class="link">
+          <div class="content" [routerLink]="['studentpresence']" [routerLinkActive]="'active'">
+            <div class="icon"  data-placement="right" title="Student Presence">
+              <i class="bi bi-person"></i>
+            </div>
+            <div class="title">Student Presence</div>
+          </div>
+        </div>
       }
       @if(settingsVisible)
       {
