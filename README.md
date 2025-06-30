@@ -21,7 +21,7 @@ SignIn :
 
 Administrator View :
 
-![image](https://github.com/user-attachments/assets/0f850cda-bccb-4450-8fd8-2d0bfe8c5794)
+![image](https://github.com/user-attachments/assets/6390f3cb-c6eb-4698-bc19-8fa3049a956c)
 
 ![image](https://github.com/user-attachments/assets/b59c7c6d-352a-4771-998f-743053b6fdd8)
 
