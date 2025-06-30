@@ -51,11 +51,9 @@ Student :
 
 ![image](https://github.com/user-attachments/assets/0450fec1-5d1e-4c4f-8d96-71550eb4ce3e)
 
-
 Student View :
 
-![image](https://github.com/user-attachments/assets/d1692cff-152b-4357-9229-bff1276d722a)
-
+![image](https://github.com/user-attachments/assets/13e3fd51-dad5-4cde-81ab-4c8a25747097)
 
 Teacher View :
 
