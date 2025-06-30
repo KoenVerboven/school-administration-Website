@@ -7,7 +7,7 @@ import {DashboardItem} from '../models/dashboardItem.model'
       itemCount:0,
       color:'#bde',
       columnNumber: 1,
-      url:'/students',
+      url:'/studentsInfo',
       visible:true
     },
     {

@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="row">
+  <div class="row">
       @for(colomnNr of colomnNrs; track colomnNr){
         <div class="col-sm">
           @for(dasboarditem of items; track dasboarditem.id ){
@@ -10,6 +10,31 @@
           }
         </div>
       }
+  </div>
+  <div class="row" style="margin-top: 12px;">
+      <div class="col-sm">
+        <div class="dashboarditemStyle"> 
+          <div><b>Students:</b></div>
+          <div>present : 200</div>
+          <div>absent : 20</div>
+          <div>sick : 10</div>
+          <button type="button" class="labelMoreInfo" style="background-color: rgb(71, 68, 68);color: white;margin-top: 10px;">More Info <i class="bi bi-arrow-right-circle"></i></button>
+          <div><button style="background-color: rgb(71, 68, 68);color: white;margin-top: 10px;width: 103px;">Refresh <i class="bi bi-arrow-clockwise"></i></button></div>
+        </div>
+      </div>
+      <div class="col-sm">
+         <div class="dashboarditemStyle"> 
+          <div><b>Teachers:</b></div>
+          <div>present : 20</div>
+          <div>absent : 10</div>
+          <div>sick : 5</div>
+          <button type="button" class="labelMoreInfo" style="background-color: rgb(71, 68, 68);color: white;margin-top: 10px;">More Info <i class="bi bi-arrow-right-circle"></i></button>
+          <div><button style="background-color: rgb(71, 68, 68);color: white;margin-top: 10px;width: 103px;">Refresh <i class="bi bi-arrow-clockwise"></i></button></div>
+         </div>
+      </div>
+      <div class="col-sm">
+
+      </div>
   </div>
 </div>
   

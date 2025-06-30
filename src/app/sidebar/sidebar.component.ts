@@ -56,6 +56,7 @@ export class SidebarComponent implements OnChanges {
         this.usersVisible = true;
         this.settingsVisible = true;
         this.studentPresenceVisible = true;
+        this.mystudyplanVisible=true;
       }
       if(this.userRole == 'student')
       {

@@ -1,5 +1,7 @@
-<br>
-<h6 style="background-color: #779;color:white;padding-left: 20px;">Preparations for exam 14 june 2025</h6>
+<p class="text-center h5" style="margin-top: 10px;" >My Studyplan</p>
+<div><label style="width: 120px;">Title:</label>Preparations for exam 14 june 2025</div>
+<div><label style="width: 120px;">Today:</label>{{ today | date :'EEEE'}} {{ today | date :'dd/MM/yyyy'}}</div>
+<div><label style="width: 120px;">Choosen date:</label>{{ studyDate | date :'EEEE'}} {{ studyDate | date :'dd/MM/yyyy'}}</div>
 @if(error != "")
 {
     <div class="errorLabel">{{error}}</div>
@@ -15,23 +17,29 @@
 }
 @if(error == "" && !loading)
 {
-    <div>
-        <div style="float: left;width: 100px;">{{ studyDate | date :'EEEE'}}</div><div style="float: left;">{{ studyDate | date :'dd/MM/yyyy'}}</div>
-        <br/><br/>
-        <button (click)="showPrevious()"><i class="bi bi-arrow-left"></i></button>
-        <button (click)="showCurrent()" style="margin-left: 20px;">Current day</button>
-        <button (click)="showNext()" style="margin-left: 20px;"><i class="bi bi-arrow-right"></i></button>
+    <div style="margin-top: 10px;margin-bottom: 10px;">
+        <button type="button" class="btn btn-light" (click)="showPrevious()"><i class="bi bi-arrow-left"></i></button>
+        <button type="button" class="btn btn-light" (click)="showCurrent()" style="margin-left: 20px;">Current day</button>
+        <button type="button" class="btn btn-light" (click)="showNext()" style="margin-left: 20px;"><i class="bi bi-arrow-right"></i></button>
     </div>
-    <br/>
     @if(studyplanDetailsCount > 0)
     {
         <table class="table table-sm">
+            <thead>
+                <th class="p-2 gridheader">Date</th>
+                <th class="p-2 gridheader">Time</th>
+                <th class="p-2 gridheader">Description</th>
+                <th class="p-2 gridheader">Completed</th>
+                <th class="p-2 gridheader">Comment</th>
+            </thead>
             <tbody>
                 @for(studyplandetail of studyplansDetails; track studyplandetail.id) {
                     <tr>
                         <td>{{studyplandetail.start | date: 'dd/MM'}}</td>
                         <td>{{studyplandetail.start | date:'shortTime'}} to {{studyplandetail.end | date:'shortTime'}}</td>
                         <td>{{studyplandetail.goalDescription}}</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="text" style="width: 90%;"></td>
                     </tr>
                 }
             </tbody>

@@ -18,6 +18,7 @@ export class StudyplanDetailListComponent {
   studyplansDetails: StudyPlanDetail[] = [];
   studyplanDetailsCount = -1;
   studyDate = new Date();
+  today = new Date();
   loading = false;
   error = '';
 

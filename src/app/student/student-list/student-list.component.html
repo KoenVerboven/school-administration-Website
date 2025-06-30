@@ -3,7 +3,7 @@
 <button  style="float:left; margin-left: 15px;" class="btn btn-light" type="button"  (click)="getStudents('name')"><i class="bi bi-search"></i> Search</button>
 <button  style="float:left; margin-left: 15px;" class="btn btn-light" type="button" (click)="clearSearch()"><i class="bi bi-x-lg"></i> Clear Search</button>
 <button   style="float:left; margin-left: 15px;" class="btn btn-light" type="button" (click)="addStudent()"><i class="bi bi-plus"></i> Add student</button>
-<br/><br/>
+
   @if(error != "")
   {
     <br/><br/><br/>  
@@ -23,7 +23,7 @@
   {
     @if(studentsCount > 0){
       <div style="float:right;">  {{studentsCount}} students found. </div>
-      <br/>
+      <br/><br/>
       <table class="table table-sm table-hover">
         <thead>
            <tr>
