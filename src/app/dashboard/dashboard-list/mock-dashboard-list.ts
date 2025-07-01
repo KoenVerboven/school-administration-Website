@@ -5,7 +5,7 @@ import {DashboardItem} from '../models/dashboardItem.model'
       id:1,
       itemName:'Students',
       itemCount:0,
-      color:'#bde',
+      color:'#fff',
       columnNumber: 1,
       url:'/studentsInfo',
       visible:true
@@ -15,7 +15,7 @@ import {DashboardItem} from '../models/dashboardItem.model'
       itemName:'Teachers',
       columnNumber: 1,
       itemCount:0,
-      color:'#bde',
+      color:'#fff',
       url:'/teachers',
       visible:true
     },
@@ -24,7 +24,7 @@ import {DashboardItem} from '../models/dashboardItem.model'
       itemName:'Courses',
       columnNumber: 2,
       itemCount:0,
-      color:'#bde',
+      color:'#fff',
       url:'/courses',
       visible:true
     },
@@ -33,7 +33,7 @@ import {DashboardItem} from '../models/dashboardItem.model'
       itemName:'Exams',
       columnNumber: 3,
       itemCount: 0,
-      color:'#bde',
+      color:'#fff',
       url:'/exams',
       visible:true
     },
@@ -42,16 +42,16 @@ import {DashboardItem} from '../models/dashboardItem.model'
       itemName:'ExamResults',
       columnNumber: 3,
       itemCount: 0,
-      color:'#bde',
+      color:'#fff',
       url:'/examresults',
       visible:true
     },
     {
       id:6,
       itemName:'Users',
-      columnNumber: 1,
+      columnNumber: 2,
       itemCount: 0,
-      color:'#bde',
+      color:'#fff',
       url:'/users',
       visible:true
     },

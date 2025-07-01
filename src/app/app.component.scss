@@ -1,9 +1,10 @@
 .content {
     margin-left: 100px;
-    margin-right: 30px;
     transition: 0.5s;
+    background-color: rgb(230, 230, 245);
+    min-height: 110vh;
     &.sidebarExpanded {
-      margin-left: 250px;
+      margin-left: 240px;
     }
   }
   .login{
@@ -24,7 +25,7 @@
   }
   #fullheight
   {
-    background-color:hsl(0, 0%, 87%);min-height: 110vh;
+    background-color:hsl(0, 30%, 86%);min-height: 110vh;
   }
   #header{
     height: 40px;background-color: rgb(135, 164, 180);color:white;

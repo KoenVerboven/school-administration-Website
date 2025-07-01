@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, OnDestroy } from '@angular/core';
+import { Component, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -8,20 +8,9 @@ import { CommonModule } from '@angular/common';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent implements OnInit, OnDestroy {
+export class HomeComponent   {
   
   numberList : number[]=[1,2,3,4,5];
   
   constructor(private elementRef: ElementRef) {}
-
-  ngOnInit() {
-    this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor =
-      '#bbd';
-  }
-
-   ngOnDestroy() {
-    this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor =
-      '#FFFF';
-  }
-
 }

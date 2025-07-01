@@ -1,70 +1,74 @@
-<p class="text-center h5" >Students</p>
-<input type="text" (keyup.enter)= "getStudents('name')" [(ngModel)]="studentSpecParams.name" placeholder="Student name" style="float:left;width: 300px;padding-left: 5px;">
-<button  style="float:left; margin-left: 15px;" class="btn btn-light" type="button"  (click)="getStudents('name')"><i class="bi bi-search"></i> Search</button>
-<button  style="float:left; margin-left: 15px;" class="btn btn-light" type="button" (click)="clearSearch()"><i class="bi bi-x-lg"></i> Clear Search</button>
-<button   style="float:left; margin-left: 15px;" class="btn btn-light" type="button" (click)="addStudent()"><i class="bi bi-plus"></i> Add student</button>
+<div style="margin-left: 5px;margin-right: 10px;">
+  <p class="text-center h5" >Students</p>
+  <input type="text" (keyup.enter)= "getStudents('name')" [(ngModel)]="studentSpecParams.name" placeholder="Student name" style="float:left;width: 300px;padding-left: 5px;">
+  <button  style="float:left; margin-left: 15px;" class="btn btn-light" type="button"  (click)="getStudents('name')"><i class="bi bi-search"></i> Search</button>
+  <button  style="float:left; margin-left: 15px;" class="btn btn-light" type="button" (click)="clearSearch()"><i class="bi bi-x-lg"></i> Clear Search</button>
+  <button   style="float:left; margin-left: 15px;" class="btn btn-light" type="button" (click)="addStudent()"><i class="bi bi-plus"></i> Add student</button>
 
-  @if(error != "")
-  {
-    <br/><br/><br/>  
-    <div class="errorLabel">{{error}}</div>
-  }
-  @if(loading)
-  {
-    <br/><br/><br/> 
-    <div style="margin-left: 200px;">
-      <div fxLayout="row" fxLayoutAlign="space-around center" style="height:100%;">
-        <mat-spinner diameter="70" strokeWidth="5"></mat-spinner>
+    @if(error != "")
+    {
+      <br/><br/><br/>  
+      <div class="errorLabel">{{error}}</div>
+    }
+    @if(loading)
+    {
+      <br/><br/><br/> 
+      <div style="margin-left: 200px;">
+        <div fxLayout="row" fxLayoutAlign="space-around center" style="height:100%;">
+          <mat-spinner diameter="70" strokeWidth="5"></mat-spinner>
+        </div>
+        <div>loading</div> 
       </div>
-      <div>loading</div> 
-    </div>
-  }
-  @if(error == "" && !loading)
-  {
-    @if(studentsCount > 0){
-      <div style="float:right;">  {{studentsCount}} students found. </div>
-      <br/><br/>
-      <table class="table table-sm table-hover">
-        <thead>
-           <tr>
-             <th class="p-2 gridheader" style="width: 10%;" (click)="getStudents('id')">Id  &nbsp;  @if(sortId) {@if(sortDirection == "asc"){<i class="bi bi-arrow-down"></i>}@else{<i class="bi bi-arrow-up"></i>}}</th>
-             <th class="p-2 gridheader" style="width: 30%;" (click)="getStudents('name')">Name  &nbsp;  @if(sortName) {@if(sortDirection == "asc"){<i class="bi bi-arrow-down"></i>}@else{<i class="bi bi-arrow-up"></i>}}</th>
-             <th class="p-2 gridheader"  style="width:30%;" (click)="getStudents('phone')">Phone  &nbsp;  @if(sortPhone) {@if(sortDirection == "asc"){<i class="bi bi-arrow-down"></i>}@else{<i class="bi bi-arrow-up"></i>}}</th>       
-             <th class="p-2 gridheader" style="width: 30%;" (click)="getStudents('email')">Email  &nbsp;  @if(sortEmail) {@if(sortDirection == "asc"){<i class="bi bi-arrow-down"></i>}@else{<i class="bi bi-arrow-up"></i>}}</th>       
-          </tr>
-        </thead>
-        <tbody>
-            @for(student of students; track student.id){
-              <tr (click)="showStudentDetail(student.id)" class="cell-hoverCursor">   
-                <td>{{student.id}}</td>        
-                <td>{{student.lastName}} {{student.firstName}}</td>  
-                <td>{{student.phone}}</td>
-                <td>{{student.email}}</td>
-              </tr>
+    }
+    @if(error == "" && !loading)
+    {
+      @if(studentsCount > 0){
+        <div style="float:right;">  {{studentsCount}} students found. </div>
+        <br/><br/>
+        <table class="table table-sm table-hover">
+          <thead>
+            <tr>
+              <th class="p-2 gridheader" style="width: 10%;" (click)="getStudents('id')">Id  &nbsp;  @if(sortId) {@if(sortDirection == "asc"){<i class="bi bi-arrow-down"></i>}@else{<i class="bi bi-arrow-up"></i>}}</th>
+              <th class="p-2 gridheader" style="width: 30%;" (click)="getStudents('name')">Name  &nbsp;  @if(sortName) {@if(sortDirection == "asc"){<i class="bi bi-arrow-down"></i>}@else{<i class="bi bi-arrow-up"></i>}}</th>
+              <th class="p-2 gridheader"  style="width:30%;" (click)="getStudents('phone')">Phone  &nbsp;  @if(sortPhone) {@if(sortDirection == "asc"){<i class="bi bi-arrow-down"></i>}@else{<i class="bi bi-arrow-up"></i>}}</th>       
+              <th class="p-2 gridheader" style="width: 30%;" (click)="getStudents('email')">Email  &nbsp;  @if(sortEmail) {@if(sortDirection == "asc"){<i class="bi bi-arrow-down"></i>}@else{<i class="bi bi-arrow-up"></i>}}</th>       
+            </tr>
+          </thead>
+          <tbody>
+              @for(student of students; track student.id){
+                <tr (click)="showStudentDetail(student.id)" class="cell-hoverCursor">   
+                  <td>{{student.id}}</td>        
+                  <td>{{student.lastName}} {{student.firstName}}</td>  
+                  <td>{{student.phone}}</td>
+                  <td>{{student.email}}</td>
+                </tr>
+              }
+          </tbody>
+        </table>
+        <nav aria-label="Page navigation">
+          <ul class="pagination">
+            @if(studentSpecParams.pageNumber > 1)
+            {
+              <li class="page-item"><a class="page-link" (click)="getPrevPage()">Previous</a></li>
             }
-        </tbody>
-      </table>
-      <nav aria-label="Page navigation">
-        <ul class="pagination">
-          @if(studentSpecParams.pageNumber > 1)
-          {
-            <li class="page-item"><a class="page-link" (click)="getPrevPage()">Previous</a></li>
-          }
-          @for( item of list;track item; let i=  $index){
-            <li class="page-item"><a class="page-link paginationSelected" [ngClass]="i + 1 == studentSpecParams.pageNumber ? 'paginationSelected' : 'paginationNotSelected'"  (click)="getPage(i + 1)">{{i + 1}}</a></li>
-          }
-          @if(studentSpecParams.pageNumber < list.length)
-          {
-            <li class="page-item"><a class="page-link" (click)="getNextPage()">Next</a></li>
-          }
-        </ul>
-      </nav>
-    }
-    @if(studentsCount == 0) {
-      <br/><br/><br/>
-      <p style="font-size: 16px;color:white;background-color: #555599;border-radius: 7px;text-align: center;">No Students found with name like '{{studentSpecParams.name}}'.</p>
-    }
-}
+            @for( item of list;track item; let i=  $index){
+              <li class="page-item"><a class="page-link paginationSelected" [ngClass]="i + 1 == studentSpecParams.pageNumber ? 'paginationSelected' : 'paginationNotSelected'"  (click)="getPage(i + 1)">{{i + 1}}</a></li>
+            }
+            @if(studentSpecParams.pageNumber < list.length)
+            {
+              <li class="page-item"><a class="page-link" (click)="getNextPage()">Next</a></li>
+            }
+          </ul>
+        </nav>
+      }
+      @if(studentsCount == 0) {
+        <br/><br/><br/>
+        <p style="font-size: 16px;color:white;background-color: #555599;border-radius: 7px;text-align: center;">No Students found with name like '{{studentSpecParams.name}}'.</p>
+      }
+  }
+</div>
+
+
 
 
  
