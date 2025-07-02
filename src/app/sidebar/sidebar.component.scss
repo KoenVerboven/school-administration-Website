@@ -13,7 +13,7 @@
   .sidebar {
     position: fixed;
     left: 0;
-    top: 0;
+    top: 10;
     height: 100vh;
     transition: 0.3s;
     width: 70px;
@@ -43,15 +43,15 @@
         }
       }
     }
-    background: #c0c3ec;
-    color: #010213;
+    background: #efeffa;
+    color: #02041d;//
   
     .header {
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 10px;
-      background: #c0c3ec;
+      background: #efeffa;
 ;
   
       h1 {
@@ -80,7 +80,7 @@
         }
   
         &:hover {
-          color: #010213;
+          color: #8388e7;
         }
       }
     }
@@ -95,7 +95,7 @@
           cursor: pointer;
           transition: 0.5s;
           &:hover {
-            background: rgb(94, 192, 231);
+            background: rgb(135, 210, 240);
             .title {
               color: rgb(15, 15, 15);
             }
@@ -105,9 +105,13 @@
           }
   
           &.active {
-            background: #34cceb;
+            background: #bad6f7;
             .title {
-              color: rgb(20, 20, 20);
+              color: rgb(58, 5, 250);
+              font-weight: bold;
+            }
+            .icon {
+              color:  #0c18ee;  
             }
           }
   
