@@ -21,10 +21,10 @@ SignIn :
 
 Administrator View :
 
-![image](https://github.com/user-attachments/assets/6390f3cb-c6eb-4698-bc19-8fa3049a956c)
+![image](https://github.com/user-attachments/assets/891ee174-0bad-43ee-9dc5-488f94f98ace)
 
-![image](https://github.com/user-attachments/assets/b59c7c6d-352a-4771-998f-743053b6fdd8)
 
+![image](https://github.com/user-attachments/assets/81f34b3d-6708-4331-bcbb-985b6bcf15c2)
 
 Student : 
 * Search on fullName (like *).
@@ -35,15 +35,11 @@ Student :
 * Jump to Student detail by clicking on GridRow.
 * Jump to Add new student.
   
-  
+![image](https://github.com/user-attachments/assets/ae1ebdf5-9114-4643-b8dc-b158683ca228)
 
-![image](https://github.com/user-attachments/assets/84fd3c9e-9254-4f24-aa82-a64e2a808281)
+![image](https://github.com/user-attachments/assets/61e7ecdf-8239-44d4-abc5-37b2d5e898a4)
 
-![image](https://github.com/user-attachments/assets/a994f98e-3030-4cfd-a1b1-58c920897ddb)
-
-![image](https://github.com/user-attachments/assets/2dae06cc-9948-482d-aa01-fa589685df79)
-
-![image](https://github.com/user-attachments/assets/5aa9771d-9d20-40b6-b618-f8356e552da6)
+![image](https://github.com/user-attachments/assets/875e0e66-e86d-45c1-ab0b-f209cd03c9e3)
 
 ![image](https://github.com/user-attachments/assets/c80cd124-16f8-492c-964d-f845bcb57c67)
 
