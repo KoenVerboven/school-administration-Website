@@ -28,10 +28,11 @@
         <table class="table table-sm table-hover">
           <thead>
             <tr>
-              <th class="p-2 gridheader" style="width: 10%;" (click)="getStudents('id')">Id  &nbsp;  @if(sortId) {@if(sortDirection == "asc"){<i class="bi bi-arrow-down"></i>}@else{<i class="bi bi-arrow-up"></i>}}</th>
-              <th class="p-2 gridheader" style="width: 30%;" (click)="getStudents('name')">Name  &nbsp;  @if(sortName) {@if(sortDirection == "asc"){<i class="bi bi-arrow-down"></i>}@else{<i class="bi bi-arrow-up"></i>}}</th>
-              <th class="p-2 gridheader"  style="width:30%;" (click)="getStudents('phone')">Phone  &nbsp;  @if(sortPhone) {@if(sortDirection == "asc"){<i class="bi bi-arrow-down"></i>}@else{<i class="bi bi-arrow-up"></i>}}</th>       
-              <th class="p-2 gridheader" style="width: 30%;" (click)="getStudents('email')">Email  &nbsp;  @if(sortEmail) {@if(sortDirection == "asc"){<i class="bi bi-arrow-down"></i>}@else{<i class="bi bi-arrow-up"></i>}}</th>       
+              <th class="p-2 gridheader" style="width: 12%;" (click)="getStudents('id')">Id  &nbsp;  @if(sortId) {@if(sortDirection == "asc"){<i class="bi bi-arrow-down"></i>}@else{<i class="bi bi-arrow-up"></i>}}</th>
+              <th class="p-2 gridheader" style="width: 22%;" (click)="getStudents('name')">Name  &nbsp;  @if(sortName) {@if(sortDirection == "asc"){<i class="bi bi-arrow-down"></i>}@else{<i class="bi bi-arrow-up"></i>}}</th>
+              <th class="p-2 gridheader" style="width: 22%;" (click)="getStudents('dateofbirth')">Date of birth  &nbsp;  @if(sortDateOfBirth) {@if(sortDirection == "asc"){<i class="bi bi-arrow-down"></i>}@else{<i class="bi bi-arrow-up"></i>}}</th>
+              <th class="p-2 gridheader" style="width:22%;" (click)="getStudents('phone')">Phone  &nbsp;  @if(sortPhone) {@if(sortDirection == "asc"){<i class="bi bi-arrow-down"></i>}@else{<i class="bi bi-arrow-up"></i>}}</th>       
+              <th class="p-2 gridheader" style="width: 22%;" (click)="getStudents('email')">Email  &nbsp;  @if(sortEmail) {@if(sortDirection == "asc"){<i class="bi bi-arrow-down"></i>}@else{<i class="bi bi-arrow-up"></i>}}</th>       
             </tr>
           </thead>
           <tbody>
@@ -39,6 +40,7 @@
                 <tr (click)="showStudentDetail(student.id)" class="cell-hoverCursor">   
                   <td>{{student.id}}</td>        
                   <td>{{student.lastName}} {{student.firstName}}</td>  
+                  <td>{{student.dateOfBirth | date: 'dd/MM/yyyy'}}</td>
                   <td>{{student.phone}}</td>
                   <td>{{student.email}}</td>
                 </tr>

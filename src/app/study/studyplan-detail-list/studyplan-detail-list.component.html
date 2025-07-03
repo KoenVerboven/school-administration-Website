@@ -1,54 +1,57 @@
-<p class="text-center h5" style="margin-top: 10px;" >My Studyplan</p>
-<div><label style="width: 120px;">Title:</label>Preparations for exam 14 june 2025</div>
-<div><label style="width: 120px;">Today:</label>{{ today | date :'EEEE'}} {{ today | date :'dd/MM/yyyy'}}</div>
-<div><label style="width: 120px;">Choosen date:</label>{{ studyDate | date :'EEEE'}} {{ studyDate | date :'dd/MM/yyyy'}}</div>
-@if(error != "")
-{
-    <div class="errorLabel">{{error}}</div>
-}
-@if(loading)
-{
-    <div style="margin-left: 200px;">
-        <div fxLayout="row" fxLayoutAlign="space-around center" style="height:100%;">
-            <mat-spinner diameter="70" strokeWidth="5"></mat-spinner>
-       </div>
-       <div>loading</div> 
-    </div>
-}
-@if(error == "" && !loading)
-{
-    <div style="margin-top: 10px;margin-bottom: 10px;">
-        <button type="button" class="btn btn-light" (click)="showPrevious()"><i class="bi bi-arrow-left"></i></button>
-        <button type="button" class="btn btn-light" (click)="showCurrent()" style="margin-left: 20px;">Current day</button>
-        <button type="button" class="btn btn-light" (click)="showNext()" style="margin-left: 20px;"><i class="bi bi-arrow-right"></i></button>
-    </div>
-    @if(studyplanDetailsCount > 0)
+<div style="margin-left: 10px;margin-right: 10px;">
+    <p class="text-center h5">Studyplan : Preparations for exam 14 june 2025</p>
+    <div><label style="width: 120px;">Today:</label>{{ today | date :'EEEE'}} {{ today | date :'dd/MM/yyyy'}}</div>
+    <div><label style="width: 120px;">Choosen date:</label>{{ studyDate | date :'EEEE'}} {{ studyDate | date :'dd/MM/yyyy'}}</div>
+    @if(error != "")
     {
-        <table class="table table-sm">
-            <thead>
-                <th class="p-2 gridheader">Date</th>
-                <th class="p-2 gridheader">Time</th>
-                <th class="p-2 gridheader">Description</th>
-                <th class="p-2 gridheader">Completed</th>
-                <th class="p-2 gridheader">Comment</th>
-            </thead>
-            <tbody>
-                @for(studyplandetail of studyplansDetails; track studyplandetail.id) {
-                    <tr>
-                        <td>{{studyplandetail.start | date: 'dd/MM'}}</td>
-                        <td>{{studyplandetail.start | date:'shortTime'}} to {{studyplandetail.end | date:'shortTime'}}</td>
-                        <td>{{studyplandetail.goalDescription}}</td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="text" style="width: 90%;"></td>
-                    </tr>
-                }
-            </tbody>
-        </table>
+        <div class="errorLabel">{{error}}</div>
     }
-    @if(studyplanDetailsCount == 0){
-        <h6>No studyplan items found for {{ studyDate | date :'dd/MM/yyyy'}} </h6>
+    @if(loading)
+    {
+        <div style="margin-left: 200px;">
+            <div fxLayout="row" fxLayoutAlign="space-around center" style="height:100%;">
+                <mat-spinner diameter="70" strokeWidth="5"></mat-spinner>
+        </div>
+        <div>loading</div> 
+        </div>
     }
-}
+    @if(error == "" && !loading)
+    {
+        <div style="margin-top: 10px;margin-bottom: 10px;">
+            <button type="button" class="btn btn-light" (click)="showPrevious()"><i class="bi bi-arrow-left"></i></button>
+            <button type="button" class="btn btn-light" (click)="showCurrent()" style="margin-left: 20px;">Current day</button>
+            <button type="button" class="btn btn-light" (click)="showNext()" style="margin-left: 20px;"><i class="bi bi-arrow-right"></i></button>
+        </div>
+        @if(studyplanDetailsCount > 0)
+        {
+            <table class="table table-sm">
+                <thead>
+                    <th class="p-2 gridheader">Date</th>
+                    <th class="p-2 gridheader">Time</th>
+                    <th class="p-2 gridheader">Description</th>
+                    <th class="p-2 gridheader">Completed</th>
+                    <th class="p-2 gridheader">Comment</th>
+                </thead>
+                <tbody>
+                    @for(studyplandetail of studyplansDetails; track studyplandetail.id) {
+                        <tr>
+                            <td>{{studyplandetail.start | date: 'dd/MM'}}</td>
+                            <td>{{studyplandetail.start | date:'shortTime'}} to {{studyplandetail.end | date:'shortTime'}}</td>
+                            <td>{{studyplandetail.goalDescription}}</td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="text" style="width: 90%;"></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        @if(studyplanDetailsCount == 0){
+            <h6>No studyplan items found for {{ studyDate | date :'dd/MM/yyyy'}} </h6>
+        }
+    }
+</div>
+
+
 
 
 

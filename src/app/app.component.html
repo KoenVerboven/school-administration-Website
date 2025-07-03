@@ -1,13 +1,15 @@
-<meta name="google-site-verification" content="ZzjLIH92ovuSGKH6C5FjjVc41M04tkZazOQdgbslOes" />
  <div  >
     <div id="header">
-       <div style="float:left;color:rgb(221, 224, 32);margin-left: 15px;font-size: 28px;margin-top:5px">Free University</div>
+       <div style="float:left;color:rgb(252, 252, 250);margin-left: 15px;font-size: 28px;margin-top:10px;">School Management</div>
        @if(!isAuthenticated)
        {
          <a routerLink="login" class="login">Sign in</a>
        }
        @else{
-         <a class="login" style="cursor:pointer;" (click)="logout()">Sign out  &nbsp;&nbsp; {{userRole}}  &nbsp;&nbsp;  {{userName}}</a>
+         <div style="float:right;margin-right: 20px;margin-top: 5px">
+              {{userRole}} &nbsp;&nbsp; {{userName}} &nbsp;&nbsp;
+              <button class="btn btn-light" type="button" (click)="logout()">Sign out</button>
+         </div>   
        }
     </div>
     @if(sidebarVisible)

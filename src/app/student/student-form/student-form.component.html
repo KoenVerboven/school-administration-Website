@@ -11,9 +11,9 @@
       <div class="formHeader">
          @if(formAction == 'detail')
          {
-            <button class="btn btn-primary headerButton" type="button" (click)="navigateBack()">Go Back</button>
-            <button class="btn btn-secondary headerButton" type="button" (click)="updateClick()">Update</button>
-            <button class="btn btn-danger" type="button" (click)="deleteClick()">Delete</button>
+            <button class="btn btn-light headerButton" type="button" (click)="navigateBack()">Go Back</button>
+            <button class="btn btn-light headerButton" type="button" (click)="updateClick()">Update</button>
+            <button class="btn btn-light" type="button" style="color: red;" (click)="deleteClick()">Delete</button>
          }
          @else {
             <button class="btn btn-success headerButton" *ngIf="formAction != 'detail'" type="submit" [disabled]="studentForm.invalid">Save</button>
