@@ -12,7 +12,7 @@ https://github.com/KoenVerboven/SchoolAdministrationApi
 ## Screenshots :
 Home Page :
 
-![image](https://github.com/user-attachments/assets/c16b3b7f-29f5-4435-abce-a35ea052f080)
+![image](https://github.com/user-attachments/assets/576e2420-dcf1-4145-840b-17b17f5131f8)
 
 
 SignIn :
@@ -21,10 +21,10 @@ SignIn :
 
 Administrator View :
 
-![image](https://github.com/user-attachments/assets/891ee174-0bad-43ee-9dc5-488f94f98ace)
+![image](https://github.com/user-attachments/assets/cfe45d91-822a-416d-ac5b-ef8b902ecb94)
 
+![image](https://github.com/user-attachments/assets/c7ed7d6c-8f23-4c6c-83ad-46f61a0f13b4)
 
-![image](https://github.com/user-attachments/assets/81f34b3d-6708-4331-bcbb-985b6bcf15c2)
 
 Student : 
 * Search on fullName (like *).
@@ -35,26 +35,27 @@ Student :
 * Jump to Student detail by clicking on GridRow.
 * Jump to Add new student.
   
-![image](https://github.com/user-attachments/assets/ae1ebdf5-9114-4643-b8dc-b158683ca228)
+![image](https://github.com/user-attachments/assets/d266eecb-a91e-4028-8491-f73d8311276c)
 
-![image](https://github.com/user-attachments/assets/61e7ecdf-8239-44d4-abc5-37b2d5e898a4)
+![image](https://github.com/user-attachments/assets/fb2031d1-6d6f-46ab-a3d9-8844b40f338b)
 
 ![image](https://github.com/user-attachments/assets/875e0e66-e86d-45c1-ab0b-f209cd03c9e3)
 
-![image](https://github.com/user-attachments/assets/c80cd124-16f8-492c-964d-f845bcb57c67)
+![image](https://github.com/user-attachments/assets/78272248-06b7-4f9b-b93f-18a3c6d891e6)
 
-![image](https://github.com/user-attachments/assets/5ed9274f-c20c-421a-bf6a-12ab4b39331e)
+![image](https://github.com/user-attachments/assets/2c0b4b66-54b8-4350-a3c7-8e18d6f913e5)
 
-![image](https://github.com/user-attachments/assets/0450fec1-5d1e-4c4f-8d96-71550eb4ce3e)
+![image](https://github.com/user-attachments/assets/c0a7928c-3afa-4fe7-bb6b-aba2ca3f9151)
+
+![image](https://github.com/user-attachments/assets/f0e4ee5b-0c3b-4fc7-be8a-bdd4c2647cd3)
+
+![image](https://github.com/user-attachments/assets/21e4b924-83f1-4124-9ea5-a1773599821d)
+
+![image](https://github.com/user-attachments/assets/e59a42a2-dfb0-441d-9c4e-0c9ab7f4f87c)
 
 Student View :
 
 ![image](https://github.com/user-attachments/assets/13e3fd51-dad5-4cde-81ab-4c8a25747097)
-
-Teacher View :
-
-![image](https://github.com/user-attachments/assets/98f89112-a11c-4fe6-8f59-b78237b94644)
-
 
 
 SQL-server :
