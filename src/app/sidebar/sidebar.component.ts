@@ -20,6 +20,7 @@ export class SidebarComponent implements OnChanges {
   teachersVisible: boolean = false;
   coursesVisible: boolean = false;
   examsVisible: boolean= false;
+  examsquestionsVisible: boolean = false;
   examResultsVisible: boolean = false;
   studyPlansVisible: boolean=false;
   mystudyplanVisible: boolean=false;
@@ -52,6 +53,7 @@ export class SidebarComponent implements OnChanges {
         this.teachersVisible = true;
         this.coursesVisible = true;
         this.examsVisible= true;
+        this.examsquestionsVisible = true;
         this.examResultsVisible = true;
         this.usersVisible = true;
         this.settingsVisible = true;

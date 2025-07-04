@@ -71,6 +71,17 @@
           </div>
         </div>
       }
+       @if(examsquestionsVisible)
+      {
+        <div class="link">
+          <div class="content" [routerLink]="['examquestions']" [routerLinkActive]="'active'">
+            <div class="icon">
+              <i class="bi bi-card-list"  data-placement="right" title="Create Exam"></i>
+            </div>
+            <div class="title">Create Exam</div>
+          </div>
+        </div>
+      }
       @if(examResultsVisible)
       {
         <div class="link">

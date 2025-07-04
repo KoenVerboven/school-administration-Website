@@ -26,6 +26,7 @@ import { PageNotFoundComponent } from './general/page-not-found/page-not-found.c
 import { AuthGuard } from './user/auth.guard';
 import { StudentPresenceComponent } from './student/student-presence/student-presence.component';
 import { StudentsInfoComponent } from './dashboard/moreInfo/students-info/students-info.component';
+import { ExamquestionListComponent } from './exam/examquestion-list/examquestion-list.component';
 
 
 export const routes: Routes = [
@@ -61,5 +62,6 @@ export const routes: Routes = [
     {path: 'permissions', component: PermissionsComponent, canActivate:[AuthGuard]},
     {path: 'studentpresence', component: StudentPresenceComponent, canActivate:[AuthGuard]},
     {path: 'studentsInfo', component: StudentsInfoComponent, canActivate:[AuthGuard]},
+    {path: 'examquestions', component: ExamquestionListComponent, canActivate:[AuthGuard]},
     {path: '**', component: PageNotFoundComponent}
 ]; 

@@ -16,7 +16,7 @@
     {
       <app-sidebar userRole={{userRole}} [isExpanded]="sidebarExpanded" (toggleSidebar)="sidebarExpanded = !sidebarExpanded"></app-sidebar>
     }
-    <div class="content" [ngClass]="{ 'sidebarExpanded': sidebarExpanded }">
-       <router-outlet></router-outlet>
+    <div class="content" style="padding-left: 10px;padding-right: 15px;" [ngClass]="{ 'sidebarExpanded': sidebarExpanded }">
+       <router-outlet style="padding-left: 20px;"></router-outlet>
     </div>
   </div>
