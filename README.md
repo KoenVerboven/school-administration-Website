@@ -12,7 +12,7 @@ https://github.com/KoenVerboven/SchoolAdministrationApi
 ## Screenshots :
 Home Page :
 
-![image](https://github.com/user-attachments/assets/c16b3b7f-29f5-4435-abce-a35ea052f080)
+![image](https://github.com/user-attachments/assets/576e2420-dcf1-4145-840b-17b17f5131f8)
 
 
 SignIn :
@@ -21,10 +21,9 @@ SignIn :
 
 Administrator View :
 
-![image](https://github.com/user-attachments/assets/891ee174-0bad-43ee-9dc5-488f94f98ace)
+![image](https://github.com/user-attachments/assets/e101115e-fbf1-4b19-bf1b-c378250bac29)
 
-
-![image](https://github.com/user-attachments/assets/81f34b3d-6708-4331-bcbb-985b6bcf15c2)
+![image](https://github.com/user-attachments/assets/4e0b3469-6aa0-4427-b0e5-c52679bb7eb0)
 
 Student : 
 * Search on fullName (like *).
@@ -35,26 +34,22 @@ Student :
 * Jump to Student detail by clicking on GridRow.
 * Jump to Add new student.
   
-![image](https://github.com/user-attachments/assets/ae1ebdf5-9114-4643-b8dc-b158683ca228)
+![image](https://github.com/user-attachments/assets/d266eecb-a91e-4028-8491-f73d8311276c)
 
-![image](https://github.com/user-attachments/assets/61e7ecdf-8239-44d4-abc5-37b2d5e898a4)
+![image](https://github.com/user-attachments/assets/fb2031d1-6d6f-46ab-a3d9-8844b40f338b)
 
 ![image](https://github.com/user-attachments/assets/875e0e66-e86d-45c1-ab0b-f209cd03c9e3)
 
 ![image](https://github.com/user-attachments/assets/c80cd124-16f8-492c-964d-f845bcb57c67)
 
-![image](https://github.com/user-attachments/assets/5ed9274f-c20c-421a-bf6a-12ab4b39331e)
+![image](https://github.com/user-attachments/assets/2c0b4b66-54b8-4350-a3c7-8e18d6f913e5)
 
-![image](https://github.com/user-attachments/assets/0450fec1-5d1e-4c4f-8d96-71550eb4ce3e)
+![image](https://github.com/user-attachments/assets/c0a7928c-3afa-4fe7-bb6b-aba2ca3f9151)
+
 
 Student View :
 
 ![image](https://github.com/user-attachments/assets/13e3fd51-dad5-4cde-81ab-4c8a25747097)
-
-Teacher View :
-
-![image](https://github.com/user-attachments/assets/98f89112-a11c-4fe6-8f59-b78237b94644)
-
 
 
 SQL-server :
