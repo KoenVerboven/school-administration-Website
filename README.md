@@ -21,9 +21,10 @@ SignIn :
 
 Administrator View :
 
-![image](https://github.com/user-attachments/assets/e101115e-fbf1-4b19-bf1b-c378250bac29)
+![image](https://github.com/user-attachments/assets/cfe45d91-822a-416d-ac5b-ef8b902ecb94)
 
-![image](https://github.com/user-attachments/assets/4e0b3469-6aa0-4427-b0e5-c52679bb7eb0)
+![image](https://github.com/user-attachments/assets/c7ed7d6c-8f23-4c6c-83ad-46f61a0f13b4)
+
 
 Student : 
 * Search on fullName (like *).
@@ -40,12 +41,17 @@ Student :
 
 ![image](https://github.com/user-attachments/assets/875e0e66-e86d-45c1-ab0b-f209cd03c9e3)
 
-![image](https://github.com/user-attachments/assets/c80cd124-16f8-492c-964d-f845bcb57c67)
+![image](https://github.com/user-attachments/assets/78272248-06b7-4f9b-b93f-18a3c6d891e6)
 
 ![image](https://github.com/user-attachments/assets/2c0b4b66-54b8-4350-a3c7-8e18d6f913e5)
 
 ![image](https://github.com/user-attachments/assets/c0a7928c-3afa-4fe7-bb6b-aba2ca3f9151)
 
+![image](https://github.com/user-attachments/assets/f0e4ee5b-0c3b-4fc7-be8a-bdd4c2647cd3)
+
+![image](https://github.com/user-attachments/assets/21e4b924-83f1-4124-9ea5-a1773599821d)
+
+![image](https://github.com/user-attachments/assets/e59a42a2-dfb0-441d-9c4e-0c9ab7f4f87c)
 
 Student View :
 
