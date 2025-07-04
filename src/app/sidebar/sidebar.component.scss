@@ -44,7 +44,7 @@
       }
     }
     background: #efeffa;
-    color: #02041d;//
+    color: #02041d;
   
     .header {
       display: flex;
@@ -93,7 +93,7 @@
           justify-content: center;
           padding: 10px;
           margin-left: 3px;
-          margin-right: 10px;
+          margin-right: 2px;
           margin-top: 1px;
           margin-bottom: 1px;
           cursor: pointer;
@@ -109,16 +109,12 @@
           }
   
           &.active {
-            background: white;
-            border-right-width: 10px;
-            border-right: solid;
-
+            background: rgb(155, 213, 240);
             .title {
-              color: rgb(240, 11, 11);
-              font-weight: normal;
+              color: rgb(31, 4, 150);
             }
             .icon {
-              color:  #ee0c0c;  
+              color: rgb(31, 4, 150); 
             }
           }
   

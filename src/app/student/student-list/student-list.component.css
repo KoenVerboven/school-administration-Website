@@ -7,7 +7,7 @@ th {
     cursor: pointer;
 }
 .paginationSelected{
-    background-color: rgb(24, 101, 179);
+    background-color: rgb(99, 99, 99);
     color:rgb(243, 238, 238);
 }
 .paginationNotSelected{
