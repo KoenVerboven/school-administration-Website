@@ -1,6 +1,6 @@
 <p class="text-center h5" >Student-presence</p>
 <p>
-  <Select>
+  <Select class="form-select" aria-label="class">
     <option value="">Please choose an class</option>
     <option value="1">Class1</option>
     <option value="2">Class2</option>
@@ -21,7 +21,7 @@
            <td style="width: 20%;">{{item.studentName}}</td> 
            <td><input type="checkbox" name="presence" value="false"></td> 
            <td>
-               <Select>
+               <Select class="form-select" aria-label="absent reason">
                    <option value="">Please choose an option</option>
                    <option value="sick">Sick</option>
                    <option value="legally absent">legally absent</option>

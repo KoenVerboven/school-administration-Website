@@ -3,12 +3,12 @@
        <div style="float:left;color:rgb(252, 252, 250);margin-left: 15px;font-size: 28px;margin-top:10px;">School Management</div>
        @if(!isAuthenticated)
        {
-         <a routerLink="login" class="login">Sign in</a>
+         <a routerLink="login" class="login">Log in</a>
        }
        @else{
          <div style="float:right;margin-right: 20px;margin-top: 5px">
               {{userRole}} &nbsp;&nbsp; {{userName}} &nbsp;&nbsp;
-              <button class="btn btn-light" type="button" (click)="logout()">Sign out</button>
+              <button class="btn btn-light" type="button" (click)="logout()"><i class="bi bi-box-arrow-right"></i> Log out</button>
          </div>   
        }
     </div>

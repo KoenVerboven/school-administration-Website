@@ -20,8 +20,10 @@
          <tr>
            <th class="p-2">Student Name</th>
            <th class="p-2">Email</th>  
-           <th class="p-2">ExamName</th>   
-           <th class="p-2">Score</th>    
+           <th class="p-2">ExamName</th> 
+
+           <th class="p-2">Score</th>
+           <th class="p-2">PASS/FAIL</th>     
         </tr>
       </thead>
       <tbody>
@@ -30,7 +32,16 @@
             <td>{{examResult.studentLastName}} {{examResult.studentFirstName}}</td> 
             <td>{{examResult.studentEmail}}</td>   
             <td>{{examResult.examName}}</td>   
-            <td [ngClass]="(examResult.examenResult >= examResult.minScoreToPassExam)?'bordergreen':'borderred'">{{examResult.examenResult}} / {{examResult.maxScore}}</td>      
+            <td>{{examResult.examenResult}} / {{examResult.maxScore}}</td>
+            @if(examResult.examenResult >= examResult.minScoreToPassExam)
+            {
+              <td style="color:green">PASS</td>      
+            }
+            @else
+            {
+              <td style="color:red">FAIL</td>      
+            }
+            
          </tr>  
         }
       </tbody>

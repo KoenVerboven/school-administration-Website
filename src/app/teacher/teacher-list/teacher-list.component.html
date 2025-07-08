@@ -14,8 +14,9 @@
 }
 @if(error == "" && !loading)
 {
-  <div style="float:left;"><a routerLink="/createteacher"><i class="bi bi-plus"></i> Add Teacher</a></div>
+  <button  style="float:left;" class="btn btn-light" type="button" (click)="addTeacher()"><i class="bi bi-plus"></i> Add Teacher</button>
   <div style="float:right;">  {{teachersCount}} teachers found. </div>
+  <br/><br/>
   <table class="table table-sm  table-hover" style="overflow:hidden; border-radius:5px;">
     <thead>
       <tr class="cell-hoverCursor">

@@ -44,4 +44,7 @@ export class ExamListComponent {
    showExamDetail(id: number): void{
       this.router.navigate(['/examdetail/detail', id])
    }
+    addExam(): void {
+      this.router.navigate(['/createexam']);
+    }
 }

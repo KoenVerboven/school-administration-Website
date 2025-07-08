@@ -44,7 +44,7 @@ export const routes: Routes = [
     {path: 'createteacher', component: TeacherFormComponent, canActivate:[AuthGuard]},
     {path: 'teacherdetail/:action/:id', component: TeacherFormComponent, canActivate:[AuthGuard]},
     {path: 'exams',component:ExamListComponent, canActivate:[AuthGuard]},
-    {path: 'createxam', component: ExamFormComponent, canActivate:[AuthGuard]},
+    {path: 'createexam', component: ExamFormComponent, canActivate:[AuthGuard]},
     {path: 'examdetail/:action/:id', component: ExamFormComponent, canActivate:[AuthGuard]},
     {path: 'examresults',component:ExamResultListComponent, canActivate:[AuthGuard]},
     {path: 'studyplans',component:StudyplanListComponent},

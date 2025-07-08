@@ -20,6 +20,7 @@ export class ExamFormComponent {
     examTitle: '',
     description: '',
     examenDate: new Date(2025,6,4),
+    examEndDateTime : new Date(2025,6,4,12,0,0), // Default end time set to 12:00 PM
     maxScore:0,
     minScoreToPassExam: 0
   }

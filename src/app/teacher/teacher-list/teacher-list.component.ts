@@ -105,5 +105,9 @@ previousSort = '';
    this.previousSort = sort;
   }
 
+addTeacher() {
+  this.router.navigate(['/createteacher']);
+}
+
 
 }

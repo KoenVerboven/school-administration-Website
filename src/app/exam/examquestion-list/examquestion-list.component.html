@@ -1,6 +1,27 @@
-<p>examquestion-list works!</p>
-<p>Choose exam</p>
-<br/>
-<button>Add question</button>
-<br/>
-<p>Questions List</p>
+<p class="text-center h5" >Create Exam</p>
+<p>
+  <Select class="form-select" aria-label="class">
+    <option value="">Please choose exam</option>
+    <option value="1">Math 20250612</option>
+    <option value="2">Electricity 20250623</option>
+    <option value="3">Chemistry 20250624</option>
+    <option value="3">Angular 20250624</option>
+  </Select>
+</p>
+<button class="btn btn-light" type="button"><i class="bi bi-plus"></i> Add Question</button>
+<br/><br/>
+<table class="table table-sm table-hover">
+  <thead>
+    <tr>
+      <th class="p-2 gridheader" style="width: 10%;">Question Nr</th>
+      <th class="p-2 gridheader" style="width: 90%;">QuestionText</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for(item of items; track item.id) {
+      <tr>
+        <td>{{item.questionNumber}}</td>
+        <td>{{item.questionText}}</td>
+      </tr>
+    }
+  </tbody>

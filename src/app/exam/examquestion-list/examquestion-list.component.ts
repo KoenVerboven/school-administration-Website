@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { examQuestions } from '../mock-examenquestion-list';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-examquestion-list',
@@ -8,5 +10,5 @@ import { Component } from '@angular/core';
   styleUrl: './examquestion-list.component.css'
 })
 export class ExamquestionListComponent {
-
+  items: any[] = examQuestions;
 }
