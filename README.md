@@ -51,7 +51,7 @@ Student :
 
 ![image](https://github.com/user-attachments/assets/f0e4ee5b-0c3b-4fc7-be8a-bdd4c2647cd3)
 
-![image](https://github.com/user-attachments/assets/21e4b924-83f1-4124-9ea5-a1773599821d)
+![image](https://github.com/user-attachments/assets/0e70c631-5d8e-4cc0-9744-520f477c27ca)
 
 ![image](https://github.com/user-attachments/assets/25bfb949-18e5-4ae3-9013-d9b485f5fc21)
 
