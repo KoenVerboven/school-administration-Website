@@ -44,10 +44,6 @@ Student :
 
 ![image](https://github.com/user-attachments/assets/2c0b4b66-54b8-4350-a3c7-8e18d6f913e5)
 
-![image](https://github.com/user-attachments/assets/fc96d976-070a-4e84-8621-11bbdf3e3bf9)
-
-![image](https://github.com/user-attachments/assets/c0a7928c-3afa-4fe7-bb6b-aba2ca3f9151)
-
 ![image](https://github.com/user-attachments/assets/5c081d44-e749-4a44-919e-77e8dc8fe2ef)
 
 ![image](https://github.com/user-attachments/assets/25bfb949-18e5-4ae3-9013-d9b485f5fc21)
