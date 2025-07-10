@@ -13,7 +13,6 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
   styleUrl: './course-list.component.css'
 })
 export class CourseListComponent implements OnInit{
-
   courses : Course[] =[]
   PageTitle: string = "Courses list"
   coursesCount = 0;
@@ -43,6 +42,10 @@ export class CourseListComponent implements OnInit{
   
   showCourseDetail(id: number): void{
     this.router.navigate(['/coursedetail/detail', id])
+  }
+
+  addCourse(): void {
+    this.router.navigate(['/createcourse']);
   }
  
 }

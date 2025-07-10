@@ -15,15 +15,15 @@
 @if(error == "" && !loading)
 {
   <div style="float:right;">  {{examResultsCount}} exam results found. </div>
-  <table class="table table-sm">
+  <table class="table table-sm  table-striped">
       <thead>
          <tr>
            <th class="p-2">Student Name</th>
            <th class="p-2">Email</th>  
            <th class="p-2">ExamName</th> 
 
-           <th class="p-2">Score</th>
-           <th class="p-2">PASS/FAIL</th>     
+           <th class="p-2" style="text-align: center;">Score</th>
+           <th class="p-2" style="text-align: center;">PASS / FAIL</th>     
         </tr>
       </thead>
       <tbody>
@@ -32,14 +32,14 @@
             <td>{{examResult.studentLastName}} {{examResult.studentFirstName}}</td> 
             <td>{{examResult.studentEmail}}</td>   
             <td>{{examResult.examName}}</td>   
-            <td>{{examResult.examenResult}} / {{examResult.maxScore}}</td>
+            <td style="text-align: center;">{{examResult.examenResult}} / {{examResult.maxScore}}</td>
             @if(examResult.examenResult >= examResult.minScoreToPassExam)
             {
-              <td style="color:green">PASS</td>      
+              <td style="color:green;background-color: #a4f8b2;text-align: center;">PASS</td>      
             }
             @else
             {
-              <td style="color:red">FAIL</td>      
+              <td style="color:rgb(243, 8, 8);background-color: rgb(245, 198, 198);text-align: center;">FAIL</td>      
             }
             
          </tr>  

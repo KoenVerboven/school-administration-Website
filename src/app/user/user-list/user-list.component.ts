@@ -14,6 +14,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
   styleUrl: './user-list.component.css'
 })
 export class UserListComponent {
+
   users: User[] = [];
   userCount = 0;
   loading = false;
@@ -45,5 +46,8 @@ export class UserListComponent {
     this.router.navigate(['/userdetail/detail', id])
   }
 
+  addUser(): void {
+    this.router.navigate(['/createuser']);
+  }
 
 }

@@ -17,14 +17,14 @@
   <button style="float:left;" class="btn btn-light" type="button" (click)="addExam()"><i class="bi bi-plus"></i> Add Exam</button>
   <div style="float:right;">  {{examsCount}} exams found. </div>
   <br/><br/>
-  <table class="table table-sm table-hover">
+  <table class="table table-sm table-hover table-striped">
       <thead>
          <tr>
            <th class="p-2">Id</th>
            <th class="p-2">Title</th>
            <th class="p-2">Date</th>   
-           <th class="p-2">StartTime</th> 
-           <th class="p-2">EndTime</th>   
+           <th class="p-2" style="text-align: center;">StartTime</th> 
+           <th class="p-2" style="text-align: center;">EndTime</th>   
         </tr>
       </thead>
       <tbody>
@@ -33,8 +33,8 @@
             <td>{{exam.id}}</td>        
             <td>{{exam.examTitle}}</td> 
             <td>{{exam.examenDate | date : 'dd/MM/yyyy'}}</td>
-            <td>{{exam.examenDate | date : 'HH:mm'}}</td>
-            <td>{{exam.examEndDateTime | date : 'HH:mm' }}</td> 
+            <td style="text-align: center;">{{exam.examenDate | date : 'HH:mm'}}</td>
+            <td style="text-align: center;">{{exam.examEndDateTime | date : 'HH:mm' }}</td> 
           </tr>      
         }
       </tbody>

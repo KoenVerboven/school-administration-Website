@@ -34,11 +34,11 @@
         </div>
         <div class="mb-3">
             <label class="form-label">Start</label>
-            <input #startDate="ngModel" [disabled]=disableControls class="form-control"   type="text" name="Start"  [(ngModel)]="exam.examenDate" />
+            <input [disabled]=disableControls class="form-control" type="time" name="Start"   />
         </div>
         <div class="mb-3">
             <label class="form-label">End</label>
-            <input #startDate="ngModel" [disabled]=disableControls class="form-control"   type="text" name="End"  [(ngModel)]="exam.examEndDateTime" />
+            <input [disabled]=disableControls class="form-control" type="time" name="End"   />
         </div>
         <div class="mb-3">
             <label class="form-label">Description</label>
