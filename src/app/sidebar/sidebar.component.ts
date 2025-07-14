@@ -16,6 +16,9 @@ export class SidebarComponent implements OnChanges {
   @Output() toggleSidebar: EventEmitter<boolean> = new EventEmitter<boolean>();
   //todo : replace hardcoded menu by a dynamic one.
   dashboardVisible: boolean = false;
+  schoolsVisible: boolean = false;
+  departmentsVisible: boolean = false;
+  classesVisible: boolean = false;
   studentsVisible: boolean = false;
   teachersVisible: boolean = false;
   coursesVisible: boolean = false;
@@ -49,6 +52,9 @@ export class SidebarComponent implements OnChanges {
       if(this.userRole == 'admin')
       {
         this.dashboardVisible = true;
+        this.schoolsVisible = true;
+        this.departmentsVisible = true;
+        this.classesVisible = true;
         this.studentsVisible= true;
         this.teachersVisible = true;
         this.coursesVisible = true;

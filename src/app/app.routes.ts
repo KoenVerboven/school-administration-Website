@@ -1,5 +1,8 @@
 import { Routes } from '@angular/router';
 import { DashboardListComponent } from './dashboard/dashboard-list/dashboard-list.component';
+import { SchoolListComponent } from './school/school/school-list/school-list.component';
+import { DepartmentListComponent } from './school/department/department-list/department-list.component';
+import { ClassListComponent}    from './school/class/class-list/class-list.component';
 import { StudentListComponent } from './student/student-list/student-list.component';
 import { StudentFormComponent } from './student/student-form/student-form.component';
 import { CourseListComponent } from './course/course-list/course-list.component';
@@ -34,6 +37,9 @@ export const routes: Routes = [
     {path: 'home', component: HomeComponent},
     {path: 'dashbord',component:DashboardListComponent, canActivate:[AuthGuard]},
     {path: 'dashbordtem', redirectTo: '', component:DashboardItemComponent},
+    {path: 'schools', component: SchoolListComponent, canActivate:[AuthGuard]},
+    {path: 'departments', component: DepartmentListComponent, canActivate:[AuthGuard]},
+    {path: 'classes', component: ClassListComponent, canActivate:[AuthGuard]},
     {path: 'students',component:StudentListComponent, canActivate:[AuthGuard]},
     {path: 'createstudent', component: StudentFormComponent, canActivate:[AuthGuard]},
     {path: 'studentdetail/:action/:id', component: StudentFormComponent, canActivate:[AuthGuard]},

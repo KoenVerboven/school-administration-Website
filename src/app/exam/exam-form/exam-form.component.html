@@ -30,7 +30,13 @@
         </div>
         <div class="mb-3">
             <label class="form-label">Date</label>
-            <input #startDate="ngModel" [disabled]=disableControls class="form-control"   type="text" name="Date"  [(ngModel)]="exam.examenDate" />
+            @if(formAction  == 'detail')
+            {
+                <label class="form-control">{{exam.examenDate | date: 'dd/MM/yyyy'}}</label>
+            }
+            @else {
+                <input #startDate="ngModel" [disabled]=disableControls class="form-control"   type="text" name="Date"  [(ngModel)]="exam.examenDate" />
+            }
         </div>
         <div class="mb-3">
             <label class="form-label">Start</label>

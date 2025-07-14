@@ -19,14 +19,58 @@
           </div>
         </div>
       }
+      @if(schoolsVisible)
+      {
+        <div class="link">
+          <div class="content" [routerLink]="['schools']" [routerLinkActive]="'active'">
+            <div class="icon" data-placement="right" title="Schools">
+              <i class="bi bi-buildings"></i>
+            </div>
+            <div class="title">Schools</div>
+          </div>
+        </div>
+      }
+      @if(departmentsVisible)
+      {
+        <div class="link">
+          <div class="content" [routerLink]="['departments']" [routerLinkActive]="'active'">
+            <div class="icon" data-placement="right" title="Schools">
+              <i class="bi bi-building"></i>
+            </div>
+            <div class="title">Departments</div>
+          </div>
+        </div>
+      }
+      @if(classesVisible)
+      {
+        <div class="link">
+          <div class="content" [routerLink]="['classes']" [routerLinkActive]="'active'">
+            <div class="icon" data-placement="right" title="Classes">
+              <i class="bi bi-book"></i>
+            </div>
+            <div class="title">Classes</div>
+          </div>
+        </div>
+      }
       @if(studentsVisible)
       {
         <div class="link">
           <div class="content" [routerLink]="['students']" [routerLinkActive]="'active'">
             <div class="icon" data-placement="right" title="Students">
-              <i class="bi bi-person"></i>
+              <i class="bi bi-mortarboard"></i>
             </div>
             <div class="title">Students</div>
+          </div>
+        </div>
+      }
+      @if(studentPresenceVisible)
+      {
+        <div class="link">
+          <div class="content" [routerLink]="['studentpresence']" [routerLinkActive]="'active'">
+            <div class="icon"  data-placement="right" title="Student Presence">
+              <i class="bi bi-mortarboard"></i>
+            </div>
+            <div class="title">Student Presence</div>
           </div>
         </div>
       }
@@ -35,7 +79,7 @@
         <div class="link">
           <div class="content" [routerLink]="['teachers']" [routerLinkActive]="'active'">
             <div class="icon"  data-placement="right" title="Teachers">
-              <i class="bi bi-person"></i>
+              <i class="bi bi-person-workspace"></i>
             </div>
             <div class="title">Teachers</div>
           </div>
@@ -46,7 +90,7 @@
         <div class="link">
           <div class="content" [routerLink]="['users']" [routerLinkActive]="'active'">
             <div class="icon"  data-placement="right" title="Users">
-              <i class="bi bi-person"></i>
+              <i class="bi bi-person-vcard"></i>
             </div>
             <div class="title">Users</div>
           </div>
@@ -90,7 +134,7 @@
         <div class="link">
           <div class="content" [routerLink]="['examresults']" [routerLinkActive]="'active'">
             <div class="icon"  data-placement="right" title="Examen results">
-              <i class="bi bi-card-list"></i>
+              <i class="bi bi-award"></i>
             </div>
             <div class="title">Examen results</div>
           </div>
@@ -101,7 +145,7 @@
       <div class="link">
         <div class="content" [routerLink]="['studyplans']" [routerLinkActive]="'active'">
           <div class="icon"  data-placement="right" title="Studyplans">
-            <i class="bi bi-card-list"></i>
+            <i class="bi bi-calendar2-check"></i>
           </div>
           <div class="title">Studyplans</div>
         </div>
@@ -112,24 +156,13 @@
         <div class="link">
           <div class="content" [routerLink]="['studyplandetail']" [routerLinkActive]="'active'">
             <div class="icon"  data-placement="right" title="My studyplan">
-              <i class="bi bi-card-list"></i>
+              <i class="bi bi-calendar2-check"></i>
             </div>
             <div class="title">My studyplan</div>
           </div>
         </div>
      }
-     @if(studentPresenceVisible)
-     {
-        <div class="link">
-          <div class="content" [routerLink]="['studentpresence']" [routerLinkActive]="'active'">
-            <div class="icon"  data-placement="right" title="Student Presence">
-              <i class="bi bi-person"></i>
-            </div>
-            <div class="title">Student Presence</div>
-          </div>
-        </div>
-      }
-      @if(settingsVisible)
+     @if(settingsVisible)
       {
          <div class="link">
            <div class="content" [routerLink]="['settings']" [routerLinkActive]="'active'">
