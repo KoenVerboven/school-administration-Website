@@ -2,7 +2,7 @@
     height:5.0rem ;
     width: 21rem;
     border-radius: 0.5rem;
-    box-shadow: 0 1px 6px black;
+    box-shadow: 0 4px 4px rgb(18, 128, 179);
     margin-top: 1.5rem;
     padding-top:0.7rem;
     padding-left:0.7rem;
@@ -23,7 +23,7 @@
     padding-top: 0.2rem;
     padding-bottom: 0.1rem;
     color:white;
-    background-color: rgb(71, 68, 68)
+    background-color: rgb(12, 85, 153)
 }
 .dashboarditemStyle:hover{
     cursor: pointer;

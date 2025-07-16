@@ -1,1 +1,23 @@
-<p>class-list works!</p>
+<p class="text-center h5" >Classes</p>
+<table class="table table-sm  table-hover  table-striped">
+    <thead>
+        <tr>
+            <th class="p-2">Id</th>
+            <th class="p-2">Name</th>
+            <th class="p-2">SchoolId</th>
+            <th class="p-2">DepartmentId</th>
+            <th class="p-2">CreatedAt</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(class of classes;track class.id){
+            <tr class="cell-hoverCursor">      
+                <td >{{class.id}}</td>
+                <td >{{class.name}}</td>
+                <td >{{class.schoolId}}</td>
+                <td >{{class.departmentId}}</td>
+                <td >{{class.createdAt | date: 'dd/MM/yyyy'}}</td>
+            </tr>       
+        }
+    </tbody>
+</table>

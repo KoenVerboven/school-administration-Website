@@ -1,0 +1,46 @@
+import { SchoolDepartment } from "./models/schooldepartment.model";
+
+export const schoolDepartments: SchoolDepartment[] = [
+    {
+        id: 1,
+        name: 'Mathematics Department',
+        headOfTheDepartmentId: 1,
+        createdAt: new Date('2023-01-01'),
+        updatedAt: new Date('2023-01-01'),
+        isActive: true,
+        description: 'Responsible for teaching mathematics subjects.',
+        facultyIds: [1, 2],
+        budget: 50000,
+        yearEstablished: 2000,
+        type: 'Academic',
+        website: 'www.mathdept.edu',
+        logoUrl: 'https://example.com/math-logo.png',
+        contactEmail: 'test@gmail.com',
+        contactPhone: '555-5678',
+        locationWithinTheSchool: 'Building A, Room 101',
+        section: 'Mathematics',
+        establishedDate: new Date('2000-01-01'),
+        schoolId: 1,
+    },
+    {
+        id: 2,
+        name: 'Science Department',
+        headOfTheDepartmentId: 2,
+        createdAt: new Date('2023-01-01'),
+        updatedAt: new Date('2023-01-01'),
+        isActive: true,
+        description: 'Responsible for teaching science subjects.',
+        facultyIds: [3, 4], 
+        budget: 60000,
+        yearEstablished: 2005,
+        type: 'Academic',
+        website: 'www.sciencedept.edu',
+        logoUrl: 'https://example.com/science-logo.png',
+        contactEmail: 'test@gmail.com',
+        contactPhone: '555-6789',
+        locationWithinTheSchool: 'Building B, Room 202',
+        section: 'Science',
+        establishedDate: new Date('2005-01-01'),
+        schoolId: 1
+    }
+];

@@ -3,6 +3,7 @@ export interface SchoolClass {
     name: string;
     grade: number; // e.g., 1, 2, 3 for first, second, third grade
     schoolId: number; 
+    departmentId?: number; // optional, if classes are organized by departments
     responsibleTeacherId: number; 
     studentIds?: number[]; 
     createdAt: Date; 

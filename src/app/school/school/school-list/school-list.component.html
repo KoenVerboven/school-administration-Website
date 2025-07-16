@@ -1,1 +1,21 @@
-<p>school-list works!</p>
+<p class="text-center h5" >Schools</p>
+<table class="table table-sm  table-hover  table-striped">
+    <thead>
+        <tr>
+            <th class="p-2">Id</th>
+            <th class="p-2">Name</th>
+            <th clas="p-2">City</th>
+            <th class="p-2">CreatedAt</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(school of schools;track school.id){
+            <tr class="cell-hoverCursor">      
+                <td >{{school.id}}</td>
+                <td >{{school.name}}</td>
+                <td >{{school.city}}</td>
+                <td >{{school.createdAt | date: 'dd/MM/yyyy'}}</td>
+            </tr>       
+        }
+    </tbody>
+</table>

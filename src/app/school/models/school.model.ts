@@ -17,4 +17,9 @@ export interface School {
     website?: string; 
     logoUrl?: string; 
     description?: string; 
+    schoolType?: string; // e.g., 'Public', 'Private', 'Charter'
+    numberOfStudents?: number;
+    numberOfTeachers?: number;
+    establishedYear?: number; // e.g., 1990
+    facilities?: string[]; // e.g., ['Library', 'Science Lab', 'Sports Ground']
 }
