@@ -21,9 +21,9 @@ SignIn :
 
 Administrator View :
 
-![image](https://github.com/user-attachments/assets/4448472f-af45-4962-bdc1-db105326e8b7)
+<img width="1898" height="940" alt="image" src="https://github.com/user-attachments/assets/418698e1-8e33-4a92-ae51-10fbba4c297b" />
 
-![image](https://github.com/user-attachments/assets/9d0b0024-a5a7-4067-b0f9-03067ef2489b)
+<img width="1897" height="942" alt="image" src="https://github.com/user-attachments/assets/978284be-ffed-4530-b8ba-128d5be95837" />
 
 Student : 
 * Search on fullName (like *).
