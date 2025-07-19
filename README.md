@@ -23,7 +23,7 @@ Administrator View :
 
 <img width="1894" height="939" alt="image" src="https://github.com/user-attachments/assets/7a175a50-234a-4f95-8289-7379de10f500" />
 
-<img width="1897" height="942" alt="image" src="https://github.com/user-attachments/assets/978284be-ffed-4530-b8ba-128d5be95837" />
+<img width="1894" height="939" alt="image" src="https://github.com/user-attachments/assets/0058db35-e7c6-4870-9aea-769d80d591b7" />
 
 Student : 
 * Search on fullName (like *).
