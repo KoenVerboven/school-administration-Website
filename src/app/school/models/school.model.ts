@@ -9,8 +9,6 @@ export interface School {
     phone?: string; 
     email?: string; 
     principalId: number; 
-    createdAt: Date; 
-    updatedAt: Date; 
     isActive: boolean; 
     yearEstablished?: number; 
     type?: string; // optional, e.g., 'Public', 'Private', 'Charter'
@@ -22,4 +20,6 @@ export interface School {
     numberOfTeachers?: number;
     establishedYear?: number; // e.g., 1990
     facilities?: string[]; // e.g., ['Library', 'Science Lab', 'Sports Ground']
+    createdAt: Date; 
+    updatedAt: Date; 
 }

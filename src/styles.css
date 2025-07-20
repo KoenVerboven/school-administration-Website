@@ -13,7 +13,7 @@ body {
   cursor: pointer;
 }
 .table-hover tbody tr:hover td {
-  background-color: rgb(253, 124, 124);
+  background-color: rgb(207, 230, 248);
   color:rgb(0, 0, 0);
 }
 .errorLabel{

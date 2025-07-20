@@ -39,15 +39,6 @@ import {DashboardItem} from '../models/dashboardItem.model'
     },
     {
       id:5,
-      itemName:'ExamResults',
-      columnNumber: 3,
-      itemCount: 0,
-      color:'#fff',
-      url:'/examresults',
-      visible:true
-    },
-    {
-      id:6,
       itemName:'Users',
       columnNumber: 2,
       itemCount: 0,

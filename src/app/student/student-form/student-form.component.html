@@ -48,22 +48,17 @@
     </div>
     <div class="mb-3">
       <label class="form-label">Date of birth</label>
-      @if(formAction  == 'detail')
-      {
-         <label class="form-control">{{student.dateOfBirth | date: 'dd/MM/yyyy'}}</label>
-      }
-      @else {
-        <mat-form-field style="width: 100%;">
-           <input matInput  
+      <mat-form-field style="width: 100%;">
+         <input matInput  
                [matDatepicker]="datepicker"
                placeholder="Select a date" 
+               [disabled]="disableControls"
                [(ngModel)]="student.dateOfBirth"
                name="dateOfBirth">
-           <mat-hint>DD/MM/YYYY</mat-hint>
-           <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
-           <mat-datepicker #datepicker></mat-datepicker>
-        </mat-form-field>
-      }
+         <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+         <mat-datepicker #datepicker></mat-datepicker>
+      </mat-form-field>
+    
     </div>
     <div class="mb-3">
       <label  class="form-label">ZipCode *</label>

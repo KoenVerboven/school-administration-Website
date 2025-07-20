@@ -109,13 +109,14 @@
           }
   
           &.active {
-            background: rgb(155, 213, 240);
+            background: rgb(189, 229, 248);
             .title {
               color: rgb(31, 4, 150);
             }
             .icon {
               color: rgb(31, 4, 150); 
             }
+            border-right: #6adae9 6px solid;
           }
   
           .icon {
