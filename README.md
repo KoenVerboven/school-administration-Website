@@ -23,7 +23,7 @@ Administrator View :
 
 <img width="1894" height="939" alt="image" src="https://github.com/user-attachments/assets/7a175a50-234a-4f95-8289-7379de10f500" />
 
-<img width="1900" height="939" alt="image" src="https://github.com/user-attachments/assets/fabe6877-70db-432c-9bff-3c2818b30239" />
+<img width="1898" height="938" alt="image" src="https://github.com/user-attachments/assets/9a30a0d6-7f66-465e-baff-51a25cf97c70" />
 
 Student : 
 * Search on fullName (like *).
@@ -34,15 +34,16 @@ Student :
 * Jump to Student detail by clicking on GridRow.
 * Jump to Add new student.
   
-![image](https://github.com/user-attachments/assets/d266eecb-a91e-4028-8491-f73d8311276c)
+<img width="1898" height="936" alt="image" src="https://github.com/user-attachments/assets/bc3cfca7-0a68-4943-87a2-729accf2156e" />
 
-![image](https://github.com/user-attachments/assets/fb2031d1-6d6f-46ab-a3d9-8844b40f338b)
+<img width="1897" height="938" alt="image" src="https://github.com/user-attachments/assets/178878ea-edf9-434b-b8a7-39a9e350a458" />
 
-![image](https://github.com/user-attachments/assets/875e0e66-e86d-45c1-ab0b-f209cd03c9e3)
+<img width="1895" height="937" alt="image" src="https://github.com/user-attachments/assets/7dbb1872-359b-4617-8c0a-29fc55134edd" />
 
-![image](https://github.com/user-attachments/assets/1bb04d21-31bf-4b53-955f-bb0a5cc88807)
+<img width="1897" height="943" alt="image" src="https://github.com/user-attachments/assets/ed2a43d3-881a-4eb5-a822-df87184f8798" />
 
-![image](https://github.com/user-attachments/assets/2c0b4b66-54b8-4350-a3c7-8e18d6f913e5)
+
+<img width="1896" height="940" alt="image" src="https://github.com/user-attachments/assets/c465d0ff-1180-4db2-8ebb-9885dc7627f8" />
 
 ![image](https://github.com/user-attachments/assets/f4127155-b435-4bec-aef8-4fb2135fd160)
 
