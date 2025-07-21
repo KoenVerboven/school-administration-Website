@@ -4,7 +4,6 @@ import { Student } from '../models/student.model';
 import { StudentService } from '../services/student.service'
 import { Router,ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
-
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
@@ -86,6 +85,7 @@ export class StudentFormComponent implements OnInit {
 
 
   onSubmit():void{
+    alert(this.student.dateOfBirth );
     this.student.dateOfBirth = this.addHours(this.student.dateOfBirth, 2);
     if(this.isUpdating){
        this.studentService.updateStudent(this.student)

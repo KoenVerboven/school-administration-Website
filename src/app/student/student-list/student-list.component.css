@@ -7,13 +7,20 @@ th {
     cursor: pointer;
 }
 .paginationSelected{
-    background-color: rgb(99, 99, 99);
-    color:rgb(243, 238, 238);
+    background-color: rgb(210, 210, 210);
 }
 .paginationNotSelected{
     background-color: rgb(244, 247, 250);
     color:black;
 }
+.page-link{
+    color: rgb(0, 5, 8);
+}
+.page-link:hover{
+    background-color: rgb(220, 220, 220);
+    cursor: pointer;
+}
+
 
 
 

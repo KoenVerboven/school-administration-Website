@@ -5,7 +5,7 @@
     </div>
 }
 @else {
-    <form (ngSubmit)="onSubmit()"   #examForm="ngForm" class="border rounded p-4 w-50 mb-5 mx-auto">
+    <form (ngSubmit)="onSubmit()"   #examForm="ngForm" class="border rounded p-4 w-90 mb-5 mx-auto">
 
         <div class="formHeader">
            @if(formAction == 'detail')
@@ -20,37 +20,60 @@
            }
        </div>
        <br/>
-        <div class="mb-3">
-            <label class="form-label">ExamName *</label>
-            <input required #examName="ngModel" [disabled]=disableControls class="form-control"   type="text" name="ExamName"  [(ngModel)]="exam.examTitle" />
-            @if((examName.invalid &&(examName.touched || examName.dirty)) && examName.errors?.['required'])
-            {
-                <div class="text-danger">ExamName is required</div>
-            }
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Date</label>
-            @if(formAction  == 'detail')
-            {
-                <label class="form-control">{{exam.examenDate | date: 'dd/MM/yyyy'}}</label>
-            }
-            @else {
-                <input #startDate="ngModel" [disabled]=disableControls class="form-control"   type="text" name="Date"  [(ngModel)]="exam.examenDate" />
-            }
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Start</label>
-            <input [disabled]=disableControls class="form-control" type="time" name="Start"   />
-        </div>
-        <div class="mb-3">
-            <label class="form-label">End</label>
-            <input [disabled]=disableControls class="form-control" type="time" name="End"   />
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Description</label>
-            <textarea rows="5" #description="ngModel" [disabled]=disableControls class="form-control"   type="text" name="description"  [(ngModel)]="exam.description" >
-            </textarea>
-        </div>
+        <div class="container">
+            <div class="row" style="margin-top: 5px;">
+              <div class="col-2">
+                   <label class="form-label" style="float:right">ExamName *</label>  
+              </div>
+              <div class="col-10">
+                <input required #examName="ngModel" [disabled]=disableControls class="form-control"   type="text" name="ExamName"  [(ngModel)]="exam.examTitle" />
+                @if((examName.invalid &&(examName.touched || examName.dirty)) && examName.errors?.['required'])
+                {
+                  <div class="text-danger">ExamName is required</div>
+                }
+              </div>   
+            </div>
+             <div class="row" style="margin-top: 5px;">
+                <div class="col-2">
+                    <label class="form-label" style="float:right">Date</label>  
+                </div>
+                <div class="col-10">
+                    @if(formAction  == 'detail')
+                    {
+                        <label class="form-control" style="width:350px;">{{exam.examenDate | date: 'dd/MM/yyyy'}}</label>
+                    }
+                    @else {
+                        <input #startDate="ngModel" style="width: 350px;" [disabled]=disableControls class="form-control"   type="text" name="Date"  [(ngModel)]="exam.examenDate" />
+                    }    
+                </div>   
+            </div>
+            <div class="row" style="margin-top: 5px;">
+              <div class="col-2">
+                  <label class="form-label" style="float:right">Start</label>   
+              </div>
+              <div class="col-10">
+                  <input [disabled]=disableControls class="form-control" type="time" name="Start"  style="width: 150px;"  />  
+              </div>   
+            </div>
+            <div class="row" style="margin-top: 5px;">
+              <div class="col-2">
+                  <label class="form-label" style="float:right">End</label>  
+              </div>
+              <div class="col-10">
+                  <input [disabled]=disableControls class="form-control" type="time" name="End" style="width: 150px;"  />  
+              </div>   
+            </div>
+            <div class="row" style="margin-top: 5px;">
+              <div class="col-2">
+                  <label class="form-label" style="float:right">Description</label>  
+              </div>
+              <div class="col-10">
+                  <textarea rows="5" #description="ngModel" [disabled]=disableControls class="form-control"   type="text" name="description"  [(ngModel)]="exam.description" >
+                  </textarea>  
+              </div>   
+            </div>
+        </div> 
+
     </form>
 }
 

@@ -6,7 +6,7 @@
   </div>
 }
 @else {
-  <form (ngSubmit)="onSubmit()"  #teacherForm="ngForm" class="border rounded p-4 w-50 mb-5 mx-auto">
+  <form (ngSubmit)="onSubmit()"  #teacherForm="ngForm" class="border rounded p-4 w-90 mb-5 mx-auto">
 
     <div class="formHeader">
       @if(formAction == 'detail')
@@ -21,67 +21,105 @@
       }
    </div>
    <br />
-    <div class="mb-3">
-        <label class="form-label">Firstname *</label>
+      
+  <div class="container">
+    <div class="row">
+      <div class="col-2">
+        <label class="form-label" style="float:right">Firstname *</label>    
+      </div>
+      <div class="col-10">
         <input required #firstName="ngModel" [disabled]=disableControls class="form-control"   type="text" name="firstName"  [(ngModel)]="teacher.firstName" />
         @if((firstName.invalid &&(firstName.touched || firstName.dirty)) && firstName.errors?.['required'])
         {
           <div class="text-danger">First Name is required</div>
         }
+      </div>   
     </div>
-    <div class="mb-3">
-        <label class="form-label">Lastname *</label>
+    <div class="row" style="margin-top: 5px;">
+      <div class="col-2">
+         <label class="form-label" style="float:right">Lastname *</label>    
+      </div>
+      <div class="col-10">
         <input required #lastName="ngModel" [disabled]=disableControls class="form-control" type="text" name="lastName"  [(ngModel)]="teacher.lastName" />
         @if((lastName.invalid &&(lastName.touched || lastName.dirty)) && lastName.errors?.['required'])
         {
           <div class="text-danger" *ngIf="lastName.errors?.['required']">Last Name is required</div>
         }
+    </div>   
     </div>
-    <div class="mb-3">
-        <label class="form-label">Gender</label>
-        <select  class="form-control" name="gender" [(ngModel)]="teacher.gender" [disabled]=disableControls>  
+    <div class="row" style="margin-top: 5px;">
+      <div class="col-2">
+        <label class="form-label" style="float:right">Gender</label>    
+      </div>
+      <div class="col-10">
+         <select  class="form-select" name="gender" [(ngModel)]="teacher.gender" [disabled]=disableControls style="width: 350px;">  
              <option value="">Select Gender</option>
              <option [ngValue]="gender.Id"  *ngFor="let gender of genderData">
                   {{gender.Name}}
              </option>    
          </select> 
+      </div>   
     </div>
-    <div class="mb-3">
-        <label class="form-label">Date of birth *</label>
+    <div class="row" style="margin-top: 5px;">
+      <div class="col-2">
+        <label class="form-label"  style="float:right">Date of birth *</label>    
+      </div>
+      <div class="col-10">
         @if(formAction  == 'detail')
         {
-          <label class="form-control">{{teacher.dateOfBirth | date: 'dd/MM/yyyy'}}</label>
+          <label class="form-control" style="background-color: #eee;width: 350px;">{{teacher.dateOfBirth | date: 'dd/MM/yyyy'}}</label>
         }
-        @else {
-          <input required #dateOfBirth="ngModel" [disabled]=disableControls class="form-control" type="text" name="dateOfBirth"  [(ngModel)]="teacher.dateOfBirth" />
-             @if((dateOfBirth.invalid &&(dateOfBirth.touched || dateOfBirth.dirty) && dateOfBirth.errors?.['required']))
-             {
-              <div class="text-danger">Date of birth is required</div>
-             }
-        }
+       @else{
+        <mat-form-field style="width: 350px;">
+           <input matInput  
+                 [matDatepicker]="datepicker"
+                 placeholder="Select a date" 
+                 [disabled]="disableControls"
+                 [(ngModel)]="teacher.dateOfBirth"
+                 name="dateOfBirth">
+           <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+           <mat-datepicker #datepicker></mat-datepicker>
+        </mat-form-field>
+       }
+      </div>   
     </div>
-    <div class="mb-3">
-        <label  class="form-label">ZipCode *</label> <!--  to do ZIPCODE MOET 4 LANG ZIJN anders ERROR !!!   -->
+    <div class="row" style="margin-top: 5px;">
+      <div class="col-2">
+        <label  class="form-label" style="float:right">ZipCode *</label> <!--  to do ZIPCODE MOET 4 LANG ZIJN anders ERROR !!!   -->     
+      </div>
+      <div class="col-10">
         <input required #zipcode="ngModel" [disabled]=disableControls class="form-control" type="text" name="zipcode"   [(ngModel)]="teacher.zipcode"/>
         @if((lastName.invalid &&(zipcode.touched || zipcode.dirty)) && zipcode.errors?.['required'])
         {
           <div class="text-danger">Zipcode is required</div>
         }
-    </div>  
-    <div class="mb-3">
-      <label  class="form-label">Street and number</label>
-      <input  #streetAndNumber="ngModel" [disabled]=disableControls class="form-control" type="text" name="streetAndNumber"  [(ngModel)]="teacher.streetAndNumber" />
-    </div>  
-    <div class="mb-3">
-        <label  class="form-label">Phone *</label>
+      </div>   
+    </div>
+    <div class="row" style="margin-top: 5px;">
+      <div class="col-2">
+        <label  class="form-label" style="float:right">Street and number</label>    
+      </div>
+      <div class="col-10">
+        <input  #streetAndNumber="ngModel" [disabled]=disableControls class="form-control" type="text" name="streetAndNumber"  [(ngModel)]="teacher.streetAndNumber" />
+      </div>   
+    </div>
+    <div class="row" style="margin-top: 5px;">
+      <div class="col-2">
+        <label  class="form-label" style="float:right">Phone *</label>    
+      </div>
+      <div class="col-10">
         <input required #phone="ngModel" [disabled]=disableControls class="form-control" type="phone" name="phone"  [(ngModel)]="teacher.phone" />
         @if((phone.invalid &&(phone.touched || phone.dirty)) && phone.errors?.['required'])
         {
           <div class="text-danger">Phone is required</div>
         }
-   </div>
-   <div class="mb-3">
-        <label class="form-label">Email *</label>
+      </div>   
+    </div>
+    <div class="row" style="margin-top: 5px;">
+      <div class="col-2">
+        <label class="form-label" style="float:right">Email *</label>    
+      </div>
+      <div class="col-10">
         <input required email #email="ngModel" [disabled]=disableControls class="form-control" type="email" name="email"  [(ngModel)]="teacher.email" />
         @if(email.invalid &&(email.touched || email.dirty))
         {
@@ -94,21 +132,32 @@
             <div class="text-danger">Email is invalid</div>
           }
         }
-   </div>
-   <div class="mb-3">
-    <label class="form-label">Hiredate *</label>
-    @if(formAction  == 'detail')
-    {
-      <label class="form-control">{{teacher.hireDate | date: 'dd/MM/yyyy'}}</label>
-    }
-    @else {
-      <input required #hireDate="ngModel" [disabled]=disableControls class="form-control" type="text" name="hireDate"  [(ngModel)]="teacher.hireDate" />
-      @if((hireDate.invalid &&(hireDate.touched || hireDate.dirty)) && hireDate.errors?.['required'])
-      {
-        <div class="text-danger">Hiredate is required</div>
-      }
-    }
-</div>
+      </div>   
+    </div>
+    <div class="row" style="margin-top: 5px;">
+      <div class="col-2">
+         <label class="form-label" style="float:right">Hiredate *</label>    
+      </div>
+      <div class="col-10">
+        @if(formAction  == 'detail')
+        {
+          <label class="form-control" style="background-color: #eee;width: 350px;">{{teacher.hireDate | date: 'dd/MM/yyyy'}}</label>
+        }
+        @else{
+          <mat-form-field style="width: 350px;">
+            <input matInput  
+                 [matDatepicker]="datepicker"
+                 placeholder="Select a date" 
+                 [disabled]="disableControls"
+                 [(ngModel)]="teacher.hireDate"
+                 name="hireDate">
+            <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+            <mat-datepicker #datepicker></mat-datepicker>
+          </mat-form-field>
+        }
+      </div>   
+    </div>
+  </div>
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">

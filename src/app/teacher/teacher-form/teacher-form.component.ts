@@ -4,11 +4,16 @@ import { Teacher } from '../models/teacher.model';
 import { TeacherService } from '../services/teacher.service'
 import { Router,ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatInputModule } from '@angular/material/input';
+import { DateAdapter } from '@angular/material/core';
+
 
 @Component({
   selector: 'app-teacher-form',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, MatDatepickerModule,MatNativeDateModule,MatInputModule],
   templateUrl: './teacher-form.component.html',
   styleUrl: './teacher-form.component.css'
 })
@@ -18,13 +23,13 @@ export class TeacherFormComponent implements OnInit {
       id: 0,
       firstName: '',
       lastName: '',
-      dateOfBirth: '',
+      dateOfBirth: new Date(),
       gender: 0,
       zipcode : 0,
       streetAndNumber:'',
       phone: '',
       email: '',
-      hireDate: ''
+      hireDate:  new Date(),
     }
 
     isUpdating: boolean = false;
@@ -37,8 +42,17 @@ export class TeacherFormComponent implements OnInit {
    
     constructor(private teacherService : TeacherService,
       private router: Router,
-      private route: ActivatedRoute
-    ){}         
+      private route: ActivatedRoute,
+      private dateAdapter: DateAdapter<Date>
+    ){
+       this.dateAdapter.setLocale('nl-BE'); 
+    }   
+    
+    addHours(date: Date, hours : number):Date {
+      const hoursToAdd = hours * 60 * 60 * 1000;
+      date.setTime(date.getTime() + hoursToAdd);
+      return date;
+   }
 
     ngOnInit(): void {
       this.route.paramMap.subscribe(result => {
@@ -69,7 +83,8 @@ export class TeacherFormComponent implements OnInit {
 
 
   onSubmit():void{
-
+    this.teacher.dateOfBirth = this.addHours(this.teacher.dateOfBirth, 2);
+    this.teacher.hireDate = this.addHours(this.teacher.hireDate, 2);
     if(this.isUpdating){
       //updating
       this.teacherService.updateTeacher(this.teacher)
