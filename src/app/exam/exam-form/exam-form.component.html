@@ -40,10 +40,10 @@
                 <div class="col-10">
                     @if(formAction  == 'detail')
                     {
-                        <label class="form-control" style="width:350px;">{{exam.examenDate | date: 'dd/MM/yyyy'}}</label>
+                        <label class="form-control" style="width:250px;">{{exam.examenDate | date: 'dd/MM/yyyy'}}</label>
                     }
                     @else {
-                        <input #startDate="ngModel" style="width: 350px;" [disabled]=disableControls class="form-control"   type="text" name="Date"  [(ngModel)]="exam.examenDate" />
+                        <input #startDate="ngModel" style="width: 250px;" [disabled]=disableControls class="form-control"   type="text" name="Date"  [(ngModel)]="exam.examenDate" />
                     }    
                 </div>   
             </div>

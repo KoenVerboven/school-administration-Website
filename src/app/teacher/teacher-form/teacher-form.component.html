@@ -28,10 +28,14 @@
         <label class="form-label" style="float:right">Firstname *</label>    
       </div>
       <div class="col-10">
-        <input required #firstName="ngModel" [disabled]=disableControls class="form-control"   type="text" name="firstName"  [(ngModel)]="teacher.firstName" />
+        <input required maxlength="30" #firstName="ngModel" [disabled]=disableControls class="form-control"   type="text" name="firstName"  [(ngModel)]="teacher.firstName" />
         @if((firstName.invalid &&(firstName.touched || firstName.dirty)) && firstName.errors?.['required'])
         {
           <div class="text-danger">First Name is required</div>
+        }
+        @if((firstName.invalid &&(firstName.touched || firstName.dirty)) && firstName.errors?.['maxlength'])
+        {
+          <div class="text-danger">First Name cannot be longer than 30 characters</div>
         }
       </div>   
     </div>
@@ -40,10 +44,14 @@
          <label class="form-label" style="float:right">Lastname *</label>    
       </div>
       <div class="col-10">
-        <input required #lastName="ngModel" [disabled]=disableControls class="form-control" type="text" name="lastName"  [(ngModel)]="teacher.lastName" />
+        <input required maxlength="30" #lastName="ngModel" [disabled]=disableControls class="form-control" type="text" name="lastName"  [(ngModel)]="teacher.lastName" />
         @if((lastName.invalid &&(lastName.touched || lastName.dirty)) && lastName.errors?.['required'])
         {
           <div class="text-danger" *ngIf="lastName.errors?.['required']">Last Name is required</div>
+        }
+        @if((firstName.invalid &&(firstName.touched || firstName.dirty)) && firstName.errors?.['maxlength'])
+        {
+          <div class="text-danger">First Name cannot be longer than 30 characters</div>
         }
     </div>   
     </div>
@@ -52,7 +60,7 @@
         <label class="form-label" style="float:right">Gender</label>    
       </div>
       <div class="col-10">
-         <select  class="form-select" name="gender" [(ngModel)]="teacher.gender" [disabled]=disableControls style="width: 350px;">  
+         <select  class="form-select" name="gender" [(ngModel)]="teacher.gender" [disabled]=disableControls style="width: 250px;">  
              <option value="">Select Gender</option>
              <option [ngValue]="gender.Id"  *ngFor="let gender of genderData">
                   {{gender.Name}}
@@ -67,10 +75,10 @@
       <div class="col-10">
         @if(formAction  == 'detail')
         {
-          <label class="form-control" style="background-color: #eee;width: 350px;">{{teacher.dateOfBirth | date: 'dd/MM/yyyy'}}</label>
+          <label class="form-control" style="background-color: #eee;width: 250px;">{{teacher.dateOfBirth | date: 'dd/MM/yyyy'}}</label>
         }
        @else{
-        <mat-form-field style="width: 350px;">
+        <mat-form-field style="width: 250px;">
            <input matInput  
                  [matDatepicker]="datepicker"
                  placeholder="Select a date" 
@@ -88,7 +96,7 @@
         <label  class="form-label" style="float:right">ZipCode *</label> <!--  to do ZIPCODE MOET 4 LANG ZIJN anders ERROR !!!   -->     
       </div>
       <div class="col-10">
-        <input required #zipcode="ngModel" [disabled]=disableControls class="form-control" type="text" name="zipcode"   [(ngModel)]="teacher.zipcode"/>
+        <input required maxlength="4" #zipcode="ngModel" [disabled]=disableControls class="form-control" type="text" name="zipcode"   [(ngModel)]="teacher.zipcode"/>
         @if((lastName.invalid &&(zipcode.touched || zipcode.dirty)) && zipcode.errors?.['required'])
         {
           <div class="text-danger">Zipcode is required</div>
@@ -100,7 +108,7 @@
         <label  class="form-label" style="float:right">Street and number</label>    
       </div>
       <div class="col-10">
-        <input  #streetAndNumber="ngModel" [disabled]=disableControls class="form-control" type="text" name="streetAndNumber"  [(ngModel)]="teacher.streetAndNumber" />
+        <input maxlength="30" #streetAndNumber="ngModel" [disabled]=disableControls class="form-control" type="text" name="streetAndNumber"  [(ngModel)]="teacher.streetAndNumber" />
       </div>   
     </div>
     <div class="row" style="margin-top: 5px;">
@@ -120,7 +128,7 @@
         <label class="form-label" style="float:right">Email *</label>    
       </div>
       <div class="col-10">
-        <input required email #email="ngModel" [disabled]=disableControls class="form-control" type="email" name="email"  [(ngModel)]="teacher.email" />
+        <input required maxlength="30" email #email="ngModel" [disabled]=disableControls class="form-control" type="email" name="email"  [(ngModel)]="teacher.email" />
         @if(email.invalid &&(email.touched || email.dirty))
         {
           @if(email.errors?.['required'])
@@ -141,10 +149,10 @@
       <div class="col-10">
         @if(formAction  == 'detail')
         {
-          <label class="form-control" style="background-color: #eee;width: 350px;">{{teacher.hireDate | date: 'dd/MM/yyyy'}}</label>
+          <label class="form-control" style="background-color: #eee;width: 250px;">{{teacher.hireDate | date: 'dd/MM/yyyy'}}</label>
         }
         @else{
-          <mat-form-field style="width: 350px;">
+          <mat-form-field style="width: 250px;">
             <input matInput  
                  [matDatepicker]="datepicker"
                  placeholder="Select a date" 
