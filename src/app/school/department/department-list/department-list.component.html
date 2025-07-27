@@ -6,6 +6,8 @@
     <option value="2">Riverdale Academy</option>
   </Select>
 </p>
+<button  style="float:left;" class="btn btn-light" type="button" (click)="addDepartment()"><i class="bi bi-plus"></i> Add Department</button>
+<br/><br/>
 <table class="table table-sm table-hover table-striped">
     <thead>
         <tr>
@@ -17,7 +19,7 @@
     </thead>
     <tbody>
         @for(department of departments; track department.id) {
-            <tr class="cell-hoverCursor">      
+            <tr  (click)="showDepartmentDetail(department.id)" class="cell-hoverCursor">      
                 <td>{{department.id}}</td>
                 <td>{{department.name}}</td>  
                 <td>{{department.schoolId}}</td>  

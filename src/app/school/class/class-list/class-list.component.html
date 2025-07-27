@@ -13,6 +13,8 @@
     <option value="2">Science Department</option>
   </Select>
 </p>
+<button  style="float:left;" class="btn btn-light" type="button" (click)="addClass()"><i class="bi bi-plus"></i> Add Class</button>
+<br/><br/>
 <table class="table table-sm  table-hover  table-striped">
     <thead>
         <tr>
@@ -25,7 +27,7 @@
     </thead>
     <tbody>
         @for(class of classes;track class.id){
-            <tr class="cell-hoverCursor">      
+            <tr (click)="showClassDetail(class.id)" class="cell-hoverCursor">      
                 <td >{{class.id}}</td>
                 <td >{{class.name}}</td>
                 <td >{{class.schoolId}}</td>

@@ -1,8 +1,11 @@
 import { Routes } from '@angular/router';
 import { DashboardListComponent } from './dashboard/dashboard-list/dashboard-list.component';
 import { SchoolListComponent } from './school/school/school-list/school-list.component';
+import { SchoolFormComponent } from './school/school/school-form/school-form.component';
 import { DepartmentListComponent } from './school/department/department-list/department-list.component';
+import { DepartmentFormComponent } from './school/department/department-form/department-form.component';
 import { ClassListComponent}    from './school/class/class-list/class-list.component';
+import { ClassFormComponent } from './school/class/class-form/class-form.component';
 import { StudentListComponent } from './student/student-list/student-list.component';
 import { StudentFormComponent } from './student/student-form/student-form.component';
 import { CourseListComponent } from './course/course-list/course-list.component';
@@ -30,6 +33,7 @@ import { AuthGuard } from './user/auth.guard';
 import { StudentPresenceComponent } from './student/student-presence/student-presence.component';
 import { StudentsInfoComponent } from './dashboard/moreInfo/students-info/students-info.component';
 import { ExamquestionListComponent } from './exam/examquestion-list/examquestion-list.component';
+import { PaymentListComponent } from './payment/payment-list/payment-list.component';
 
 
 export const routes: Routes = [
@@ -38,8 +42,14 @@ export const routes: Routes = [
     {path: 'dashbord',component:DashboardListComponent, canActivate:[AuthGuard]},
     {path: 'dashbordtem', redirectTo: '', component:DashboardItemComponent},
     {path: 'schools', component: SchoolListComponent, canActivate:[AuthGuard]},
+    {path: 'schooldetail/:action/:id', component: SchoolFormComponent, canActivate:[AuthGuard]},
+    {path: 'createschool', component: SchoolFormComponent, canActivate:[AuthGuard]},
     {path: 'departments', component: DepartmentListComponent, canActivate:[AuthGuard]},
+    {path: 'createdepartment', component: DepartmentFormComponent, canActivate:[AuthGuard]},
+    {path: 'departmentdetail/:action/:id', component: DepartmentFormComponent, canActivate:[AuthGuard]},
     {path: 'classes', component: ClassListComponent, canActivate:[AuthGuard]},
+    {path: 'classdetail/:action/:id', component: ClassFormComponent, canActivate:[AuthGuard]},
+    {path: 'createsclass', component: ClassFormComponent, canActivate:[AuthGuard]},
     {path: 'students',component:StudentListComponent, canActivate:[AuthGuard]},
     {path: 'createstudent', component: StudentFormComponent, canActivate:[AuthGuard]},
     {path: 'studentdetail/:action/:id', component: StudentFormComponent, canActivate:[AuthGuard]},
@@ -69,5 +79,6 @@ export const routes: Routes = [
     {path: 'studentpresence', component: StudentPresenceComponent, canActivate:[AuthGuard]},
     {path: 'studentsInfo', component: StudentsInfoComponent, canActivate:[AuthGuard]},
     {path: 'examquestions', component: ExamquestionListComponent, canActivate:[AuthGuard]},
+    {path: 'payments', component: PaymentListComponent, canActivate:[AuthGuard]},
     {path: '**', component: PageNotFoundComponent}
 ]; 

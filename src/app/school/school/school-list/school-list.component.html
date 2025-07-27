@@ -1,4 +1,6 @@
 <p class="text-center h5" >Schools</p>
+<button  style="float:left;" class="btn btn-light" type="button" (click)="addSchool()"><i class="bi bi-plus"></i> Add School</button>
+<br/><br/>
 <table class="table table-sm  table-hover  table-striped">
     <thead>
         <tr>
@@ -10,7 +12,7 @@
     </thead>
     <tbody>
         @for(school of schools;track school.id){
-            <tr class="cell-hoverCursor">      
+            <tr (click)="showSchoolDetail(school.id)" class="cell-hoverCursor">      
                 <td >{{school.id}}</td>
                 <td >{{school.name}}</td>
                 <td >{{school.city}}</td>

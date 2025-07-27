@@ -155,24 +155,34 @@
      {
         <div class="link">
           <div class="content" [routerLink]="['studyplandetail']" [routerLinkActive]="'active'">
-            <div class="icon"  data-placement="right" title="My studyplan">
+            <div class="icon"  data-placement="right" title="Studyplans">
               <i class="bi bi-calendar2-check"></i>
             </div>
-            <div class="title">My studyplan</div>
+            <div class="title">Studyplans</div>
           </div>
         </div>
      }
-     @if(settingsVisible)
+     @if(paymentsVisible)
+     {
+        <div class="link">
+          <div class="content" [routerLink]="['payments']" [routerLinkActive]="'active'">
+            <div class="icon"  data-placement="right" title="Payments">
+               <i class="bi bi-cash-coin"></i>
+            </div>
+            <div class="title">Payments</div>
+          </div>
+        </div>
+      }
+      @if(settingsVisible)
       {
-         <div class="link">
-           <div class="content" [routerLink]="['settings']" [routerLinkActive]="'active'">
-             <div class="icon"  data-placement="right" title="Settings">
+        <div class="link">
+          <div class="content" [routerLink]="['settings']" [routerLinkActive]="'active'">
+            <div class="icon"  data-placement="right" title="Settings">
                <i class="bi bi-gear"></i>
-             </div>
-             <div class="title">Settings</div>
-           </div>
-         </div>
-       }
-      
+            </div>
+            <div class="title">Settings</div>
+          </div>
+        </div>
+      }
     </div>
   </div>

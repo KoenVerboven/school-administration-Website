@@ -7,7 +7,7 @@
 }
 @else
 {
-   <form (ngSubmit)="onSubmit()" #studentForm="ngForm" class="border rounded p-4 w-90 mb-5 mx-auto">
+   <form (ngSubmit)="onSubmit()" #studentForm="ngForm" class="border rounded p-4 w-99 mb-5 mx-auto">
       <div class="formHeader">
          @if(formAction == 'detail')
          {
@@ -24,10 +24,21 @@
       
       <div class="container">
          <div class="row">
-            <div class="col-2">
-               <label class="form-label" style="float:right">Firstname *</label>
+            <div class="col-3">
+               <label class="form-label" style="float:right">LastName * & Firstname *</label>
             </div>
-            <div class="col-10">
+            <div class="col-4">
+               <input required maxlength="30" #lastName="ngModel" [disabled]=disableControls class="form-control" type="text" name="lastName"  [(ngModel)]="student.lastName" />
+               @if((lastName.invalid &&(lastName.touched || lastName.dirty)) && lastName.errors?.['required'])
+               {
+                  <div class="text-danger">Last Name is required</div>
+               }
+               @if((firstName.invalid &&(firstName.touched || firstName.dirty)) && firstName.errors?.['maxlength'])
+               {
+                  <div class="text-danger">First Name cannot be longer than 30 characters</div>
+               }
+            </div>
+            <div class="col-4">
                <input required maxlength="30" #firstName="ngModel" [disabled]=disableControls class="form-control"   type="text" name="firstName"  [(ngModel)]="student.firstName" />
                @if((firstName.invalid &&(firstName.touched || firstName.dirty)) && firstName.errors?.['required'])
                {
@@ -40,26 +51,10 @@
             </div>
          </div>
          <div class="row" style="margin-top: 5px;">
-            <div class="col-2">
-                <label class="form-label" style="float:right">Lastname *</label>
-            </div>
-            <div class="col-10">
-               <input required maxlength="30" #lastName="ngModel" [disabled]=disableControls class="form-control" type="text" name="lastName"  [(ngModel)]="student.lastName" />
-               @if((lastName.invalid &&(lastName.touched || lastName.dirty)) && lastName.errors?.['required'])
-               {
-                  <div class="text-danger">Last Name is required</div>
-               }
-               @if((firstName.invalid &&(firstName.touched || firstName.dirty)) && firstName.errors?.['maxlength'])
-               {
-                  <div class="text-danger">First Name cannot be longer than 30 characters</div>
-               }
-            </div>
-         </div>
-         <div class="row" style="margin-top: 5px;">
-            <div class="col-2">
+            <div class="col-3">
                 <label class="form-label" style="float:right">Gender</label>
             </div>
-            <div class="col-10">
+            <div class="col-8">
                <select  class="form-select" style="width: 250px;" name="gender" [(ngModel)]="student.gender" [disabled]=disableControls>  
                   <option value="">Select Gender</option>
                   <option [ngValue]="gender.Id"  *ngFor="let gender of genderData">
@@ -69,10 +64,10 @@
             </div>
          </div>
          <div class="row" style="margin-top: 5px;">
-            <div class="col-2">
+            <div class="col-3">
                 <label class="form-label" style="float:right">Date of birth *</label>
             </div>
-            <div class="col-10">
+            <div class="col-8">
                @if(formAction  == 'detail')
                {
                   <label class="form-control" style="background-color: #eee;width: 250px;">{{student.dateOfBirth | date: 'dd/MM/yyyy'}}</label>
@@ -92,30 +87,33 @@
             </div>
          </div>
          <div class="row" style="margin-top: 5px;">
-            <div class="col-2">
-               <label  class="form-label" style="float:right">ZipCode *</label>
+            <div class="col-3">
+               <label  class="form-label" style="float:right">ZipCode * & City *</label>
             </div>
-            <div class="col-10">
-               <input required #zipcode="ngModel" [disabled]=disableControls class="form-control" type="text" name="zipcode"   [(ngModel)]="student.zipcode"/>
+            <div class="col-3">
+               <input required #zipcode="ngModel" style="width: 250px;" [disabled]=disableControls class="form-control" type="text" name="zipcode"   [(ngModel)]="student.zipcode"/>
                @if((lastName.invalid &&(zipcode.touched || zipcode.dirty)) && zipcode.errors?.['required'])
                {
                   <div class="text-danger">Zipcode is required</div>
                }
             </div>
+            <div class="col-5">
+               <input required maxlength="30"  [disabled]=disableControls class="form-control" type="text" name="city"   />
+            </div>
          </div>
          <div class="row" style="margin-top: 5px;">
-            <div class="col-2">
+            <div class="col-3">
                 <label class="form-label" style="float:right">Street and number</label>
             </div>
-            <div class="col-10">
+            <div class="col-8">
                <input maxlength="30" #streetAndNumber="ngModel" [disabled]=disableControls class="form-control" type="text" name="streetAndNumber"  [(ngModel)]="student.streetAndNumber" />
             </div>
          </div>
          <div class="row" style="margin-top: 5px;">
-            <div class="col-2">
+            <div class="col-3">
                <label  class="form-label" style="float:right">Phone *</label>
             </div>
-            <div class="col-10">
+            <div class="col-8">
                <input required #phone="ngModel" [disabled]=disableControls class="form-control" type="phone" name="phone"  [(ngModel)]="student.phone" />
                @if((phone.invalid &&(phone.touched || phone.dirty)) && phone.errors?.['required'])
                {
@@ -124,10 +122,10 @@
             </div>
          </div>
          <div class="row" style="margin-top: 5px;">
-            <div class="col-2">
+            <div class="col-3">
                 <label class="form-label"  style="float:right">Email *</label>
             </div>
-            <div class="col-10">
+            <div class="col-8">
                <input required maxlength="30" email #email="ngModel" [disabled]=disableControls class="form-control" type="email" name="email"  [(ngModel)]="student.email" />
                @if(email.invalid &&(email.touched || email.dirty))
                {

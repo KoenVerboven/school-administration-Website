@@ -30,6 +30,7 @@ export class SidebarComponent implements OnChanges {
   usersVisible: boolean=false;
   studentPresenceVisible: boolean= false;
   settingsVisible: boolean = false;
+  paymentsVisible: boolean = false;
 
   ngOnInit(): void {
     this.setRights();
@@ -65,6 +66,7 @@ export class SidebarComponent implements OnChanges {
         this.settingsVisible = true;
         this.studentPresenceVisible = true;
         this.mystudyplanVisible=true;
+        this.paymentsVisible = true;
       }
       if(this.userRole == 'student')
       {

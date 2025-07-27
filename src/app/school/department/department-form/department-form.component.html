@@ -1,1 +1,56 @@
-<p>department-form works!</p>
+<p class="text-center h5" >{{pageTitle}}</p>
+
+<div class="container">
+    <div class="row">
+      <div class="col-2">
+        <label class="form-label" style="float:right">Name *</label>    
+      </div>
+      <div class="col-10">
+        <input required maxlength="30"  class="form-control"   type="text" name="name"   />
+      </div>   
+    </div>
+    <div class="row"  style="margin-top: 5px;">
+      <div class="col-2">
+        <label class="form-label" style="float:right">School *</label>    
+      </div>
+      <div class="col-10">
+        <Select class="form-select" aria-label="class">
+            <option value="">Please choose a school</option>
+            <option value="1">School 1 </option>
+            <option value="2">School 2</option>
+            <option value="2">School 3</option>
+        </Select> 
+      </div>   
+    </div>
+     <div class="row"  style="margin-top: 5px;">
+      <div class="col-2">
+        <label class="form-label" style="float:right">Head of the Department</label>    
+      </div>
+      <div class="col-10">
+        <Select class="form-select" aria-label="class">
+            <option value="">Please choose a teacher</option>
+            <option value="1">Teacher 1 </option>
+            <option value="2">Teacher 2</option>
+            <option value="2">Teacher 3</option>
+        </Select> 
+      </div>   
+    </div>
+    <div class="row" style="margin-top: 5px;">
+      <div class="col-2">
+        <label class="form-label" style="float:right">Contact phone *</label>    
+      </div>
+      <div class="col-10">
+        <input required maxlength="30"  class="form-control"   type="text" name="contactphone"   />
+      </div>   
+    </div>
+    <div class="row" style="margin-top: 5px;">
+      <div class="col-2">
+        <label class="form-label" style="float:right">Contact email *</label>    
+      </div>
+      <div class="col-10">
+        <input required maxlength="30"  class="form-control"   type="text" name="contactemail"   />
+      </div>   
+    </div>
+
+   
+  </div>

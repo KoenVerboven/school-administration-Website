@@ -8,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './class-form.component.css'
 })
 export class ClassFormComponent {
+  pageTitle= 'Class Form';
 
 }

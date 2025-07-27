@@ -8,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './department-form.component.css'
 })
 export class DepartmentFormComponent {
+  pageTitle = "Create Department";
 
 }
