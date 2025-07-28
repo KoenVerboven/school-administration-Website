@@ -1,1 +1,32 @@
 <p class="text-center h5" >Payments</p>
+@if(error == "" && !loading)
+{
+  <button style="float:left;" class="btn btn-light" type="button" (click)="addPayment()"><i class="bi bi-plus"></i> Add Payment</button>
+  <div style="float:right;">{{paymentsCount}} payments found. </div>
+  <br/><br/>
+  <table class="table table-sm table-hover  table-striped" style="width: 100%;">
+    <thead>
+        <th class="p-2" style="text-align: right;">Id</th>
+        <th class="p-2" style="text-align: right;">StudentId</th>
+        <th class="p-2" style="text-align: center;">StudentName</th>
+        <th class="p-2" style="text-align: right;">CourseId</th>
+        <th class="p-2" style="text-align: right;">Amount</th>
+        <th class="p-2" style="text-align: center;">PaymentDate</th>
+        <th class="p-2" style="text-align: center;">PaymentMethod</th>
+    </thead>
+    <tbody>
+      @for(item of items; track item.id){
+        <tr (click)="showPaymentDetail(item.id)" class="cell-hoverCursor">
+           <td style="width: 2%;" style="text-align: right;">{{item.id}}</td>
+           <td style="width: 10%;text-align: right;">{{item.studentId}}</td> 
+           <td style="width: 28%;text-align: center;">{{item.studentFullName}}</td>
+           <td style="width: 5%;text-align: right;">{{item.courseId}}</td> 
+           <td style="width: 10%;text-align: right;">{{monneySymbol}}{{item.amount}}</td> 
+           <td style="width: 15%;text-align: center;">{{item.paymentDate | date:"dd/MM/yyyy HH:mm"}}</td> 
+           <td style="width: 20%;text-align: center;">{{item.paymentMethod}}</td>  
+        </tr>
+      }  
+    </tbody>
+ </table>
+}
+

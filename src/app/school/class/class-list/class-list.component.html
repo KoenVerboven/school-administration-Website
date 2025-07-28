@@ -18,21 +18,21 @@
 <table class="table table-sm  table-hover  table-striped">
     <thead>
         <tr>
-            <th class="p-2">Id</th>
-            <th class="p-2">Name</th>
-            <th class="p-2">SchoolId</th>
-            <th class="p-2">DepartmentId</th>
-            <th class="p-2">CreatedAt</th>
+            <th class="p-2" style="text-align: right;">Id</th>
+            <th class="p-2" style="text-align: center;">Name</th>
+            <th class="p-2" style="text-align: right;">SchoolId</th>
+            <th class="p-2" style="text-align: right;">DepartmentId</th>
+            <th class="p-2" style="text-align: center;">CreatedAt</th>
         </tr>
     </thead>
     <tbody>
         @for(class of classes;track class.id){
             <tr (click)="showClassDetail(class.id)" class="cell-hoverCursor">      
-                <td >{{class.id}}</td>
-                <td >{{class.name}}</td>
-                <td >{{class.schoolId}}</td>
-                <td >{{class.departmentId}}</td>
-                <td >{{class.createdAt | date: 'dd/MM/yyyy'}}</td>
+                <td style="text-align: right;">{{class.id}}</td>
+                <td style="text-align: center;">{{class.name}}</td>
+                <td style="text-align: right;">{{class.schoolId}}</td>
+                <td style="text-align: right;">{{class.departmentId}}</td>
+                <td style="text-align: center;">{{class.createdAt | date: 'dd/MM/yyyy'}}</td>
             </tr>       
         }
     </tbody>

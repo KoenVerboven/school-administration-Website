@@ -20,17 +20,17 @@
     <table class="table table-sm  table-hover  table-striped">
         <thead>
            <tr>
-             <th class="p-2">Id</th>
-             <th class="p-2">Name</th>
-             <th class="p-2">Code</th>
+             <th class="p-2" style="text-align:right;">Id</th>
+             <th class="p-2" style="text-align:center;">Name</th>
+             <th class="p-2" style="text-align:center;">Code</th>
             </tr>
         </thead>
         <tbody>
             @for(course of courses;track course.id){
                 <tr (click)="showCourseDetail(course.id)" class="cell-hoverCursor">      
-                    <td >{{course.id}}</td>        
-                    <td >{{course.courseName}}</td> 
-                    <td>{{course.courseCode}}</td>  
+                    <td style="text-align:right;">{{course.id}}</td>        
+                    <td style="text-align:center;">{{course.courseName}}</td> 
+                    <td style="text-align:center;">{{course.courseCode}}</td>  
                 </tr>       
             }
         </tbody>

@@ -18,10 +18,9 @@
   <table class="table table-sm  table-striped">
       <thead>
          <tr>
-           <th class="p-2">Student Name</th>
-           <th class="p-2">Email</th>  
-           <th class="p-2">ExamName</th> 
-
+           <th class="p-2" style="text-align: center;">Student Name</th>
+           <th class="p-2" style="text-align: center;">Email</th>  
+           <th class="p-2" style="text-align: center;">ExamName</th> 
            <th class="p-2" style="text-align: center;">Score</th>
            <th class="p-2" style="text-align: center;">PASS / FAIL</th>     
         </tr>
@@ -29,9 +28,9 @@
       <tbody>
         @for(examResult of examResults; track examResult.id){
           <tr class="cell-hoverCursor">      
-            <td>{{examResult.studentLastName}} {{examResult.studentFirstName}}</td> 
-            <td>{{examResult.studentEmail}}</td>   
-            <td>{{examResult.examName}}</td>   
+            <td style="text-align: center;">{{examResult.studentLastName}} {{examResult.studentFirstName}}</td> 
+            <td style="text-align: center;">{{examResult.studentEmail}}</td>   
+            <td style="text-align: center;">{{examResult.examName}}</td>   
             <td style="text-align: center;">{{examResult.examenResult}} / {{examResult.maxScore}}</td>
             @if(examResult.examenResult >= examResult.minScoreToPassExam)
             {

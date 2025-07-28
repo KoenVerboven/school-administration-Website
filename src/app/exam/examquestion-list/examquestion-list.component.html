@@ -13,15 +13,15 @@
 <table class="table table-sm table-hover">
   <thead>
     <tr>
-      <th class="p-2 gridheader" style="width: 10%;">Question Nr</th>
-      <th class="p-2 gridheader" style="width: 90%;">QuestionText</th>
+      <th class="p-2 gridheader" style="width: 10%;text-align: center;">Question Nr</th>
+      <th class="p-2 gridheader" style="width: 90%;text-align: center">QuestionText</th>
     </tr>
   </thead>
   <tbody>
     @for(item of items; track item.id) {
       <tr>
-        <td>{{item.questionNumber}}</td>
-        <td>{{item.questionText}}</td>
+        <td style="text-align: right">{{item.questionNumber}}</td>
+        <td style="text-align: left;padding-left: 20px;">{{item.questionText}}</td>
       </tr>
     }
   </tbody>

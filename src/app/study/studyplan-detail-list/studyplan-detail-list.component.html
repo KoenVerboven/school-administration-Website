@@ -26,20 +26,20 @@
         {
             <table class="table table-sm">
                 <thead>
-                    <th class="p-2 gridheader">Date</th>
-                    <th class="p-2 gridheader">Time</th>
-                    <th class="p-2 gridheader">Description</th>
-                    <th class="p-2 gridheader">Completed</th>
-                    <th class="p-2 gridheader">Comment</th>
+                    <th class="p-2 gridheader" style="text-align: center;">Date</th>
+                    <th class="p-2 gridheader" style="text-align: center;">Time</th>
+                    <th class="p-2 gridheader" style="text-align: center;">Description</th>
+                    <th class="p-2 gridheader" style="text-align: center;">Completed</th>
+                    <th class="p-2 gridheader" style="text-align: center;">Comment</th>
                 </thead>
                 <tbody>
                     @for(studyplandetail of studyplansDetails; track studyplandetail.id) {
                         <tr>
-                            <td>{{studyplandetail.start | date: 'dd/MM'}}</td>
-                            <td>{{studyplandetail.start | date:'shortTime'}} to {{studyplandetail.end | date:'shortTime'}}</td>
-                            <td>{{studyplandetail.goalDescription}}</td>
-                            <td><input type="checkbox"></td>
-                            <td><input type="text" style="width: 90%;"></td>
+                            <td  style="text-align: center;">{{studyplandetail.start | date: 'dd/MM'}}</td>
+                            <td style="text-align: center;">{{studyplandetail.start | date:'shortTime'}} to {{studyplandetail.end | date:'shortTime'}}</td>
+                            <td style="text-align: center;">{{studyplandetail.goalDescription}}</td>
+                            <td style="text-align: center;"><input type="checkbox"></td>
+                            <td style="text-align: center;"><input type="text" style="width: 90%;"></td>
                         </tr>
                     }
                 </tbody>

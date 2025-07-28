@@ -20,21 +20,21 @@
   <table class="table table-sm  table-hover table-striped" style="overflow:hidden; border-radius:5px;">
     <thead>
       <tr class="cell-hoverCursor">
-        <th class="p-2" style="width: 12%;" (click)="getTeachers('id')">Id  &nbsp;  @if(sortId) {@if(sortDirection == "asc"){<i class="bi bi-arrow-down"></i>}@else{<i class="bi bi-arrow-up"></i>}}</th>
-        <th class="p-2" style="width: 22%;" (click)="getTeachers('name')">Name &nbsp; @if(sortName) {@if(sortDirection == "asc"){<i class="bi bi-arrow-down"></i>}@else{<i class="bi bi-arrow-up"></i>}}</th>
-        <th class="p-2" style="width: 22%;" (click)="getTeachers('dateofbirth')">Date of birth &nbsp; @if(sortDateOfBirth) {@if(sortDirection == "asc"){<i class="bi bi-arrow-down"></i>}@else{<i class="bi bi-arrow-up"></i>}}</th>
-        <th class="p-2" style="width: 22%;" (click)="getTeachers('phone')">Phone &nbsp; @if(sortPhone) {@if(sortDirection == "asc"){<i class="bi bi-arrow-down"></i>}@else{<i class="bi bi-arrow-up"></i>}}</th>       
-        <th class="p-2" style="width: 22%;" (click)="getTeachers('email')">Email &nbsp; @if(sortEmail) {@if(sortDirection == "asc"){<i class="bi bi-arrow-down"></i>}@else{<i class="bi bi-arrow-up"></i>}}</th>       
+        <th class="p-2" style="width: 12%;text-align:right;" (click)="getTeachers('id')">Id  &nbsp;  @if(sortId) {@if(sortDirection == "asc"){<i class="bi bi-arrow-down"></i>}@else{<i class="bi bi-arrow-up"></i>}}</th>
+        <th class="p-2" style="width: 22%;text-align:center;" (click)="getTeachers('name')">Name &nbsp; @if(sortName) {@if(sortDirection == "asc"){<i class="bi bi-arrow-down"></i>}@else{<i class="bi bi-arrow-up"></i>}}</th>
+        <th class="p-2" style="width: 22%;text-align:center;" (click)="getTeachers('dateofbirth')">Date of birth &nbsp; @if(sortDateOfBirth) {@if(sortDirection == "asc"){<i class="bi bi-arrow-down"></i>}@else{<i class="bi bi-arrow-up"></i>}}</th>
+        <th class="p-2" style="width: 22%;text-align:center;" (click)="getTeachers('phone')">Phone &nbsp; @if(sortPhone) {@if(sortDirection == "asc"){<i class="bi bi-arrow-down"></i>}@else{<i class="bi bi-arrow-up"></i>}}</th>       
+        <th class="p-2" style="width: 22%;text-align:center;" (click)="getTeachers('email')">Email &nbsp; @if(sortEmail) {@if(sortDirection == "asc"){<i class="bi bi-arrow-down"></i>}@else{<i class="bi bi-arrow-up"></i>}}</th>       
       </tr>
     </thead>
     <tbody>
       @for(teacher of teachers; track teacher.id){  
         <tr  (click)="showTeacherDetail(teacher.id)" class="cell-hoverCursor" >      
-          <td>{{teacher.id}}</td>        
-          <td>{{teacher.lastName}} {{teacher.firstName}}</td>   
-          <td>{{teacher.dateOfBirth | date: 'dd/MM/yyyy'}}</td>   
-          <td>{{teacher.phone}}</td>
-          <td>{{teacher.email}}</td>
+          <td style="text-align: right;">{{teacher.id}}</td>        
+          <td style="text-align: center;">{{teacher.lastName}} {{teacher.firstName}}</td>   
+          <td style="text-align: center;">{{teacher.dateOfBirth | date: 'dd/MM/yyyy'}}</td>   
+          <td style="text-align: center;">{{teacher.phone}}</td>
+          <td style="text-align: center;">{{teacher.email}}</td>
         </tr>  
       } 
     </tbody>

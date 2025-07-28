@@ -34,6 +34,7 @@ import { StudentPresenceComponent } from './student/student-presence/student-pre
 import { StudentsInfoComponent } from './dashboard/moreInfo/students-info/students-info.component';
 import { ExamquestionListComponent } from './exam/examquestion-list/examquestion-list.component';
 import { PaymentListComponent } from './payment/payment-list/payment-list.component';
+import { PaymentFormComponent } from './payment/payment-form/payment-form.component';
 
 
 export const routes: Routes = [
@@ -80,5 +81,7 @@ export const routes: Routes = [
     {path: 'studentsInfo', component: StudentsInfoComponent, canActivate:[AuthGuard]},
     {path: 'examquestions', component: ExamquestionListComponent, canActivate:[AuthGuard]},
     {path: 'payments', component: PaymentListComponent, canActivate:[AuthGuard]},
+    {path: 'createpayment', component: PaymentFormComponent, canActivate:[AuthGuard]},
+    {path: 'paymentdetail/:action/:id', component: PaymentFormComponent, canActivate:[AuthGuard]},
     {path: '**', component: PageNotFoundComponent}
 ]; 

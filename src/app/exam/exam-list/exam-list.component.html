@@ -20,9 +20,9 @@
   <table class="table table-sm table-hover table-striped">
       <thead>
          <tr>
-           <th class="p-2">Id</th>
-           <th class="p-2">Title</th>
-           <th class="p-2">Date</th>   
+           <th class="p-2" style="text-align:right;">Id</th>
+           <th class="p-2" style="text-align:center;">Title</th>
+           <th class="p-2" style="text-align:center;">Date</th>   
            <th class="p-2" style="text-align: center;">StartTime</th> 
            <th class="p-2" style="text-align: center;">EndTime</th>   
         </tr>
@@ -30,9 +30,9 @@
       <tbody>
         @for(exam of exams; track exam.id){
           <tr (click)="showExamDetail(exam.id)" class="cell-hoverCursor">      
-            <td>{{exam.id}}</td>        
-            <td>{{exam.examTitle}}</td> 
-            <td>{{exam.examenDate | date : 'dd/MM/yyyy'}}</td>
+            <td style="text-align:right;">{{exam.id}}</td>        
+            <td style="text-align:center;">{{exam.examTitle}}</td> 
+            <td style="text-align:center;">{{exam.examenDate | date : 'dd/MM/yyyy'}}</td>
             <td style="text-align: center;">{{exam.examenDate | date : 'HH:mm'}}</td>
             <td style="text-align: center;">{{exam.examEndDateTime | date : 'HH:mm' }}</td> 
           </tr>      
