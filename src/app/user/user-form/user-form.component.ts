@@ -37,40 +37,11 @@ export class UserFormComponent implements OnInit {
   constructor(private userService : UserService, private router: Router, private route: ActivatedRoute, private fb: FormBuilder){
     this.userForm = this.fb.group(
       {
-        name:[
-          '',
-          [
-                Validators.required,
-          ],
-        ],
-        userName:[
-          '',
-          [
-                Validators.required,
-          ],
-        ],
-        email:[
-          '',
-          [
-               Validators.email,
-          ],
-        ],
-        password: [
-              '',
-              [
-                  Validators.required,
-                  Validators.minLength(8),
-                  CustomValidators.hasUppercase,
-                  CustomValidators.hasNumber,
-                  CustomValidators.hasSpecialCharacter,
-              ],
-          ],
-          role:[
-            '',
-            [
-              Validators.required
-            ],
-          ],
+        name:['', [Validators.required,],],
+        userName:['',[Validators.required,],],     
+        email:['', [Validators.email,],],
+        password: ['',[ Validators.required,Validators.minLength(8),CustomValidators.hasUppercase, CustomValidators.hasSpecialCharacter, ]],
+        role:['',[Validators.required],],
       }
     );
   }

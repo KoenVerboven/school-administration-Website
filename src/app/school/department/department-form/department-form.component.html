@@ -1,19 +1,38 @@
 <p class="text-center h5" >{{pageTitle}}</p>
-
-<div class="container">
+@if(errorMessage != '')
+{
+   <div  class="text-danger text-center">
+      {{errorMessage}}
+   </div>
+}
+@else { 
+    <form (ngSubmit)="onSubmit()"  class="border rounded p-4 w-90 mb-5 mx-auto">
+        <div class="formHeader">
+           @if(formAction == 'detail')
+           {
+             <button class="btn btn-light headerButton" type="button" (click)="navigateBack()">Go Back</button>
+             <button class="btn btn-light headerButton" type="button" >Update</button>
+           }
+           @else {
+             <button class="btn btn-success headerButton" *ngIf="formAction != 'detail'" type="submit">Save</button>
+             <button class="btn btn-warning" *ngIf="formAction != 'detail'" type="button" (click)="navigateBack()">Cancel</button>
+           }
+        </div>
+        <br />  
+        <div class="container">
     <div class="row">
-      <div class="col-2">
+      <div class="col-3">
         <label class="form-label" style="float:right">Name *</label>    
       </div>
-      <div class="col-10">
+      <div class="col-9">
         <input required maxlength="30"  class="form-control"   type="text" name="name"   />
       </div>   
     </div>
     <div class="row"  style="margin-top: 5px;">
-      <div class="col-2">
+      <div class="col-3">
         <label class="form-label" style="float:right">School *</label>    
       </div>
-      <div class="col-10">
+      <div class="col-9">
         <Select class="form-select" aria-label="class">
             <option value="">Please choose a school</option>
             <option value="1">School 1 </option>
@@ -23,10 +42,10 @@
       </div>   
     </div>
      <div class="row"  style="margin-top: 5px;">
-      <div class="col-2">
+      <div class="col-3">
         <label class="form-label" style="float:right">Head of the Department</label>    
       </div>
-      <div class="col-10">
+      <div class="col-9">
         <Select class="form-select" aria-label="class">
             <option value="">Please choose a teacher</option>
             <option value="1">Teacher 1 </option>
@@ -36,21 +55,26 @@
       </div>   
     </div>
     <div class="row" style="margin-top: 5px;">
-      <div class="col-2">
+      <div class="col-3">
         <label class="form-label" style="float:right">Contact phone *</label>    
       </div>
-      <div class="col-10">
+      <div class="col-9">
         <input required maxlength="30"  class="form-control"   type="text" name="contactphone"   />
       </div>   
     </div>
     <div class="row" style="margin-top: 5px;">
-      <div class="col-2">
+      <div class="col-3">
         <label class="form-label" style="float:right">Contact email *</label>    
       </div>
-      <div class="col-10">
+      <div class="col-9">
         <input required maxlength="30"  class="form-control"   type="text" name="contactemail"   />
       </div>   
     </div>
+   </div>
 
-   
-  </div>
+
+  </form>
+}
+
+
+

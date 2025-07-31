@@ -1,74 +1,96 @@
 <p class="text-center h5" >{{pageTitle}}</p>
-
-<div class="container">
-    <div class="row">
-      <div class="col-2">
-        <label class="form-label" style="float:right">Name *</label>    
+@if(errorMessage != '')
+{
+   <div  class="text-danger text-center">
+      {{errorMessage}}
+   </div>
+}
+@else { 
+    <form (ngSubmit)="onSubmit()"  class="border rounded p-4 w-90 mb-5 mx-auto">
+        <div class="formHeader">
+           @if(formAction == 'detail')
+           {
+             <button class="btn btn-light headerButton" type="button" (click)="navigateBack()">Go Back</button>
+             <button class="btn btn-light headerButton" type="button" >Update</button>
+           }
+           @else {
+             <button class="btn btn-success headerButton" *ngIf="formAction != 'detail'" type="submit">Save</button>
+             <button class="btn btn-warning" *ngIf="formAction != 'detail'" type="button" (click)="navigateBack()">Cancel</button>
+           }
+        </div>
+        <br />
+        <div class="container">
+      <div class="row">
+        <div class="col-2">
+          <label class="form-label" style="float:right">Name *</label>    
+        </div>
+        <div class="col-10">
+          <input required maxlength="30"  class="form-control"   type="text" name="name"   />
+        </div>   
       </div>
-      <div class="col-10">
-        <input required maxlength="30"  class="form-control"   type="text" name="name"   />
-      </div>   
-    </div>
-    <div class="row" style="margin-top: 5px;">
-      <div class="col-2">
-        <label class="form-label" style="float:right">Adress *</label>    
+      <div class="row" style="margin-top: 5px;">
+        <div class="col-2">
+          <label class="form-label" style="float:right">Adress *</label>    
+        </div>
+        <div class="col-10">
+          <input required maxlength="30"  class="form-control"   type="text" name="address"   />
+        </div>   
       </div>
-      <div class="col-10">
-        <input required maxlength="30"  class="form-control"   type="text" name="address"   />
-      </div>   
-    </div>
-    <div class="row" style="margin-top: 5px;">
-      <div class="col-2">
-        <label class="form-label" style="float:right">Zipcode *</label>    
+      <div class="row" style="margin-top: 5px;">
+        <div class="col-2">
+          <label class="form-label" style="float:right">Zipcode *</label>    
+        </div>
+        <div class="col-10">
+          <input required maxlength="4"  class="form-control"   type="text" name="zipcode"   />
+        </div>   
       </div>
-      <div class="col-10">
-        <input required maxlength="4"  class="form-control"   type="text" name="zipcode"   />
-      </div>   
-    </div>
-    <div class="row" style="margin-top: 5px;">
-      <div class="col-2">
-        <label class="form-label" style="float:right">City *</label>    
+      <div class="row" style="margin-top: 5px;">
+        <div class="col-2">
+          <label class="form-label" style="float:right">City *</label>    
+        </div>
+        <div class="col-10">
+          <input required maxlength="30"  class="form-control"   type="text" name="city"   />
+        </div>   
       </div>
-      <div class="col-10">
-        <input required maxlength="30"  class="form-control"   type="text" name="city"   />
-      </div>   
-    </div>
-    <div class="row" style="margin-top: 5px;">
-      <div class="col-2">
-        <label class="form-label" style="float:right">Email *</label>    
+      <div class="row" style="margin-top: 5px;">
+        <div class="col-2">
+          <label class="form-label" style="float:right">Email *</label>    
+        </div>
+        <div class="col-10">
+          <input required maxlength="30"  class="form-control"   type="text" name="email"   />
+        </div>   
       </div>
-      <div class="col-10">
-        <input required maxlength="30"  class="form-control"   type="text" name="email"   />
-      </div>   
-    </div>
-    <div class="row" style="margin-top: 5px;">
-      <div class="col-2">
-        <label class="form-label" style="float:right">Website</label>    
+      <div class="row" style="margin-top: 5px;">
+        <div class="col-2">
+          <label class="form-label" style="float:right">Website</label>    
+        </div>
+        <div class="col-10">
+          <input required maxlength="30"  class="form-control"   type="text" name="website"   />
+        </div>   
       </div>
-      <div class="col-10">
-        <input required maxlength="30"  class="form-control"   type="text" name="website"   />
-      </div>   
-    </div>
-    <div class="row" style="margin-top: 5px;">
-      <div class="col-2">
-        <label class="form-label" style="float:right">SchoolType</label>    
-      </div>
-      <div class="col-10">
-        <Select class="form-select" aria-label="class">
+      <div class="row" style="margin-top: 5px;">
+        <div class="col-2">
+          <label class="form-label" style="float:right">SchoolType</label>    
+        </div>
+        <div class="col-10">
+          <Select class="form-select" aria-label="class">
             <option value="">Please choose a schoolType</option>
-            <option value="1">Public School</option>
-            <option value="2">Private School</option>
-        </Select> 
-      </div>   
-    </div>
-     <div class="row" style="margin-top: 5px;">
-      <div class="col-2">
-        <label class="form-label" style="float:right">Description</label>    
+            <option  *ngFor="let schoolType of schoolTypes">
+              {{schoolType.Name}}
+            </option>    
+          </Select> 
+        </div>   
       </div>
-      <div class="col-10">
-        <textarea maxlength="400" class="form-control" name="description" rows="3"></textarea>
-      </div>   
-    </div>
+      <div class="row" style="margin-top: 5px;">
+        <div class="col-2">
+          <label class="form-label" style="float:right">Description</label>    
+        </div>
+        <div class="col-10">
+          <textarea maxlength="400" class="form-control" name="description" rows="3"></textarea>
+        </div>   
+      </div>
+     </div>
+    </form>
+}
 
-   
-  </div>
+

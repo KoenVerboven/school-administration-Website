@@ -34,11 +34,11 @@
             <td style="text-align: center;">{{examResult.examenResult}} / {{examResult.maxScore}}</td>
             @if(examResult.examenResult >= examResult.minScoreToPassExam)
             {
-              <td style="color:green;background-color: #a4f8b2;text-align: center;">PASS</td>      
+              <td style="color:green;text-align: center;">PASS <i class="bi bi-check-circle"></i></td>      
             }
             @else
             {
-              <td style="color:rgb(243, 8, 8);background-color: rgb(245, 198, 198);text-align: center;">FAIL</td>      
+              <td style="color:rgb(243, 8, 8);text-align: center;">FAIL <i class="bi bi-emoji-frown"></i></td>      
             }
             
          </tr>  

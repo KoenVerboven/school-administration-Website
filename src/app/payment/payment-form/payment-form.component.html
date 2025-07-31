@@ -1,1 +1,69 @@
-<p>payment-form works!</p>
+<p class="text-center h5" >{{pageTitle}}</p>
+@if(errorMessage != '')
+{
+   <div  class="text-danger text-center">
+      {{errorMessage}}
+   </div>
+}
+@else
+{
+   <form (ngSubmit)="onSubmit()" class="border rounded p-4 w-90 mb-5 mx-auto">
+      <div class="formHeader">
+            @if(formAction == 'detail')
+            {
+            <button class="btn btn-light headerButton" type="button" (click)="navigateBack()">Go Back</button>
+            <button class="btn btn-light headerButton" type="button" (click)="updateClick()" >Update</button>
+            }
+            @else {
+                <button class="btn btn-success headerButton" *ngIf="formAction != 'detail'"    type="submit" >Save</button>
+                <button class="btn btn-warning"  *ngIf="formAction != 'detail'" type="button"  (click)="navigateBack()">Cancel</button>
+            }
+       </div>
+      <br />
+
+      <div class="container">
+        <div class="row">
+            <div class="col-2">
+                <label class="form-label" style="float:right">StudentName *</label>
+            </div>
+            <div class="col-10">
+                <input required  [disabled]=disableControls class="form-control" style="width: 40%;" formControlName="studentFullName"  type="text" />
+            </div>   
+        </div>
+        <div class="row" style="margin-top: 5px;">
+            <div class="col-2">
+                <label class="form-label" style="float:right">CourseName *</label>
+            </div>
+            <div class="col-10">
+                <input required  [disabled]=disableControls class="form-control"  style="width: 40%;float:left"  formControlName="courseName"  type="text" />
+            </div>   
+        </div>
+        <div class="row" style="margin-top: 5px;">
+            <div class="col-2">
+                <label class="form-label" style="float:right">Amount *</label>
+            </div>
+            <div class="col-10">
+                <div style="float: left;">{{monneySymbol}} &nbsp;</div>
+                <input required  [disabled]=disableControls class="form-control"  style="width: 20%;float:left"  formControlName="amount"  type="number" />
+            </div>   
+        </div>
+        <div class="row" style="margin-top: 5px;">
+            <div class="col-2">
+                <label class="form-label" style="float:right">Payment Method *</label>
+            </div>
+            <div class="col-10">
+                <Select class="form-select" aria-label="class" style="width: 40%;">
+                    <option value="">Please choose payment method</option>
+                     <option  *ngFor="let paymentMethod of paymentMethods">
+                        {{paymentMethod.name}}
+                  </option>    
+                </Select>
+            </div>   
+        </div>
+        </div>
+   </form>
+  
+}
+
+
+
