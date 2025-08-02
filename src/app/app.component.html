@@ -7,8 +7,7 @@
        }
        @else{
          <div style="float:right;margin-right: 20px;margin-top: 5px">
-              {{userRole}} &nbsp;&nbsp; {{userName}} &nbsp;&nbsp;
-              <button class="btn btn-light" type="button" (click)="logout()"><i class="bi bi-box-arrow-right"></i> Log out</button>
+            <button class="btn btn-light" type="button" data-bs-toggle="modal" data-bs-target="#accountModal"><i class="bi bi-person-circle"></i> {{userName}}</button>
          </div>   
        }
     </div>
@@ -18,5 +17,24 @@
     }
     <div class="content" style="padding-left: 10px;padding-right: 15px;" [ngClass]="{ 'sidebarExpanded': sidebarExpanded }">
        <router-outlet style="padding-left: 20px;"></router-outlet>
+    </div>
+  </div>
+
+   <!-- Modal -->
+  <div class="modal fade" id="accountModal" tabindex="-1" aria-labelledby="accountModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="accountModalLabel">Account Info</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>username :{{userName}}</p>
+          <p>userrole :{{userRole}}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal"  (click)="logout()"><i class="bi bi-box-arrow-right"></i> Log out</button>
+        </div>
+      </div>
     </div>
   </div>
