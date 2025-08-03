@@ -22,4 +22,11 @@ body {
   color:rgb(253, 4, 4);
   background-color:white
 }
+.pageTitle{
+  padding-left:20px;
+  font-size: 20px;
+  width: 100%;
+  color:rgb(2, 143, 56);
+  background-color:rgb(241, 235, 235)
+}
 

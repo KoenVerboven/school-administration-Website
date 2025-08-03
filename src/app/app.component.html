@@ -24,16 +24,18 @@
   <div class="modal fade" id="accountModal" tabindex="-1" aria-labelledby="accountModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="accountModalLabel">Account Info</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-header" style="background-color: #57eb83;">
+          <h1 class="modal-title fs-5" id="accountModalLabel">Account</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="background-color: white;"></button>
         </div>
         <div class="modal-body">
-          <p>username :{{userName}}</p>
-          <p>userrole :{{userRole}}</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-bs-dismiss="modal"  (click)="logout()"><i class="bi bi-box-arrow-right"></i> Log out</button>
+          <p><img src="/NoPicture.jpg" style="height: 120px;width: 95px;border-width: 1px;border-color:#777;border-style: solid;border-radius: 3px;"></p>
+          <p>name:</p>
+          <p>username: {{userName}}</p>
+          <p>email: </p>
+          <p>userrole: {{userRole}}</p>
+          <br/>
+          <p><button type="button" class="btn btn-primary"  data-bs-dismiss="modal"  (click)="logout()"><i class="bi bi-box-arrow-right"></i> Log out</button></p>
         </div>
       </div>
     </div>

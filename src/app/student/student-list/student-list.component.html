@@ -1,5 +1,5 @@
 
-  <p class="text-center h5" >Students</p>
+  <p class="pageTitle" >Search Students</p>
   <input type="text" (keyup.enter)= "getStudents('name')" [(ngModel)]="studentSpecParams.name" placeholder="Student name" style="float:left;width: 300px;padding-left: 5px;">
   <button  style="float:left; margin-left: 15px;" class="btn btn-light" type="button"  (click)="getStudents('name')"><i class="bi bi-search"></i> Search</button>
   <button  style="float:left; margin-left: 15px;" class="btn btn-light" type="button" (click)="clearSearch()"><i class="bi bi-x-lg"></i> Clear Search</button>
