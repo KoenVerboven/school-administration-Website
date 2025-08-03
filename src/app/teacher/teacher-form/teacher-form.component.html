@@ -1,4 +1,3 @@
-<p class="pageTitle" >{{pageTitle}}</p>
 @if(errorMessage != '')
 {
   <div  class="text-danger text-center">
@@ -7,19 +6,21 @@
 }
 @else {
   <form (ngSubmit)="onSubmit()"  #teacherForm="ngForm" class="border rounded p-4 w-90 mb-5 mx-auto">
-
-    <div class="formHeader">
-      @if(formAction == 'detail')
-      {
-        <button class="btn btn-light headerButton" type="button" (click)="navigateBack()">Go Back</button>
-        <button class="btn btn-light headerButton" type="button" (click)="updateClick()">Update</button>
-        <button type="button" class="btn btn-light" style="color:red" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete</button>
-      }
-      @else {
-        <button class="btn btn-success headerButton" type="submit" [disabled]="teacherForm.invalid">Save</button>
-        <button class="btn btn-warning"  type="button" (click)="navigateBack()">Cancel</button>
-      }
-   </div>
+    <div class="pageTitle" >
+      {{pageTitle}}
+      <div style="float:right">
+        @if(formAction == 'detail')
+        {
+          <button class="btn btn-light headerButton" type="button" (click)="navigateBack()">Go Back</button>
+          <button class="btn btn-light headerButton" type="button" (click)="updateClick()">Update</button>
+          <button type="button" class="btn btn-light" style="color:red" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete</button>
+        }
+        @else {
+          <button class="btn btn-success headerButton" type="submit" [disabled]="teacherForm.invalid">Save</button>
+          <button class="btn btn-warning"  type="button" (click)="navigateBack()">Cancel</button>
+        }
+      </div>
+    </div>
    <br />
       
   <div class="container">
