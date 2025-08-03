@@ -30,6 +30,7 @@ export class TeacherFormComponent implements OnInit {
       phone: '',
       email: '',
       hireDate:  new Date(),
+      leaveDate: new Date()
     }
 
     isUpdating: boolean = false;

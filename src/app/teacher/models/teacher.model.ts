@@ -9,4 +9,5 @@ export interface Teacher{
     phone: string;
     email: string;
     hireDate: Date;
+    leaveDate: Date;
 }

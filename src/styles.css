@@ -24,9 +24,14 @@ body {
 }
 .pageTitle{
   padding-left:20px;
+  padding-top:2px;
+  padding-bottom:2px;
   font-size: 20px;
   width: 100%;
-  color:rgb(2, 143, 56);
-  background-color:rgb(241, 235, 235)
+  height: 45px;
+  border: 1px solid rgb(173, 169, 169);
+  border-radius: 4px;
+  color:rgb(7, 50, 71);
+  background-color: rgb(188, 212, 243);
 }
 

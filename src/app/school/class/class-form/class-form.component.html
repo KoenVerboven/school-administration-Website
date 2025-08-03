@@ -1,4 +1,4 @@
-<p class="pageTitle" >{{pageTitle}}</p>
+
 @if(errorMessage != '')
 {
    <div  class="text-danger text-center">
@@ -7,17 +7,19 @@
 }
 @else { 
     <form (ngSubmit)="onSubmit()"  class="border rounded p-4 w-90 mb-5 mx-auto">
-      
-        <div class="formHeader">
-           @if(formAction == 'detail')
-           {
-             <button class="btn btn-light headerButton" type="button" (click)="navigateBack()">Go Back</button>
-             <button class="btn btn-light headerButton" type="button" >Update</button>
-           }
-           @else {
-             <button class="btn btn-success headerButton" *ngIf="formAction != 'detail'" type="submit">Save</button>
-             <button class="btn btn-warning" *ngIf="formAction != 'detail'" type="button" (click)="navigateBack()">Cancel</button>
-           }
+        <div class="pageTitle" >
+          {{pageTitle}}
+          <div style="float:right">
+            @if(formAction == 'detail')
+            {
+              <button class="btn btn-light headerButton" type="button" (click)="navigateBack()">Go Back</button>
+              <button class="btn btn-light headerButton" type="button" >Update</button>
+            }
+            @else {
+              <button class="btn btn-success headerButton" *ngIf="formAction != 'detail'" type="submit">Save</button>
+              <button class="btn btn-warning" *ngIf="formAction != 'detail'" type="button" (click)="navigateBack()">Cancel</button>
+            }
+          </div>
         </div>
         <br />
 

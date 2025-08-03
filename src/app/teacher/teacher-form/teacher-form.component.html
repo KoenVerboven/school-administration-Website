@@ -165,6 +165,20 @@
         }
       </div>   
     </div>
+     <div class="row" style="margin-top: 5px;">
+      <div class="col-2">
+         <label class="form-label" style="float:right">Leavedate</label>    
+      </div>
+      <div class="col-10">
+        @if(formAction  == 'detail')
+        {
+          <label class="form-control" style="background-color: #eee;width: 250px;">{{teacher.leaveDate}}</label>
+        }
+        @else{
+          
+        }
+      </div>   
+    </div>
   </div>
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
