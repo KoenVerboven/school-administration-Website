@@ -15,35 +15,27 @@ https://github.com/KoenVerboven/SchoolAdministrationApi
 
 ![image](https://github.com/user-attachments/assets/b6c7830b-f369-499d-8f6e-453f0f01df97)
 
-<img width="1897" height="942" alt="image" src="https://github.com/user-attachments/assets/9e09b2be-019c-4b86-a479-0f0516963e96" />
+<img width="1897" height="938" alt="image" src="https://github.com/user-attachments/assets/b99528e1-6ff9-462a-ac90-db09eea41ecc" />
 
-<img width="1899" height="941" alt="image" src="https://github.com/user-attachments/assets/bf0df465-59f6-4022-a557-979001af56a9" />
+<img width="1912" height="935" alt="image" src="https://github.com/user-attachments/assets/5b439e22-c28d-4e87-8768-5b0ed45604d1" />
 
-<img width="1905" height="937" alt="image" src="https://github.com/user-attachments/assets/1aaa61a9-8d89-4b5a-ba6f-cb63585aa8ce" />
+<img width="1900" height="946" alt="image" src="https://github.com/user-attachments/assets/6ce506e7-5997-482b-9e38-ce6b567a4116" />
 
-<img width="1919" height="941" alt="image" src="https://github.com/user-attachments/assets/3efe880b-4f1b-4b79-a9b6-dd683f9ff11c" />
+<img width="1903" height="938" alt="image" src="https://github.com/user-attachments/assets/fde0237f-6b61-4446-9d8b-942e5f40ddb3" />
 
-<img width="1899" height="939" alt="image" src="https://github.com/user-attachments/assets/588cf657-065d-4a15-a916-491afee07482" />
+<img width="1905" height="937" alt="image" src="https://github.com/user-attachments/assets/945b3d8a-76c7-4b79-908c-40d0ac8645a4" />
 
-<img width="1899" height="947" alt="image" src="https://github.com/user-attachments/assets/33626170-3a6b-4b14-9486-62deafd8051a" />
-  
-<img width="1898" height="937" alt="image" src="https://github.com/user-attachments/assets/e4be85f7-d498-46fd-a237-03525e2ac050" />
+<img width="1892" height="935" alt="image" src="https://github.com/user-attachments/assets/9b8c3f14-152b-43ec-9157-a24dd1fc3e57" />
 
-<img width="1898" height="945" alt="image" src="https://github.com/user-attachments/assets/1c9e3baa-ba99-4d58-8447-cea51a0684e2" />
+<img width="1903" height="940" alt="image" src="https://github.com/user-attachments/assets/77931aa3-cc93-4d9d-8f3c-c397e635cdc4" />
 
-<img width="1901" height="939" alt="image" src="https://github.com/user-attachments/assets/2b55a0b2-ad0d-4a67-ba68-2b6d78e75d82" />
+<img width="1897" height="936" alt="image" src="https://github.com/user-attachments/assets/e3897dc0-9630-440e-a3d6-29a427a1e7e8" />
 
-<img width="1897" height="943" alt="image" src="https://github.com/user-attachments/assets/ed2a43d3-881a-4eb5-a822-df87184f8798" />
+<img width="1897" height="942" alt="image" src="https://github.com/user-attachments/assets/6d8e39cf-46f7-4c85-8084-4a75ea8df258" />
 
-<img width="1896" height="940" alt="image" src="https://github.com/user-attachments/assets/c465d0ff-1180-4db2-8ebb-9885dc7627f8" />
+<img width="1898" height="938" alt="image" src="https://github.com/user-attachments/assets/596d929b-5073-4679-a7a8-aaef3d6450d8" />
 
-<img width="1896" height="942" alt="image" src="https://github.com/user-attachments/assets/a52b70d7-645d-410a-97cd-8b1ed40a2b46" />
-
-<img width="1902" height="939" alt="image" src="https://github.com/user-attachments/assets/b269e584-9dcb-413a-8b31-44f8701c478a" />
-
-<img width="1900" height="942" alt="image" src="https://github.com/user-attachments/assets/308f7fb0-a1b4-4792-8d1f-db4b86fdd4c2" />
-
-<img width="1901" height="945" alt="image" src="https://github.com/user-attachments/assets/a0bc63cb-1860-4e6c-b56e-4957daa9472e" />
+<img width="1897" height="937" alt="image" src="https://github.com/user-attachments/assets/44749318-22ec-4d59-bbb5-b3147404fa14" />
 
 
 
