@@ -1,14 +1,14 @@
 
 #studentsImage{
-    margin-top: 10px;
+    margin-top: 2px;
     width: 100%;
 }
 .welcome{
-    margin-top : 10px;
-    font-size: 30px;
-    color:rgb(39, 163, 221);
-    background: linear-gradient(to bottom, #106d85 0%, #28117c 100%);
-    padding: 12px;
+    margin-top : 5px;
+    color:rgba(17, 127, 179, 1);
+    background: linear-gradient(to bottom, #e9f0f1ff 0%, #70a5b3ff 100%);
+    padding-left: 11px;
+    padding-bottom: 5px;
     border-radius: 8px;
     width: 100%;
 }
