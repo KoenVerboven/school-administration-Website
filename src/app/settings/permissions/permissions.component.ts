@@ -16,6 +16,7 @@ export class PermissionsComponent {
   formAction = 'detail';
   disableControls:boolean = true;
   roleList= rolelistitems;
+  pageTitle: string = 'Permissions';
 
   constructor(private router: Router)
   {

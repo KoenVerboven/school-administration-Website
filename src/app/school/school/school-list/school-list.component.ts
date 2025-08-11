@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { schools } from '../../mock-school-list';
 import { CommonModule } from '@angular/common';
 import { Router , RouterModule} from '@angular/router';
+import { SchoolService } from '../services/school.service';
 
 @Component({
   selector: 'app-school-list',
@@ -13,11 +14,28 @@ import { Router , RouterModule} from '@angular/router';
 export class SchoolListComponent implements OnInit {
   PageTitle: string = "School List";
   schools: any[] = [];
+  error = '';
     
-  constructor(private router: Router) {}
+  constructor(private schoolService : SchoolService, private router: Router) {}
   
   ngOnInit(): void {
-    this.schools = schools; // This should be replaced with actual data fetching logic}
+    this.getSchools();
+    //this.schools = schools; // This should be replaced with actual data fetching logic}
+  }
+
+   getSchools():void{
+   // this.loading = true;
+    this.schoolService.getSchools().subscribe(schoolsFromApi => {
+        this.schools = schoolsFromApi;
+       // this.coursesCount = this.courses.length;
+        //this.loading = false;
+      },
+      error => {
+        this.error = 'An error has occurred. Please try again later.';
+        console.log(error.message);
+        // this.loading = false;
+      }
+    ) 
   }
 
   addSchool() {

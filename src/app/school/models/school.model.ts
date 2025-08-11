@@ -7,7 +7,7 @@ export interface School {
     locationState: string; 
     country: string; 
     phone?: string; 
-    email?: string; 
+    contactEmail?: string; 
     principalId: number; 
     isActive: boolean; 
     yearEstablished?: number; 

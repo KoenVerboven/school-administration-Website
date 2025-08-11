@@ -4,10 +4,9 @@
 <table class="table table-sm  table-hover  table-striped">
     <thead>
         <tr>
-            <th class="p-2" style="text-align: right;">Id</th>
-            <th class="p-2" style="text-align: center;">Name</th>
-            <th clas="p-2" style="text-align: center;">City</th>
-            <th class="p-2" style="text-align: center;">CreatedAt</th>
+           <th class="p-2" style="text-align: right;">Id</th>
+           <th class="p-2" style="text-align: center;">Name</th>
+           <th class="p-2" style="text-align: center;">Email</th>
         </tr>
     </thead>
     <tbody>
@@ -15,8 +14,7 @@
             <tr (click)="showSchoolDetail(school.id)" class="cell-hoverCursor">      
                 <td style="text-align: right;">{{school.id}}</td>
                 <td style="text-align: center;">{{school.name}}</td>
-                <td style="text-align: center;">{{school.city}}</td>
-                <td style="text-align: center;">{{school.createdAt | date: 'dd/MM/yyyy'}}</td>
+                <td style="text-align: center;">{{school.contactEmail}}</td>
             </tr>       
         }
     </tbody>

@@ -1,32 +1,37 @@
-<p class="pageTitle">Permissions</p>
 <form (ngSubmit)="onSubmit()"   #courseForm="ngForm" class="formClass">
-  <div>
-    <select Name="role" style="width: 200px;" (change)="RefreshGrid()"> 
-      <option value="">Select Role</option>
-      @for(roleItem of roleList; track roleItem.id)
+  
+  <div class="pageTitle">
+    {{pageTitle}}
+    <div style="float:right">
+      @if(formAction == 'detail')
       {
-        <option value={{roleItem.id}}>{{roleItem.Name}}</option>  
+        <button class="btn btn-light headerButton" type="button" (click)="navigateBack()">Go Back</button>
+        <button class="btn btn-light headerButton" type="button" (click)="updateClick()">Update</button>
       }
-    </select> 
-  </div>
-  <br>
-  <div class="formHeader">
-    @if(formAction == 'detail')
-    {
-      <button class="btn btn-light headerButton" type="button" (click)="navigateBack()">Go Back</button>
-      <button class="btn btn-light headerButton" type="button" (click)="updateClick()">Update</button>
-    }
-    @else {
-      <button class="btn btn-success headerButton" type="submit">Save</button>
-      <button class="btn btn-warning"  type="button" (click)="cancel()">Cancel</button>
-    }
+      @else {
+        <button class="btn btn-success headerButton" type="submit">Save</button>
+        <button class="btn btn-warning"  type="button" (click)="cancel()">Cancel</button>
+      }
+    </div>
+    <br/><br/>
+    <div>
+     
+    </div>
   </div>
   <br>
   <div class="container">
     <table class="table">
       <thead>
         <tr>
-          <th class="p-2"></th>
+          <th class="p-2"> 
+            <select Name="role" class="form-select" (change)="RefreshGrid()"> 
+              <option value="">Select Role</option>
+              @for(roleItem of roleList; track roleItem.id)
+              {
+                <option value={{roleItem.id}}>{{roleItem.Name}}</option>  
+              }
+            </select> 
+          </th>
           <th class="p-2">read</th>
           <th class="p-2">create</th>       
           <th class="p-2">update</th>  
@@ -36,7 +41,7 @@
       <tbody>
         @for(permissionItem of items; track permissionItem.id){
           <tr>   
-            <td style="background-color: rgb(219, 235, 235);">{{permissionItem.subject}}</td>        
+            <td style="background-color: rgb(251, 251, 251);text-align: center;">{{permissionItem.subject}}</td>        
             <td><input type="checkbox" [disabled]=disableControls name='r{{permissionItem.id}}' [(ngModel)]="permissionItem.readRights"></td>  
             <td><input type="checkbox" [disabled]=disableControls name='c{{permissionItem.id}}' [(ngModel)]="permissionItem.createRigthst"></td>
             <td><input type="checkbox" [disabled]=disableControls name='u{{permissionItem.id}}' [(ngModel)]="permissionItem.updateRights"></td>

@@ -1,0 +1,27 @@
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { environment } from '../../../../environments/environment';
+import { SchoolDepartment } from '../../models/schooldepartment.model';
+import { Observable } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class DepartmentService {
+
+  private apiUrl = `${environment.apiUrl}/department`;    
+
+  constructor(private http: HttpClient) { }
+
+    getDepartments(): Observable<SchoolDepartment[]>{
+      return this.http.get<SchoolDepartment[]>(this.apiUrl)
+    }
+
+    getDepartmentById(id : number): Observable<SchoolDepartment>{
+      return this.http.get<SchoolDepartment>(`${this.apiUrl}/${id}`)
+    }
+
+    createDepartement(departement : SchoolDepartment): Observable<SchoolDepartment>{
+      return this.http.post<SchoolDepartment>(this.apiUrl,departement);
+    }
+}
