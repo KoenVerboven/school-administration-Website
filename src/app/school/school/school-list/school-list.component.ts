@@ -14,26 +14,27 @@ import { SchoolService } from '../services/school.service';
 export class SchoolListComponent implements OnInit {
   PageTitle: string = "School List";
   schools: any[] = [];
+  schoolsCount = 0;
+  loading = false;
   error = '';
     
   constructor(private schoolService : SchoolService, private router: Router) {}
   
   ngOnInit(): void {
     this.getSchools();
-    //this.schools = schools; // This should be replaced with actual data fetching logic}
   }
 
    getSchools():void{
-   // this.loading = true;
+    this.loading = true;
     this.schoolService.getSchools().subscribe(schoolsFromApi => {
         this.schools = schoolsFromApi;
-       // this.coursesCount = this.courses.length;
-        //this.loading = false;
+        this.schoolsCount = this.schools.length;
+        this.loading = false;
       },
       error => {
         this.error = 'An error has occurred. Please try again later.';
         console.log(error.message);
-        // this.loading = false;
+        this.loading = false;
       }
     ) 
   }

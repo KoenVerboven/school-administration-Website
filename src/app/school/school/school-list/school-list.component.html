@@ -4,17 +4,20 @@
 <table class="table table-sm  table-hover  table-striped">
     <thead>
         <tr>
-           <th class="p-2" style="text-align: right;">Id</th>
-           <th class="p-2" style="text-align: center;">Name</th>
-           <th class="p-2" style="text-align: center;">Email</th>
+           <th class="p-2" style="text-align: right; width: 5%;">Id</th>
+           <th class="p-2" style="text-align: center;width: 45%;">Name & Email</th>
+           <th class="p-2" style="text-align: center;width: 50%;"></th>
         </tr>
     </thead>
     <tbody>
         @for(school of schools;track school.id){
             <tr (click)="showSchoolDetail(school.id)" class="cell-hoverCursor">      
                 <td style="text-align: right;">{{school.id}}</td>
-                <td style="text-align: center;">{{school.name}}</td>
-                <td style="text-align: center;">{{school.contactEmail}}</td>
+                <td style="text-align: center;">
+                    {{school.name}}<br/>
+                    {{school.contactEmail}}
+                </td>
+                <td></td>
             </tr>       
         }
     </tbody>

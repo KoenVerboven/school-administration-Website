@@ -16,19 +16,22 @@
     }
     @else {
       <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
-      <input 
-          type="text" 
-          class="form-control"
-          style="width: 100%;"
-          name="userName"
-          [(ngModel)] =  "user.userName"
-          id="inputEmailOrUserName" 
-          aria-describedby="emailHelp" 
-          required
-          placeholder="Enter username or email">
-      <br/>
-      <div class="container">
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1"> <i class="bi bi-person fs-4"></i></span>
           <input 
+            type="text" 
+            class="form-control"
+            style="width: 80%;float: left;"  name="userName"
+            [(ngModel)] =  "user.userName"
+            id="inputEmailOrUserName" 
+            aria-describedby="emailHelp" 
+            required
+            placeholder="Enter username or email">
+        </div>
+        <div class="container">
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1"><i class="bi bi-key  fs-4"></i> </span>
+            <input 
                 [type]="showPassword ? 'text' : 'password'" 
                 class="form-control"
                 name="password"
@@ -41,7 +44,9 @@
             >
             <button type="button"  (click)="togglePasswordVisibility()">
               <i class="fa" [ngClass]="{'bi bi-eye': !showPassword, 'bi bi-eye-slash': showPassword}"></i>
-            </button>    
+            </button>  
+          </div>
+   
       </div>
       <button type="submit" 
           class="btn btn-primary" 
