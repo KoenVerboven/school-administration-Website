@@ -17,7 +17,7 @@
     @else {
       <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
         <div class="input-group mb-3">
-          <span class="input-group-text" id="basic-addon1"> <i class="bi bi-person fs-4"></i></span>
+          <span class="input-group-text" id="basic-addon1" style="background-color: aquamarine;"> <i class="bi bi-person fs-4" ></i></span>
           <input 
             type="text" 
             class="form-control"
@@ -30,7 +30,7 @@
         </div>
         <div class="container">
           <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1"><i class="bi bi-key  fs-4"></i> </span>
+            <span class="input-group-text" id="basic-addon1" style="background-color: aquamarine;"><i class="bi bi-key  fs-4"></i> </span>
             <input 
                 [type]="showPassword ? 'text' : 'password'" 
                 class="form-control"
