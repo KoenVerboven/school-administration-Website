@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { mockClassList } from '../../mock-class-list';
 import { CommonModule } from '@angular/common';
 import { Router , RouterModule} from '@angular/router';
+import { ClassService } from '../services/class.service';
 
 @Component({
   selector: 'app-class-list',
@@ -13,11 +13,29 @@ import { Router , RouterModule} from '@angular/router';
 export class ClassListComponent implements OnInit {
   PageTitle: string = "Class List";
   classes: any[] = [];
+  classesCount = 0;
+  loading = false;
+  error = '';
   
-  constructor(private router: Router) {}
+  constructor(private classService: ClassService,private router: Router) {}
 
   ngOnInit(): void {
-    this.classes = mockClassList // This should be replaced with actual data fetching logic}
+    this.getClasses();
+  }
+
+  getClasses():void{
+    this.loading = true;
+    this.classService.getClasses().subscribe(classesFromApi => {
+        this.classes = classesFromApi;
+        this.classesCount = this.classes.length;
+        this.loading = false;
+      },
+      error => {
+        this.error = 'An error has occurred. Please try again later.';
+        console.log(error.message);
+        this.loading = false;
+      }
+    ) 
   }
 
   addClass() {
