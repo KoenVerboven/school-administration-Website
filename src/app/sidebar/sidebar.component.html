@@ -76,7 +76,7 @@
       }
       @if(teachersVisible)
       {
-        <div class="link">
+         <div class="link">
           <div class="content" [routerLink]="['teachers']" [routerLinkActive]="'active'">
             <div class="icon"  data-placement="right" title="Teachers">
               <i class="bi bi-person-workspace"></i>
@@ -85,6 +85,18 @@
           </div>
         </div>
       }
+      @if(teacherPresenceVisible)
+      {
+        <div class="link">
+          <div class="content" [routerLink]="['teacherpresence']" [routerLinkActive]="'active'">
+            <div class="icon"  data-placement="right" title="Teacher Presence">
+              <i class="bi bi-person-workspace"></i>
+            </div>
+            <div class="title">Teacher Presence</div>
+          </div>
+        </div>
+      }
+     
       @if(usersVisible)
       {
         <div class="link">

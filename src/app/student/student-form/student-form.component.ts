@@ -9,6 +9,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { DateAdapter } from '@angular/material/core';
+import { GeneralFunctions } from '../../general/functions/generalfunctions';
 
 @Component({
   selector: 'app-student-form',
@@ -86,8 +87,8 @@ export class StudentFormComponent implements OnInit {
 
 
   onSubmit():void{
-    alert(this.student.dateOfBirth );
-    this.student.dateOfBirth = this.addHours(this.student.dateOfBirth, 2);
+    let generalFunctions = new GeneralFunctions();
+    this.student.dateOfBirth = generalFunctions.addHoursToDate(this.student.dateOfBirth, 2);
     if(this.isUpdating){
        this.studentService.updateStudent(this.student)
       .subscribe({ 

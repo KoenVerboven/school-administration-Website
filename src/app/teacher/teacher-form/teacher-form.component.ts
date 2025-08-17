@@ -8,7 +8,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { DateAdapter } from '@angular/material/core';
-
+import { GeneralFunctions } from '../../general/functions/generalfunctions';
 
 @Component({
   selector: 'app-teacher-form',
@@ -32,7 +32,7 @@ export class TeacherFormComponent implements OnInit {
       hireDate:  new Date(),
       leaveDate: new Date()
     }
-
+  
     isUpdating: boolean = false;
     disableControls: boolean = false;
     formAction : string = "true";
@@ -40,8 +40,8 @@ export class TeacherFormComponent implements OnInit {
     pageTitle: string| null = "";
     teacherId: number = 0;
     genderData =[
-     {"Id":1,"Name":"Male"},
-     {"Id":2,"Name":"Female"}
+      {"Id":1,"Name":"Male"},
+      {"Id":2,"Name":"Female"}
     ];
    
     constructor(private teacherService : TeacherService,
@@ -51,12 +51,6 @@ export class TeacherFormComponent implements OnInit {
     ){
        this.dateAdapter.setLocale('nl-BE'); 
     }   
-    
-    addHours(date: Date, hours : number):Date {
-      const hoursToAdd = hours * 60 * 60 * 1000;
-      date.setTime(date.getTime() + hoursToAdd);
-      return date;
-   }
 
     ngOnInit(): void {
       this.route.paramMap.subscribe(result => {
@@ -85,8 +79,10 @@ export class TeacherFormComponent implements OnInit {
 
 
   onSubmit():void{
-    this.teacher.dateOfBirth = this.addHours(this.teacher.dateOfBirth, 2);
-    this.teacher.hireDate = this.addHours(this.teacher.hireDate, 2);
+
+    let generalFunctions = new GeneralFunctions();
+    this.teacher.dateOfBirth = generalFunctions.addHoursToDate(this.teacher.dateOfBirth,  2);
+    this.teacher.hireDate = generalFunctions.addHoursToDate(this.teacher.hireDate, 2);
     if(this.isUpdating){
       //updating
       this.teacherService.updateTeacher(this.teacher)
