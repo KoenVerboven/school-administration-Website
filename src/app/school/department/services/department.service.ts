@@ -18,7 +18,7 @@ export class DepartmentService {
     }
 
     getDepartmentById(id : number): Observable<SchoolDepartment>{
-      return this.http.get<SchoolDepartment>(`${this.apiUrl}/${id}`)
+      return this.http.get<SchoolDepartment>(`${this.apiUrl}/getById/${id}`)
     }
 
     createDepartement(departement : SchoolDepartment): Observable<SchoolDepartment>{

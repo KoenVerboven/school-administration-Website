@@ -10,7 +10,7 @@ import { SchoolClass } from '../../models/schoolclass.model';
 })
 export class ClassService {
 
-  private apiUrl = `${environment.apiUrl}/school/class`;
+  private apiUrl = `${environment.apiUrl}/class`;
 
   constructor(private http: HttpClient) { }
    
@@ -19,7 +19,7 @@ export class ClassService {
   }
    
   getClassById(id : number): Observable<SchoolClass>{
-    return this.http.get<SchoolClass>(`${this.apiUrl}/${id}`)
+    return this.http.get<SchoolClass>(`${this.apiUrl}/getById/${id}`)
   }
 
   createClass(schoolclass : SchoolClass): Observable<SchoolClass>{

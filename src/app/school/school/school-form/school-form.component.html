@@ -28,7 +28,7 @@
           <label class="form-label" style="float:right">Name *</label>    
         </div>
         <div class="col-10">
-          <input required maxlength="30"  class="form-control"   type="text" name="name"   />
+          <input required maxlength="30"  class="form-control"   type="text" name="name"  [(ngModel)]="school.name" />
         </div>   
       </div>
       <div class="row" style="margin-top: 5px;">
@@ -36,7 +36,7 @@
           <label class="form-label" style="float:right">Adress *</label>    
         </div>
         <div class="col-10">
-          <input required maxlength="30"  class="form-control"   type="text" name="address"   />
+          <input required maxlength="30"  class="form-control"   type="text" name="address" [(ngModel)]="school.streetAndNumber"  />
         </div>   
       </div>
       <div class="row" style="margin-top: 5px;">
@@ -44,7 +44,7 @@
           <label class="form-label" style="float:right">Zipcode *</label>    
         </div>
         <div class="col-10">
-          <input required maxlength="4"  class="form-control"   type="text" name="zipcode"   />
+          <input required maxlength="4"  class="form-control"   type="text" name="zipcode"  [(ngModel)]="school.zipCode" />
         </div>   
       </div>
       <div class="row" style="margin-top: 5px;">
@@ -60,7 +60,7 @@
           <label class="form-label" style="float:right">Email *</label>    
         </div>
         <div class="col-10">
-          <input required maxlength="30"  class="form-control"   type="text" name="email"   />
+          <input required maxlength="30"  class="form-control"   type="text" name="email" [(ngModel)]="school.contactEmail"   />
         </div>   
       </div>
       <div class="row" style="margin-top: 5px;">
@@ -68,7 +68,7 @@
           <label class="form-label" style="float:right">Website</label>    
         </div>
         <div class="col-10">
-          <input required maxlength="30"  class="form-control"   type="text" name="website"   />
+          <input required maxlength="30"  class="form-control"   type="text" name="website" [(ngModel)]="school.website"  />
         </div>   
       </div>
       <div class="row" style="margin-top: 5px;">

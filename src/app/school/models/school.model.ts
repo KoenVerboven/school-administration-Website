@@ -1,25 +1,19 @@
 export interface School {
     id: number; 
     name: string; 
-    address: string; 
+    streetAndNumber: string; 
     zipCode: string; 
-    city: string; 
-    locationState: string; 
-    country: string; 
-    phone?: string; 
+    countryId?: number; 
+    contactPhone?: string; 
     contactEmail?: string; 
-    principalId: number; 
-    isActive: boolean; 
-    yearEstablished?: number; 
-    type?: string; // optional, e.g., 'Public', 'Private', 'Charter'
     website?: string; 
     logoUrl?: string; 
+    schoolType?: string; 
     description?: string; 
-    schoolType?: string; // e.g., 'Public', 'Private', 'Charter'
-    numberOfStudents?: number;
-    numberOfTeachers?: number;
-    establishedYear?: number; // e.g., 1990
-    facilities?: string[]; // e.g., ['Library', 'Science Lab', 'Sports Ground']
-    createdAt: Date; 
-    updatedAt: Date; 
+    numberOfStudents?: number; 
+    numberOfTeachers?: number; 
+    establishedYear?: number; 
+    facilities?: string[]; 
+    socialMedia?: string[]; 
+
 }

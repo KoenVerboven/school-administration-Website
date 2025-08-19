@@ -27,7 +27,7 @@
         <label class="form-label" style="float:right">Name *</label>    
       </div>
       <div class="col-9">
-        <input required maxlength="30"  class="form-control"   type="text" name="name"   />
+        <input required maxlength="30"  class="form-control"   type="text" name="name" [(ngModel)]="department.name"  />
       </div>   
     </div>
     <div class="row"  style="margin-top: 5px;">
@@ -61,7 +61,7 @@
         <label class="form-label" style="float:right">Contact phone *</label>    
       </div>
       <div class="col-9">
-        <input required maxlength="30"  class="form-control"   type="text" name="contactphone"   />
+        <input required maxlength="30"  class="form-control"   type="text" name="contactphone" [(ngModel)]="department.contactPhone"  />
       </div>   
     </div>
     <div class="row" style="margin-top: 5px;">
@@ -69,7 +69,7 @@
         <label class="form-label" style="float:right">Contact email *</label>    
       </div>
       <div class="col-9">
-        <input required maxlength="30"  class="form-control"   type="text" name="contactemail"   />
+        <input required maxlength="30"  class="form-control"   type="text" name="contactemail" [(ngModel)]="department.contactEmail"  />
       </div>   
     </div>
    </div>

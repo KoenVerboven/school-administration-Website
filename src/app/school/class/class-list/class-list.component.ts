@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router , RouterModule} from '@angular/router';
+import { ActivatedRoute, Router , RouterModule} from '@angular/router';
 import { ClassService } from '../services/class.service';
 
 @Component({
@@ -17,7 +17,7 @@ export class ClassListComponent implements OnInit {
   loading = false;
   error = '';
   
-  constructor(private classService: ClassService,private router: Router) {}
+  constructor(private classService: ClassService,private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.getClasses();

@@ -18,10 +18,10 @@ export class SchoolService {
    }
     
    getSchoolById(id : number): Observable<School>{
-     return this.http.get<School>(`${this.apiUrl}/${id}`)
+     return this.http.get<School>(`${this.apiUrl}/getById/${id}`)
    }
 
-    createSchool(school : School): Observable<School>{
+   createSchool(school : School): Observable<School>{
       return this.http.post<School>(this.apiUrl,school);
-    }
+   } 
 }

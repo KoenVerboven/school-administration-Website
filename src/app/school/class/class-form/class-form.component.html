@@ -29,7 +29,7 @@
                 <label class="form-label" style="float:right">Name *</label>    
               </div>
               <div class="col-10">
-                <input required maxlength="30"  class="form-control"   type="text" name="name"   />
+                <input required maxlength="30"  class="form-control"   type="text" name="name" [(ngModel)]="schoolClass.name"  />
               </div>   
             </div>
            
@@ -38,7 +38,7 @@
                 <label class="form-label" style="float:right">Academic year *</label>    
               </div>
               <div class="col-10">
-                <input required maxlength="4"  class="form-control"   type="number" name="academicyear"   />
+                <input required maxlength="4"  class="form-control"   type="number" name="academicyear"  [(ngModel)]="schoolClass.academicYear" />
               </div>   
             </div>
           
@@ -58,7 +58,7 @@
           
             <div class="row"  style="margin-top: 5px;">
               <div class="col-2">
-                <label class="form-label" style="float:right">Department *</label>    
+                <label class="form-label" style="float:right">Department</label>    
               </div>
               <div class="col-10">
                 <Select class="form-select" aria-label="class">
@@ -72,7 +72,7 @@
           
             <div class="row"  style="margin-top: 5px;">
               <div class="col-2">
-                <label class="form-label" style="float:right">Responsable teacher *</label>    
+                <label class="form-label" style="float:right">Responsable teacher</label>    
               </div>
               <div class="col-10">
                 <Select class="form-select" aria-label="class">
@@ -96,7 +96,17 @@
                 </Select> 
               </div>   
              </div>
+              <div class="row" style="margin-top: 5px;">
+          <div class="col-2">
+            <label class="form-label" style="float:right">ClassDescription</label>
+          </div>
+          <div class="col-10">
+            <textarea rows="5" #description="ngModel"  class="form-control"   type="text" name="description"  [(ngModel)]="schoolClass.descripton" >
+            </textarea>  
+          </div>   
+        </div>
        </div>
+     
 </form>
    
 }
