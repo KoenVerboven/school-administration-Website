@@ -25,4 +25,12 @@ export class ClassService {
   createClass(schoolclass : SchoolClass): Observable<SchoolClass>{
     return this.http.post<SchoolClass>(this.apiUrl,schoolclass);
   }
+
+  updateClass(schoolclass : SchoolClass):Observable<SchoolClass>{
+    return this.http.put<SchoolClass>(`${this.apiUrl}/${schoolclass.id}`,schoolclass);
+  }
+
+  deleteClass(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  }
 }

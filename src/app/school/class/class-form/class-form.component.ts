@@ -67,5 +67,10 @@ export class ClassFormComponent implements OnInit {
     throw new Error('Method not implemented.');
   }
   
+  updateClick() {
+    this.formAction = "update";
+    this.pageTitle = "Update class";
+    this.disableControls = false;
+  }
 
 }

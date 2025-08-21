@@ -24,4 +24,12 @@ export class SchoolService {
    createSchool(school : School): Observable<School>{
       return this.http.post<School>(this.apiUrl,school);
    } 
+
+   updateSchool(school : School):Observable<School>{
+       return this.http.put<School>(`${this.apiUrl}/${school.id}`,school);
+    }
+
+    deleteSchool(id: number): Observable<void> {    
+      return this.http.delete<void>(`${this.apiUrl}/${id}`);
+    }
 }

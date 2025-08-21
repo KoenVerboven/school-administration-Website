@@ -75,12 +75,42 @@ export class SchoolFormComponent implements OnInit {
   }
 
   onSubmit() {
-    throw new Error('Method not implemented.');
+    if(this.isUpdating){
+      //updating
+      this.schoolService.updateSchool(this.school)
+      .subscribe({ 
+        next: (response) =>{
+          this.router.navigate(['/courses'])
+        },
+        error: (err) => {
+          console.error(err);
+          this.errorMessage = `Error occured during update : ${err.status}`;
+        }
+      });
+    }
+    else{
+      //inserting
+      this.schoolService.createSchool(this.school)
+      .subscribe({ 
+        next: (response) =>{
+          this.router.navigate(['/schools'])
+        },
+        error: (err) => {
+          console.error(err);
+          this.errorMessage = `Error occured during insert : ${err.status}`;
+        }
+      });
+    }
   }
 
   navigateBack() {
     this.router.navigateByUrl('/schools');
   }
   
+  updateClick() {
+    this.formAction = "update";
+    this.pageTitle = "Update school";
+    this.disableControls = false;
+  }
 
 }

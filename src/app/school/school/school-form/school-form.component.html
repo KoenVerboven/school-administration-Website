@@ -12,7 +12,7 @@
            @if(formAction == 'detail')
            {
              <button class="btn btn-light headerButton" type="button" (click)="navigateBack()">Go Back</button>
-             <button class="btn btn-light headerButton" type="button" >Update</button>
+             <button class="btn btn-light headerButton" type="button" (click)="updateClick()">Update</button>
            }
            @else {
              <button class="btn btn-success headerButton" *ngIf="formAction != 'detail'" type="submit">Save</button>
@@ -28,7 +28,7 @@
           <label class="form-label" style="float:right">Name *</label>    
         </div>
         <div class="col-10">
-          <input required maxlength="30"  class="form-control"   type="text" name="name"  [(ngModel)]="school.name" />
+          <input required maxlength="30"  class="form-control"  [disabled]=disableControls type="text" name="name"  [(ngModel)]="school.name" />
         </div>   
       </div>
       <div class="row" style="margin-top: 5px;">
@@ -36,7 +36,7 @@
           <label class="form-label" style="float:right">Adress *</label>    
         </div>
         <div class="col-10">
-          <input required maxlength="30"  class="form-control"   type="text" name="address" [(ngModel)]="school.streetAndNumber"  />
+          <input required maxlength="30"  class="form-control" [disabled]=disableControls  type="text" name="address" [(ngModel)]="school.streetAndNumber"  />
         </div>   
       </div>
       <div class="row" style="margin-top: 5px;">
@@ -44,7 +44,7 @@
           <label class="form-label" style="float:right">Zipcode *</label>    
         </div>
         <div class="col-10">
-          <input required maxlength="4"  class="form-control"   type="text" name="zipcode"  [(ngModel)]="school.zipCode" />
+          <input required maxlength="4"  class="form-control" [disabled]=disableControls  type="text" name="zipcode"  [(ngModel)]="school.zipCode" />
         </div>   
       </div>
       <div class="row" style="margin-top: 5px;">
@@ -52,7 +52,7 @@
           <label class="form-label" style="float:right">City *</label>    
         </div>
         <div class="col-10">
-          <input required maxlength="30"  class="form-control"   type="text" name="city"   />
+          <input required maxlength="30"  class="form-control" [disabled]=disableControls  type="text" name="city"   />
         </div>   
       </div>
       <div class="row" style="margin-top: 5px;">
@@ -60,7 +60,7 @@
           <label class="form-label" style="float:right">Email *</label>    
         </div>
         <div class="col-10">
-          <input required maxlength="30"  class="form-control"   type="text" name="email" [(ngModel)]="school.contactEmail"   />
+          <input required maxlength="30"  class="form-control" [disabled]=disableControls  type="text" name="email" [(ngModel)]="school.contactEmail"   />
         </div>   
       </div>
       <div class="row" style="margin-top: 5px;">
@@ -68,7 +68,7 @@
           <label class="form-label" style="float:right">Website</label>    
         </div>
         <div class="col-10">
-          <input required maxlength="30"  class="form-control"   type="text" name="website" [(ngModel)]="school.website"  />
+          <input required maxlength="30"  class="form-control" [disabled]=disableControls  type="text" name="website" [(ngModel)]="school.website"  />
         </div>   
       </div>
       <div class="row" style="margin-top: 5px;">
@@ -89,7 +89,7 @@
           <label class="form-label" style="float:right">Description</label>    
         </div>
         <div class="col-10">
-          <textarea maxlength="400" class="form-control" name="description" rows="3"></textarea>
+          <textarea maxlength="400" class="form-control" [disabled]=disableControls name="description" rows="3"></textarea>
         </div>   
       </div>
      </div>

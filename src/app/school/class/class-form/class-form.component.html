@@ -13,7 +13,7 @@
             @if(formAction == 'detail')
             {
               <button class="btn btn-light headerButton" type="button" (click)="navigateBack()">Go Back</button>
-              <button class="btn btn-light headerButton" type="button" >Update</button>
+              <button class="btn btn-light headerButton" type="button" (click)="updateClick()">Update</button>
             }
             @else {
               <button class="btn btn-success headerButton" *ngIf="formAction != 'detail'" type="submit">Save</button>
@@ -29,7 +29,7 @@
                 <label class="form-label" style="float:right">Name *</label>    
               </div>
               <div class="col-10">
-                <input required maxlength="30"  class="form-control"   type="text" name="name" [(ngModel)]="schoolClass.name"  />
+                <input required maxlength="30"  class="form-control" [disabled]=disableControls  type="text" name="name" [(ngModel)]="schoolClass.name"  />
               </div>   
             </div>
            
@@ -38,7 +38,7 @@
                 <label class="form-label" style="float:right">Academic year *</label>    
               </div>
               <div class="col-10">
-                <input required maxlength="4"  class="form-control"   type="number" name="academicyear"  [(ngModel)]="schoolClass.academicYear" />
+                <input required maxlength="4"  class="form-control"  [disabled]=disableControls type="number" name="academicyear"  [(ngModel)]="schoolClass.academicYear" />
               </div>   
             </div>
           
@@ -101,7 +101,7 @@
             <label class="form-label" style="float:right">ClassDescription</label>
           </div>
           <div class="col-10">
-            <textarea rows="5" #description="ngModel"  class="form-control"   type="text" name="description"  [(ngModel)]="schoolClass.descripton" >
+            <textarea rows="5" #description="ngModel" [disabled]=disableControls class="form-control"   type="text" name="description"  [(ngModel)]="schoolClass.descripton" >
             </textarea>  
           </div>   
         </div>

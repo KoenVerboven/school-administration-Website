@@ -76,4 +76,10 @@ export class DepartmentFormComponent implements OnInit {
     throw new Error('Method not implemented.');
   }
 
+  updateClick() {
+    this.formAction = "update";
+    this.pageTitle = "Update department";
+    this.disableControls = false;
+  }
+
 }

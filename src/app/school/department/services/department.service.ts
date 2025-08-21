@@ -24,4 +24,12 @@ export class DepartmentService {
     createDepartement(departement : SchoolDepartment): Observable<SchoolDepartment>{
       return this.http.post<SchoolDepartment>(this.apiUrl,departement);
     }
+
+    updateDepartment(department : SchoolDepartment):Observable<SchoolDepartment>{
+        return this.http.put<SchoolDepartment>(`${this.apiUrl}/${department.id}`,department);
+    }
+
+    deleteDepartment(id: number): Observable<void> {
+      return this.http.delete<void>(`${this.apiUrl}/${id}`);
+    }
 }
