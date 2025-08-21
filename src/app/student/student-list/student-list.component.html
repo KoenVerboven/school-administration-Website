@@ -1,9 +1,15 @@
 
   <p class="pageTitle" >Search Students</p>
-  <input type="text" (keyup.enter)= "getStudents('name')" [(ngModel)]="studentSpecParams.name" placeholder="Student name" style="float:left;width: 300px;padding-left: 5px;">
-  <button  style="float:left; margin-left: 15px;" class="btn btn-light" type="button"  (click)="getStudents('name')"><i class="bi bi-search"></i> Search</button>
-  <button  style="float:left; margin-left: 15px;" class="btn btn-light" type="button" (click)="clearSearch()"><i class="bi bi-x-lg"></i> Clear Search</button>
-  <button   style="float:left; margin-left: 15px;" class="btn btn-light" type="button" (click)="addStudent()"><i class="bi bi-plus"></i> Add student</button>
+  <div class="buttonBar">
+    <input type="text" (keyup.enter)= "getStudents('name')" [(ngModel)]="studentSpecParams.name" placeholder="Student name" style="float:left;width: 300px;padding-left: 5px;">
+    <button  style="float:left; margin-left: 15px;" class="btn btn-light" type="button"  (click)="getStudents('name')"><i class="bi bi-search"></i> Search</button>
+    <button  style="float:left; margin-left: 15px;" class="btn btn-light" type="button" (click)="clearSearch()"><i class="bi bi-x-lg"></i> Clear Search</button>
+    <button   style="float:left; margin-left: 15px;" class="btn btn-light" type="button" (click)="addStudent()"><i class="bi bi-plus"></i> Add student</button>
+    @if(studentsCount > 0){
+      <div style="float:right;width: 200px;padding-left: 7px;border-radius: 4px;">  {{studentsCount}} students found. </div>
+    }
+    
+  </div>
 
     @if(error != "")
     {
@@ -12,7 +18,6 @@
     }
     @if(loading)
     {
-      <br/><br/><br/> 
       <div style="margin-left: 200px;">
         <div fxLayout="row" fxLayoutAlign="space-around center" style="height:100%;">
           <mat-spinner diameter="70" strokeWidth="5"></mat-spinner>
@@ -23,8 +28,7 @@
     @if(error == "" && !loading)
     {
       @if(studentsCount > 0){
-        <div style="float:right;width: 200px;background-color: rgb(210, 210, 210);padding-left: 7px;border-radius: 4px;">  {{studentsCount}} students found. </div>
-        <br/><br/>
+        <br/>
         <table class="table table-sm table-hover  table-striped">
           <thead>
             <tr>

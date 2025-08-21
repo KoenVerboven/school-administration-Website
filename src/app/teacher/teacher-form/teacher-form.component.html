@@ -8,22 +8,21 @@
   <form (ngSubmit)="onSubmit()"  #teacherForm="ngForm" class="formClass">
     <div class="pageTitle" >
       {{pageTitle}}
-      <div style="float:right">
-        @if(formAction == 'detail')
+    </div>
+    <div class="buttonBar" style="margin-top:10px">
+       @if(formAction == 'detail')
         {
           <button class="btn btn-light headerButton" type="button" (click)="navigateBack()">Go Back</button>
-          <button class="btn btn-light headerButton" type="button" (click)="updateClick()">Update</button>
+          <button class="btn btn-light headerButton" type="button" style="color: green;" (click)="updateClick()">Update</button>
           <button type="button" class="btn btn-light" style="color:red" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete</button>
         }
         @else {
-          <button class="btn btn-success headerButton" type="submit" [disabled]="teacherForm.invalid">Save</button>
-          <button class="btn btn-warning"  type="button" (click)="navigateBack()">Cancel</button>
+          <button class="btn btn-light headerButton" style="color: green;" type="submit" [disabled]="teacherForm.invalid">Save</button>
+          <button class="btn btn-light" style="color: red;"  type="button" (click)="navigateBack()">Cancel</button>
         }
-      </div>
     </div>
-   <br />
-      
-  <div class="container">
+     
+   <div class="container">
     <div class="row">
       <div class="col-2">
         <label class="form-label" style="float:right">Firstname *</label>    
