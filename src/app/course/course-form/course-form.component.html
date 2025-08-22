@@ -8,20 +8,25 @@
     <form (ngSubmit)="onSubmit()"   #courseForm="ngForm" class="formClass">
         <div class="pageTitle" >
            {{pageTitle}}
-            <div style="float:right">
-                @if(formAction == 'detail')
-                {
-                    <button class="btn btn-light headerButton" type="button" (click)="navigateBack()">Go Back</button>
-                    <button class="btn btn-light headerButton" type="button" (click)="updateClick()">Update</button>
-                    <button class="btn btn-light"  style="color:red" type="button" (click)="deleteClick()">Delete</button>
-                }
-                @else {
-                    <button class="btn btn-success headerButton" type="submit" [disabled]="courseForm.invalid">Save</button>
-                    <button class="btn btn-warning"  type="button" (click)="navigateBack()">Cancel</button>
-                }
-            </div>
         </div>
-        <br/>
+        <div class="buttonBar" style="margin-top: 10px;">
+            @if(formAction == 'add')
+            {
+                <button class="btn btn-success headerButton" type="submit" [disabled]="courseForm.invalid">Add</button>
+                <button class="btn btn-warning"  type="button" (click)="navigateBack()">Cancel</button>
+            }
+           @if(formAction == 'detail')
+           {
+                <button class="btn btn-light headerButton" type="button" (click)="navigateBack()">Go Back</button>
+                <button class="btn btn-light headerButton" type="button" (click)="updateClick()">Update</button>
+                <button class="btn btn-light"  style="color:red" type="button" (click)="deleteClick()">Delete</button>
+                }
+            @else 
+            {
+                <button class="btn btn-success headerButton" type="submit" [disabled]="courseForm.invalid">Save</button>
+                <button class="btn btn-warning"  type="button" (click)="navigateBack()">Cancel</button>
+            }
+        </div>
         <div class="container">
 
             <div class="row" style="margin-top: 5px;">

@@ -1,9 +1,10 @@
 <p class="pageTitle" >Payments</p>
 @if(error == "" && !loading)
 {
-  <button style="float:left;" class="btn btn-light" type="button" (click)="addPayment()"><i class="bi bi-plus"></i> Add Payment</button>
-  <div style="float:right;">{{paymentsCount}} payments found. </div>
-  <br/><br/>
+  <div class="buttonBar">
+    <button style="float:left;" class="btn btn-light" type="button" (click)="addPayment()"><i class="bi bi-plus"></i> Add Payment</button>
+    <div style="float:right;">{{paymentsCount}} payments found. </div>
+  </div>
   <table class="table table-sm table-hover  table-striped" style="width: 100%;">
     <thead>
         <th class="p-2" style="text-align: right;">Id</th>

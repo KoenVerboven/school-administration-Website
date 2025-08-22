@@ -10,20 +10,19 @@
    <form (ngSubmit)="onSubmit()" [formGroup]="userForm"  class="formClass">
        <div class="pageTitle" >
           {{pageTitle}}
-            <div style="float:right">
-                 @if(formAction == 'detail')
-                 {
-                   <button class="btn btn-light headerButton" type="button" (click)="navigateBack()">Go Back</button>
-                   <button class="btn btn-light headerButton" type="button" >Update</button>
-                 }
-                 @else {
-                    <button class="btn btn-success headerButton" *ngIf="formAction != 'detail'"  [disabled]="userForm.invalid"  type="submit" >Save</button>
-                    <button class="btn btn-warning"  *ngIf="formAction != 'detail'" type="button"  (click)="navigateBack()">Cancel</button>
-                 }
-            </div>
-        </div>
-      <br />
-      <div class="container">
+       </div>
+       <div class="buttonBar" style="margin-top:10px">
+          @if(formAction == 'detail')
+          {
+            <button class="btn btn-light headerButton" type="button" (click)="navigateBack()">Go Back</button>
+            <button class="btn btn-light headerButton" type="button" >Update</button>
+           }
+           @else {
+             <button class="btn btn-success headerButton" *ngIf="formAction != 'detail'"  [disabled]="userForm.invalid"  type="submit" >Save</button>
+             <button class="btn btn-warning"  *ngIf="formAction != 'detail'" type="button"  (click)="navigateBack()">Cancel</button>
+            }
+       </div>
+       <div class="container">
         <div class="row" style="margin-top: 5px;">
             <div class="col-2">
                 <label class="form-label" style="float:right">Name *</label>

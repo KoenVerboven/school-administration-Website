@@ -8,8 +8,9 @@
     <form (ngSubmit)="onSubmit()"  class="formClass">
       <div class="pageTitle" >
         {{pageTitle}}
-        <div style="float:right">
-           @if(formAction == 'detail')
+      </div>
+      <div class="buttonBar" style="margin-top:10px">
+         @if(formAction == 'detail')
            {
              <button class="btn btn-light headerButton" type="button" (click)="navigateBack()">Go Back</button>
              <button class="btn btn-light headerButton" type="button" (click)="updateClick()">Update</button>
@@ -18,9 +19,7 @@
              <button class="btn btn-success headerButton" *ngIf="formAction != 'detail'" type="submit">Save</button>
              <button class="btn btn-warning" *ngIf="formAction != 'detail'" type="button" (click)="navigateBack()">Cancel</button>
            }
-        </div>
       </div>
-    <br />  
     <div class="container">
     <div class="row">
       <div class="col-3">
