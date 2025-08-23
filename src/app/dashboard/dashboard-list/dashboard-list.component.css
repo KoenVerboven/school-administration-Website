@@ -1,13 +1,13 @@
 
 .dashboarditemStyle{
-    height:12.0rem ;
+    height:9.0rem ;
     width: 21rem;
     border-radius: 0.5rem;
-    box-shadow: 0 4px 4px rgb(231, 54, 9);
     margin-top: 1.5rem;
     padding-top:0.7rem;
     padding-left:0.7rem;
     background-color: white;
+    border-left: 0.5rem solid rgb(43, 86, 226)  ;
 }
 
 
