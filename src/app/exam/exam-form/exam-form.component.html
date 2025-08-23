@@ -42,11 +42,20 @@
                 <div class="col-10">
                     @if(formAction  == 'detail')
                     {
-                        <label class="form-control" style="width:250px;">{{exam.examenDate | date: 'dd/MM/yyyy'}}</label>
+                        <label class="form-control" style="background-color: #eee;width: 250px;">{{exam.examenDate | date: 'dd/MM/yyyy'}}</label>
                     }
-                    @else {
-                        <input #startDate="ngModel" style="width: 250px;" [disabled]=disableControls class="form-control"   type="text" name="Date"  [(ngModel)]="exam.examenDate" />
-                    }    
+                    @else{
+                        <mat-form-field style="width: 250px">
+                            <input matInput  
+                                [matDatepicker]="datepicker"
+                                placeholder="Select a date" 
+                                [disabled]="disableControls"
+                                [(ngModel)]="exam.examenDate"
+                                name="dateOfBirth">
+                            <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+                            <mat-datepicker #datepicker></mat-datepicker>
+                        </mat-form-field>
+                    }
                 </div>   
             </div>
             <div class="row" style="margin-top: 5px;">

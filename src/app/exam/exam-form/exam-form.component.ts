@@ -4,11 +4,17 @@ import { Exam } from '../models/exam.model';
 import { ExamService } from '../services/exam.service'
 import { Router,ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { DateAdapter } from '@angular/material/core';
+import { GeneralFunctions } from '../../general/functions/generalfunctions';
 
 @Component({
   selector: 'app-exam-form',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule,MatDatepickerModule,MatNativeDateModule,MatInputModule,MatFormFieldModule],
   templateUrl: './exam-form.component.html',
   styleUrl: './exam-form.component.css'
 })
@@ -19,7 +25,7 @@ export class ExamFormComponent {
     courseId: 0,
     examTitle: '',
     description: '',
-    examenDate: new Date(2025,6,4),
+    examenDate: new Date(),
     examEndDateTime : new Date(2025,6,4,12,0,0), // Default end time set to 12:00 PM
     maxScore:0,
     minScoreToPassExam: 0
@@ -34,8 +40,11 @@ export class ExamFormComponent {
 
   constructor(private examService : ExamService,
               private router: Router,
-              private route: ActivatedRoute
-  ){}  
+              private route: ActivatedRoute,
+              private dateAdapter: DateAdapter<Date>
+  ){
+    this.dateAdapter.setLocale('nl-BE'); 
+  }  
 
 
   ngOnInit(): void {
@@ -63,7 +72,8 @@ export class ExamFormComponent {
   }
 
   onSubmit():void{
-
+    let generalFunctions = new GeneralFunctions();
+    this.exam.examenDate = generalFunctions.addHoursToDate(this.exam.examenDate,2);
     if(this.isUpdating){
       //updating
       this.examService.updateExam(this.exam)
