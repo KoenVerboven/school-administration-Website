@@ -5,7 +5,7 @@
     margin-top: 1.5rem;
     padding-top:0.7rem;
     padding-left:0.7rem;
-    border-left: 0.5rem solid rgb(43, 226, 186)  ;
+    border-left: 0.6rem solid rgb(43, 226, 186)  ;
 }
 .itemName{
     font-size: 1.1rem;
@@ -17,10 +17,8 @@
 }
 .dashboarditemStyle:hover{
     cursor: pointer;
+    border-left: 0.5rem solid rgb(6, 82, 65)  ;
 }
 
-.dashboarditemStyle:hover .labelMoreInfo{
-    background-color: rgb(43, 86, 226);
-}
 
 
