@@ -8,6 +8,7 @@ import {DashboardItem} from '../models/dashboardItem.model'
       color:'#eb4040ff',
       columnNumber: 1,
       url:'/studentsInfo',
+      icon:'bi bi-mortarboard',
       visible:true
     },
     {
@@ -17,6 +18,7 @@ import {DashboardItem} from '../models/dashboardItem.model'
       itemCount:0,
       color:'#b235ecff',
       url:'/teachers',
+      icon:'bi bi-person-workspace',
       visible:true
     },
     {
@@ -26,6 +28,7 @@ import {DashboardItem} from '../models/dashboardItem.model'
       itemCount:0,
       color:'#1eb918ff',
       url:'/courses',
+      icon:'bi bi-card-list',
       visible:true
     },
     {
@@ -33,8 +36,9 @@ import {DashboardItem} from '../models/dashboardItem.model'
       itemName:'Exams',
       columnNumber: 3,
       itemCount: 0,
-      color:'#eee460ff',
+      color:'#aaaa47ff',
       url:'/exams',
+      icon:'bi bi-card-list',
       visible:true
     },
     {
@@ -43,7 +47,8 @@ import {DashboardItem} from '../models/dashboardItem.model'
       columnNumber: 2,
       itemCount: 0,
       color:'#b235ecff',
-      url:'/users',
+      url:'/teacherpresence',
+      icon:'bi bi-person-workspace',
       visible:true
     },
      {
@@ -52,16 +57,48 @@ import {DashboardItem} from '../models/dashboardItem.model'
       columnNumber: 1,
       itemCount: 0,
       color:'#eb4040ff',
-      url:'/studentsPresent',
+      url:'/studentpresence',
+      icon:'bi bi-mortarboard',
       visible:true
     },
-     {
+    {
       id:7,
       itemName:'Users',
       columnNumber: 1,
       itemCount: 0,
       color:'#1bbcc2ff',
       url:'/users',
+      icon:'bi bi-person-vcard',
+      visible:true
+    },
+    {
+      id:8,
+      itemName:'Departments',
+      columnNumber: 2,
+      itemCount: 0,
+      color:'#1507dbff',
+      url:'/departments',
+      icon:'bi bi-building',
+      visible:true
+    },
+    {
+      id:9,
+      itemName:'Classes',
+      columnNumber: 3,
+      itemCount: 0,
+      color:'#1507dbff',
+      url:'/classes',
+      icon:'bi bi-book',
+      visible:true
+    },
+    {
+      id:10,
+      itemName:'Payments',
+      columnNumber: 1,
+      itemCount: 0,
+      color:'#ed7014',
+      url:'/payments',
+      icon:'bi bi-cash-coin',
       visible:true
     },
 ]

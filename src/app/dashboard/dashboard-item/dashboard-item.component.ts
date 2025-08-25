@@ -18,6 +18,7 @@ export class DashboardItemComponent {
       itemCount?: number | undefined;
       color?: string | undefined;
       url: string;
+      icon:string;
       visible:boolean
    }
   

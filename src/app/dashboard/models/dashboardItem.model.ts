@@ -5,5 +5,6 @@ export interface DashboardItem{
     itemCount?: number;
     color?:string;
     url:string;
+    icon:string;
     visible:boolean;
 }
