@@ -1,7 +1,3 @@
-th {
-    color: rgb(0, 5, 8);
-    background-color:rgb(238, 243, 252); 
-}
 .gridheader:hover{
     background-color: rgb(220, 230, 240);
     cursor: pointer;

@@ -51,7 +51,7 @@ import {DashboardItem} from '../models/dashboardItem.model'
       icon:'bi bi-person-workspace',
       visible:true
     },
-     {
+    {
       id:6,
       itemName:'Students Present',
       columnNumber: 1,

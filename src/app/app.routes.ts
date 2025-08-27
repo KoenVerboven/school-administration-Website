@@ -12,7 +12,7 @@ import { CourseListComponent } from './course/course-list/course-list.component'
 import { CourseFormComponent } from './course/course-form/course-form.component';
 import { TeacherListComponent } from './teacher/teacher-list/teacher-list.component';
 import { TeacherFormComponent } from './teacher/teacher-form/teacher-form.component';
-import  {TeacherPresenceComponent} from './teacher/teacher-presence/teacher-presence.component';
+import { TeacherPresenceComponent } from './teacher/teacher-presence/teacher-presence.component';
 import { ExamListComponent } from './exam/exam-list/exam-list.component';
 import { ExamFormComponent } from './exam/exam-form/exam-form.component';
 import { ExamResultListComponent } from './exam/examresult-list/examresult-list.component';
