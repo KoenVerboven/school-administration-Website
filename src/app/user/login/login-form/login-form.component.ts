@@ -51,6 +51,9 @@ export class LoginFormComponent {
   signInMessage = "";
   loading = false;
   showPassword: boolean = false;
+  loginCount: number = 0;
+  maxLoginAttempts: number = 5;
+  loginButtonDisabled: boolean = false;
 
   constructor(private authService: AuthService, private router: Router,){}
 
@@ -59,6 +62,14 @@ export class LoginFormComponent {
   }
   
   onSubmit(loginForm : NgForm):void{
+    this.loginCount = this.loginCount + 1;
+    if(this.loginCount >= this.maxLoginAttempts)
+    {
+      this.signInMessage = 'Too many failed login attempts. Adminstrator action needed to unlock.';
+      this.loginButtonDisabled = true;
+      //to do: lockout user ; admin action needed to unlock
+      return;
+    }
     this.authService.authenticated.next(false);
     if(!loginForm.valid)
     {
@@ -86,7 +97,10 @@ export class LoginFormComponent {
         error: (err) => {
           console.error(err);
           this.loading = false;
-          this.signInMessage = 'Bad userName or Password.';
+          if(err.status === 400) {
+            this.signInMessage = 'Invalid username or password.';
+          }
+   
         }
     });
     
