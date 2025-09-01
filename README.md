@@ -15,34 +15,33 @@ https://github.com/KoenVerboven/SchoolAdministrationApi
 
 <img width="1901" height="938" alt="image" src="https://github.com/user-attachments/assets/bb613c79-a8b2-4a81-be64-98e1227dcbaf" />
 
-<img width="1900" height="940" alt="image" src="https://github.com/user-attachments/assets/bd1f1af2-19e9-49a5-9809-2eec95012e24" />
+<img width="1915" height="937" alt="image" src="https://github.com/user-attachments/assets/ffc03374-1692-42eb-8967-30e0a676a25f" />
 
-<img width="1906" height="942" alt="image" src="https://github.com/user-attachments/assets/c58cbf85-38f9-4893-a549-197330ef9a11" />
+<img width="1907" height="942" alt="image" src="https://github.com/user-attachments/assets/005c2724-72e0-437e-82cf-6ff13d4bcdfc" />
 
-<img width="1900" height="941" alt="image" src="https://github.com/user-attachments/assets/99952bab-5449-4630-8e86-73d65056e12a" />
+<img width="1896" height="942" alt="image" src="https://github.com/user-attachments/assets/2128c7f4-271a-4365-b3e7-e938435d9c34" />
 
-<img width="1902" height="941" alt="image" src="https://github.com/user-attachments/assets/5a98b260-c96e-405d-899b-c56c453e5df0" />
+<img width="1902" height="940" alt="image" src="https://github.com/user-attachments/assets/2296fbef-2d4c-4314-99cf-215ec156cffd" />
 
-<img width="1897" height="945" alt="image" src="https://github.com/user-attachments/assets/7e796833-cc3f-4270-9573-68782b8425a1" />
+<img width="1901" height="942" alt="image" src="https://github.com/user-attachments/assets/5b5bfa5b-e7be-4ce2-b3d4-1943de56dd49" />
 
-<img width="1897" height="946" alt="image" src="https://github.com/user-attachments/assets/a42558f1-0f66-41ef-b750-dbabd2d1627e" />
+<img width="1907" height="942" alt="image" src="https://github.com/user-attachments/assets/fde2c1f1-145c-4c5f-8cb8-e8ca20a73dbc" />
 
-<img width="1902" height="938" alt="image" src="https://github.com/user-attachments/assets/60e7a6fe-f53d-44f4-9283-3fc96736c7b3" />
+<img width="1896" height="942" alt="image" src="https://github.com/user-attachments/assets/94e7ee78-b73c-4249-8acd-cb1fd8627be7" />
 
-<img width="1900" height="942" alt="image" src="https://github.com/user-attachments/assets/38bcbcdc-ffd9-4d1d-9a01-0e22608b27d8" />
+<img width="1901" height="937" alt="image" src="https://github.com/user-attachments/assets/04caea0d-48a3-430c-a00b-8d8994a5dcad" />
 
-<img width="1903" height="946" alt="image" src="https://github.com/user-attachments/assets/bc19ae68-75f1-4f59-8888-e0782c6a9a54" />
+<img width="1898" height="946" alt="image" src="https://github.com/user-attachments/assets/c56161ce-634e-49a6-870c-15d9e486214a" />
 
-<img width="1900" height="942" alt="image" src="https://github.com/user-attachments/assets/081d9912-33d3-4ee3-a492-b38668cf9edd" />
+<img width="1898" height="941" alt="image" src="https://github.com/user-attachments/assets/1c66ddb9-3990-49a3-844a-cb4fe70e3d8b" />
 
-<img width="1903" height="942" alt="image" src="https://github.com/user-attachments/assets/157184ba-afa0-46e7-b4ff-caa396640685" />
-
-<img width="1897" height="938" alt="image" src="https://github.com/user-attachments/assets/3fd2cffa-e90c-41c8-b5c6-85d6cadfd601" />
+<img width="1902" height="945" alt="image" src="https://github.com/user-attachments/assets/b1182932-7ae0-4a53-b47c-6899880878b3" />
 
 
 SQL-server :
 
-![image](https://github.com/user-attachments/assets/63025142-f4e7-4d35-a371-f3a26314073a)
+<img width="460" height="623" alt="image" src="https://github.com/user-attachments/assets/57fa248e-efc8-4f19-adf3-13f590e00bf0" />
+
 
 
 
