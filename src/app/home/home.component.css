@@ -5,11 +5,13 @@
 }
 .welcome{
     margin-top : 5px;
-    color:rgba(17, 127, 179, 1);
-    background: linear-gradient(to bottom, #e9f0f1ff 0%, #70a5b3ff 100%);
+    color:rgb(6, 60, 85);
+    background: linear-gradient(to bottom, rgb(152, 226, 226) 0%, rgb(60, 185, 194) 100%);
     padding-left: 11px;
     padding-bottom: 5px;
     border-radius: 8px;
+    border-width: 1px;
+    border-color: blue;
     width: 100%;
 }
 .info{

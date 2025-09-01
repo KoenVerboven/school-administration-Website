@@ -2,15 +2,9 @@
     <div style="float:left">
       <div class="itemName">Total {{dashboardItem.itemName}}</div>
       <div style="font-size: 26px;color:#6b6a6a"> {{dashboardItem.itemCount}}</div>
+      <div style="font-size: 14px;color:#9b9999"><u>More Info</u></div>
     </div>
     <div style = float:right;>
-        <!--   
-        <img style="float:right; height: 50px; width: 50px; margin-top: 10px;" [src]="dashboardItem.iconUrl" alt="icon">
-        -->
-        <!-- Using Material Icons -->
-         <!--
-        <mat-icon style="float:right; font-size: 50px; color: #6b6a6a; margin-top: 10px;">{{dashboardItem.iconName}}</mat-icon>
-        -->
         <i  [ngClass]=dashboardItem.icon style="margin-right: 10px;font-size: 2rem;" [ngStyle]="{'color': dashboardItem.color? dashboardItem.color : '#000'}"></i>
     </div>
   

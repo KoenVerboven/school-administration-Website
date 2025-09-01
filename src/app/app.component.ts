@@ -15,6 +15,7 @@ import { AuthResponseData } from  '../app/user/models/authResponseData.model'
 })
 export class AppComponent implements OnInit, OnDestroy {
   isAuthenticated = false;
+  loginPage = false;
   private userSub!: Subscription;
   public userName: string = '';
   public userRole:string = '';
@@ -47,6 +48,7 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   logout(){
+     this.loginPage = false;
     this.authService.user.next(this.responseData);
     this.isAuthenticated = false;
     this.sidebarVisible = false;
@@ -55,6 +57,11 @@ export class AppComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(){
     this.userSub.unsubscribe();
+  }
+
+  GoToLoginPage(): void {
+    this.loginPage = true;
+    this.router.navigate(['/login']) 
   }
 
 }

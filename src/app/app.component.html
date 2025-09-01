@@ -1,14 +1,13 @@
  <div  >
     <div id="header">
        <div style="float:left;color:rgb(252, 252, 250);margin-left: 15px;font-size: 28px;margin-top:10px;">School Management</div>
-       @if(!isAuthenticated)
+       @if(!isAuthenticated && !loginPage)
        {
-         <a routerLink="login" class="login">Log in</a>
+        <button class="btn btn-light" style="float:right;margin-right: 20px;margin-top: 5px" (click)="GoToLoginPage()"  type="button"  ><i class="bi bi-person-circle"></i> Login</button>
        }
-       @else{
-         <div style="float:right;margin-right: 20px;margin-top: 5px">
-            <button class="btn btn-light" type="button" data-bs-toggle="modal" data-bs-target="#accountModal"><i class="bi bi-person-circle"></i> {{userName}}</button>
-         </div>   
+       @if(isAuthenticated)
+       {
+        <button class="btn btn-light" type="button"  style="float:right;margin-right: 20px;margin-top: 5px" data-bs-toggle="modal" data-bs-target="#accountModal"><i class="bi bi-person-circle"></i> {{userName}}</button>
        }
     </div>
     @if(isAuthenticated)
