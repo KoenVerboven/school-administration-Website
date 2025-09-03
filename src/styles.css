@@ -50,3 +50,7 @@ body {
 th{
   background-color: rgb(243, 156, 75) !important;
 }
+.headerButton{
+  border-color: rgb(149, 216, 233) !important;
+  border-width: 2px !important;
+}

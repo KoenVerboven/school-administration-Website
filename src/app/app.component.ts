@@ -48,7 +48,7 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   logout(){
-     this.loginPage = false;
+    this.loginPage = false;
     this.authService.user.next(this.responseData);
     this.isAuthenticated = false;
     this.sidebarVisible = false;
