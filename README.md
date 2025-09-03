@@ -11,9 +11,9 @@ https://github.com/KoenVerboven/SchoolAdministrationApi
 
 ## Screenshots :
 
-<img width="1902" height="942" alt="image" src="https://github.com/user-attachments/assets/d9ee66e8-c1e3-4c50-89f8-b67d278501e4" />
+<img width="1900" height="942" alt="image" src="https://github.com/user-attachments/assets/87df12c7-935a-4bbe-859f-f8b8bc4f0c6a" />
 
-<img width="1901" height="938" alt="image" src="https://github.com/user-attachments/assets/bb613c79-a8b2-4a81-be64-98e1227dcbaf" />
+<img width="1895" height="902" alt="image" src="https://github.com/user-attachments/assets/7b6b9df1-ec66-4dfc-b1c1-cb84f7e21252" />
 
 <img width="1915" height="937" alt="image" src="https://github.com/user-attachments/assets/ffc03374-1692-42eb-8967-30e0a676a25f" />
 
@@ -28,6 +28,8 @@ https://github.com/KoenVerboven/SchoolAdministrationApi
 <img width="1907" height="942" alt="image" src="https://github.com/user-attachments/assets/fde2c1f1-145c-4c5f-8cb8-e8ca20a73dbc" />
 
 <img width="1896" height="942" alt="image" src="https://github.com/user-attachments/assets/94e7ee78-b73c-4249-8acd-cb1fd8627be7" />
+
+<img width="1902" height="986" alt="image" src="https://github.com/user-attachments/assets/a13d722f-867a-4c27-a56e-c51e83be48de" />
 
 <img width="1901" height="937" alt="image" src="https://github.com/user-attachments/assets/04caea0d-48a3-430c-a00b-8d8994a5dcad" />
 
