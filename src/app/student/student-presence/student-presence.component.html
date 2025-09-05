@@ -4,6 +4,7 @@
       <button class="btn btn-light headerButton"  type="submit" >Save</button>
   </div>
 
+  <!-- 
   <p>
     <Select class="form-select" aria-label="class">
       <option value="">Please choose an class</option>
@@ -11,29 +12,44 @@
       <option value="2">Class2</option>
     </Select>
   </p>
+  
+  -->
+
+ 
 
   <table class="table table-sm" style="width: 100%;">
       <thead>
           <th class="p-2" style="text-align: center;">Student</th>
+          <th class="p-2" style="text-align: right;">StudentId</th>
           <th class="p-2" style="text-align: center;">Presence</th>
           <th class="p-2" style="text-align: center;">Absense reason</th>
           <th class="p-2" style="text-align: center;">Comment</th>
       </thead>
       <tbody>
-        @for(item of students; track item.id){
+        @for(item of studentsPresences; track item.id){
           <tr>
-            <td style="width: 20%;text-align: center;">{{item.lastName}} {{item.firstName}}</td> 
-            <td style="width: 10%;text-align: center;"><input type="checkbox"  name="presence" value="false"></td> 
-            <td style="width: 20%;text-align: left;">
-                <Select class="form-select" aria-label="absent reason">
-                    <option value="">Please choose an option</option>
-                    <option value="unknown">Unknown</option>
-                    <option value="sick">Sick</option>
-                    <option value="publictransportstrike">Public transport strike</option>
-                    <option value="legally absent">legally absent</option>
-                </Select>
+            <td style="width: 20%;text-align: center;">
+               {{item.studentName}}
+            </td> 
+            <td style="width: 20%;text-align: right;">
+               {{item.studentId}} 
             </td>
-            <td style="width: 30%;text-align: center;"><input type="text" style="width: 100%;"></td>
+            <td style="width: 10%;text-align: center;">
+              <input type="checkbox" #presence="ngModel"  [(ngModel)]="item.presence" name="presence{{item.id}}" name="presence" value="false">
+            </td> 
+            <td style="width: 20%;text-align: left;">
+           
+               <select class="form-select" [(ngModel)]="item.absenceReason" name="absenceReason{{item.id}}">
+                <option [ngValue]="absenceReason.Id" *ngFor="let absenceReason of absentReasonData">
+                        {{absenceReason.Name}}
+                  </option>   
+              </select>
+      
+    
+            </td>
+            <td style="width: 30%;text-align: center;">
+              <input maxlength="30" #comment="ngModel" class="form-control" [(ngModel)]="item.comment" name="comment{{item.id}}" type="text" style="width: 100%;">
+            </td>
           </tr>
         }  
       </tbody>

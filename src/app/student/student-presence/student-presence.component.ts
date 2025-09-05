@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 import { StudentPresenceService } from '../services/student-presence.service';
 import { Student } from '../models/student.model';
+import { StudentPresence } from '../models/studentPresence.model';
 
 @Component({
   selector: 'app-student-presence',
@@ -15,13 +16,23 @@ import { Student } from '../models/student.model';
 })
 export class StudentPresenceComponent implements OnInit {
 
-  items = studentpresenceitems;
+  //studentsPresences = studentpresenceitems;
 
   PageTitle: string = "student presence List";
   students: Student[] = [];
+  studentsPresences: StudentPresence[] = [];
   departmentsCount = 0;
   loading = false;
   error = '';
+  
+  absentReasonData =[
+    {"Id":0,"Name":"Please choose an option"},
+    {"Id":1,"Name":"Unknown"},  
+    {"Id":2,"Name":"Sick"},
+    {"Id":3,"Name":"Public transport strike"},
+    {"Id":4,"Name":"legally absent"}
+   ];
+
 
   constructor(private studentPresenceService: StudentPresenceService,private router: Router) {}
  
@@ -34,6 +45,9 @@ export class StudentPresenceComponent implements OnInit {
     this.loading = true;
     this.studentPresenceService.getStudents().subscribe(studenstFromApi => {
         this.students = studenstFromApi;
+        for(let student of this.students){
+          this.studentsPresences.push({id:student.id, studentId: student.id, classId:0,studentName: student.lastName + ' ' + student.firstName, courseId:0,courseStartDateTime:new Date(),presence: false ,absenceReason:0,comment:'',createByTeacherId:0});
+        }
         this.loading = false;
       },
       error => {
@@ -45,8 +59,19 @@ export class StudentPresenceComponent implements OnInit {
   }
 
   onSubmit() {
-    alert('Form submitted!');
-  }
+     console.log('Saving student presences: ', this.studentsPresences);
 
+    for(let sp of this.studentsPresences){
+      console.log('Student presence: ', sp.studentName, sp.presence, sp.absenceReason, sp.comment);
+      //todo: call api to save each student presence
+    }
+
+    /* 
+    this.studentPresenceService.saveStudentsPresences(this.studentsPresences).subscribe(response => {
+        alert('Student presences saved successfully!');
+        this.router.navigate(['/teacher']);
+      }
+    */
+  }
 
 }
