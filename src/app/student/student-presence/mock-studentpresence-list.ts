@@ -9,6 +9,7 @@ import {StudentPresence} from  '../models/studentPresence.model'
       courseId:1,
       courseStartDateTime : new Date(),
       presence : false,
+      toLate:0,
       absenceReason : 1,
       comment : '',
       createByTeacherId: 1

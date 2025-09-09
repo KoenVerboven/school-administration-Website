@@ -7,6 +7,7 @@ import { StudentPresenceService } from '../services/student-presence.service';
 import { Student } from '../models/student.model';
 import { StudentPresence } from '../models/studentPresence.model';
 
+
 @Component({
   selector: 'app-student-presence',
   standalone: true,
@@ -24,13 +25,20 @@ export class StudentPresenceComponent implements OnInit {
   departmentsCount = 0;
   loading = false;
   error = '';
+  errorMessage : string = "";
   
   absentReasonData =[
-    {"Id":0,"Name":"Please choose an option"},
+    {"Id":0,"Name":""},
     {"Id":1,"Name":"Unknown"},  
     {"Id":2,"Name":"Sick"},
     {"Id":3,"Name":"Public transport strike"},
     {"Id":4,"Name":"legally absent"}
+   ];
+   toLateData =[
+    {"Id":0,"Name":"No"},
+    {"Id":1,"Name":"< 5min"},  
+    {"Id":2,"Name":"< 15min"},
+    {"Id":3,"Name":"> 15min"},
    ];
 
 
@@ -63,15 +71,21 @@ export class StudentPresenceComponent implements OnInit {
 
     for(let sp of this.studentsPresences){
       console.log('Student presence: ', sp.studentName, sp.presence, sp.absenceReason, sp.comment);
-      //todo: call api to save each student presence
+      sp.courseId = undefined; //temp to set courseId
     }
 
-    /* 
-    this.studentPresenceService.saveStudentsPresences(this.studentsPresences).subscribe(response => {
-        alert('Student presences saved successfully!');
-        this.router.navigate(['/teacher']);
-      }
-    */
+    this.studentPresenceService.AddStudentsPresence(this.studentsPresences) 
+      .subscribe({ 
+        next: (response) =>{
+          this.router.navigate(['/students'])
+        },
+        error: (err) => {
+          console.error(err);
+          this.errorMessage = `Error occured during insert : ${err.status}`;
+        }
+      });
+
+    alert('Student presences saved successfully!');
   }
 
 }

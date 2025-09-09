@@ -3,10 +3,11 @@ export interface StudentPresence{
     studentId: number;
     classId: number,
     studentName: string;
-    courseId: number;
+    courseId?: number;
     courseStartDateTime: Date;
     presence: boolean;
-    absenceReason: number;
+    toLate?: number;
+    absenceReason?: number;
     comment: string;
     createByTeacherId: number;
  }

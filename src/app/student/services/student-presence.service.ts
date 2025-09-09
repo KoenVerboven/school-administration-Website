@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { Student } from '../models/student.model';
-import { StudentSpecParams } from '../models/studentSpecParams.model';
+import { StudentPresence } from '../models/studentPresence.model';
 
 @Injectable({
   providedIn: 'root'
@@ -17,5 +17,9 @@ export class StudentPresenceService {
     getStudents(): Observable<Student[]>{
       return this.http.get<Student[]>(`${this.apiUrl}/getStudents`)
     }
+
+  AddStudentsPresence(studentsPresences : StudentPresence[]): Observable<StudentPresence[]>{
+    return this.http.post<StudentPresence[]>(`${this.apiUrl}/AddStudentsPresenceList`,studentsPresences);
+  }
   
 }
