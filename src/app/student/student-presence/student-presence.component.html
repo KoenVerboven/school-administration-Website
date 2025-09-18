@@ -1,26 +1,28 @@
 <p class="pageTitle" >Student-presence</p>
+
+  <p>
+    <Select class="form-select" aria-label="class" name="ClassSelect"  (change)="onClassChange($event)"  >
+      <option value="0">Please choose an class</option>
+      <option *ngFor="let schoolClass of schoolClassData" value={{schoolClass.id}}  id="{{schoolClass.id}}">
+        {{schoolClass.name }}
+      </option>  
+    </Select>
+  </p>
+<!-- 
+   <p>
+     {{selectedSchoolClassId }}
+  </p> 
+-->
+
 <form  (ngSubmit)="onSubmit()" #studentPresenceForm="ngForm" class="formClass">
   <div class="buttonBar" style="margin-top:10px">
       <button class="btn btn-light headerButton"  type="submit" >Save</button>
   </div>
-
-  <!-- 
-  <p>
-    <Select class="form-select" aria-label="class">
-      <option value="">Please choose an class</option>
-      <option value="1">Class1</option>
-      <option value="2">Class2</option>
-    </Select>
-  </p>
-  
-  -->
-
- 
-
-  <table class="table table-sm" style="width: 100%;">
+  <table class="table table-sm table-striped" style="width: 100%;">
       <thead>
         <th class="p-2" style="text-align: center;">Present</th>
-        <th class="p-2" style="text-align: center;">Student</th>
+        <th class="p-2" style="text-align: center;">StudentImage</th>
+        <th class="p-2" style="text-align: center;">StudentName</th>
         <th class="p-2" style="text-align: right;">StudentId</th>
         <th class="p-2" style="text-align: center;">To late</th>
         <th class="p-2" style="text-align: center;">Absense reason</th>
@@ -29,31 +31,42 @@
       <tbody>
         @for(item of studentsPresences; track item.id){
           <tr>
-            <td style="width: 10%;text-align: center;">
-              <input type="checkbox" #presence="ngModel"  [(ngModel)]="item.presence" name="presence{{item.id}}" name="presence" value="false">
+            <td style="width: 10%;text-align: center;vertical-align: middle;">
+              <input type="checkbox"  #presence="ngModel"  [(ngModel)]="item.presence" name="presence{{item.id}}" name="presence" value="false">
             </td> 
-            <td style="width: 20%;text-align: center;">
+            <td style="width: 10%;text-align: center;vertical-align: middle;">
+              @if(item.picture == null)
+              {
+                <img src="/StudentPictures/NoPicture.jpg" style="height: 90px;width: 65px;border-width: 1px;border-color:#777;border-style: solid;border-radius: 3px;">
+              }
+              @else
+              {
+                <img src={{item.picture}} style="height: 90px;width: 65px;border-width: 1px;border-color:#777;border-style: solid;border-radius: 3px;">
+              }
+            </td>
+            <td style="width: 20%;text-align: center;vertical-align: middle;">
                {{item.studentName}}
             </td> 
-            <td style="width: 10%;text-align: right;">
+            <td style="width: 10%;text-align: right;vertical-align: middle;">
                {{item.studentId}} 
             </td>
-            <td style="width: 10%;text-align: left;">
+            <td style="width: 10%;text-align: left;vertical-align: middle;">
                <select class="form-select" [(ngModel)]="item.toLate" name="toLate{{item.id}}">
                 <option [ngValue]="toLateData.Id" *ngFor="let toLateData of toLateData">
                         {{toLateData.Name}}
                   </option>   
               </select>
             </td>
-            <td style="width: 20%;text-align: left;">
+            <td style="width: 20%;text-align: left;vertical-align: middle;">
                <select class="form-select" [(ngModel)]="item.absenceReason" name="absenceReason{{item.id}}">
                 <option [ngValue]="absenceReason.Id" *ngFor="let absenceReason of absentReasonData">
                         {{absenceReason.Name}}
                   </option>   
               </select>
             </td>
-            <td style="width: 30%;text-align: center;">
-              <input maxlength="30" #comment="ngModel" class="form-control" [(ngModel)]="item.comment" name="comment{{item.id}}" type="text" style="width: 100%;">
+            <td style="width: 30%;text-align: center;vertical-align: middle;">
+              <textarea maxlength="60" #comment="ngModel" class="form-control" [(ngModel)]="item.comment" name="comment{{item.id}}" type="text" style="width: 100%;height:80px;">
+              </textarea>
             </td>
           </tr>
         }  

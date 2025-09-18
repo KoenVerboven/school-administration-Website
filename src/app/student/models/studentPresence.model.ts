@@ -10,4 +10,5 @@ export interface StudentPresence{
     absenceReason?: number;
     comment: string;
     createByTeacherId: number;
+    picture?: string;
  }

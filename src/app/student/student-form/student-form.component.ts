@@ -41,7 +41,8 @@ export class StudentFormComponent implements OnInit {
     zipcode:0,
     streetAndNumber: '',
     phone: '',
-    email: ''
+    email: '',
+    picture : ''
   }
 
   constructor(private studentService : StudentService, 
