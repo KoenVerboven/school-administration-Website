@@ -29,7 +29,7 @@ https://github.com/KoenVerboven/SchoolAdministrationApi
 
 <img width="1896" height="942" alt="image" src="https://github.com/user-attachments/assets/94e7ee78-b73c-4249-8acd-cb1fd8627be7" />
 
-<img width="1902" height="986" alt="image" src="https://github.com/user-attachments/assets/a13d722f-867a-4c27-a56e-c51e83be48de" />
+<img width="1907" height="942" alt="image" src="https://github.com/user-attachments/assets/89f211e6-7a9a-4451-889c-3fc5513a1834" />
 
 <img width="1901" height="937" alt="image" src="https://github.com/user-attachments/assets/04caea0d-48a3-430c-a00b-8d8994a5dcad" />
 
@@ -38,6 +38,9 @@ https://github.com/KoenVerboven/SchoolAdministrationApi
 <img width="1898" height="941" alt="image" src="https://github.com/user-attachments/assets/1c66ddb9-3990-49a3-844a-cb4fe70e3d8b" />
 
 <img width="1902" height="945" alt="image" src="https://github.com/user-attachments/assets/b1182932-7ae0-4a53-b47c-6899880878b3" />
+
+<img width="1897" height="937" alt="image" src="https://github.com/user-attachments/assets/dff43017-b768-4462-9882-77a7845fa764" />
+
 
 
 SQL-server :
