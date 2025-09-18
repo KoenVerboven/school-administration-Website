@@ -19,6 +19,12 @@ import { GeneralFunctions } from '../../general/functions/generalfunctions';
   styleUrl: './student-form.component.css'
 })
 export class StudentFormComponent implements OnInit {
+clearPicture() {
+throw new Error('Method not implemented.');
+}
+onFileSelected($event: Event) {
+throw new Error('Method not implemented.');
+}
 
   geboortedate : string| undefined;
   isUpdating: boolean = false;
@@ -27,6 +33,7 @@ export class StudentFormComponent implements OnInit {
   errorMessage : string = "";
   pageTitle: string| null = "";
   studentId: number = 0;
+   noPictureUrl: string = "/StudentPictures/NoPicture.jpg";
   genderData =[
     {"Id":1,"Name":"Male"},
      {"Id":2,"Name":"Female"}

@@ -26,6 +26,22 @@
       <div class="container">
          <div class="row">
             <div class="col-3">
+               @if(student.picture == null)
+               {
+                  <img src={{noPictureUrl}} style="float: right ;height: 130px;width: 95px;border-width: 1px;border-color:#777;border-style: solid;border-radius: 3px;">
+               }
+               @else {
+                  <img src={{student.picture}} style="float: right;height: 130px;width: 95px;border-width: 1px;border-color:#777;border-style: solid;border-radius: 3px;">
+               }
+            </div>   
+            <div class="col-4">
+               <input type="file" (change)="onFileSelected($event)" [disabled]=disableControls />
+               <button class="btn btn-light" style="margin-top: 10px;" type="button" (click)="clearPicture()" [disabled]=disableControls>Clear picture</button>
+            </div>
+         </div>
+         <hr />
+         <div class="row">
+            <div class="col-3">
                <label class="form-label" style="float:right">LastName * & Firstname *</label>
             </div>
             <div class="col-4">

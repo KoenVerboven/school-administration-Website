@@ -28,6 +28,7 @@ export class StudentPresenceComponent implements OnInit {
   errorMessage : string = "";
   schoolClassData : SchoolClassData[] = [];
   selectedSchoolClassId: string = "";
+  noPictureUrl: string = "/StudentPictures/NoPicture.jpg";
    
   absentReasonData =[
     {"Id":0,"Name":""},
