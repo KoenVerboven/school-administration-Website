@@ -39,6 +39,8 @@ https://github.com/KoenVerboven/SchoolAdministrationApi
 
 <img width="1902" height="945" alt="image" src="https://github.com/user-attachments/assets/b1182932-7ae0-4a53-b47c-6899880878b3" />
 
+<img width="1899" height="939" alt="image" src="https://github.com/user-attachments/assets/448d7a61-22fe-432b-a5f3-31ff0f8db5a1" />
+
 <img width="1897" height="937" alt="image" src="https://github.com/user-attachments/assets/dff43017-b768-4462-9882-77a7845fa764" />
 
 
