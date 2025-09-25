@@ -18,29 +18,36 @@
   <table class="table table-sm  table-striped">
       <thead>
          <tr>
+           <th class="p-2" style="text-align: center;">PASS / FAIL</th>   
            <th class="p-2" style="text-align: center;">Student Name</th>
            <th class="p-2" style="text-align: center;">Email</th>  
            <th class="p-2" style="text-align: center;">ExamName</th> 
            <th class="p-2" style="text-align: center;">Score</th>
-           <th class="p-2" style="text-align: center;">PASS / FAIL</th>     
         </tr>
       </thead>
       <tbody>
         @for(examResult of examResults; track examResult.id){
-          <tr class="cell-hoverCursor">      
+          <tr class="cell-hoverCursor">
+            @if(examResult.examenResult >= examResult.minScoreToPassExam)
+            {
+              <td style="align-content: center;">
+                <div style="background-color:green;text-align: center;color:white;border-radius: 5px;width: 100px;margin-left: auto;margin-right: auto;">
+                    PASS <i class="bi bi-check-circle"></i>
+                </div>
+              </td>      
+            }
+            @else
+            {
+              <td>
+                <div style="background-color:rgb(243, 8, 8);text-align: center;color:white;border-radius: 5px;width: 100px;margin-left: auto;margin-right: auto;">
+                    FAIL <i class="bi bi-emoji-frown"></i>
+                </div>
+              </td>
+            }      
             <td style="text-align: center;">{{examResult.studentLastName}} {{examResult.studentFirstName}}</td> 
             <td style="text-align: center;">{{examResult.studentEmail}}</td>   
             <td style="text-align: center;">{{examResult.examName}}</td>   
             <td style="text-align: center;">{{examResult.examenResult}} / {{examResult.maxScore}}</td>
-            @if(examResult.examenResult >= examResult.minScoreToPassExam)
-            {
-              <td style="color:green;text-align: center;">PASS <i class="bi bi-check-circle"></i></td>      
-            }
-            @else
-            {
-              <td style="color:rgb(243, 8, 8);text-align: center;">FAIL <i class="bi bi-emoji-frown"></i></td>      
-            }
-            
          </tr>  
         }
       </tbody>

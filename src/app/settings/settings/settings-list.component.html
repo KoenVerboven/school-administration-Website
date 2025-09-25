@@ -1,8 +1,10 @@
 <p class="pageTitle">Settings</p>
 <br/>
 <div class="container">
-    @for(settingsitem of items; track settingsitem.id)
-    {
-       <div class="settingitem" (click)="navigateTo(settingsitem.url)">{{settingsitem.itemName}}</div>   
-    }
+    <div class="row">
+        @for(settingsitem of items; track settingsitem.id)
+        {
+            <div class="settingitem" (click)="navigateTo(settingsitem.url)">{{settingsitem.itemName}}</div>   
+        }
+    </div>
 </div>

@@ -1,4 +1,4 @@
-import { SettingsItem } from "../models/SettingsItem.models"
+import { SettingsItem } from "../models/settingsItem.models"
 
 export const settingitems: SettingsItem[] =[
     {
@@ -10,16 +10,23 @@ export const settingitems: SettingsItem[] =[
     },
     {
         id:2,
-        itemName : 'Display Theme',
+        itemName : 'Display',
         sequenceNumber:2,
         visible:true,
          url:''
     },
     {
         id:3,
-        itemName : 'Database Settings',
+        itemName : 'Database',
         sequenceNumber:3,
         visible:true,
          url:''
     },
+    {
+        id:4,
+        itemName : 'Language',
+        sequenceNumber:4,
+        visible:true,
+         url:''
+    }
 ]

@@ -35,11 +35,16 @@
                }
             </div>   
             <div class="col-4">
+               <!--   
                <input type="file" (change)="onFileSelected($event)" [disabled]=disableControls />
                <button class="btn btn-light" style="margin-top: 10px;" type="button" (click)="clearPicture()" [disabled]=disableControls>Clear picture</button>
+               -->
+               <button class="btn btn-primary" style="margin-top: 10px;" type="button"  [disabled]=disableControls><i class="bi bi-upload"></i> Upload photo</button>
             </div>
          </div>
          <hr />
+         <label style="background-color: #777;color:white;padding-left: 10px;padding-right: 10px;border-radius: 2px;">Student Info</label>
+         <br/> <br/>
          <div class="row">
             <div class="col-3">
                <label class="form-label" style="float:right">LastName * & Firstname *</label>
@@ -156,6 +161,68 @@
                   }
                }
             </div>
+         </div>
+         <hr />
+         <!-- todo loop through Parent(s)-->
+         <label style="background-color: #777;color:white;padding-left: 10px;padding-right: 10px;border-radius: 2px;">Parent Info</label>
+         <br/> <br/>
+         <div class="row">
+            <div class="col-3">
+               <label class="form-label" style="float:right">LastName * & Firstname *</label>
+            </div>
+            <div class="col-4">
+               <input required maxlength="30"  [disabled]=disableControls class="form-control" type="text" name="lastName"  />
+               @if((lastName.invalid &&(lastName.touched || lastName.dirty)) && lastName.errors?.['required'])
+               {
+                  <div class="text-danger">Last Name is required</div>
+               }
+               @if((firstName.invalid &&(firstName.touched || firstName.dirty)) && firstName.errors?.['maxlength'])
+               {
+                  <div class="text-danger">First Name cannot be longer than 30 characters</div>
+               }
+            </div>
+            <div class="col-4">
+               <input required maxlength="30"  [disabled]=disableControls class="form-control"   type="text" name="firstName"   />
+               @if((firstName.invalid &&(firstName.touched || firstName.dirty)) && firstName.errors?.['required'])
+               {
+                  <div class="text-danger">First Name is required</div>
+               }
+               @if((firstName.invalid &&(firstName.touched || firstName.dirty)) && firstName.errors?.['maxlength'])
+               {
+                  <div class="text-danger">First Name cannot be longer than 30 characters</div>
+               }
+            </div>
+            <div class="row" style="margin-top: 5px;">
+            <div class="col-3">
+               <label  class="form-label" style="float:right">Phone *</label>
+            </div>
+            <div class="col-8">
+               <input required  [disabled]=disableControls class="form-control" type="phone" name="phone"   />
+               @if((phone.invalid &&(phone.touched || phone.dirty)) && phone.errors?.['required'])
+               {
+               <div class="text-danger">Phone is required</div>
+               }
+            </div>
+         </div>
+         <div class="row" style="margin-top: 5px;">
+            <div class="col-3">
+                <label class="form-label"  style="float:right">Email *</label>
+            </div>
+            <div class="col-8">
+               <input required maxlength="30" email  [disabled]=disableControls class="form-control" type="email" name="email"   />
+               @if(email.invalid &&(email.touched || email.dirty))
+               {
+                  @if(email.errors?.['required'])
+                  {
+                     <div class="text-danger">Email is required</div>
+                  }
+                  @if(email.errors?.['email'])
+                  {
+                     <div class="text-danger">Email is invalid</div>
+                  }
+               }
+            </div>
+         </div>
          </div>
      </div>
  </form>
