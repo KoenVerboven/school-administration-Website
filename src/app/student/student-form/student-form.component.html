@@ -163,68 +163,83 @@
             </div>
          </div>
          <hr />
-         <!-- todo loop through Parent(s)-->
-         <label style="background-color: #777;color:white;padding-left: 10px;padding-right: 10px;border-radius: 2px;">Parent Info</label>
-         <br/> <br/>
-         <div class="row">
-            <div class="col-3">
-               <label class="form-label" style="float:right">LastName * & Firstname *</label>
-            </div>
-            <div class="col-4">
-               <input required maxlength="30"  [disabled]=disableControls class="form-control" type="text" name="lastName"  />
-               @if((lastName.invalid &&(lastName.touched || lastName.dirty)) && lastName.errors?.['required'])
-               {
-                  <div class="text-danger">Last Name is required</div>
-               }
-               @if((firstName.invalid &&(firstName.touched || firstName.dirty)) && firstName.errors?.['maxlength'])
-               {
-                  <div class="text-danger">First Name cannot be longer than 30 characters</div>
-               }
-            </div>
-            <div class="col-4">
-               <input required maxlength="30"  [disabled]=disableControls class="form-control"   type="text" name="firstName"   />
-               @if((firstName.invalid &&(firstName.touched || firstName.dirty)) && firstName.errors?.['required'])
-               {
-                  <div class="text-danger">First Name is required</div>
-               }
-               @if((firstName.invalid &&(firstName.touched || firstName.dirty)) && firstName.errors?.['maxlength'])
-               {
-                  <div class="text-danger">First Name cannot be longer than 30 characters</div>
-               }
+            <label style="background-color: #777;color:white;padding-left: 10px;padding-right: 10px;border-radius: 2px;">Parent Info</label>
+            <br/><br/>
+            <button class="btn btn-primary" style="margin-bottom: 10px;margin-right: 10px;" type="button"   (click)="previousParent()"><i class="bi bi-arrow-left"></i></button>
+            <button class="btn btn-primary" style="margin-bottom: 10px;" type="button"  (click)="nextParent()"><i class="bi bi-arrow-right"></i></button>
+            <div class="row">
+               <div class="col-3">
+                  <label class="form-label" style="float:right">LastName * & Firstname *</label>
+               </div>
+               <div class="col-4">
+                  <input required maxlength="30" #parentlastName="ngModel" [disabled]=disableControls class="form-control" type="text" name="parentlastName" [(ngModel)]="parent.lastName"/>
+                  @if((lastName.invalid &&(lastName.touched || lastName.dirty)) && lastName.errors?.['required'])
+                  {
+                     <div class="text-danger">Last Name is required</div>
+                  }
+                  @if((firstName.invalid &&(firstName.touched || firstName.dirty)) && firstName.errors?.['maxlength'])
+                  {
+                     <div class="text-danger">First Name cannot be longer than 30 characters</div>
+                  }
+               </div>
+               <div class="col-4">
+                  <input required maxlength="30"  #parentFirstName="ngModel" [disabled]=disableControls class="form-control"   type="text" name="parentfirstName" [(ngModel)]="parent.firstName" />
+                  @if((firstName.invalid &&(firstName.touched || firstName.dirty)) && firstName.errors?.['required'])
+                  {
+                     <div class="text-danger">First Name is required</div>
+                  }
+                  @if((firstName.invalid &&(firstName.touched || firstName.dirty)) && firstName.errors?.['maxlength'])
+                  {
+                     <div class="text-danger">First Name cannot be longer than 30 characters</div>
+                  }
+               </div>
+               <div class="row" style="margin-top: 5px;">
+               <div class="col-3">
+                  <label  class="form-label" style="float:right">Phone *</label>
+               </div>
+               <div class="col-8">
+                  <input required  #parentPhoneNumber="ngModel" [disabled]=disableControls class="form-control" type="phone" name="parentphone"  [(ngModel)]="parent.phoneNumber"  />
+                  @if((phone.invalid &&(phone.touched || phone.dirty)) && phone.errors?.['required'])
+                  {
+                  <div class="text-danger">Phone is required</div>
+                  }
+               </div>
             </div>
             <div class="row" style="margin-top: 5px;">
-            <div class="col-3">
-               <label  class="form-label" style="float:right">Phone *</label>
-            </div>
-            <div class="col-8">
-               <input required  [disabled]=disableControls class="form-control" type="phone" name="phone"   />
-               @if((phone.invalid &&(phone.touched || phone.dirty)) && phone.errors?.['required'])
-               {
-               <div class="text-danger">Phone is required</div>
-               }
-            </div>
-         </div>
-         <div class="row" style="margin-top: 5px;">
-            <div class="col-3">
-                <label class="form-label"  style="float:right">Email *</label>
-            </div>
-            <div class="col-8">
-               <input required maxlength="30" email  [disabled]=disableControls class="form-control" type="email" name="email"   />
-               @if(email.invalid &&(email.touched || email.dirty))
-               {
-                  @if(email.errors?.['required'])
+               <div class="col-3">
+                  <label class="form-label"  style="float:right">Email *</label>
+               </div>
+               <div class="col-8">
+                  <input required maxlength="30" #parentEmail="ngModel" email  [disabled]=disableControls class="form-control" type="email" name="parentemail"   [(ngModel)]="parent.email"  />
+                  @if(email.invalid &&(email.touched || email.dirty))
                   {
-                     <div class="text-danger">Email is required</div>
+                     @if(email.errors?.['required'])
+                     {
+                        <div class="text-danger">Email is required</div>
+                     }
+                     @if(email.errors?.['email'])
+                     {
+                        <div class="text-danger">Email is invalid</div>
+                     }
                   }
-                  @if(email.errors?.['email'])
-                  {
-                     <div class="text-danger">Email is invalid</div>
-                  }
-               }
+               </div>
             </div>
-         </div>
-         </div>
+            <div class="row" style="margin-top: 5px;">
+               <div class="col-3">
+                  <label class="form-label"  style="float:right">Relation to student</label>
+               </div>
+               <div class="col-8">
+                  <select class="form-select"   [disabled]=disableControls style="width: 40%;">
+                     <option value="0">Please choose relationship</option>
+                     <option *ngFor="let relationship of relationshipToStudent" [selected]="relationship.id==parent.relationshipToStudent" >
+                           {{relationship.name}}
+                     </option>    
+                  </select>
+               </div>
+            </div>
+            </div>
+
      </div>
  </form>
 }
-
+<br/><br/>

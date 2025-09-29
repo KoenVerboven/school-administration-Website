@@ -22,35 +22,43 @@ export class PaymentFormComponent {
   formAction: string = 'true';
   monneySymbol: string = '€';
   paymentId: number = 0;
-
   paymentMethods = [
     { id: 1, name: 'Cash' },
     { id: 2, name: 'Bancontact' },
     { id: 3, name: 'Visa' },
     { id: 4, name: 'Mastercard' },
   ]
+  payment: Payment = {
+    id: 0,
+    studentId: 0,
+    studentFullName: '',
+    courseId: 0,
+    amount: 0,
+    paymentDate: new Date(),
+    paymentMethod: '',
+    transactionId: ''
+  };
 
 
   constructor(private paymentService: PaymentService, private router: Router, private route: ActivatedRoute) {  }
 
    ngOnInit(): void {
+ 
     this.route.paramMap.subscribe(result => {
     const id = result.get('id');
     const action = result.get('action');
     this.paymentId = Number(id);
-
-     alert(this.paymentId);
+     
     /*
     if(id){
       this.paymentService.getPaymentById(Number(id)).subscribe({
-      next: result => this.exam = result,
+      next: result => this.payment = result,
       error: err => this.errorMessage = `Error : (${err.status})`
      });
      this.isUpdating = true;
     } 
-    */
-
-    
+     */
+ 
     if(action == null){this.pageTitle = "Create payment"}
       else if(action == "detail"){
         this.pageTitle = "Payment detail";
@@ -59,6 +67,7 @@ export class PaymentFormComponent {
       }
       else if(action == "update"){this.pageTitle = "Update peyment"}
     });
+
   }
 
 

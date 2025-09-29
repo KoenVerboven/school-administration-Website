@@ -6,7 +6,7 @@ export interface Parent{
     email: string;
     sortOrder: number;
     studentId: number;
-    relationshipToStudent: string;
+    relationshipToStudent: number;
     addressSameAsStudent: boolean;
     occupation: string;
     workPhoneNumber: string;

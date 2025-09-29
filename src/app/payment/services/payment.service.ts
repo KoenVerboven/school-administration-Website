@@ -21,7 +21,6 @@ export class PaymentService {
       return this.http.get<Payment>(`${this.apiUrl}/${id}`)
     }
 
-
     createPayment(payment : Payment): Observable<Payment>{
       return this.http.post<Payment>(this.apiUrl,payment);
     }

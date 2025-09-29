@@ -4,21 +4,25 @@ import { Student } from '../models/student.model';
 import { StudentService } from '../services/student.service'
 import { Router,ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule,} from '@angular/forms';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { DateAdapter } from '@angular/material/core';
 import { GeneralFunctions } from '../../general/functions/generalfunctions';
+import { Parent } from '../models/parent.model';
+import { parents } from './mock-studentParent-list';
 
 @Component({
   selector: 'app-student-form',
   standalone: true,
-  imports: [FormsModule, CommonModule,MatDatepickerModule,MatNativeDateModule,MatInputModule,MatFormFieldModule],
+  imports: [FormsModule, CommonModule,MatDatepickerModule,MatNativeDateModule,MatInputModule,MatFormFieldModule,ReactiveFormsModule],
   templateUrl: './student-form.component.html',
   styleUrl: './student-form.component.css'
 })
 export class StudentFormComponent implements OnInit {
+
 clearPicture() {
 throw new Error('Method not implemented.');
 }
@@ -33,11 +37,20 @@ throw new Error('Method not implemented.');
   errorMessage : string = "";
   pageTitle: string| null = "";
   studentId: number = 0;
-   noPictureUrl: string = "/StudentPictures/NoPicture.jpg";
+  noPictureUrl: string = "/StudentPictures/NoPicture.jpg";
+  parentIndex: number = 0;
+  parent:Parent = parents[this.parentIndex];
   genderData =[
     {"Id":1,"Name":"Male"},
      {"Id":2,"Name":"Female"}
     ];
+  relationshipToStudent = [
+    { id: 1, name: 'father' },
+    { id: 2, name: 'mother' },
+    { id: 3, name: 'grandparent' },
+    { id: 4, name: 'guardian' },
+    { id: 5, name: 'other' },
+  ]
   events: string[] = [];
   student: Student = {
     id: 0,
@@ -144,5 +157,19 @@ throw new Error('Method not implemented.');
       }
     });
   }
+
+
+nextParent() {
+  if(this.parentIndex < parents.length - 1) {
+    this.parentIndex++;
+    this.parent = parents[this.parentIndex];
+  }
+}
+previousParent() {
+  if(this.parentIndex > 0) {
+    this.parentIndex--;
+    this.parent = parents[this.parentIndex];  
+  }
+}
 
 }

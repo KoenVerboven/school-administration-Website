@@ -7,7 +7,7 @@
 @else
 {
    <form (ngSubmit)="onSubmit()" class="formClass" >
-       <div class="pageTitle" >
+       <div class="pageTitle">
             {{pageTitle}}
         </div>
         <div class="buttonBar" style="margin-top:10px">
@@ -27,24 +27,23 @@
                 <label class="form-label" style="float:right">StudentName *</label>
             </div>
             <div class="col-10">
-                <input required  [disabled]=disableControls class="form-control" style="width: 40%;" formControlName="studentFullName"  type="text" />
+                
             </div>   
         </div>
-        <div class="row" style="margin-top: 5px;">
+         <div class="row" style="margin-top: 5px;">
             <div class="col-2">
                 <label class="form-label" style="float:right">CourseName *</label>
             </div>
             <div class="col-10">
-                <input required  [disabled]=disableControls class="form-control"  style="width: 40%;float:left"  formControlName="courseName"  type="text" />
+                <input required  [disabled]=disableControls class="form-control"  style="width: 40%;float:left"    type="text" />
             </div>   
         </div>
         <div class="row" style="margin-top: 5px;">
             <div class="col-2">
-                <label class="form-label" style="float:right">Amount *</label>
+                <label class="form-label" style="float:right">Amount * {{monneySymbol}}</label>
             </div>
             <div class="col-10">
-                <div style="float: left;">{{monneySymbol}} &nbsp;</div>
-                <input required  [disabled]=disableControls class="form-control"  style="width: 20%;float:left"  formControlName="amount"  type="number" />
+                <input required  [disabled]=disableControls class="form-control" style="width: 40%;float:left" type="number" />
             </div>   
         </div>
         <div class="row" style="margin-top: 5px;">
@@ -52,7 +51,7 @@
                 <label class="form-label" style="float:right">Payment Method *</label>
             </div>
             <div class="col-10">
-                <Select class="form-select" aria-label="class" style="width: 40%;">
+                <Select class="form-select" [disabled]=disableControls aria-label="class" style="width: 40%;">
                     <option value="">Please choose payment method</option>
                      <option  *ngFor="let paymentMethod of paymentMethods">
                         {{paymentMethod.name}}
@@ -60,7 +59,7 @@
                 </Select>
             </div>   
         </div>
-        </div>
+    </div>
    </form>
   
 }
