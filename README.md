@@ -1,20 +1,17 @@
 # SchoolAdministrationApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.1.
+To Start Application :
+-----------------------
+1/Install Sql-Server on your Pc.
 
-Visual Studio Code :
+2/ Open and start the back-end API ( https://github.com/KoenVerboven/SchoolAdministrationApi ) in Visual Studio.
+
+3/Open the school-administration-Website in Visual Studio Code and run 'ng serve --open' in cmd-terminal.
 
 <img width="1905" height="1032" alt="image" src="https://github.com/user-attachments/assets/2015c5a1-3914-4fc0-b6cd-8d99a8beeb53" />
 
-## Development server
-
-run 'ng serve --open' in cmd-terminal
-
-<img width="1251" height="192" alt="image" src="https://github.com/user-attachments/assets/4226b585-293f-46d3-85f0-795b546b0477" />
 
 
-# Back-end :
-https://github.com/KoenVerboven/SchoolAdministrationApi
 
 ## Screenshots :
 
