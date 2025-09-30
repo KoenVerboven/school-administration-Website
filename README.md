@@ -2,18 +2,21 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.1.
 
+Visual Studio Code :
+
+<img width="1905" height="1032" alt="image" src="https://github.com/user-attachments/assets/2015c5a1-3914-4fc0-b6cd-8d99a8beeb53" />
+
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+run 'ng serve --open' in cmd-terminal
+
+<img width="1251" height="192" alt="image" src="https://github.com/user-attachments/assets/4226b585-293f-46d3-85f0-795b546b0477" />
+
 
 # Back-end :
 https://github.com/KoenVerboven/SchoolAdministrationApi
 
 ## Screenshots :
-
-Visual Studio Code :
-
-<img width="1916" height="1030" alt="image" src="https://github.com/user-attachments/assets/b3971f48-22d0-4674-82b9-08fd86bce554" />
 
 
 <img width="1902" height="938" alt="image" src="https://github.com/user-attachments/assets/326dc45c-38c4-4e44-9f75-e8a975d8e0a6" />
