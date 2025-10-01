@@ -42,9 +42,8 @@
                <button class="btn btn-primary" style="margin-top: 10px;" type="button"  [disabled]=disableControls><i class="bi bi-upload"></i> Upload photo</button>
             </div>
          </div>
-         <hr />
-         <label style="background-color: #777;color:white;padding-left: 10px;padding-right: 10px;border-radius: 2px;">Student Info</label>
-         <br/> <br/>
+         <label class="sectionTitle">Student Info</label>
+         <br/> 
          <div class="row">
             <div class="col-3">
                <label class="form-label" style="float:right">LastName * & Firstname *</label>
@@ -162,9 +161,8 @@
                }
             </div>
          </div>
-         <hr />
-            <label style="background-color: #777;color:white;padding-left: 10px;padding-right: 10px;border-radius: 2px;">Parent Info</label>
-            <br/><br/>
+            <label class="sectionTitle">Parent Info</label>
+            <br/>
             <button class="btn btn-primary" style="margin-bottom: 10px;margin-right: 10px;" type="button"   (click)="previousParent()"><i class="bi bi-arrow-left"></i></button>
             <button class="btn btn-primary" style="margin-bottom: 10px;" type="button"  (click)="nextParent()"><i class="bi bi-arrow-right"></i></button>
             <div class="row">
@@ -238,6 +236,28 @@
                </div>
             </div>
             </div>
+            <label class="sectionTitle">Courses</label>
+            <br/>
+            <table class="table table-sm  table-hover  table-striped">
+            <thead>
+               <tr>
+                  <th class="p-2" style="text-align:center;">Name</th>
+                  <th class="p-2" style="text-align:center;">Code</th>
+                  <th class="p-2" style="text-align:center;">StartDate</th>
+                  <th class="p-2" style="text-align:center;">EndDate</th>
+                  </tr>
+            </thead>
+            <tbody>
+                  @for(course of courses;track course.id){
+                     <tr>      
+                        <td style="text-align:center;">{{course.courseName}}</td> 
+                        <td style="text-align:center;">{{course.courseCode}}</td>  
+                        <td style="text-align:center;">{{course.startDate | date: 'dd/MM/yyyy'}}</td>
+                        <td style="text-align:center;">{{course.endDate | date: 'dd/MM/yyyy'}}</td>
+                     </tr>       
+                  }
+            </tbody>
+    </table>
 
      </div>
  </form>

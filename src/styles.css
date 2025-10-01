@@ -26,13 +26,24 @@ body {
   padding-left:20px;
   padding-top:2px;
   padding-bottom:2px;
-  font-size: 20px;
+  font-size: 21px;
   width: 100%;
   height: 32px;
   border: 1px solid rgb(173, 169, 169);
   border-radius: 4px;
   color:rgb(235, 240, 243);
   background-color: rgb(92, 132, 184);
+}
+.sectionTitle{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    background-color: #0e8803;
+    color:white;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 2px;
+    width: 100%;
 }
 .formClass{
    padding: 0rem!important;
@@ -48,7 +59,9 @@ body {
   background-color: rgb(235, 232, 231);
 }
 th{
-  background-color: rgb(243, 156, 75) !important;
+  background-color: rgb(245, 244, 167) !important;
+  font-size: 16px !important;
+  font-weight: normal !important;
 }
 .headerButton{
   border-color: rgb(149, 216, 233) !important;

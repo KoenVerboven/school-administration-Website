@@ -12,7 +12,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { DateAdapter } from '@angular/material/core';
 import { GeneralFunctions } from '../../general/functions/generalfunctions';
 import { Parent } from '../models/parent.model';
+import { Course } from '../models/course.model';
 import { parents } from './mock-studentParent-list';
+import { courses } from './mock-course-list';
 
 @Component({
   selector: 'app-student-form',
@@ -37,9 +39,10 @@ throw new Error('Method not implemented.');
   errorMessage : string = "";
   pageTitle: string| null = "";
   studentId: number = 0;
-  noPictureUrl: string = "/StudentPictures/NoPicture.jpg";
+  noPictureUrl: string = "/StudentPictures/NoPicture.jpg";  
   parentIndex: number = 0;
   parent:Parent = parents[this.parentIndex];
+  courses= courses;
   genderData =[
     {"Id":1,"Name":"Male"},
      {"Id":2,"Name":"Female"}
