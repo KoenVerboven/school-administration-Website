@@ -39,10 +39,9 @@ To Start Application :
 
 <img width="1907" height="942" alt="image" src="https://github.com/user-attachments/assets/fde2c1f1-145c-4c5f-8cb8-e8ca20a73dbc" />
 
-<img width="1902" height="945" alt="image" src="https://github.com/user-attachments/assets/660cc2bd-083a-403a-b52f-8057e9dc94a8" />
+<img width="1901" height="942" alt="image" src="https://github.com/user-attachments/assets/6bc564db-1df2-4d36-bfce-e5fa0ffac6fc" />
 
-<img width="1662" height="937" alt="image" src="https://github.com/user-attachments/assets/b4d63eee-7e69-4a4d-b15b-67afff5b1f4d" />
-
+<img width="1660" height="941" alt="image" src="https://github.com/user-attachments/assets/9691f2bb-6f4f-487b-96cd-bd1ad60135ea" />
 
 <img width="1907" height="942" alt="image" src="https://github.com/user-attachments/assets/89f211e6-7a9a-4451-889c-3fc5513a1834" />
 
