@@ -11,9 +11,33 @@ To Start Application :
 <img width="1905" height="1032" alt="image" src="https://github.com/user-attachments/assets/2015c5a1-3914-4fc0-b6cd-8d99a8beeb53" />
 
 
+Code Scaffolding :
+------------------
+* Run ng new --name to generate a new angular project
+  
+  example : ng new school-administration-app
+  
+* Run ng generate component --name to generate a new component.
 
+  ng g c --name ( same command but shorter )
+  
+  example : ng g c student-form : makes a new component with the name 'student-form'
+  
+  generate a new component on a in an existing or non-existent location:
+  
+  ng g c user\login\login-form -> generate a new component on the location : user\login
 
-## Screenshots :
+* Run ng generate service --name to generate a new service.
+  
+  ng g s --name ( same command but shorter )
+  
+  example : ng g s student : generate a new service with the name student.service.ts
+
+* Run ng g help to get help
+  
+
+Screenshots :
+-------------
 
 
 <img width="1902" height="938" alt="image" src="https://github.com/user-attachments/assets/326dc45c-38c4-4e44-9f75-e8a975d8e0a6" />
