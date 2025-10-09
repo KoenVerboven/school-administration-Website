@@ -13,27 +13,27 @@ To Start Application :
 
 Code Scaffolding :
 ------------------
-* Run ng new --name to generate a new angular project
+* Run `ng new --name` to generate a new angular project
   
-  example : ng new school-administration-app
+  example : `ng new school-administration-app`
   
-* Run ng generate component --name to generate a new component.
+* Run `ng generate component --name` to generate a new component.
 
-  ng g c --name ( same command but shorter )
+  `ng g c --name` ( same command but shorter )
   
-  example : ng g c student-form : makes a new component with the name 'student-form'
+  example : `ng g c student-form` : makes a new component with the name 'student-form'
   
   generate a new component on a existing or non-existent location:
   
-  ng g c user\login\login-form -> generate a new component on the location : user\login
+  `ng g c user\login\login-form` -> generate a new component on the location : user\login
 
-* Run ng generate service --name to generate a new service.
+* Run `ng generate service --name` to generate a new service.
   
-  ng g s --name ( same command but shorter )
+  `ng g s --name` ( same command but shorter )
   
-  example : ng g s student : generate a new service with the name student.service.ts
+  example : `ng g s student` : generate a new service with the name student.service.ts
 
-* Run ng g help to get help
+* Run `ng g help` to get help
   
 
 Screenshots :
