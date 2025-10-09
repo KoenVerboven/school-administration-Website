@@ -23,7 +23,7 @@ Code Scaffolding :
   
   example : ng g c student-form : makes a new component with the name 'student-form'
   
-  generate a new component on a in an existing or non-existent location:
+  generate a new component on a existing or non-existent location:
   
   ng g c user\login\login-form -> generate a new component on the location : user\login
 
