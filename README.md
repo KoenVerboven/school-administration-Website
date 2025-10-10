@@ -6,7 +6,7 @@ To Start Application :
 
 2/ Open and start the back-end API ( https://github.com/KoenVerboven/SchoolAdministrationApi ) in Visual Studio.
 
-3/Open the school-administration-Website in Visual Studio Code and run 'ng serve --open' in cmd-terminal.
+3/Open the school-administration-Website in Visual Studio Code and run `ng serve --open` in cmd-terminal.
 
 <img width="1905" height="1032" alt="image" src="https://github.com/user-attachments/assets/2015c5a1-3914-4fc0-b6cd-8d99a8beeb53" />
 
