@@ -1,5 +1,11 @@
 # SchoolAdministrationApp
 
+CLI-Version :
+--------------
+`18.2.12`
+
+Run ng --version
+
 To Start Application :
 -----------------------
 1/Install Sql-Server on your Pc.
