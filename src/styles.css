@@ -38,12 +38,23 @@ body {
     margin-top: 10px;
     margin-bottom: 10px;
     font-size: 18px;
-    background-color: #0e8803;
+    background-color: #7085fd;
     color:white;
     padding-left: 10px;
     padding-right: 10px;
     border-radius: 2px;
     width: 100%;
+}
+.subTitle{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    background-color: #ec8743;
+    color:white;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+    width: fit-content;
 }
 .formClass{
    padding: 0rem!important;

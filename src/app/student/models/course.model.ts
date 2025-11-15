@@ -5,4 +5,7 @@ export interface Course{
     courseDescription: string;
     startDate:Date;
     endDate:Date;
+    amountPaid?: number;
+    totalAmount?: number;
+    fullyPaid?: boolean;
 }

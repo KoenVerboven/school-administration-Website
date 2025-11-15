@@ -245,6 +245,9 @@
                   <th class="p-2" style="text-align:center;">Code</th>
                   <th class="p-2" style="text-align:center;">StartDate</th>
                   <th class="p-2" style="text-align:center;">EndDate</th>
+                  <th  class="p-2" style="text-align:center;">Amount paid</th>
+                  <th  class="p-2" style="text-align:center;">Total amount</th>
+                  <th  class="p-2" style="text-align:center;">Fully paid</th>
                   </tr>
             </thead>
             <tbody>
@@ -254,6 +257,10 @@
                         <td style="text-align:center;">{{course.courseCode}}</td>  
                         <td style="text-align:center;">{{course.startDate | date: 'dd/MM/yyyy'}}</td>
                         <td style="text-align:center;">{{course.endDate | date: 'dd/MM/yyyy'}}</td>
+                        <!-- <td style="text-align:center;">{{course.amountPaid | currency:'USD':'symbol':'1.2-2'}}</td> -->
+                        <td style="text-align:center;">{{course.amountPaid | currency:'EUR':'symbol':'1.2-2'}}</td>
+                        <td style="text-align:center;">{{course.totalAmount | currency:'EUR':'symbol':'1.2-2'}}</td>
+                        <td style="text-align:center;"> @if(course.fullyPaid) { <i class="bi bi-check-lg" style="color:green;"></i> } @else { <i class="bi bi-x-lg" style="color:red;"></i> } </td>
                      </tr>       
                   }
             </tbody>

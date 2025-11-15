@@ -1,7 +1,6 @@
 
-    <p class="text-center h5">Studyplan : Preparations for exam 14 june 2025</p>
-    <div><label style="width: 120px;">Today:</label>{{ today | date :'EEEE'}} {{ today | date :'dd/MM/yyyy'}}</div>
-    <div><label style="width: 120px;">Choosen date:</label>{{ studyDate | date :'EEEE'}} {{ studyDate | date :'dd/MM/yyyy'}}</div>
+    <p class="pageTitle" >Studyplan</p>
+    <p class="subTitle">Preparations for exam 14 june 2025</p>
     @if(error != "")
     {
         <div class="errorLabel">{{error}}</div>
@@ -17,10 +16,11 @@
     }
     @if(error == "" && !loading)
     {
-        <div style="margin-top: 10px;margin-bottom: 10px;">
-            <button type="button" class="btn btn-light  headerButton" (click)="showPrevious()"><i class="bi bi-arrow-left"></i></button>
-            <button type="button" class="btn btn-light  headerButton" (click)="showCurrent()" style="margin-left: 20px;">Current day</button>
+        <div class="buttonBar" >
+         <button type="button" class="btn btn-light  headerButton" (click)="showPrevious()"><i class="bi bi-arrow-left"></i></button>
+            <button type="button" class="btn btn-light  headerButton" (click)="showCurrent()" style="margin-left: 20px;">Today</button>
             <button type="button" class="btn btn-light  headerButton" (click)="showNext()" style="margin-left: 20px;"><i class="bi bi-arrow-right"></i></button>
+            <label style="margin-left: 20px;">{{ studyDate | date :'EEEE'}} {{ studyDate | date :'dd/MM/yyyy'}}</label>
         </div>
         @if(studyplanDetailsCount > 0)
         {

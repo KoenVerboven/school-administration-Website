@@ -185,6 +185,17 @@
           </div>
         </div>
       }
+      @if(courseSheduleVisible)
+     {
+        <div class="link">
+          <div class="content" [routerLink]="['courseShedule']" [routerLinkActive]="'active'">
+            <div class="icon"  data-placement="right" title="CourseShedule">
+               <i class="bi bi-cash-coin"></i>
+            </div>
+            <div class="title">CourseShedule</div>
+          </div>
+        </div>
+      }
       @if(settingsVisible)
       {
         <div class="link">

@@ -9,7 +9,7 @@ import { ExamResult } from '../models/examResult.model';
 })
 export class ExamResultsService {
 
-   private apiUrl = `${environment.apiUrl}/student/GetStudentsExamResults`  
+   private apiUrl = `${environment.apiUrl}/student/getStudentsExamResults`  
   
   constructor(private http: HttpClient) { }
 

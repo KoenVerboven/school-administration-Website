@@ -33,7 +33,7 @@ export class StudentPresenceService {
    }
 
   AddStudentsPresence(studentsPresences : StudentPresence[]): Observable<StudentPresence[]>{
-    return this.http.post<StudentPresence[]>(`${this.apiUrl}/AddStudentsPresenceList`,studentsPresences);
+    return this.http.post<StudentPresence[]>(`${this.apiUrl}/addStudentsPresenceList`,studentsPresences);
   }
   
 }

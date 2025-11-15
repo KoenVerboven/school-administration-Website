@@ -7,7 +7,10 @@ import { Course } from "../models/course.model"
         courseCode: 'MATH101',
         courseDescription: 'Introduction to basic mathematical concepts and operations.',
         startDate: new Date('2024-09-01'),
-        endDate: new Date('2025-06-30'),        
+        endDate: new Date('2025-06-30'), 
+        amountPaid: 500,
+        totalAmount: 1000,
+        fullyPaid: false       
     },
     {
         id:2,
@@ -16,6 +19,9 @@ import { Course } from "../models/course.model"
         courseDescription: 'Exploration of classic and contemporary English literature.',
         startDate: new Date('2024-09-01'),  
         endDate: new Date('2025-06-30'),
+        amountPaid: 800,
+        totalAmount: 800,
+        fullyPaid: true
     },
     {
         id:3,   
@@ -24,5 +30,8 @@ import { Course } from "../models/course.model"
         courseDescription: 'Fundamental principles of biology, including cell structure and function.',
         startDate: new Date('2024-09-01'),  
         endDate: new Date('2025-06-30'),
-    }   
-    ]
+        amountPaid: 300,
+        totalAmount: 600,
+        fullyPaid: false
+    },
+]

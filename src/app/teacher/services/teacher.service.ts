@@ -18,7 +18,7 @@ export class TeacherService {
     }
 
     getTeachersSort(sort: string): Observable<Teacher[]>{
-      return this.http.get<Teacher[]>(`${this.apiUrl}/GetAllTeachersSort/${sort}`)
+      return this.http.get<Teacher[]>(`${this.apiUrl}/getAllTeachersSort/${sort}`)
     }
 
     getTeacherById(id : number): Observable<Teacher>{
