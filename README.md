@@ -1,19 +1,49 @@
 # SchoolAdministrationApp
 
+CLI-Version :
+--------------
+`18.2.12`
+
+Run ng --version
+
 To Start Application :
 -----------------------
 1/Install Sql-Server on your Pc.
 
 2/ Open and start the back-end API ( https://github.com/KoenVerboven/SchoolAdministrationApi ) in Visual Studio.
 
-3/Open the school-administration-Website in Visual Studio Code and run 'ng serve --open' in cmd-terminal.
+3/Open the school-administration-Website in Visual Studio Code and run `ng serve --open` in cmd-terminal.
 
 <img width="1905" height="1032" alt="image" src="https://github.com/user-attachments/assets/2015c5a1-3914-4fc0-b6cd-8d99a8beeb53" />
 
 
+Code Scaffolding :
+------------------
+* Run `ng new --name` to generate a new angular project
+  
+  example : `ng new school-administration-app`
+  
+* Run `ng generate component --name` to generate a new component.
 
+  `ng g c --name` ( same command but shorter )
+  
+  example : `ng g c student-form` : makes a new component with the name 'student-form'
+  
+  generate a new component on a existing or non-existent location:
+  
+  `ng g c user\login\login-form` -> generate a new component on the location : user\login
 
-## Screenshots :
+* Run `ng generate service --name` to generate a new service.
+  
+  `ng g s --name` ( same command but shorter )
+  
+  example : `ng g s student` : generate a new service with the name student.service.ts
+
+* Run `ng g help` to get help
+  
+
+Screenshots :
+-------------
 
 
 <img width="1902" height="938" alt="image" src="https://github.com/user-attachments/assets/326dc45c-38c4-4e44-9f75-e8a975d8e0a6" />
@@ -39,10 +69,9 @@ To Start Application :
 
 <img width="1907" height="942" alt="image" src="https://github.com/user-attachments/assets/fde2c1f1-145c-4c5f-8cb8-e8ca20a73dbc" />
 
-<img width="1898" height="942" alt="image" src="https://github.com/user-attachments/assets/53e2a4eb-e762-48a8-9663-c35416f1cba5" />
+<img width="1901" height="942" alt="image" src="https://github.com/user-attachments/assets/6bc564db-1df2-4d36-bfce-e5fa0ffac6fc" />
 
-<img width="1658" height="946" alt="image" src="https://github.com/user-attachments/assets/de6f9ec2-0b50-4c05-8077-5637b99b35f1" />
-
+<img width="1660" height="941" alt="image" src="https://github.com/user-attachments/assets/9691f2bb-6f4f-487b-96cd-bd1ad60135ea" />
 
 <img width="1907" height="942" alt="image" src="https://github.com/user-attachments/assets/89f211e6-7a9a-4451-889c-3fc5513a1834" />
 
@@ -64,6 +93,8 @@ To Start Application :
 
 <img width="1897" height="937" alt="image" src="https://github.com/user-attachments/assets/dff43017-b768-4462-9882-77a7845fa764" />
 
+
+<img width="1906" height="938" alt="image" src="https://github.com/user-attachments/assets/3c34538e-7042-4023-a4fb-16a944ca2ddb" />
 
 
 
