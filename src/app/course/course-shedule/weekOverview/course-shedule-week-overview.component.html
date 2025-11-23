@@ -1,0 +1,30 @@
+<p class="pageTitle" >Courses WeekOverview</p>
+ <table class="table table-bordered table-sm">
+        <thead>
+           <tr>
+             <th class="p-2" style="text-align:center;background-color: rgb(86, 184, 86) !important"></th> 
+             <th class="p-2" style="text-align:center;background-color: rgb(224, 86, 44) !important">Sun 2-10</th>
+             <th class="p-2" style="text-align:center;background-color:  rgb(220, 220, 220) !important">Mon 3-10</th>
+             <th class="p-2" style="text-align:center;background-color:  rgb(240, 240, 240) !important">Tue 4-10</th>
+             <th class="p-2" style="text-align:center;background-color:  rgb(220, 220, 220) !important">Wed 4-10</th>
+             <th class="p-2" style="text-align:center;background-color:  rgb(240, 240, 240) !important">Thur 6-10</th>
+             <th class="p-2" style="text-align:center;background-color:  rgb(220, 220, 220) !important">Fri 7-10</th>
+             <th class="p-2" style="text-align:center;background-color:  rgb(224, 86, 44) !important">Sat 8-10</th>
+            </tr>
+        </thead>
+        <tbody>
+           @for(course of  courseSheduleWeekOverviews; track course.id){
+            <tr>
+             <td class="p-2" style="text-align:center;background-color: rgb(144, 227, 144) !important">{{course.startTime | date:"HH:mm"}}</td> 
+             <td class="p-2" style="text-align:center">{{course.Day0CourseTitle}}</td>
+             <td class="p-2" style="text-align:center">{{course.Day1CourseTitle}}</td>
+             <td class="p-2" style="text-align:center">{{course.Day2CourseTitle}}</td>
+             <td class="p-2" style="text-align:center">{{course.Day3CourseTitle}}</td>
+             <td class="p-2" style="text-align:center">{{course.Day4CourseTitle}}</td>
+             <td class="p-2" style="text-align:center">{{course.Day5CourseTitle}}</td>
+             <td class="p-2" style="text-align:center">{{course.Day6CourseTitle}}</td>
+           </tr>
+           }
+
+        </tbody>
+    </table>

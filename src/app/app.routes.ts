@@ -36,8 +36,7 @@ import { StudentsInfoComponent } from './dashboard/moreInfo/students-info/studen
 import { ExamquestionListComponent } from './exam/examquestion-list/examquestion-list.component';
 import { PaymentListComponent } from './payment/payment-list/payment-list.component';
 import { PaymentFormComponent } from './payment/payment-form/payment-form.component';
-import { CourseShedule } from './course/models/courseShedule.model';
-import { CourseSheduleComponent } from './course/course-shedule/course-shedule.component';
+import { CourseSheduleWeekOverviewComponent } from './course/course-shedule/weekOverview/course-shedule-week-overview.component';
 
 
 export const routes: Routes = [
@@ -87,6 +86,6 @@ export const routes: Routes = [
     {path: 'payments', component: PaymentListComponent, canActivate:[AuthGuard]},
     {path: 'createpayment', component: PaymentFormComponent, canActivate:[AuthGuard]},
     {path: 'paymentdetail/:action/:id', component: PaymentFormComponent, canActivate:[AuthGuard]},
-    {path : 'courseShedule', component: CourseSheduleComponent, canActivate:[AuthGuard]},
+    {path : 'courseSheduleWeekOverview', component: CourseSheduleWeekOverviewComponent, canActivate:[AuthGuard]},
     {path: '**', component: PageNotFoundComponent}
 ]; 
