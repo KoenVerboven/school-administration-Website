@@ -12,7 +12,7 @@ export const courseSheduleWeekOverviews: CourseSheduleWeekOverview[] = [
         Day1Course: {     
             id: 1,
             courseName: 'Electronics',
-            courseCode: 'elec101',
+            courseCode: 'Elec101',
             courseDescription: 'An introductory course to eLectronics',
             startDate: new Date('2024-09-01'),
             endDate: new Date('2025-06-30'),
@@ -183,7 +183,7 @@ export const courseSheduleWeekOverviews: CourseSheduleWeekOverview[] = [
         Day1Course: {     
             id: 1,
             courseName: 'Programming Java',
-            courseCode: 'MATH101',
+            courseCode: 'JAVA101',
             courseDescription: 'An introductory course to Java Programming',
             startDate: new Date('2024-09-01'),
             endDate: new Date('2025-06-30'),
