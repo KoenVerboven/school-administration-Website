@@ -5,11 +5,11 @@ export interface CourseSheduleWeekOverview{
     id: number;
     startTime: Date;
     Day0Course: string;
-    Day1Course: Course;
-    Day2Course: Course;
-    Day3Course: Course;
-    Day4Course: Course;
-    Day5Course: Course;
+    Day1Course: any| Course;
+    Day2Course:  any| Course;
+    Day3Course:  any| Course;
+    Day4Course:  any| Course;
+    Day5Course:  any| Course;
     Day6CourseTitle: string;
     weekNumber: number;
 }

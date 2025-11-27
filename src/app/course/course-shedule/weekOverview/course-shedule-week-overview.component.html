@@ -17,11 +17,36 @@
             <tr>
              <td class="p-2" style="text-align:center;background-color: rgb(144, 227, 144) !important">{{course.startTime | date:"HH:mm"}}</td> 
              <td class="p-2" style="text-align:center">{{course.Day0Course}}</td>
-             <td class="p-2" style="text-align:center"><b>{{course.Day1Course.courseCode}}</b> <Br> {{course.Day1Course.courseName}}</td>
-             <td class="p-2" style="text-align:center"><b>{{course.Day2Course.courseCode}}</b> <Br> {{course.Day2Course.courseName}}</td>
-             <td class="p-2" style="text-align:center"><b>{{course.Day2Course.courseCode}}</b> <Br> {{course.Day3Course.courseName}}</td>
-             <td class="p-2" style="text-align:center"><b>{{course.Day4Course.courseCode}}</b> <Br> {{course.Day4Course.courseName}}</td>
-             <td class="p-2" style="text-align:center"><b>{{course.Day5Course.courseCode}}</b> <Br> {{course.Day5Course.courseName}}</td>
+             @if(course.Day1Course != null) {
+               <td class="p-2" style="text-align:center"><b>{{course.Day1Course.courseCode}}</b> <Br> {{course.Day1Course.courseName}}</td>
+             } 
+             @else{
+                <td class="p-2" style="text-align:center;background-color: aquamarine;">no course</td>
+             }
+             @if(course.Day2Course != null) {
+               <td class="p-2" style="text-align:center"><b>{{course.Day2Course.courseCode}}</b> <Br> {{course.Day2Course.courseName}}</td>
+             } 
+             @else{
+                <td class="p-2" style="text-align:center;background-color: aquamarine;">no course</td>
+             }
+             @if(course.Day3Course != null) {
+               <td class="p-2" style="text-align:center"><b>{{course.Day3Course.courseCode}}</b> <Br> {{course.Day3Course.courseName}}</td>
+             } 
+             @else{
+                <td class="p-2" style="text-align:center;background-color: aquamarine;">no course</td>
+             }
+             @if(course.Day4Course != null) {
+               <td class="p-2" style="text-align:center"><b>{{course.Day4Course.courseCode}}</b> <Br> {{course.Day4Course.courseName}}</td>
+             } 
+             @else{
+                <td class="p-2" style="text-align:center;background-color: aquamarine;">no course</td>
+             }
+             @if(course.Day5Course != null) {
+               <td class="p-2" style="text-align:center"><b>{{course.Day5Course.courseCode}}</b> <Br> {{course.Day5Course.courseName}}</td>
+             } 
+             @else{
+                <td class="p-2" style="text-align:center;background-color: aquamarine;">no course</td>
+             }
              <td class="p-2" style="text-align:center">{{course.Day6CourseTitle}}</td>
            </tr>
            }

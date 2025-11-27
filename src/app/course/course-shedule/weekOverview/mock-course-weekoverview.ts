@@ -9,16 +9,7 @@ export const courseSheduleWeekOverviews: CourseSheduleWeekOverview[] = [
         weekNumber: 23,
         startTime: new Date('1970-01-01T08:00:00'),
         Day0Course: '', 
-        Day1Course: {     
-            id: 1,
-            courseName: 'Electronics',
-            courseCode: 'Elec101',
-            courseDescription: 'An introductory course to eLectronics',
-            startDate: new Date('2024-09-01'),
-            endDate: new Date('2025-06-30'),
-            coursePrice: 500,
-            maxNumberOfStudents: 30 
-        },
+        Day1Course: null,
         Day2Course: {     
             id: 1,
             courseName: 'Electronics',
@@ -69,7 +60,7 @@ export const courseSheduleWeekOverviews: CourseSheduleWeekOverview[] = [
         Day1Course: {     
             id: 1,
             courseName: 'Biology',
-            courseCode: 'Bio101',
+            courseCode: 'BIO101',
             courseDescription: 'An introductory course to Biology',
             startDate: new Date('2024-09-01'),
             endDate: new Date('2025-06-30'),
@@ -237,56 +228,11 @@ export const courseSheduleWeekOverviews: CourseSheduleWeekOverview[] = [
         weekNumber: 23,
         startTime: new Date('1970-01-01T12:00:00'),
         Day0Course: '', 
-        Day1Course: {     
-            id: 1,
-            courseName: 'Mathematics',
-            courseCode: 'MATH101',
-            courseDescription: 'An introductory course to Mathematics',
-            startDate: new Date('2024-09-01'),
-            endDate: new Date('2025-06-30'),
-            coursePrice: 500,
-            maxNumberOfStudents: 30 
-        },
-        Day2Course: {     
-            id: 1,
-            courseName: 'Mathematics',
-            courseCode: 'MATH101',
-            courseDescription: 'An introductory course to Mathematics',
-            startDate: new Date('2024-09-01'),
-            endDate: new Date('2025-06-30'),
-            coursePrice: 500,
-            maxNumberOfStudents: 30 
-        }, 
-        Day3Course: {     
-            id: 1,
-            courseName: 'Programming C#',  
-            courseCode: 'PROG101',
-            courseDescription: 'An introductory course to C# Programming',
-            startDate: new Date('2024-09-01'),  
-            endDate: new Date('2025-06-30'),
-            coursePrice: 500,
-            maxNumberOfStudents: 30 
-        },
-        Day4Course: {
-            id: 1,
-            courseName: 'Programming C#',
-            courseCode: 'PROG101',      
-            courseDescription: 'An introductory course to C# Programming',
-            startDate: new Date('2024-09-01'),
-            endDate: new Date('2025-06-30'),    
-            coursePrice: 500,
-            maxNumberOfStudents: 30 
-        },
-        Day5Course: {   
-            id: 1,
-            courseName: 'Mathematics',
-            courseCode: 'MATH101',
-            courseDescription: 'An introductory course to Mathematics',
-            startDate: new Date('2024-09-01'),
-            endDate: new Date('2025-06-30'),
-            coursePrice: 500,
-            maxNumberOfStudents: 30 
-        },
+        Day1Course: null,
+        Day2Course: null, 
+        Day3Course: null,
+        Day4Course: null,
+        Day5Course: null,
         Day6CourseTitle: ''
     },
     {
@@ -582,8 +528,8 @@ export const courseSheduleWeekOverviews: CourseSheduleWeekOverview[] = [
         Day1Course: {     
             id: 1,
             courseName: 'Chemistry',
-            courseCode: 'chem101',
-            courseDescription: 'An introductory course to cHemistry',
+            courseCode: 'Chem101',
+            courseDescription: 'An introductory course to Chemistry',
             startDate: new Date('2024-09-01'),
             endDate: new Date('2025-06-30'),
             coursePrice: 500,
