@@ -16,12 +16,12 @@
            @for(course of  courseSheduleWeekOverviews; track course.id){
             <tr>
              <td class="p-2" style="text-align:center;background-color: rgb(144, 227, 144) !important">{{course.startTime | date:"HH:mm"}}</td> 
-             <td class="p-2" style="text-align:center">{{course.Day0CourseTitle}}</td>
-             <td class="p-2" style="text-align:center">{{course.Day1CourseTitle}}</td>
-             <td class="p-2" style="text-align:center">{{course.Day2CourseTitle}}</td>
-             <td class="p-2" style="text-align:center">{{course.Day3CourseTitle}}</td>
-             <td class="p-2" style="text-align:center">{{course.Day4CourseTitle}}</td>
-             <td class="p-2" style="text-align:center">{{course.Day5CourseTitle}}</td>
+             <td class="p-2" style="text-align:center">{{course.Day0Course}}</td>
+             <td class="p-2" style="text-align:center">{{course.Day1Course.courseName}}</td>
+             <td class="p-2" style="text-align:center">{{course.Day2Course.courseName}}</td>
+             <td class="p-2" style="text-align:center">{{course.Day3Course.courseName}}</td>
+             <td class="p-2" style="text-align:center">{{course.Day4Course.courseName}}</td>
+             <td class="p-2" style="text-align:center">{{course.Day5Course.courseName}}</td>
              <td class="p-2" style="text-align:center">{{course.Day6CourseTitle}}</td>
            </tr>
            }
