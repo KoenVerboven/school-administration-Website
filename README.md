@@ -98,6 +98,12 @@ Screenshots :
 
 <img width="1898" height="907" alt="image" src="https://github.com/user-attachments/assets/a6e02916-77ed-4db0-aaf7-5028b3c358f5" />
 
+If you want to read more info about this site or the used technology :
+
+https://github.com/KoenVerboven/school-administration-Website/tree/main/public/infoFiles
+
+
+
 
 
 
