@@ -92,12 +92,13 @@ Screenshots :
 
 <img width="1906" height="938" alt="image" src="https://github.com/user-attachments/assets/3c34538e-7042-4023-a4fb-16a944ca2ddb" />
 
-<img width="1898" height="907" alt="image" src="https://github.com/user-attachments/assets/a6e02916-77ed-4db0-aaf7-5028b3c358f5" />
+<img width="1899" height="910" alt="image" src="https://github.com/user-attachments/assets/a22f3fa8-f84d-465a-bb29-5defc031e437" />
 
 
-Milestone 16 unique visitors :
 
-<img width="1863" height="1076" alt="image" src="https://github.com/user-attachments/assets/ad0c687a-e17e-455f-a487-1e0b468afb14" />
+Milestone 21 unique visitors :
+
+<img width="1908" height="1009" alt="image" src="https://github.com/user-attachments/assets/b9ba6680-9320-4f45-999b-0e8de30239d0" />
 
 
 
