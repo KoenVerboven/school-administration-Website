@@ -81,8 +81,7 @@ Screenshots :
 
 <img width="1898" height="946" alt="image" src="https://github.com/user-attachments/assets/c56161ce-634e-49a6-870c-15d9e486214a" />
 
-
-<img width="1905" height="942" alt="image" src="https://github.com/user-attachments/assets/d9e65abc-29f0-4ead-a239-2f7ce148cdd7" />
+<img width="1892" height="908" alt="image" src="https://github.com/user-attachments/assets/82bef746-806e-453f-b15d-7ecccf75767d" />
 
 
 <img width="1902" height="945" alt="image" src="https://github.com/user-attachments/assets/b1182932-7ae0-4a53-b47c-6899880878b3" />
@@ -97,6 +96,19 @@ Screenshots :
 <img width="1906" height="938" alt="image" src="https://github.com/user-attachments/assets/3c34538e-7042-4023-a4fb-16a944ca2ddb" />
 
 <img width="1898" height="907" alt="image" src="https://github.com/user-attachments/assets/a6e02916-77ed-4db0-aaf7-5028b3c358f5" />
+
+
+Milestone 16 unique visitors :
+
+<img width="1863" height="1076" alt="image" src="https://github.com/user-attachments/assets/ad0c687a-e17e-455f-a487-1e0b468afb14" />
+
+
+
+If you want to read more info about this site or the used technology :
+
+https://github.com/KoenVerboven/school-administration-Website/tree/main/public/infoFiles
+
+
 
 
 
