@@ -46,7 +46,7 @@ Screenshots :
 -------------
 
 
-<img width="1902" height="938" alt="image" src="https://github.com/user-attachments/assets/326dc45c-38c4-4e44-9f75-e8a975d8e0a6" />
+<img width="1905" height="907" alt="image" src="https://github.com/user-attachments/assets/605829c7-66d9-4f03-a8c4-334178f6e2d5" />
 
 
 <img width="1895" height="902" alt="image" src="https://github.com/user-attachments/assets/7b6b9df1-ec66-4dfc-b1c1-cb84f7e21252" />
