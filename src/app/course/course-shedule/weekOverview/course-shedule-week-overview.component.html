@@ -2,50 +2,50 @@
  <table class="table table-bordered table-sm">
         <thead>
            <tr>
-             <th class="p-2" style="text-align:center;background-color: rgb(86, 184, 86) !important"></th> 
-             <th class="p-2" style="text-align:center;background-color: rgb(224, 86, 44) !important">Sun 2-10</th>
+             <th class="p-2" style="text-align:center;background-color: rgb(156, 238, 156) !important"></th> 
+             <th class="p-2" style="text-align:center;background-color: rgb(240, 240, 240) ;color: red  !important">Sun 2-10</th>
              <th class="p-2" style="text-align:center;background-color:  rgb(220, 220, 220) !important">Mon 3-10</th>
              <th class="p-2" style="text-align:center;background-color:  rgb(240, 240, 240) !important">Tue 4-10</th>
              <th class="p-2" style="text-align:center;background-color:  rgb(220, 220, 220) !important">Wed 4-10</th>
              <th class="p-2" style="text-align:center;background-color:  rgb(240, 240, 240) !important">Thur 6-10</th>
              <th class="p-2" style="text-align:center;background-color:  rgb(220, 220, 220) !important">Fri 7-10</th>
-             <th class="p-2" style="text-align:center;background-color:  rgb(224, 86, 44) !important">Sat 8-10</th>
+             <th class="p-2" style="text-align:center;background-color:  rgb(240, 240, 240); color: red !important">Sat 8-10</th>
             </tr>
         </thead>
         <tbody>
            @for(course of  courseSheduleWeekOverviews; track course.id){
             <tr>
-             <td class="p-2" style="text-align:center;background-color: rgb(144, 227, 144) !important">{{course.startTime | date:"HH:mm"}}</td> 
+             <td class="p-2" style="text-align:center;background-color: rgb(190, 250, 190) !important">{{course.startTime | date:"HH:mm"}}</td> 
              <td class="p-2" style="text-align:center">{{course.Day0Course}}</td>
              @if(course.Day1Course != null) {
                <td class="p-2" style="text-align:center"><b>{{course.Day1Course.courseCode}}</b> <Br> {{course.Day1Course.courseName}}</td>
              } 
              @else{
-                <td class="p-2" style="text-align:center;background-color: aquamarine;">no course</td>
+                <td class="p-2" style="text-align:center;font-style:italic;color: green;">Free</td>
              }
              @if(course.Day2Course != null) {
                <td class="p-2" style="text-align:center"><b>{{course.Day2Course.courseCode}}</b> <Br> {{course.Day2Course.courseName}}</td>
              } 
              @else{
-                <td class="p-2" style="text-align:center;background-color: aquamarine;">no course</td>
+                <td class="p-2" style="text-align:center;font-style:italic;color: green;">Free</td>
              }
              @if(course.Day3Course != null) {
                <td class="p-2" style="text-align:center"><b>{{course.Day3Course.courseCode}}</b> <Br> {{course.Day3Course.courseName}}</td>
              } 
              @else{
-                <td class="p-2" style="text-align:center;background-color: aquamarine;">no course</td>
+                <td class="p-2" style="text-align:center;font-style:italic;color: green;">Free</td>
              }
              @if(course.Day4Course != null) {
                <td class="p-2" style="text-align:center"><b>{{course.Day4Course.courseCode}}</b> <Br> {{course.Day4Course.courseName}}</td>
              } 
              @else{
-                <td class="p-2" style="text-align:center;background-color: aquamarine;">no course</td>
+                <td class="p-2" style="text-align:center;font-style:italic;color: green;">Free</td>
              }
              @if(course.Day5Course != null) {
                <td class="p-2" style="text-align:center"><b>{{course.Day5Course.courseCode}}</b> <Br> {{course.Day5Course.courseName}}</td>
              } 
              @else{
-                <td class="p-2" style="text-align:center;background-color: aquamarine;">no course</td>
+                <td class="p-2" style="text-align:center;font-style:italic;color: green;">Free</td>
              }
              <td class="p-2" style="text-align:center">{{course.Day6CourseTitle}}</td>
            </tr>
