@@ -1,0 +1,18 @@
+.CellCourseSheduled{
+    padding: 10px;
+    border: 1px solid black;
+    text-align: center;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    width: 12%;    
+
+}
+.CellNotSheduled{
+    padding: 10px;
+    border: 1px solid black;
+    text-align: center;
+    font-size: 14px;
+    background-color: #e0f7e0;
+    width: 12%;    
+
+}
