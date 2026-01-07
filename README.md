@@ -96,12 +96,6 @@ Screenshots :
 
 
 
-Milestone 21 unique visitors :
-
-<img width="1908" height="1009" alt="image" src="https://github.com/user-attachments/assets/b9ba6680-9320-4f45-999b-0e8de30239d0" />
-
-
-
 If you want to read more info about this site or the used technology :
 
 https://github.com/KoenVerboven/school-administration-Website/tree/main/public/infoFiles
