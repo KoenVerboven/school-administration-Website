@@ -1,5 +1,10 @@
 # SchoolAdministrationApp
 
+Demo movie :
+------------
+![SchoolAdministration](https://github.com/user-attachments/assets/32a8dadb-1497-462f-84b6-0cd697451253)
+
+
 CLI-Version :
 --------------
 `18.2.12`
@@ -44,8 +49,6 @@ Code Scaffolding :
 
 Screenshots :
 -------------
-
-![SchoolAdministration](https://github.com/user-attachments/assets/32a8dadb-1497-462f-84b6-0cd697451253)
 
 
 <img width="1905" height="907" alt="image" src="https://github.com/user-attachments/assets/605829c7-66d9-4f03-a8c4-334178f6e2d5" />
