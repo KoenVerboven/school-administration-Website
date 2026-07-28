@@ -25,6 +25,7 @@
     "rxjs": "~7.8.0",
     "shell-quote": "^1.10.0",
     "tslib": "^2.3.0",
+    "websocket-driver": "^0.7.5",
     "zone.js": "~0.14.3"
   },
   "devDependencies": {

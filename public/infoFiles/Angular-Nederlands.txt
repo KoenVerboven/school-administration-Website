@@ -632,5 +632,14 @@ https://getbootstrap.com/docs/5.3/components/pagination/
 
 ---------------------------------------------------------------
 
+Security issues (critical):
+shell-quote quote() does not escapte newlines in object .op values 
+Solution:
+npm install shell-quote@latest
+
+websocket-driver: Message corruption via abuse of protocol length headers
+Solution:
+npm install websocket-driver@latest
+
 
 
