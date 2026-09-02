@@ -633,6 +633,7 @@ https://getbootstrap.com/docs/5.3/components/pagination/
 ---------------------------------------------------------------
 
 Security issues (critical):
+
 shell-quote quote() does not escapte newlines in object .op values 
 Solution:
 npm install shell-quote@latest
@@ -641,5 +642,8 @@ websocket-driver: Message corruption via abuse of protocol length headers
 Solution:
 npm install websocket-driver@latest
 
-
+angular Socket.IO: Engine.IO Polling Transport Connection Exhaustion
+Solution:
+https://github.com/socketio/socket.io/security/advisories/GHSA-r635-g3xr-vw7x
+npm install engine.io@^6.6.7
 
