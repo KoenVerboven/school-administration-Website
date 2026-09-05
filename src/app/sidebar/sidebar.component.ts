@@ -52,7 +52,7 @@ export class SidebarComponent implements OnChanges {
         this.examResultsVisible = false;
         this.usersVisible=false;
       }
-      if(this.userRole == 'admin')
+      if(this.userRole.toLowerCase() == 'superadmin' ||   this.userRole.toLowerCase() == 'admin')
       {
         this.dashboardVisible = true;
         this.schoolsVisible = true;
@@ -72,20 +72,20 @@ export class SidebarComponent implements OnChanges {
         this.paymentsVisible = true;
         this.courseSheduleVisible = true;
       }
-      if(this.userRole == 'student')
+      if(this.userRole.toLowerCase() == 'student')
       {
         this.examResultsVisible = true;
         this.studyPlansVisible=true;
         this.mystudyplanVisible=true;
       }
-      if(this.userRole =='teacher')
+      if(this.userRole.toLowerCase() =='teacher')
       {
         this.coursesVisible = true;
         this.examsVisible= true;
         this.examResultsVisible = true;
         this.studentPresenceVisible = true;
       }
-      if(this.userRole == 'parent')
+      if(this.userRole.toLowerCase() == 'parent')
       {
         this.examResultsVisible = true;
       }
